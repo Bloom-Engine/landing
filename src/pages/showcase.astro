@@ -1,0 +1,263 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Showcase — Bloom Engine" description="Games and projects built with Bloom Engine.">
+  <section class="page-hero">
+    <div class="container">
+      <h1>Showcase</h1>
+      <p class="page-desc">Games and projects built with Bloom Engine.</p>
+    </div>
+  </section>
+
+  <section class="showcase">
+    <div class="container">
+      <div class="showcase-grid">
+        <a href="https://github.com/Bloom-Engine" target="_blank" rel="noopener" class="showcase-card featured">
+          <div class="showcase-preview garden">
+            <div class="showcase-badge">Featured</div>
+            <div class="garden-art">
+              <div class="garden-ground"></div>
+              <div class="garden-flower f1"></div>
+              <div class="garden-flower f2"></div>
+              <div class="garden-flower f3"></div>
+            </div>
+          </div>
+          <div class="showcase-info">
+            <h3>Bloom Garden</h3>
+            <p>A tiny garden adventure. The flagship demo game built entirely with Bloom Engine &mdash; cozy low-poly exploration with warm golden-hour lighting.</p>
+            <span class="showcase-link">View on GitHub &rarr;</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/Bloom-Engine" target="_blank" rel="noopener" class="showcase-card">
+          <div class="showcase-preview pong">
+            <div class="pong-art">
+              <div class="pong-paddle left"></div>
+              <div class="pong-ball"></div>
+              <div class="pong-paddle right"></div>
+              <div class="pong-line"></div>
+            </div>
+          </div>
+          <div class="showcase-info">
+            <h3>Pong</h3>
+            <p>Classic two-player Pong. Demonstrates input handling, 2D shapes, collision detection, audio, and game state management in ~170 lines.</p>
+            <span class="showcase-link">View on GitHub &rarr;</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="showcase-cta">
+        <h2>Build something with Bloom?</h2>
+        <p>We'd love to feature your project here. Share it on GitHub and let us know!</p>
+        <a href="https://github.com/Bloom-Engine" target="_blank" rel="noopener" class="btn btn-primary">
+          Submit Your Project
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    padding: 4rem 0 3rem;
+    background: var(--bloom-light);
+    text-align: center;
+  }
+
+  .page-desc {
+    color: rgba(27, 42, 30, 0.6);
+    font-size: 1.125rem;
+    margin-top: 0.75rem;
+  }
+
+  .showcase {
+    padding: 3rem 0 5rem;
+  }
+
+  .showcase-grid {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .showcase-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--bloom-light);
+    text-decoration: none;
+    color: var(--bloom-dark);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid rgba(27, 42, 30, 0.06);
+  }
+
+  .showcase-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+    color: var(--bloom-dark);
+  }
+
+  .showcase-preview {
+    aspect-ratio: 16 / 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .showcase-preview.garden {
+    background: linear-gradient(180deg, #B4D4E7 0%, #F5D5C0 100%);
+  }
+
+  .showcase-preview.pong {
+    background: #0D1A10;
+  }
+
+  .showcase-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--petal-gold);
+    color: var(--bloom-dark);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.6875rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Garden art */
+  .garden-art {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .garden-ground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 35%;
+    background: #7BA78A;
+    border-radius: 50% 50% 0 0 / 20% 20% 0 0;
+  }
+
+  .garden-flower {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(255, 213, 79, 0.5);
+  }
+
+  .garden-flower.f1 {
+    background: var(--petal-gold);
+    bottom: 38%;
+    left: 30%;
+  }
+
+  .garden-flower.f2 {
+    background: var(--petal-coral);
+    bottom: 42%;
+    left: 55%;
+    width: 12px;
+    height: 12px;
+  }
+
+  .garden-flower.f3 {
+    background: var(--petal-lavender);
+    bottom: 35%;
+    left: 70%;
+    width: 14px;
+    height: 14px;
+  }
+
+  /* Pong art */
+  .pong-art {
+    position: relative;
+    width: 80%;
+    height: 70%;
+  }
+
+  .pong-paddle {
+    position: absolute;
+    width: 8px;
+    height: 48px;
+    background: var(--bloom-white);
+    border-radius: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .pong-paddle.left { left: 10%; }
+  .pong-paddle.right { right: 10%; }
+
+  .pong-ball {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: var(--bloom-green-light);
+    border-radius: 50%;
+    top: 45%;
+    left: 55%;
+    box-shadow: 0 0 10px rgba(102, 187, 106, 0.5);
+  }
+
+  .pong-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+  }
+
+  .showcase-info {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .showcase-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .showcase-info p {
+    color: rgba(27, 42, 30, 0.6);
+    font-size: 0.9375rem;
+    margin-bottom: 1rem;
+  }
+
+  .showcase-link {
+    color: var(--bloom-green);
+    font-weight: 700;
+    font-size: 0.875rem;
+  }
+
+  .showcase-cta {
+    text-align: center;
+    padding: 3rem;
+    background: var(--bloom-light);
+    border-radius: 16px;
+  }
+
+  .showcase-cta p {
+    color: rgba(27, 42, 30, 0.6);
+    margin: 0.75rem auto 1.5rem;
+    max-width: 400px;
+  }
+
+  @media (max-width: 768px) {
+    .showcase-card {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

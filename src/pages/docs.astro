@@ -1,0 +1,377 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const modules = [
+  {
+    name: "Core",
+    import: "bloom/core",
+    description: "Window management, game loop, input, and timing.",
+    functions: [
+      "initWindow(width, height, title)",
+      "windowShouldClose()",
+      "closeWindow()",
+      "beginDrawing() / endDrawing()",
+      "clearBackground(color)",
+      "getDeltaTime()",
+      "getFPS()",
+      "setTargetFPS(fps)",
+      "toggleFullscreen()",
+      "isKeyPressed(key) / isKeyDown(key)",
+      "isMouseButtonPressed(btn)",
+      "getMousePosition()",
+      "beginMode2D(camera) / endMode2D()",
+      "beginMode3D(camera) / endMode3D()",
+    ],
+  },
+  {
+    name: "Shapes",
+    import: "bloom/shapes",
+    description: "2D shape drawing and collision detection.",
+    functions: [
+      "drawLine(x1, y1, x2, y2, color)",
+      "drawRect(x, y, w, h, color)",
+      "drawCircle(cx, cy, radius, color)",
+      "drawTriangle(v1, v2, v3, color)",
+      "drawPoly(center, sides, radius, rotation, color)",
+      "checkCollisionRecs(r1, r2)",
+      "checkCollisionCircles(c1, r1, c2, r2)",
+      "checkCollisionPointRec(point, rect)",
+    ],
+  },
+  {
+    name: "Textures",
+    import: "bloom/textures",
+    description: "Image loading and sprite rendering.",
+    functions: [
+      "loadTexture(path)",
+      "unloadTexture(texture)",
+      "drawTexture(texture, x, y, tint)",
+      "drawTexturePro(texture, src, dest, origin, rotation, tint)",
+      "drawTextureRec(texture, src, pos, tint)",
+    ],
+  },
+  {
+    name: "Text",
+    import: "bloom/text",
+    description: "Font loading and text rendering.",
+    functions: [
+      "drawText(text, x, y, fontSize, color)",
+      "measureText(text, fontSize)",
+      "loadFont(path)",
+    ],
+  },
+  {
+    name: "Audio",
+    import: "bloom/audio",
+    description: "Sound effects and music streaming.",
+    functions: [
+      "initAudio()",
+      "loadSound(path)",
+      "playSound(sound)",
+      "stopSound(sound)",
+      "setSoundVolume(sound, volume)",
+      "setMasterVolume(volume)",
+      "loadMusic(path)",
+      "playMusic(music)",
+      "updateMusicStream(music)",
+    ],
+  },
+  {
+    name: "Models",
+    import: "bloom/models",
+    description: "3D model loading and rendering.",
+    functions: [
+      "loadModel(path)",
+      "unloadModel(model)",
+      "drawModel(model, position)",
+      "drawCube(position, w, h, l, color)",
+      "drawSphere(center, radius, color)",
+      "drawGrid(slices, spacing)",
+    ],
+  },
+  {
+    name: "Math",
+    import: "bloom/math",
+    description: "Vectors, matrices, quaternions, and utilities.",
+    functions: [
+      "vec2Add / vec2Sub / vec2Scale / vec2Normalize",
+      "vec3Add / vec3Sub / vec3Cross / vec3Dot",
+      "mat4Identity / mat4Multiply / mat4Perspective",
+      "mat4LookAt / mat4Translate / mat4Rotate",
+      "quaternionFromEuler / quaternionSlerp",
+      "lerp / clamp / remap",
+      "easeInQuad / easeOutElastic / easeBounce",
+      "randomFloat / randomInt",
+    ],
+  },
+];
+---
+
+<Layout title="Docs — Bloom Engine" description="Bloom Engine API reference and documentation.">
+  <section class="page-hero">
+    <div class="container">
+      <h1>Documentation</h1>
+      <p class="page-desc">API reference for every Bloom module. Full docs are coming soon.</p>
+      <a href="https://github.com/Bloom-Engine" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top: 1.5rem;">
+        Full Docs on GitHub
+      </a>
+    </div>
+  </section>
+
+  <section class="docs">
+    <div class="container docs-layout">
+      <aside class="docs-sidebar">
+        <nav>
+          <h4>Modules</h4>
+          {modules.map((m) => (
+            <a href={`#${m.name.toLowerCase()}`} class="sidebar-link">{m.name}</a>
+          ))}
+        </nav>
+        <nav>
+          <h4>Resources</h4>
+          <a href="https://github.com/Bloom-Engine" target="_blank" rel="noopener" class="sidebar-link">GitHub</a>
+          <a href="https://github.com/Bloom-Engine" target="_blank" rel="noopener" class="sidebar-link">Examples</a>
+        </nav>
+      </aside>
+
+      <div class="docs-content">
+        <div class="docs-quickstart">
+          <h2>Quick Start</h2>
+          <div class="code-window">
+            <div class="code-header">
+              <span class="code-dot" style="background: #FF5F57"></span>
+              <span class="code-dot" style="background: #FEBC2E"></span>
+              <span class="code-dot" style="background: #28C840"></span>
+              <span class="code-title">main.ts</span>
+            </div>
+            <pre><code><span class="kw">import</span> {"{"} initWindow, windowShouldClose, beginDrawing,
+         endDrawing, clearBackground, drawText,
+         Colors, closeWindow {"}"} <span class="kw">from</span> <span class="str">"bloom"</span>;
+
+initWindow(<span class="num">800</span>, <span class="num">450</span>, <span class="str">"Hello Bloom"</span>);
+
+<span class="kw">while</span> (!windowShouldClose()) {"{"}
+  beginDrawing();
+  clearBackground(Colors.<span class="prop">RAYWHITE</span>);
+  drawText(<span class="str">"Hello, Bloom!"</span>, <span class="num">190</span>, <span class="num">200</span>, <span class="num">20</span>, Colors.<span class="prop">DARKGRAY</span>);
+  endDrawing();
+{"}"}
+
+closeWindow();</code></pre>
+          </div>
+        </div>
+
+        <div class="docs-types">
+          <h2>Core Types</h2>
+          <div class="code-window">
+            <div class="code-header">
+              <span class="code-dot" style="background: #FF5F57"></span>
+              <span class="code-dot" style="background: #FEBC2E"></span>
+              <span class="code-dot" style="background: #28C840"></span>
+              <span class="code-title">types.ts</span>
+            </div>
+            <pre><code><span class="kw">interface</span> <span class="prop">Vec2</span> {"{"} x: <span class="num">number</span>; y: <span class="num">number</span> {"}"}
+<span class="kw">interface</span> <span class="prop">Vec3</span> {"{"} x: <span class="num">number</span>; y: <span class="num">number</span>; z: <span class="num">number</span> {"}"}
+<span class="kw">interface</span> <span class="prop">Color</span> {"{"} r: <span class="num">number</span>; g: <span class="num">number</span>; b: <span class="num">number</span>; a: <span class="num">number</span> {"}"}
+<span class="kw">interface</span> <span class="prop">Rect</span> {"{"} x: <span class="num">number</span>; y: <span class="num">number</span>; width: <span class="num">number</span>; height: <span class="num">number</span> {"}"}
+<span class="kw">interface</span> <span class="prop">Camera2D</span> {"{"} offset: Vec2; target: Vec2; rotation: <span class="num">number</span>; zoom: <span class="num">number</span> {"}"}
+<span class="kw">interface</span> <span class="prop">Camera3D</span> {"{"} position: Vec3; target: Vec3; up: Vec3; fovy: <span class="num">number</span>; projection: <span class="num">number</span> {"}"}
+<span class="kw">interface</span> <span class="prop">Texture</span> {"{"} handle: <span class="num">number</span>; width: <span class="num">number</span>; height: <span class="num">number</span> {"}"}
+<span class="kw">interface</span> <span class="prop">Sound</span> {"{"} handle: <span class="num">number</span> {"}"}
+<span class="kw">interface</span> <span class="prop">Model</span> {"{"} handle: <span class="num">number</span> {"}"}</code></pre>
+          </div>
+        </div>
+
+        {modules.map((mod) => (
+          <div class="docs-module" id={mod.name.toLowerCase()}>
+            <div class="docs-module-header">
+              <h2>{mod.name}</h2>
+              <code class="module-import">{mod.import}</code>
+            </div>
+            <p class="docs-module-desc">{mod.description}</p>
+            <div class="function-list">
+              {mod.functions.map((fn) => (
+                <div class="function-item">
+                  <code>{fn}</code>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    padding: 4rem 0 3rem;
+    background: var(--bloom-light);
+    text-align: center;
+  }
+
+  .page-desc {
+    color: rgba(27, 42, 30, 0.6);
+    font-size: 1.125rem;
+    margin-top: 0.75rem;
+  }
+
+  .docs {
+    padding: 3rem 0 5rem;
+  }
+
+  .docs-layout {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .docs-sidebar {
+    position: sticky;
+    top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .docs-sidebar h4 {
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(27, 42, 30, 0.4);
+    margin-bottom: 0.5rem;
+  }
+
+  .sidebar-link {
+    display: block;
+    padding: 0.3rem 0;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: rgba(27, 42, 30, 0.65);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .sidebar-link:hover {
+    color: var(--bloom-green);
+  }
+
+  .docs-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    min-width: 0;
+  }
+
+  /* Code window styles */
+  .code-window {
+    background: #0D1A10;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .code-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .code-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  .code-title {
+    margin-left: auto;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    font-family: var(--font-mono);
+  }
+
+  .code-window pre {
+    padding: 1.25rem 1.5rem;
+    overflow-x: auto;
+    line-height: 1.6;
+  }
+
+  .code-window code {
+    color: #E8F0E9;
+    font-size: 0.8125rem;
+  }
+
+  .code-window .kw { color: #B39DDB; }
+  .code-window .str { color: #66BB6A; }
+  .code-window .num { color: #FFD54F; }
+  .code-window .prop { color: #FF8A65; }
+
+  .docs-module {
+    scroll-margin-top: 80px;
+  }
+
+  .docs-module-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .docs-module-header h2 {
+    font-size: 1.375rem;
+  }
+
+  .module-import {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    background: #0D1A10;
+    color: var(--bloom-green-light);
+    border-radius: 4px;
+    font-size: 0.75rem;
+  }
+
+  .docs-module-desc {
+    color: rgba(27, 42, 30, 0.6);
+    margin-bottom: 1rem;
+    font-size: 0.9375rem;
+  }
+
+  .function-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .function-item {
+    padding: 0.5rem 0.75rem;
+    background: var(--bloom-light);
+    border-radius: 6px;
+    border-left: 3px solid transparent;
+    transition: border-color 0.15s;
+  }
+
+  .function-item:hover {
+    border-left-color: var(--bloom-green);
+  }
+
+  .function-item code {
+    font-size: 0.8125rem;
+    color: var(--bloom-dark);
+  }
+
+  @media (max-width: 768px) {
+    .docs-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .docs-sidebar {
+      position: static;
+      flex-direction: row;
+      overflow-x: auto;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(27, 42, 30, 0.08);
+    }
+  }
+</style>

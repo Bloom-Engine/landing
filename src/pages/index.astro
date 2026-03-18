@@ -1,0 +1,627 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Bloom Engine — Native games from TypeScript">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <p class="hero-badge">Open Source Game Engine</p>
+        <h1>Native games from <span class="highlight">TypeScript</span></h1>
+        <p class="hero-desc">
+          Write TypeScript. Ship native games. No browser, no C++.
+          Bloom compiles your game to Metal, DirectX 12, Vulkan, and OpenGL
+          — one codebase for every platform.
+        </p>
+        <div class="hero-actions">
+          <a href="https://github.com/Bloom-Engine" target="_blank" rel="noopener" class="btn btn-primary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            Get Started
+          </a>
+          <a href="https://github.com/Bloom-Engine" target="_blank" rel="noopener" class="btn btn-secondary">
+            View on GitHub
+          </a>
+        </div>
+      </div>
+      <div class="hero-code">
+        <div class="code-window">
+          <div class="code-header">
+            <span class="code-dot" style="background: #FF5F57"></span>
+            <span class="code-dot" style="background: #FEBC2E"></span>
+            <span class="code-dot" style="background: #28C840"></span>
+            <span class="code-title">main.ts</span>
+          </div>
+          <pre><code><span class="kw">import</span> {"{"} initWindow, windowShouldClose,
+         beginDrawing, endDrawing,
+         clearBackground, drawText,
+         Colors {"}"} <span class="kw">from</span> <span class="str">"bloom"</span>;
+
+initWindow(<span class="num">800</span>, <span class="num">450</span>, <span class="str">"My Game"</span>);
+
+<span class="kw">while</span> (!windowShouldClose()) {"{"}
+  beginDrawing();
+  clearBackground(Colors.<span class="prop">RAYWHITE</span>);
+  drawText(<span class="str">"Hello, Bloom!"</span>,
+    <span class="num">190</span>, <span class="num">200</span>, <span class="num">20</span>, Colors.<span class="prop">DARKGRAY</span>);
+  endDrawing();
+{"}"}</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proof -->
+  <section class="proof">
+    <div class="container proof-inner">
+      <div class="proof-cards">
+        <div class="proof-card">
+          <span class="proof-number">0</span>
+          <span class="proof-label">Runtime overhead</span>
+        </div>
+        <div class="proof-card">
+          <span class="proof-number">5</span>
+          <span class="proof-label">Target platforms</span>
+        </div>
+        <div class="proof-card">
+          <span class="proof-number">7</span>
+          <span class="proof-label">Modular subsystems</span>
+        </div>
+        <div class="proof-card">
+          <span class="proof-number">1</span>
+          <span class="proof-label">Codebase to maintain</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Bloom -->
+  <section class="why">
+    <div class="container">
+      <h2 class="section-title">Why Bloom?</h2>
+      <p class="section-desc">
+        Bloom is the only game engine that lets you write TypeScript and ship truly native games.
+        No Electron, no WebView, no browser runtime. Just your code, compiled to native.
+      </p>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+          </div>
+          <h3>Simple API</h3>
+          <p>The entire API fits on a cheatsheet. No classes, no inheritance, no magic. Just functions you call.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3>True Native</h3>
+          <p>Compiles to Metal, DirectX 12, Vulkan, and OpenGL. Real GPU acceleration, real performance.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3>Ship Everywhere</h3>
+          <p>macOS, Windows, Linux, iOS, and Android from one codebase. Steam, App Store, Play Store ready.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modules -->
+  <section class="modules">
+    <div class="container">
+      <h2 class="section-title">Everything you need</h2>
+      <p class="section-desc">
+        Seven modular subsystems, each independently importable. Use only what you need.
+      </p>
+      <div class="modules-grid">
+        <div class="module-card">
+          <div class="module-icon core"></div>
+          <h3>Core</h3>
+          <p>Window creation, game loop, input handling, timing, and frame control.</p>
+          <code class="module-import">bloom/core</code>
+        </div>
+        <div class="module-card">
+          <div class="module-icon shapes"></div>
+          <h3>Shapes</h3>
+          <p>2D shape drawing &mdash; lines, rects, circles, polygons &mdash; plus collision detection.</p>
+          <code class="module-import">bloom/shapes</code>
+        </div>
+        <div class="module-card">
+          <div class="module-icon textures"></div>
+          <h3>Textures</h3>
+          <p>Image loading, texture management, and efficient sprite batching.</p>
+          <code class="module-import">bloom/textures</code>
+        </div>
+        <div class="module-card">
+          <div class="module-icon text"></div>
+          <h3>Text</h3>
+          <p>TTF and OTF font loading, text rendering, and measurement.</p>
+          <code class="module-import">bloom/text</code>
+        </div>
+        <div class="module-card">
+          <div class="module-icon audio"></div>
+          <h3>Audio</h3>
+          <p>Sound effects, music streaming, and volume control. WAV, OGG, and MP3.</p>
+          <code class="module-import">bloom/audio</code>
+        </div>
+        <div class="module-card">
+          <div class="module-icon models"></div>
+          <h3>Models</h3>
+          <p>3D model loading (glTF, OBJ), mesh generation, and animations.</p>
+          <code class="module-import">bloom/models</code>
+        </div>
+        <div class="module-card">
+          <div class="module-icon math"></div>
+          <h3>Math</h3>
+          <p>Vectors, matrices, quaternions, easing functions, and random number generation.</p>
+          <code class="module-import">bloom/math</code>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Platforms -->
+  <section class="platforms">
+    <div class="container">
+      <h2 class="section-title">One codebase. Every platform.</h2>
+      <p class="section-desc">
+        Bloom maps to the native graphics API on each platform. Your TypeScript compiles to real binaries.
+      </p>
+      <div class="platform-grid">
+        <div class="platform-card">
+          <div class="platform-name">macOS</div>
+          <div class="platform-api">Metal</div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-name">Windows</div>
+          <div class="platform-api">DirectX 12</div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-name">Linux</div>
+          <div class="platform-api">Vulkan / OpenGL</div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-name">iOS</div>
+          <div class="platform-api">Metal</div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-name">Android</div>
+          <div class="platform-api">Vulkan / OpenGL ES</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Code Examples -->
+  <section class="examples">
+    <div class="container">
+      <h2 class="section-title">Familiar patterns, native power</h2>
+      <p class="section-desc">
+        Plain interfaces, pure functions, zero magic. If you know TypeScript, you know Bloom.
+      </p>
+      <div class="examples-grid">
+        <div class="example-card">
+          <h3>2D Shapes & Collision</h3>
+          <div class="code-window small">
+            <div class="code-header">
+              <span class="code-dot" style="background: #FF5F57"></span>
+              <span class="code-dot" style="background: #FEBC2E"></span>
+              <span class="code-dot" style="background: #28C840"></span>
+            </div>
+            <pre><code><span class="kw">import</span> {"{"} drawRect, drawCircle,
+         checkCollisionRecs {"}"} <span class="kw">from</span> <span class="str">"bloom/shapes"</span>;
+
+drawRect(<span class="num">100</span>, <span class="num">100</span>, <span class="num">200</span>, <span class="num">80</span>, Colors.<span class="prop">GREEN</span>);
+drawCircle(<span class="num">400</span>, <span class="num">300</span>, <span class="num">50</span>, Colors.<span class="prop">GOLD</span>);
+
+<span class="kw">if</span> (checkCollisionRecs(player, enemy)) {"{"}
+  playSound(hitSound);
+{"}"}</code></pre>
+          </div>
+        </div>
+        <div class="example-card">
+          <h3>3D Camera & Models</h3>
+          <div class="code-window small">
+            <div class="code-header">
+              <span class="code-dot" style="background: #FF5F57"></span>
+              <span class="code-dot" style="background: #FEBC2E"></span>
+              <span class="code-dot" style="background: #28C840"></span>
+            </div>
+            <pre><code><span class="kw">const</span> camera: Camera3D = {"{"}
+  position: {"{"} x: <span class="num">10</span>, y: <span class="num">10</span>, z: <span class="num">10</span> {"}"},
+  target: {"{"} x: <span class="num">0</span>, y: <span class="num">0</span>, z: <span class="num">0</span> {"}"},
+  up: {"{"} x: <span class="num">0</span>, y: <span class="num">1</span>, z: <span class="num">0</span> {"}"},
+  fovy: <span class="num">45</span>, projection: <span class="num">0</span>
+{"}"};
+
+beginMode3D(camera);
+drawModel(tree, {"{"} x: <span class="num">0</span>, y: <span class="num">0</span>, z: <span class="num">0</span> {"}"});
+drawGrid(<span class="num">10</span>, <span class="num">1</span>);
+endMode3D();</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container cta-inner">
+      <h2>Ready to build your game?</h2>
+      <p>Bloom is open source and free. Jump in, build something, and ship it everywhere.</p>
+      <div class="hero-actions">
+        <a href="https://github.com/Bloom-Engine" target="_blank" rel="noopener" class="btn btn-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          Get Started on GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Hero */
+  .hero {
+    padding: 5rem 0 4rem;
+    background: linear-gradient(180deg, var(--bloom-light) 0%, var(--bloom-white) 100%);
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: rgba(76, 175, 80, 0.1);
+    color: var(--bloom-green-dark);
+    border-radius: 999px;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .highlight {
+    color: var(--bloom-green);
+  }
+
+  .hero-desc {
+    font-size: 1.125rem;
+    color: rgba(27, 42, 30, 0.7);
+    margin: 1.25rem 0 2rem;
+    max-width: 520px;
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  /* Code Window */
+  .code-window {
+    background: #0D1A10;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+
+  .code-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .code-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  .code-title {
+    margin-left: auto;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    font-family: var(--font-mono);
+  }
+
+  .code-window pre {
+    padding: 1.25rem 1.5rem;
+    overflow-x: auto;
+    line-height: 1.6;
+  }
+
+  .code-window code {
+    color: #E8F0E9;
+    font-size: 0.8125rem;
+  }
+
+  .code-window .kw { color: #B39DDB; }
+  .code-window .str { color: #66BB6A; }
+  .code-window .num { color: #FFD54F; }
+  .code-window .prop { color: #FF8A65; }
+  .code-window .cmt { color: #5A7A5E; }
+
+  /* Proof */
+  .proof {
+    padding: 3rem 0;
+    background: var(--bloom-white);
+  }
+
+  .proof-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  .proof-card {
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .proof-number {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--bloom-green);
+    line-height: 1;
+  }
+
+  .proof-label {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: rgba(27, 42, 30, 0.6);
+    font-weight: 600;
+  }
+
+  /* Why */
+  .why {
+    padding: 5rem 0;
+  }
+
+  .section-title {
+    text-align: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-desc {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    color: rgba(27, 42, 30, 0.65);
+    font-size: 1.0625rem;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .why-card {
+    padding: 2rem;
+    border-radius: 12px;
+    background: var(--bloom-light);
+    transition: transform 0.2s;
+  }
+
+  .why-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .why-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(76, 175, 80, 0.1);
+    color: var(--bloom-green);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+
+  .why-card h3 {
+    margin-bottom: 0.5rem;
+  }
+
+  .why-card p {
+    color: rgba(27, 42, 30, 0.65);
+    font-size: 0.9375rem;
+  }
+
+  /* Modules */
+  .modules {
+    padding: 5rem 0;
+    background: var(--bloom-light);
+  }
+
+  .modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .module-card {
+    background: var(--bloom-white);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(27, 42, 30, 0.06);
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .module-card:hover {
+    border-color: var(--bloom-green);
+    transform: translateY(-2px);
+  }
+
+  .module-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+
+  .module-icon.core { background: rgba(76, 175, 80, 0.15); }
+  .module-icon.shapes { background: rgba(255, 138, 101, 0.15); }
+  .module-icon.textures { background: rgba(255, 213, 79, 0.15); }
+  .module-icon.text { background: rgba(179, 157, 219, 0.15); }
+  .module-icon.audio { background: rgba(180, 212, 231, 0.15); }
+  .module-icon.models { background: rgba(184, 175, 166, 0.15); }
+  .module-icon.math { background: rgba(76, 175, 80, 0.1); }
+
+  .module-card h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .module-card p {
+    font-size: 0.875rem;
+    color: rgba(27, 42, 30, 0.6);
+    margin-bottom: 0.75rem;
+  }
+
+  .module-import {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    background: #0D1A10;
+    color: var(--bloom-green-light);
+    border-radius: 4px;
+    font-size: 0.75rem;
+  }
+
+  /* Platforms */
+  .platforms {
+    padding: 5rem 0;
+  }
+
+  .platform-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+  }
+
+  .platform-card {
+    text-align: center;
+    padding: 2rem 1rem;
+    border-radius: 12px;
+    background: var(--bloom-light);
+    transition: transform 0.2s;
+  }
+
+  .platform-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .platform-name {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.125rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .platform-api {
+    font-size: 0.8125rem;
+    color: var(--bloom-green-dark);
+    font-weight: 600;
+  }
+
+  /* Examples */
+  .examples {
+    padding: 5rem 0;
+    background: var(--bloom-light);
+  }
+
+  .examples-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .example-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+
+  .code-window.small pre {
+    padding: 1rem 1.25rem;
+  }
+
+  .code-window.small code {
+    font-size: 0.75rem;
+  }
+
+  /* CTA */
+  .cta {
+    padding: 5rem 0;
+    background: var(--bloom-dark);
+    color: var(--bloom-white);
+  }
+
+  .cta-inner {
+    text-align: center;
+  }
+
+  .cta-inner h2 {
+    color: var(--bloom-white);
+  }
+
+  .cta-inner p {
+    color: rgba(255, 255, 255, 0.6);
+    margin: 1rem auto 2rem;
+    max-width: 480px;
+  }
+
+  .cta .hero-actions {
+    justify-content: center;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero {
+      padding: 3rem 0 2rem;
+    }
+
+    .hero-inner {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .proof-cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .why-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .platform-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .examples-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .platform-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .proof-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

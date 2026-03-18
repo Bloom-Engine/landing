@@ -1,0 +1,260 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Native games from TypeScript. Write TypeScript. Ship native games. No browser, no C++." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="container nav">
+        <a href="/" class="nav-logo">
+          <img src="/favicon.svg" alt="Bloom" width="32" height="32" />
+          <span>Bloom Engine</span>
+        </a>
+        <div class="nav-links">
+          <a href="/showcase">Showcase</a>
+          <a href="/docs">Docs</a>
+          <a href="https://github.com/Bloom-Engine" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <a href="/" class="nav-logo">
+            <img src="/favicon.svg" alt="Bloom" width="24" height="24" />
+            <span>Bloom Engine</span>
+          </a>
+          <p class="footer-tagline">Native games from TypeScript.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Project</h4>
+            <a href="/showcase">Showcase</a>
+            <a href="/docs">Docs</a>
+            <a href="https://github.com/Bloom-Engine" target="_blank" rel="noopener">GitHub</a>
+          </div>
+          <div class="footer-col">
+            <h4>Community</h4>
+            <a href="https://github.com/Bloom-Engine" target="_blank" rel="noopener">Discussions</a>
+            <a href="https://github.com/Bloom-Engine" target="_blank" rel="noopener">Contributing</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom container">
+        <p>&copy; {new Date().getFullYear()} Bloom Engine. Open source under MIT.</p>
+      </div>
+    </footer>
+
+    <script>
+      const toggle = document.querySelector('.nav-toggle');
+      const links = document.querySelector('.nav-links');
+      toggle?.addEventListener('click', () => {
+        links?.classList.toggle('open');
+        toggle.classList.toggle('open');
+      });
+    </script>
+  </body>
+</html>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(27, 42, 30, 0.08);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.125rem;
+    color: var(--bloom-dark);
+    text-decoration: none;
+  }
+
+  .nav-logo:hover {
+    color: var(--bloom-green);
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .nav-links a {
+    font-weight: 600;
+    font-size: 0.9375rem;
+    color: var(--bloom-dark);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: var(--bloom-green);
+  }
+
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--bloom-dark);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  .nav-toggle.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .nav-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  @media (max-width: 640px) {
+    .nav-toggle {
+      display: flex;
+    }
+
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 64px;
+      left: 0;
+      right: 0;
+      background: var(--bloom-white);
+      flex-direction: column;
+      padding: 1.5rem;
+      gap: 1rem;
+      border-bottom: 1px solid rgba(27, 42, 30, 0.08);
+    }
+
+    .nav-links.open {
+      display: flex;
+    }
+  }
+
+  .site-footer {
+    background: var(--bloom-dark);
+    color: rgba(255, 255, 255, 0.7);
+    padding-top: 4rem;
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .footer-brand .nav-logo {
+    color: var(--bloom-white);
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-tagline {
+    font-size: 0.875rem;
+    opacity: 0.6;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 4rem;
+  }
+
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-col h4 {
+    color: var(--bloom-white);
+    font-size: 0.875rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .footer-col a {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-col a:hover {
+    color: var(--bloom-green-light);
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 0.8125rem;
+    opacity: 0.5;
+  }
+
+  @media (max-width: 640px) {
+    .footer-inner {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .footer-links {
+      gap: 2rem;
+    }
+  }
+</style>
