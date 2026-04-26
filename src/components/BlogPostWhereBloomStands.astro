@@ -1,0 +1,252 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { tFor, localePath, type Locale } from "../i18n/ui";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = tFor(locale);
+
+const slug = "where-bloom-stands";
+const k = (key: string) => t(`blog.posts.${slug}.${key}`);
+
+const title = `${k("title")} — Bloom Engine`;
+const description = k("excerpt");
+const docsHref = "/docs";
+const showcaseHref = localePath(locale, "/showcase");
+
+// Try-it paragraph weaves links inline; render as composed Fragment instead of dangerouslySetInnerHTML.
+---
+
+<Layout title={title} description={description} locale={locale} pathWithoutLocale={`/blog/${slug}`}>
+  <article class="post">
+    <header class="post-header">
+      <div class="container post-header-inner">
+        <a href={localePath(locale, "/blog")} class="back-link">{t("blog.back")}</a>
+        <div class="post-meta">
+          <span class="post-tag">{t("blog.tag.update")}</span>
+          <time datetime="2026-04-26">{k("dateLabel")}</time>
+          <span class="dot">&middot;</span>
+          <span>{k("author")}</span>
+        </div>
+        <h1>{k("title")}</h1>
+        <p class="lede">{k("lede")}</p>
+      </div>
+    </header>
+
+    <div class="container post-body">
+      <h2>{k("h.pitch")}</h2>
+      <p>{k("p.pitch1")}</p>
+      <p>{k("p.pitch2")}</p>
+
+      <h2>{k("h.whyTs")}</h2>
+      <p>{k("p.whyTs1")}</p>
+      <p set:html={k("p.whyTs2")}></p>
+
+      <h2>{k("h.whyPerry")}</h2>
+      <p set:html={k("p.whyPerry1")}></p>
+      <p set:html={k("p.whyPerry2")}></p>
+
+      <h2>{k("h.whyWgpu")}</h2>
+      <p>{k("p.whyWgpu1")}</p>
+      <p set:html={k("p.whyWgpu2")}></p>
+
+      <h2>{k("h.box")}</h2>
+      <p>{k("p.box")}</p>
+      <ul>
+        <li set:html={k("li.box1")}></li>
+        <li set:html={k("li.box2")}></li>
+        <li set:html={k("li.box3")}></li>
+        <li set:html={k("li.box4")}></li>
+        <li set:html={k("li.box5")}></li>
+        <li set:html={k("li.box6")}></li>
+        <li set:html={k("li.box7")}></li>
+      </ul>
+
+      <h2>{k("h.proud")}</h2>
+      <p>{k("p.proud")}</p>
+      <ul>
+        <li set:html={k("li.proud1")}></li>
+        <li set:html={k("li.proud2")}></li>
+        <li set:html={k("li.proud3")}></li>
+        <li set:html={k("li.proud4")}></li>
+        <li set:html={k("li.proud5")}></li>
+      </ul>
+
+      <h2>{k("h.notdone")}</h2>
+      <p>{k("p.notdone")}</p>
+      <ul>
+        <li set:html={k("li.notdone1")}></li>
+        <li set:html={k("li.notdone2")}></li>
+        <li set:html={k("li.notdone3")}></li>
+        <li set:html={k("li.notdone4")}></li>
+        <li set:html={k("li.notdone5")}></li>
+        <li set:html={k("li.notdone6")}></li>
+      </ul>
+
+      <h2>{k("h.api")}</h2>
+      <p>{k("p.api1")}</p>
+      <pre class="snippet"><code><span class="kw">import</span> {"{"} initWindow, windowShouldClose, beginDrawing,
+         endDrawing, clearBackground, drawText, Colors {"}"} <span class="kw">from</span> <span class="str">"bloom"</span>;
+
+initWindow(<span class="num">800</span>, <span class="num">450</span>, <span class="str">"Hello Bloom"</span>);
+
+<span class="kw">while</span> (!windowShouldClose()) {"{"}
+  beginDrawing();
+  clearBackground(Colors.<span class="prop">RAYWHITE</span>);
+  drawText(<span class="str">"Hello, Bloom!"</span>, <span class="num">190</span>, <span class="num">200</span>, <span class="num">20</span>, Colors.<span class="prop">DARKGRAY</span>);
+  endDrawing();
+{"}"}</code></pre>
+      <p>{k("p.api2")}</p>
+
+      <h2>{k("h.next")}</h2>
+      <p>{k("p.next")}</p>
+      <ul>
+        <li>{k("li.next1")}</li>
+        <li set:html={k("li.next2")}></li>
+        <li>{k("li.next3")}</li>
+        <li>{k("li.next4")}</li>
+        <li>{k("li.next5")}</li>
+      </ul>
+
+      <h2>{k("h.try")}</h2>
+      <p set:html={k("p.try1").replace('data-internal="docs"', `href="${docsHref}"`).replace('data-internal="showcase"', `href="${showcaseHref}"`)}></p>
+      <p>{k("p.try2")}</p>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .post-header {
+    padding: 4rem 0 2.5rem;
+    background: var(--bloom-light);
+  }
+
+  .post-header-inner {
+    max-width: 760px;
+  }
+
+  .back-link {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--bloom-green-dark);
+    margin-bottom: 1.5rem;
+  }
+
+  .post-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    font-size: 0.8125rem;
+    color: rgba(27, 42, 30, 0.6);
+    margin-bottom: 1rem;
+  }
+
+  .post-tag {
+    padding: 0.15rem 0.55rem;
+    background: rgba(76, 175, 80, 0.12);
+    color: var(--bloom-green-dark);
+    border-radius: 999px;
+    font-size: 0.6875rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .post-meta .dot {
+    opacity: 0.5;
+  }
+
+  .post-header h1 {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+    line-height: 1.25;
+  }
+
+  .lede {
+    font-size: 1.1875rem;
+    color: rgba(27, 42, 30, 0.75);
+    line-height: 1.6;
+    max-width: 640px;
+  }
+
+  .post-body {
+    max-width: 760px;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+  }
+
+  .post-body h2 {
+    font-size: 1.375rem;
+    margin: 2.5rem 0 0.75rem;
+  }
+
+  .post-body h2:first-child {
+    margin-top: 0;
+  }
+
+  .post-body p {
+    color: rgba(27, 42, 30, 0.85);
+    margin-bottom: 1.1rem;
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .post-body ul {
+    margin: 0 0 1.25rem 1.25rem;
+    color: rgba(27, 42, 30, 0.85);
+  }
+
+  .post-body li {
+    margin-bottom: 0.6rem;
+    line-height: 1.7;
+  }
+
+  .post-body code {
+    background: rgba(27, 42, 30, 0.06);
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+  }
+
+  .post-body strong {
+    color: var(--bloom-dark);
+  }
+
+  .snippet {
+    background: #0D1A10;
+    color: #E8F0E9;
+    padding: 1.25rem 1.5rem;
+    border-radius: 12px;
+    overflow-x: auto;
+    margin: 1.25rem 0 1.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    line-height: 1.6;
+  }
+
+  .snippet code {
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+  }
+
+  .snippet .kw { color: #B39DDB; }
+  .snippet .str { color: #66BB6A; }
+  .snippet .num { color: #FFD54F; }
+  .snippet .prop { color: #FF8A65; }
+
+  @media (max-width: 640px) {
+    .post-header h1 {
+      font-size: 1.75rem;
+    }
+
+    .lede {
+      font-size: 1.0625rem;
+    }
+  }
+</style>

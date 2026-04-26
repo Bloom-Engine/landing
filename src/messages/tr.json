@@ -1,0 +1,181 @@
+{
+  "meta": {
+    "defaultDescription": "TypeScript ile native oyunlar. TypeScript yaz. Native oyun yayınla. Tarayıcı yok, C++ yok.",
+    "languageLabel": "Dil"
+  },
+  "nav": {
+    "showcase": "Vitrin",
+    "docs": "Dokümanlar",
+    "blog": "Blog",
+    "github": "GitHub",
+    "toggleMenu": "Menüyü aç/kapat"
+  },
+  "footer": {
+    "tagline": "TypeScript ile native oyunlar.",
+    "project": "Proje",
+    "community": "Topluluk",
+    "discussions": "Tartışmalar",
+    "contributing": "Katkıda Bulunma",
+    "rights": "MIT lisansı altında açık kaynak."
+  },
+  "home": {
+    "title": "Bloom Engine — TypeScript ile native oyunlar",
+    "heroBadge": "Açık Kaynak Oyun Motoru",
+    "heroTitlePrefix": "Native oyunlar, doğrudan ",
+    "heroTitleHighlight": "TypeScript",
+    "heroDesc": "TypeScript yaz. Native oyun yayınla. Tarayıcı yok, C++ yok. Bloom oyununu önceden derler ve Metal, DirectX 12, Vulkan ile WebGPU üzerinde çalıştırır — tek kod tabanı, altı hedef, kutudan çıkar çıkmaz gerçek PBR render ve fizik.",
+    "getStarted": "Başla",
+    "viewOnGithub": "GitHub'da Görüntüle",
+    "proof": {
+      "runtimeOverhead": "Çalışma zamanı yükü",
+      "targetPlatforms": "Hedef platformlar",
+      "modules": "Modüler alt sistemler",
+      "codebase": "Bakılacak kod tabanı"
+    },
+    "why": {
+      "title": "Neden Bloom?",
+      "desc": "Bloom, TypeScript yazıp gerçek anlamda native oyunlar yayınlamana izin veren tek oyun motorudur. Electron yok, WebView yok, tarayıcı çalışma zamanı yok. Kodun Perry derleyicisi tarafından önceden derlenir ve bir Rust çekirdeğine karşı çalışır.",
+      "simpleApi": {
+        "title": "Basit API",
+        "desc": "API'nin tamamı bir kopya kağıdına sığar. Sınıf yok, kalıtım yok, sihir yok. Sadece çağırdığın fonksiyonlar."
+      },
+      "trueNative": {
+        "title": "Gerçek Native",
+        "desc": "Tek render motoru, dört arka uç — Metal, DirectX 12, Vulkan ve WebGPU. PBR materyaller, kademeli gölgeler, TAA ve post-FX kutunun içinde."
+      },
+      "shipEverywhere": {
+        "title": "Her Yere Yayınla",
+        "desc": "Tek bir kod tabanından macOS, Windows, Linux, iOS, tvOS ve Web. Steam, App Store ve itch.io'ya hazır."
+      }
+    },
+    "modules": {
+      "title": "İhtiyacın olan her şey",
+      "desc": "Dokuz modüler alt sistem, her biri bağımsız olarak içe aktarılabilir. Sadece ihtiyacın olanı kullan.",
+      "items": [
+        { "id": "core", "title": "Core", "desc": "Pencere oluşturma, oyun döngüsü, girdi yönetimi, zamanlama ve kare kontrolü." },
+        { "id": "shapes", "title": "Shapes", "desc": "2B şekil çizimi — çizgiler, dikdörtgenler, daireler, çokgenler — artı çarpışma tespiti." },
+        { "id": "textures", "title": "Textures", "desc": "Görüntü yükleme, doku yönetimi, sprite gruplama ve doku üzerine render." },
+        { "id": "text", "title": "Text", "desc": "TTF ve OTF font yükleme, metin renderlama ve ölçüm." },
+        { "id": "audio", "title": "Audio", "desc": "Ses efektleri, müzik akışı, 3B konumsal ses, WAV / OGG / MP3." },
+        { "id": "models", "title": "Models", "desc": "glTF 2.0 yükleme, GPU iskelet animasyonu, PBR materyaller, mesh ilkel cisimleri." },
+        { "id": "math", "title": "Math", "desc": "Vektörler, matrisler, kuaterniyonlar, easing fonksiyonları ve rastgele sayı üretimi." },
+        { "id": "physics", "title": "Physics", "desc": "Jolt destekli katı ve yumuşak cisimler, karakter denetleyicileri, araçlar, ışın izleri, kısıtlar." },
+        { "id": "scene", "title": "Scene", "desc": "Tutulan kipte sahne grafiği — dönüşümler, görünürlük, gölgeler, materyal bağlama." }
+      ]
+    },
+    "platforms": {
+      "title": "Tek kod tabanı. Her platform.",
+      "desc": "Bloom, tek bir wgpu tabanlı render motoru aracılığıyla her platformda native grafik API'sine eşlenir. TypeScript kodun gerçek ikili dosyalara — ya da web için bir WASM paketine — derlenir."
+    },
+    "whatsnew": {
+      "title": "Yenilikler",
+      "desc": "Bloom aktif geliştirme aşamasında — sadece son birkaç haftada 300'ü aşkın commit. Son öne çıkanlar:",
+      "items": [
+        { "tag": "Renderer", "title": "Otomatik DRS ve CAS keskinleştirme", "desc": "Dinamik render ölçeği hedef FPS'ine göre kendini ayarlar; kesirli çözünürlüklerde net kalmak için bir upscale + RCAS keskinleştirme geçişi uygular." },
+        { "tag": "Materials", "title": "Düzlemsel yansımalar + doku dizileri", "desc": "Eğik kırpma ve IBL yedeği ile ayna benzeri düzlemsel yansımalar. Mip'li doku dizisi bağlamaları üzerinden splat eşlemeli arazi." },
+        { "tag": "Tools", "title": "Imposter baker CLI", "desc": "Uzak LOD'lar için oktahedral atlaslar — çizim çağrısı bütçeni boğmadan yoğun ormanlar ve kalabalıklar yayınla." },
+        { "tag": "Post-FX", "title": "İstiflenebilir post geçişleri", "desc": "ACES / AgX ton eşleme, otomatik pozlama, bloom, DoF, hareket bulanıklığı, SSGI, SSAO, TAA — ping-pong render hedefleri ile birleştirilmiş." },
+        { "tag": "Platform", "title": "Platformlar arası HiDPI", "desc": "Windows, Linux ve Web artık macOS ile iOS'un zaten sahip olduğu aynı HiDPI işlemesini paylaşıyor. UI'ın her ekranda net kalır." },
+        { "tag": "DX", "title": "WGSL shader hot reload", "desc": "Bir shader'ı kaydet, sonucu bir saniyeden kısa sürede gör. Geliştirme sırasında materyaller yerinde yeniden derlenir." }
+      ]
+    },
+    "examples": {
+      "title": "Tanıdık desenler, native güç",
+      "desc": "Düz arayüzler, saf fonksiyonlar, sıfır sihir. TypeScript biliyorsan, Bloom'u biliyorsun.",
+      "shapes": "2B Şekiller ve Çarpışma",
+      "camera": "3B Kamera ve Modeller"
+    },
+    "cta": {
+      "title": "Oyununu yapmaya hazır mısın?",
+      "desc": "Bloom açık kaynak ve ücretsiz. Atla, bir şeyler yap ve her yere yayınla.",
+      "button": "GitHub'da Başla"
+    }
+  },
+  "showcase": {
+    "title": "Vitrin",
+    "desc": "Bloom Engine ile yapılmış oyunlar ve projeler.",
+    "metaDescription": "Bloom Engine ile yapılmış oyunlar ve projeler.",
+    "featured": "Öne Çıkan",
+    "viewLink": "GitHub'da Görüntüle →",
+    "garden": {
+      "title": "Bloom Garden",
+      "desc": "Küçük bir bahçe macerası. Tamamen Bloom Engine ile yapılmış amiral gemisi demo oyunu — sıcak altın saat aydınlatması ile rahat, low-poly keşif."
+    },
+    "pong": {
+      "title": "Pong",
+      "desc": "Klasik iki oyunculu Pong. ~170 satırda girdi yönetimi, 2B şekiller, çarpışma tespiti, ses ve oyun durumu yönetimini gösterir."
+    },
+    "cta": {
+      "title": "Bloom ile bir şeyler mi yaptın?",
+      "desc": "Projeni burada öne çıkarmaya bayılırız. GitHub'da paylaş ve bize haber ver!",
+      "button": "Projeni Gönder"
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "desc": "Bloom Engine ekibinden haberler, tasarım notları ve gelişme güncellemeleri.",
+    "metaDescription": "Bloom Engine ekibinden haberler, tasarım notları ve gelişme güncellemeleri.",
+    "back": "← Bloga geri dön",
+    "tag": {
+      "update": "Güncelleme"
+    },
+    "posts": {
+      "where-bloom-stands": {
+        "title": "Bloom nerede duruyor: tasarım tercihleri, ilerleme ve sıradaki adımlar",
+        "dateLabel": "26 Nisan 2026",
+        "author": "Bloom ekibi",
+        "excerpt": "Beş hafta geçti, 311 commit arkada. TypeScript + Perry + wgpu'yu neden seçtiğimize, bugün gerçekten ne çalıştığına ve hâlâ rendelediğimiz pürüzlere dürüst bir bakış.",
+        "lede": "Bloom bu hafta beş haftalık oldu. Üç yüz on bir commit sonrasında, elimizde ne olduğunu, neden bu şekilde yaptığımızı ve hangi parçaların hâlâ pürüzlü kaldığını yazmak istedik.",
+        "h.pitch": "Tek cümleyle pitch",
+        "p.pitch1": "Oyununu TypeScript ile yaz, önceden derle ve macOS, Windows, Linux, iOS ve tvOS üzerinde gerçek bir native ikili — ya da web için bir WASM paketi — yayınla. Electron yok, WebView yok, gönderdiğin oyunda gömülü JavaScript çalışma zamanı yok.",
+        "p.pitch2": "Bu cümle çok iş gördü. Erken tasarım kararlarımızın çoğunun böyle görünmesinin nedeni de bu.",
+        "h.whyTs": "Neden TypeScript",
+        "p.whyTs1": "TypeScript'i JavaScript'i sevdiğimiz için seçmedik. En çok kullanılan, yapısal tip sistemine sahip, devasa bir araç ekosistemi olan ve kimseyi korkutmayan bir sözdizimi sunan, statik tipli dil olduğu için seçtik. Birlikte oyun yapmak istediğimiz insanların çoğu daha önce TypeScript yayınladı. Çok azı C++ yayınladı.",
+        "p.whyTs2": "Ayrıca, gönderdiğin her ikiliye bir çöp toplayıcı ve bayt kodu yorumlayıcısı sürüklemeden önceden temiz bir şekilde derlene<em>bilen</em> bir dil istedik. Bu, ağır bir çalışma zamanı gerektiren her şeyi (Python, C#, dil olarak JS) eledi. TypeScript — varsayılan olarak dinamik kısımları çıkarıldığında — tatlı bir nokta olduğu ortaya çıktı.",
+        "h.whyPerry": "Neden Perry",
+        "p.whyPerry1": "Perry, TypeScript kodunu native koda çeviren önceden derleyicidir. TS'den ikiliye giden yol, &ldquo;çalışma zamanı yükü yok&rdquo; sözünü vermemizi sağlayan parçadır. Oyunun, kararlı bir C ABI üzerinden bir Rust çekirdeğine çağrı yapan tek bir ikili dosyaya dönüşür. V8 yok, Bun yok, JIT yok.",
+        "p.whyPerry2": "Perry'yi seçmek, açığa çıkardığımız dil yüzeyi konusunda acımasız olmamıza izin verdi. Bloom API'si fonksiyonlar ve düz arayüzlerden oluşur — sınıf yok, dekoratör yok, proxy yok, <code>eval</code> yok. Bir TypeScript özelliği native bir çağrıya temiz bir şekilde derlenmiyorsa, onu API'de kullanmıyoruz. Sonuç, bir kopya kağıdına sığan bir API ve kafanın içine sığan bir build.",
+        "h.whyWgpu": "Neden wgpu, dört özel render motoru değil",
+        "p.whyWgpu1": "İlk içgüdümüz önce bir Metal render motoru, sonra bir DirectX 12 render motoru, sonra bir Vulkan render motoru yazmaktı. Bir hafta sonu içinde kendimizi vazgeçirdik. Dört arka uç dört shader dili, dört kaynak modeli, dört hata yüzeyi ve HiDPI'ı unutmak için dört yer demektir.",
+        "p.whyWgpu2": "Bunun yerine, render motorunun tamamı bir kez <strong>wgpu</strong> üzerine yazıldı. Shader'lar WGSL. Apple platformlarında Metal, Windows'ta DirectX 12, Linux ve Android'de Vulkan ve tarayıcıda WebGPU (WebGL yedeği ile) — tek bir kod tabanından alıyoruz. Bedeli, wgpu'nun özellik setine bağlı kalmamız ve birkaç egzotik şeyin (mesh shader'lar, ray tracing) şimdilik masada olmaması. Küçük bir ekip için bunun adil bir takas olduğunu düşünüyoruz.",
+        "h.box": "Bugün gerçekten kutuda olanlar",
+        "p.box": "Pazarlama sitesine çalışmayan hiçbir şeyi koymamaya çalışıyoruz. Bugün gerçek olan şu:",
+        "li.box1": "<strong>Dokuz içe aktarılabilir modül</strong> — <code>bloom/core</code>, <code>bloom/shapes</code>, <code>bloom/textures</code>, <code>bloom/text</code>, <code>bloom/audio</code>, <code>bloom/models</code>, <code>bloom/math</code>, <code>bloom/physics</code> ve <code>bloom/scene</code>.",
+        "li.box2": "<strong>Gerçek bir PBR render motoru</strong> — substrate tarzı katmanlı materyaller, statik geometri için önbellekli kademeli gölge haritaları, ACES/AgX ton eşleme, otomatik pozlama, bloom, alan derinliği, hareket bulanıklığı, SSGI, SSAO, TAA ve kesirli render ölçekleri için bir CAS keskinleştirme geçişi.",
+        "li.box3": "<strong>GPU iskelet animasyonu</strong> — glTF 2.0 içe aktarımı, GPU üzerinde dört kemikli doğrusal karışım skinning, iskelet başına 128'e kadar eklem.",
+        "li.box4": "<strong>Jolt fizik</strong> — katı ve yumuşak cisimler, karakter denetleyicileri, araçlar, ışın izleri, kısıtlar, temas geri çağrımları. Web hedefi JoltPhysics.js yedeğini kullanır, böylece aynı kod tarayıcıda çalışır.",
+        "li.box5": "<strong>Altı hedef platform</strong> — macOS, Windows, Linux, iOS, tvOS ve Web. Android kısmen bağlandı ama henüz yayınlanabilir değil.",
+        "li.box6": "<strong>Hot reload</strong> — bir WGSL shader'ı veya bir materyal JSON'u kaydet, değişiklik geliştirme sırasında bir saniyeden kısa sürede ekranda. Dosya izleme kodu sürüm yapılarından çıkarılır.",
+        "li.box7": "<strong>On yedi örnek proje</strong> — 170 satırlık bir Pong'dan Intel Sponza ve Bistro sahnelerini yüklemeye kadar.",
+        "h.proud": "Yakın zamanda gurur duyduğumuz birkaç şey",
+        "p.proud": "Render motoru iyi bir ay geçirdi. Birkaç öne çıkan:",
+        "li.proud1": "<strong>Otomatik DRS.</strong> Render motoru hedef kare hızına ulaşmak için render ölçeğini kendi kendine ayarlar, ardından görüntü net kalsın diye bir upscale artı RCAS keskinleştirme geçişi çalıştırır. Sen bir hedef FPS belirlersin; gerisini motor halleder.",
+        "li.proud2": "<strong>Düzlemsel yansımalar.</strong> Eğik kırpma ile gerçek ayna düzlemi yakalamaları ve yansıma bütçesi tükendiğinde IBL yedeği. Su, parlak zeminler ve dükkân vitrinleri için kullanışlı.",
+        "li.proud3": "<strong>Doku dizisi splat eşlemesi.</strong> Arazi ve detay katmanları artık uygun mip'lerle bir doku dizisi bağlayabilir, böylece katman başına bir çizim çağrısı ödemeden her döşemeye birkaç materyal boyayabilirsin.",
+        "li.proud4": "<strong>Imposter baker.</strong> Uzak LOD'lar için oktahedral imposter atlasları pişiren küçük bir CLI. Sahnelere orman düşürmeye başladığımız anda buna ihtiyacımız oldu.",
+        "li.proud5": "<strong>Platformlar arası HiDPI.</strong> Windows, Linux ve Web nihayet macOS ve iOS'un zaten sahip olduğu aynı HiDPI işlemesini paylaşıyor. UI her ekranda net kalır.",
+        "h.notdone": "Bittiğini iddia etmediğimiz şeyler",
+        "p.notdone": "Sana yağcı olmayan listeyi de borçluyuz:",
+        "li.notdone1": "<strong>Android.</strong> Platform crate'i mevcut ve FFI yüzeyinin çoğu bağlandı, ancak native-activity yapıştırıcısı bitmedi. Henüz kimseye Bloom ile Android yayınlamasını söylemiyoruz.",
+        "li.notdone2": "<strong>watchOS.</strong> Shader'lar derleniyor, platform stub'ı orada, ancak bu gerçek olmadan önce Perry'nin watchOS desteğine takılıyız.",
+        "li.notdone3": "<strong>Sanallaştırılmış geometri.</strong> Nanite eşdeğeri yok, mesh shader yok, donanım ray tracing yok. Bu yol haritasında, ikilide değil.",
+        "li.notdone4": "<strong>İskelet animasyonu sınırı.</strong> UBO boyutu nedeniyle iskelet başına 128 eklem, sıkı sınır. Büyük rig'ler bugün geçici çözümlere ihtiyaç duyuyor.",
+        "li.notdone5": "<strong>Sahne grafiği genç.</strong> Dönüşümler, görünürlük, gölgeler ve materyal bağlama hepsi çalışıyor. Sorgu sistemleri ve daha geniş optimizasyon geçişleri henüz yok.",
+        "li.notdone6": "<strong>Kullanıcı shader'ları.</strong> WGSL'i elle yazıp materyal hattı üzerinden yükleyebilirsin, ancak motor içi shader graph yok ve TypeScript'ten çalışma zamanı shader derlemesi yok.",
+        "h.api": "API'nin şekli",
+        "p.api1": "API'nin anlık modlu kısımları için Raylib'den yoğun şekilde ödünç aldık. Bir Raylib oyunu yazdıysan, kas hafızası aktarılır:",
+        "p.api2": "3B ve fizik işleri için aynı felsefe geçerli: düz arayüzler, saf fonksiyonlar, gizli durum makineleri yok. Bir kamera bir nesne literali. Bir katı cisim bir tutamak. Render hattı, görünmez bir orkestratöre dinleyiciler kaydederek değil, fonksiyonları belirli bir sırayla çağırarak yapılandırılır.",
+        "h.next": "Sıradaki ne",
+        "p.next": "Önümüzdeki birkaç hafta için kısa listemiz:",
+        "li.next1": "Android native-activity yapıştırıcısını bitir ve Android'i yayınlanabilir ilan et.",
+        "li.next2": "Sahne grafiği işini &ldquo;temel&rdquo;in ötesine, gerçekten kullanışlı olana itele: sorgular, frustum culling iyileştirmesi, instancing yardımcıları.",
+        "li.next3": "Editör entegrasyonunun ilk halini sahne üzerinde oyununu yeniden başlatmadan iterasyon yapabilesin diye indir.",
+        "li.next4": "Pong'dan biraz daha büyük bir demo dahil, örnek oyunları açık kaynak yap.",
+        "li.next5": "Perry derleme hattını ayrıntılı olarak yaz. Birkaç kişi sordu.",
+        "h.try": "Dene",
+        "p.try1": "Bloom MIT lisansı altında açık kaynak. Tüm depo <a href=\"https://github.com/Bloom-Engine\" target=\"_blank\" rel=\"noopener\">GitHub</a>'da. Çatallamadan takip etmek istersen, <a data-internal=\"docs\">dokümanlarda</a> 12 satırlık bir hızlı başlangıç var ve <a data-internal=\"showcase\">vitrin</a> sayfası bizim onunla neler ürettiğimizi listeler.",
+        "p.try2": "Her durumda: göz attığın için teşekkürler. Daha büyük parçalar geldikçe burada paylaşmaya devam edeceğiz."
+      }
+    }
+  }
+}

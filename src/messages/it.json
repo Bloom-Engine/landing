@@ -1,0 +1,181 @@
+{
+  "meta": {
+    "defaultDescription": "Giochi nativi da TypeScript. Scrivi TypeScript. Pubblica giochi nativi. Niente browser, niente C++.",
+    "languageLabel": "Lingua"
+  },
+  "nav": {
+    "showcase": "Vetrina",
+    "docs": "Documentazione",
+    "blog": "Blog",
+    "github": "GitHub",
+    "toggleMenu": "Apri/chiudi menu"
+  },
+  "footer": {
+    "tagline": "Giochi nativi da TypeScript.",
+    "project": "Progetto",
+    "community": "Comunità",
+    "discussions": "Discussioni",
+    "contributing": "Contribuire",
+    "rights": "Open source con licenza MIT."
+  },
+  "home": {
+    "title": "Bloom Engine — Giochi nativi da TypeScript",
+    "heroBadge": "Game Engine Open Source",
+    "heroTitlePrefix": "Giochi nativi da ",
+    "heroTitleHighlight": "TypeScript",
+    "heroDesc": "Scrivi TypeScript. Pubblica giochi nativi. Niente browser, niente C++. Bloom compila il tuo gioco ahead-of-time e lo esegue su Metal, DirectX 12, Vulkan e WebGPU — un'unica codebase, sei target, rendering PBR reale e fisica pronti all'uso.",
+    "getStarted": "Inizia subito",
+    "viewOnGithub": "Guarda su GitHub",
+    "proof": {
+      "runtimeOverhead": "Overhead a runtime",
+      "targetPlatforms": "Piattaforme target",
+      "modules": "Sottosistemi modulari",
+      "codebase": "Codebase da mantenere"
+    },
+    "why": {
+      "title": "Perché Bloom?",
+      "desc": "Bloom è l'unico game engine che ti permette di scrivere TypeScript e distribuire giochi davvero nativi. Niente Electron, niente WebView, niente runtime browser. Il tuo codice viene compilato ahead-of-time dal compilatore Perry e gira su un core in Rust.",
+      "simpleApi": {
+        "title": "API semplice",
+        "desc": "L'intera API ci sta su un foglio riassuntivo. Niente classi, niente ereditarietà, niente magia. Solo funzioni che chiami."
+      },
+      "trueNative": {
+        "title": "Davvero nativo",
+        "desc": "Un solo renderer, quattro backend — Metal, DirectX 12, Vulkan e WebGPU. Materiali PBR, ombre cascaded, TAA e post-FX inclusi."
+      },
+      "shipEverywhere": {
+        "title": "Pubblica ovunque",
+        "desc": "macOS, Windows, Linux, iOS, tvOS e Web da un'unica codebase. Pronto per Steam, App Store e itch.io."
+      }
+    },
+    "modules": {
+      "title": "Tutto ciò che ti serve",
+      "desc": "Nove sottosistemi modulari, ciascuno importabile in modo indipendente. Usa solo ciò di cui hai bisogno.",
+      "items": [
+        { "id": "core", "title": "Core", "desc": "Creazione finestre, game loop, gestione input, timing e controllo dei frame." },
+        { "id": "shapes", "title": "Shapes", "desc": "Disegno di forme 2D — linee, rettangoli, cerchi, poligoni — più rilevamento collisioni." },
+        { "id": "textures", "title": "Textures", "desc": "Caricamento immagini, gestione texture, sprite batching e render-to-texture." },
+        { "id": "text", "title": "Text", "desc": "Caricamento font TTF e OTF, rendering del testo e misurazione." },
+        { "id": "audio", "title": "Audio", "desc": "Effetti sonori, streaming musicale, audio posizionale 3D, WAV / OGG / MP3." },
+        { "id": "models", "title": "Models", "desc": "Caricamento glTF 2.0, animazione scheletrica su GPU, materiali PBR, primitive mesh." },
+        { "id": "math", "title": "Math", "desc": "Vettori, matrici, quaternioni, funzioni di easing e generazione di numeri casuali." },
+        { "id": "physics", "title": "Physics", "desc": "Corpi rigidi e soft basati su Jolt, character controller, veicoli, raycast, vincoli." },
+        { "id": "scene", "title": "Scene", "desc": "Scene graph in retained-mode — trasformazioni, visibilità, ombre, binding dei materiali." }
+      ]
+    },
+    "platforms": {
+      "title": "Una codebase. Ogni piattaforma.",
+      "desc": "Bloom si mappa sull'API grafica nativa di ciascuna piattaforma tramite un singolo renderer basato su wgpu. Il tuo TypeScript compila in binari reali — o in un bundle WASM per il web."
+    },
+    "whatsnew": {
+      "title": "Novità",
+      "desc": "Bloom è in sviluppo attivo — oltre 300 commit solo nelle ultime settimane. Tra le novità recenti:",
+      "items": [
+        { "tag": "Renderer", "title": "Auto-DRS e nitidezza CAS", "desc": "La scala di rendering dinamica si auto-regola sul tuo FPS target, con un passaggio di upscaling più sharpening RCAS per restare nitidi a risoluzioni frazionarie." },
+        { "tag": "Materials", "title": "Riflessioni planari + texture array", "desc": "Riflessioni planari da specchio con clipping obliquo e fallback IBL. Terreno con splat-mapping tramite binding di texture array con mip." },
+        { "tag": "Tools", "title": "CLI per il baking degli imposter", "desc": "Atlanti octahedral per i LOD distanti — pubblica foreste fitte e folle senza sforare il budget di draw call." },
+        { "tag": "Post-FX", "title": "Passaggi post stackabili", "desc": "Tone mapping ACES / AgX, esposizione automatica, bloom, DoF, motion blur, SSGI, SSAO, TAA — composti tramite render target ping-pong." },
+        { "tag": "Platform", "title": "HiDPI multipiattaforma", "desc": "Windows, Linux e Web ora condividono la stessa gestione HiDPI che macOS e iOS avevano già. La tua UI resta nitida su ogni display." },
+        { "tag": "DX", "title": "Hot reload degli shader WGSL", "desc": "Salvi uno shader, vedi il risultato in meno di un secondo. I materiali si ricompilano sul posto durante lo sviluppo." }
+      ]
+    },
+    "examples": {
+      "title": "Pattern familiari, potenza nativa",
+      "desc": "Interfacce semplici, funzioni pure, zero magia. Se conosci TypeScript, conosci Bloom.",
+      "shapes": "Forme 2D e collisioni",
+      "camera": "Camera 3D e modelli"
+    },
+    "cta": {
+      "title": "Pronto a costruire il tuo gioco?",
+      "desc": "Bloom è open source e gratuito. Buttati dentro, costruisci qualcosa e pubblicalo ovunque.",
+      "button": "Inizia su GitHub"
+    }
+  },
+  "showcase": {
+    "title": "Vetrina",
+    "desc": "Giochi e progetti realizzati con Bloom Engine.",
+    "metaDescription": "Giochi e progetti realizzati con Bloom Engine.",
+    "featured": "In evidenza",
+    "viewLink": "Guarda su GitHub →",
+    "garden": {
+      "title": "Bloom Garden",
+      "desc": "Una piccola avventura in giardino. Il gioco demo di punta costruito interamente con Bloom Engine — esplorazione low-poly accogliente con calde luci da golden hour."
+    },
+    "pong": {
+      "title": "Pong",
+      "desc": "Il classico Pong a due giocatori. Mostra gestione input, forme 2D, rilevamento collisioni, audio e gestione dello stato di gioco in circa 170 righe."
+    },
+    "cta": {
+      "title": "Hai costruito qualcosa con Bloom?",
+      "desc": "Ci piacerebbe mostrare il tuo progetto qui. Condividilo su GitHub e facci sapere!",
+      "button": "Invia il tuo progetto"
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "desc": "Notizie, note di design e aggiornamenti dal team di Bloom Engine.",
+    "metaDescription": "Notizie, note di design e aggiornamenti dal team di Bloom Engine.",
+    "back": "← Torna al blog",
+    "tag": {
+      "update": "Aggiornamento"
+    },
+    "posts": {
+      "where-bloom-stands": {
+        "title": "A che punto è Bloom: scelte di design, progressi e prossimi passi",
+        "dateLabel": "26 aprile 2026",
+        "author": "Il team di Bloom",
+        "excerpt": "Cinque settimane dentro, 311 commit dopo. Uno sguardo sincero sul perché abbiamo scelto TypeScript + Perry + wgpu, su cosa funziona davvero oggi e sugli spigoli che stiamo ancora limando.",
+        "lede": "Bloom ha compiuto cinque settimane questa settimana. Dopo trecentoundici commit, volevamo mettere nero su bianco cosa abbiamo, perché l'abbiamo costruito così e quali pezzi sono ancora ruvidi.",
+        "h.pitch": "Il pitch, in una frase",
+        "p.pitch1": "Scrivi il tuo gioco in TypeScript, compilalo ahead-of-time e pubblica un vero binario nativo su macOS, Windows, Linux, iOS e tvOS — oppure un bundle WASM per il web. Niente Electron, niente WebView, niente runtime JavaScript embedded nel gioco che spedisci.",
+        "p.pitch2": "Quella frase ha lavorato parecchio. È anche il motivo per cui la maggior parte delle nostre prime decisioni di design ha l'aspetto che ha.",
+        "h.whyTs": "Perché TypeScript",
+        "p.whyTs1": "Non abbiamo scelto TypeScript perché amiamo JavaScript. L'abbiamo scelto perché è il linguaggio più diffuso con tipizzazione statica, sistema di tipi strutturale, un'enorme storia di tooling e una sintassi che non spaventa nessuno. La maggior parte delle persone con cui vogliamo fare giochi ha già spedito TypeScript. Pochissime hanno spedito C++.",
+        "p.whyTs2": "Volevamo anche un linguaggio che <em>potesse</em> essere compilato ahead-of-time in modo pulito, senza trascinarsi dietro un garbage collector e un interprete bytecode in ogni binario spedito. Questo escludeva tutto ciò che richiede un runtime pesante (Python, C#, JS-il-linguaggio). TypeScript — meno le parti dynamic-by-default — si è rivelato un punto d'incontro azzeccato.",
+        "h.whyPerry": "Perché Perry",
+        "p.whyPerry1": "Perry è il compilatore ahead-of-time che trasforma il tuo TypeScript in codice nativo. Il percorso da TS a binario è la parte che ci permette di promettere &ldquo;nessun overhead a runtime.&rdquo; Il tuo gioco diventa un singolo binario che chiama un core Rust attraverso una ABI C stabile. Non c'è V8, non c'è Bun, non c'è JIT.",
+        "p.whyPerry2": "Scegliere Perry ci ha permesso di essere spietati sulla superficie del linguaggio che esponiamo. L'API di Bloom è funzioni e interfacce semplici — niente classi, niente decoratori, niente proxy, niente <code>eval</code>. Se una feature di TypeScript non compila in modo pulito in una chiamata nativa, non la usiamo nell'API. Il risultato è un'API che ci sta su un foglio riassuntivo e una build che ti sta in testa.",
+        "h.whyWgpu": "Perché wgpu e non quattro renderer su misura",
+        "p.whyWgpu1": "Il nostro primo istinto è stato scrivere un renderer Metal, poi un renderer DirectX 12, poi un renderer Vulkan. Ce ne siamo dissuasi nel giro di un weekend. Quattro backend significano quattro linguaggi shader, quattro modelli di risorse, quattro superfici di bug e quattro posti in cui dimenticarsi dell'HiDPI.",
+        "p.whyWgpu2": "Invece, l'intero renderer è scritto una sola volta sopra <strong>wgpu</strong>. Gli shader sono in WGSL. Otteniamo Metal sulle piattaforme Apple, DirectX 12 su Windows, Vulkan su Linux e Android e WebGPU (con fallback WebGL) nel browser — da un'unica codebase. Il prezzo è che siamo legati al feature set di wgpu, e alcune cose esotiche (mesh shader, ray tracing) sono fuori discussione per ora. Ci sembra uno scambio equo per un piccolo team.",
+        "h.box": "Cosa c'è davvero dentro oggi",
+        "p.box": "Cerchiamo di non mettere sul sito di marketing nulla che non funzioni. Ecco cos'è reale, oggi:",
+        "li.box1": "<strong>Nove moduli importabili</strong> — <code>bloom/core</code>, <code>bloom/shapes</code>, <code>bloom/textures</code>, <code>bloom/text</code>, <code>bloom/audio</code>, <code>bloom/models</code>, <code>bloom/math</code>, <code>bloom/physics</code> e <code>bloom/scene</code>.",
+        "li.box2": "<strong>Un vero renderer PBR</strong> — materiali a strati in stile substrate, cascaded shadow map con caching per la geometria statica, tone mapping ACES/AgX, esposizione automatica, bloom, depth of field, motion blur, SSGI, SSAO, TAA e un passaggio di sharpening CAS per scale di rendering frazionarie.",
+        "li.box3": "<strong>Animazione scheletrica su GPU</strong> — import glTF 2.0, linear blend skinning a quattro ossa sulla GPU, fino a 128 joint per scheletro.",
+        "li.box4": "<strong>Fisica Jolt</strong> — corpi rigidi e soft, character controller, veicoli, raycast, vincoli, callback di contatto. Il target web usa il fallback JoltPhysics.js, così lo stesso codice gira nel browser.",
+        "li.box5": "<strong>Sei piattaforme target</strong> — macOS, Windows, Linux, iOS, tvOS e Web. Android è parzialmente cablato ma non ancora pronto per la pubblicazione.",
+        "li.box6": "<strong>Hot reload</strong> — salvi uno shader WGSL o un material JSON e la modifica è a schermo in meno di un secondo durante lo sviluppo. Il codice di file-watching viene rimosso dalle build di release.",
+        "li.box7": "<strong>Diciassette progetti di esempio</strong> — da un Pong di 170 righe al caricamento delle scene Intel Sponza e Bistro.",
+        "h.proud": "Alcune cose recenti di cui andiamo fieri",
+        "p.proud": "Il renderer ha avuto un buon mese. Alcuni momenti salienti:",
+        "li.proud1": "<strong>Auto-DRS.</strong> Il renderer auto-regola la propria scala di rendering per centrare il framerate target, poi esegue un upscaling più un passaggio di sharpening RCAS perché l'immagine resti nitida. Tu imposti un FPS target; al resto pensa l'engine.",
+        "li.proud2": "<strong>Riflessioni planari.</strong> Veri capture di mirror-plane con clipping obliquo e fallback IBL quando il budget per le riflessioni si esaurisce. Utili per acqua, pavimenti lucidi e vetrine.",
+        "li.proud3": "<strong>Splat mapping con texture array.</strong> Il terreno e i layer di dettaglio possono ora collegare un texture array con mip corretti, così puoi dipingere più materiali per tile senza pagare una draw call per layer.",
+        "li.proud4": "<strong>Imposter baker.</strong> Una piccola CLI che fa il baking di atlanti octahedral di imposter per i LOD distanti. Ne abbiamo avuto bisogno nel momento in cui abbiamo iniziato a piazzare foreste nelle scene.",
+        "li.proud5": "<strong>HiDPI multipiattaforma.</strong> Windows, Linux e Web condividono finalmente la stessa gestione HiDPI che macOS e iOS avevano già. La UI resta nitida su ogni display.",
+        "h.notdone": "Cose che non fingiamo di aver finito",
+        "p.notdone": "Vi dobbiamo anche la lista poco lusinghiera:",
+        "li.notdone1": "<strong>Android.</strong> Il crate della piattaforma esiste e gran parte della superficie FFI è cablata, ma il glue per la native-activity non è finito. Non stiamo dicendo a nessuno di pubblicare su Android con Bloom, per ora.",
+        "li.notdone2": "<strong>watchOS.</strong> Gli shader compilano, lo stub della piattaforma c'è, ma siamo bloccati in attesa del supporto a watchOS in Perry prima che sia reale.",
+        "li.notdone3": "<strong>Geometria virtualizzata.</strong> Nessun equivalente di Nanite, niente mesh shader, niente ray tracing hardware. È nella roadmap, non nel binario.",
+        "li.notdone4": "<strong>Limite dell'animazione scheletrica.</strong> 128 joint per scheletro, limite duro, a causa della dimensione dell'UBO. I rig grossi richiedono workaround oggi.",
+        "li.notdone5": "<strong>Lo scene graph è giovane.</strong> Trasformazioni, visibilità, ombre e binding dei materiali funzionano tutti. I sistemi di query e i passaggi di ottimizzazione più ampi non esistono ancora.",
+        "li.notdone6": "<strong>Shader utente.</strong> Puoi scrivere a mano WGSL e caricarlo attraverso la pipeline dei materiali, ma non c'è uno shader graph dentro l'engine né una compilazione di shader a runtime da TypeScript.",
+        "h.api": "La forma dell'API",
+        "p.api1": "Abbiamo preso molto in prestito da Raylib per le parti immediate-mode dell'API. Se hai scritto un gioco in Raylib, la memoria muscolare si trasferisce:",
+        "p.api2": "Per il lavoro 3D e di fisica vale la stessa filosofia: interfacce semplici, funzioni pure, niente macchine a stati nascoste. Una camera è un object literal. Un corpo rigido è un handle. La pipeline di rendering si configura chiamando funzioni in un ordine specifico, non registrando listener su un orchestratore invisibile.",
+        "h.next": "Cosa c'è in arrivo",
+        "p.next": "La nostra lista breve per le prossime settimane:",
+        "li.next1": "Finire il glue della native-activity Android e dichiarare Android pronto per la pubblicazione.",
+        "li.next2": "Spingere il lavoro sullo scene graph oltre il &ldquo;basilare&rdquo; verso qualcosa di davvero utile: query, raffinamento del frustum culling, helper per l'instancing.",
+        "li.next3": "Far atterrare un primo taglio dell'integrazione editor così puoi iterare su una scena senza riavviare il gioco.",
+        "li.next4": "Rendere open source i giochi di esempio, inclusa una demo un po' più grande di Pong.",
+        "li.next5": "Scrivere in dettaglio della pipeline di compilazione di Perry. Diverse persone l'hanno chiesto.",
+        "h.try": "Provalo",
+        "p.try1": "Bloom è open source con licenza MIT. L'intero repository è su <a href=\"https://github.com/Bloom-Engine\" target=\"_blank\" rel=\"noopener\">GitHub</a>. Se vuoi seguire i lavori senza fare un fork, la <a data-internal=\"docs\">documentazione</a> ha un quick start di 12 righe, e la pagina <a data-internal=\"showcase\">vetrina</a> elenca cosa stiamo costruendo noi stessi con esso.",
+        "p.try2": "In ogni caso: grazie per aver dato un'occhiata. Continueremo a postare qui man mano che atterrano pezzi più grossi."
+      }
+    }
+  }
+}

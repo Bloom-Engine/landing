@@ -1,0 +1,138 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { tFor, localePath, type Locale } from "../i18n/ui";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = tFor(locale);
+
+const posts = [
+  {
+    slug: "where-bloom-stands",
+    date: "2026-04-26",
+    tagKey: "blog.tag.update",
+  },
+];
+
+const title = `${t("blog.title")} — Bloom Engine`;
+---
+
+<Layout title={title} description={t("blog.metaDescription")} locale={locale} pathWithoutLocale="/blog">
+  <section class="page-hero">
+    <div class="container">
+      <h1>{t("blog.title")}</h1>
+      <p class="page-desc">{t("blog.desc")}</p>
+    </div>
+  </section>
+
+  <section class="blog-list">
+    <div class="container">
+      <ul class="posts">
+        {posts.map((post) => (
+          <li class="post-card">
+            <a href={localePath(locale, `/blog/${post.slug}`)} class="post-link">
+              <div class="post-meta">
+                <span class="post-tag">{t(post.tagKey)}</span>
+                <time datetime={post.date}>{t(`blog.posts.${post.slug}.dateLabel`)}</time>
+              </div>
+              <h2 class="post-title">{t(`blog.posts.${post.slug}.title`)}</h2>
+              <p class="post-excerpt">{t(`blog.posts.${post.slug}.excerpt`)}</p>
+              <span class="post-byline">{t(`blog.posts.${post.slug}.author`)}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    padding: 4rem 0 3rem;
+    background: var(--bloom-light);
+    text-align: center;
+  }
+
+  .page-desc {
+    color: rgba(27, 42, 30, 0.6);
+    font-size: 1.125rem;
+    margin-top: 0.75rem;
+  }
+
+  .blog-list {
+    padding: 3rem 0 5rem;
+  }
+
+  .posts {
+    list-style: none;
+    display: grid;
+    gap: 1.25rem;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .post-card {
+    background: var(--bloom-white);
+    border: 1px solid rgba(27, 42, 30, 0.08);
+    border-radius: 14px;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  }
+
+  .post-card:hover {
+    border-color: var(--bloom-green);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+  }
+
+  .post-link {
+    display: block;
+    padding: 1.75rem 2rem;
+    color: var(--bloom-dark);
+    text-decoration: none;
+  }
+
+  .post-link:hover {
+    color: var(--bloom-dark);
+  }
+
+  .post-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.8125rem;
+    color: rgba(27, 42, 30, 0.55);
+    margin-bottom: 0.75rem;
+  }
+
+  .post-tag {
+    padding: 0.15rem 0.55rem;
+    background: rgba(76, 175, 80, 0.12);
+    color: var(--bloom-green-dark);
+    border-radius: 999px;
+    font-size: 0.6875rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .post-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+
+  .post-excerpt {
+    color: rgba(27, 42, 30, 0.7);
+    font-size: 0.9375rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .post-byline {
+    font-size: 0.8125rem;
+    color: rgba(27, 42, 30, 0.5);
+    font-weight: 600;
+  }
+</style>

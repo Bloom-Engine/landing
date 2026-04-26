@@ -1,0 +1,181 @@
+{
+  "meta": {
+    "defaultDescription": "Game native dari TypeScript. Tulis TypeScript. Rilis game native. Tanpa browser, tanpa C++.",
+    "languageLabel": "Bahasa"
+  },
+  "nav": {
+    "showcase": "Showcase",
+    "docs": "Dokumentasi",
+    "blog": "Blog",
+    "github": "GitHub",
+    "toggleMenu": "Buka/tutup menu"
+  },
+  "footer": {
+    "tagline": "Game native dari TypeScript.",
+    "project": "Proyek",
+    "community": "Komunitas",
+    "discussions": "Diskusi",
+    "contributing": "Kontribusi",
+    "rights": "Open source di bawah MIT."
+  },
+  "home": {
+    "title": "Bloom Engine — Game native dari TypeScript",
+    "heroBadge": "Game Engine Open Source",
+    "heroTitlePrefix": "Game native dari ",
+    "heroTitleHighlight": "TypeScript",
+    "heroDesc": "Tulis TypeScript. Rilis game native. Tanpa browser, tanpa C++. Bloom mengompilasi game kamu secara ahead-of-time dan menjalankannya di Metal, DirectX 12, Vulkan dan WebGPU — satu codebase, enam target, rendering PBR sungguhan dan physics siap pakai.",
+    "getStarted": "Mulai Sekarang",
+    "viewOnGithub": "Lihat di GitHub",
+    "proof": {
+      "runtimeOverhead": "Overhead runtime",
+      "targetPlatforms": "Platform target",
+      "modules": "Subsistem modular",
+      "codebase": "Codebase yang dikelola"
+    },
+    "why": {
+      "title": "Kenapa Bloom?",
+      "desc": "Bloom adalah satu-satunya game engine yang memungkinkan kamu menulis TypeScript dan merilis game yang benar-benar native. Tanpa Electron, tanpa WebView, tanpa runtime browser. Kode kamu dikompilasi ahead-of-time oleh kompiler Perry dan berjalan di atas core Rust.",
+      "simpleApi": {
+        "title": "API Sederhana",
+        "desc": "Seluruh API muat di satu cheatsheet. Tanpa class, tanpa inheritance, tanpa sihir. Hanya fungsi yang kamu panggil."
+      },
+      "trueNative": {
+        "title": "Benar-benar Native",
+        "desc": "Satu renderer, empat backend — Metal, DirectX 12, Vulkan dan WebGPU. Material PBR, cascaded shadows, TAA dan post-FX siap pakai."
+      },
+      "shipEverywhere": {
+        "title": "Rilis ke Mana Saja",
+        "desc": "macOS, Windows, Linux, iOS, tvOS dan Web dari satu codebase. Siap untuk Steam, App Store dan itch.io."
+      }
+    },
+    "modules": {
+      "title": "Semua yang kamu butuhkan",
+      "desc": "Sembilan subsistem modular, masing-masing bisa diimpor secara terpisah. Pakai hanya yang kamu butuhkan.",
+      "items": [
+        { "id": "core", "title": "Core", "desc": "Pembuatan window, game loop, penanganan input, timing, dan kontrol frame." },
+        { "id": "shapes", "title": "Shapes", "desc": "Menggambar bentuk 2D — garis, persegi, lingkaran, poligon — plus deteksi tabrakan." },
+        { "id": "textures", "title": "Textures", "desc": "Pemuatan gambar, manajemen tekstur, sprite batching, dan render-to-texture." },
+        { "id": "text", "title": "Text", "desc": "Pemuatan font TTF dan OTF, rendering teks, dan pengukurannya." },
+        { "id": "audio", "title": "Audio", "desc": "Efek suara, streaming musik, audio posisional 3D, WAV / OGG / MP3." },
+        { "id": "models", "title": "Models", "desc": "Pemuatan glTF 2.0, animasi skeletal di GPU, material PBR, mesh primitif." },
+        { "id": "math", "title": "Math", "desc": "Vektor, matriks, kuaternion, fungsi easing, dan pembangkit angka acak." },
+        { "id": "physics", "title": "Physics", "desc": "Rigid & soft body bertenaga Jolt, character controller, kendaraan, raycast, constraint." },
+        { "id": "scene", "title": "Scene", "desc": "Scene graph mode retained — transform, visibilitas, bayangan, binding material." }
+      ]
+    },
+    "platforms": {
+      "title": "Satu codebase. Semua platform.",
+      "desc": "Bloom memetakan ke API grafis native di tiap platform melalui satu renderer berbasis wgpu. TypeScript kamu dikompilasi ke binary asli — atau ke bundle WASM untuk web."
+    },
+    "whatsnew": {
+      "title": "Yang baru",
+      "desc": "Bloom sedang dalam pengembangan aktif — 300+ commit hanya dalam beberapa minggu terakhir. Sorotan terbaru:",
+      "items": [
+        { "tag": "Renderer", "title": "Auto-DRS & penajaman CAS", "desc": "Render scale dinamis menyesuaikan otomatis ke target FPS, dengan upscale + RCAS sharpen pass agar tetap tajam di resolusi pecahan." },
+        { "tag": "Materials", "title": "Refleksi planar + texture array", "desc": "Refleksi planar mirip cermin dengan oblique-clip dan fallback IBL. Terrain splat-mapped via texture-array binding dengan mip." },
+        { "tag": "Tools", "title": "CLI imposter baker", "desc": "Atlas oktahedral untuk LOD jauh — rilis hutan padat dan kerumunan tanpa mencekik anggaran draw call kamu." },
+        { "tag": "Post-FX", "title": "Post pass yang bisa ditumpuk", "desc": "Tone mapping ACES / AgX, auto-exposure, bloom, DoF, motion blur, SSGI, SSAO, TAA — disusun melalui render target ping-pong." },
+        { "tag": "Platform", "title": "HiDPI lintas platform", "desc": "Windows, Linux dan Web kini berbagi penanganan HiDPI yang sama seperti yang sudah dimiliki macOS dan iOS. UI kamu tetap tajam di setiap layar." },
+        { "tag": "DX", "title": "Hot reload shader WGSL", "desc": "Simpan shader, lihat hasilnya kurang dari satu detik. Material dikompilasi ulang di tempat selama pengembangan." }
+      ]
+    },
+    "examples": {
+      "title": "Pola yang familiar, tenaga native",
+      "desc": "Interface biasa, fungsi murni, tanpa sihir. Kalau kamu bisa TypeScript, kamu bisa Bloom.",
+      "shapes": "Bentuk 2D & Tabrakan",
+      "camera": "Kamera 3D & Model"
+    },
+    "cta": {
+      "title": "Siap membangun game-mu?",
+      "desc": "Bloom open source dan gratis. Langsung lompat masuk, bangun sesuatu, dan rilis ke mana saja.",
+      "button": "Mulai di GitHub"
+    }
+  },
+  "showcase": {
+    "title": "Showcase",
+    "desc": "Game dan proyek yang dibangun dengan Bloom Engine.",
+    "metaDescription": "Game dan proyek yang dibangun dengan Bloom Engine.",
+    "featured": "Unggulan",
+    "viewLink": "Lihat di GitHub →",
+    "garden": {
+      "title": "Bloom Garden",
+      "desc": "Petualangan kebun mungil. Demo game andalan yang dibuat sepenuhnya dengan Bloom Engine — eksplorasi low-poly yang nyaman dengan pencahayaan golden-hour yang hangat."
+    },
+    "pong": {
+      "title": "Pong",
+      "desc": "Pong klasik dua pemain. Mendemonstrasikan penanganan input, bentuk 2D, deteksi tabrakan, audio, dan manajemen state game dalam ~170 baris."
+    },
+    "cta": {
+      "title": "Membangun sesuatu dengan Bloom?",
+      "desc": "Kami senang sekali kalau bisa menampilkan proyekmu di sini. Bagikan di GitHub dan beri tahu kami!",
+      "button": "Kirim Proyekmu"
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "desc": "Berita, catatan desain, dan update kemajuan dari tim Bloom Engine.",
+    "metaDescription": "Berita, catatan desain, dan update kemajuan dari tim Bloom Engine.",
+    "back": "← Kembali ke blog",
+    "tag": {
+      "update": "Update"
+    },
+    "posts": {
+      "where-bloom-stands": {
+        "title": "Posisi Bloom saat ini: pilihan desain, kemajuan, dan apa yang berikutnya",
+        "dateLabel": "26 April 2026",
+        "author": "Tim Bloom",
+        "excerpt": "Lima minggu berjalan, 311 commit kemudian. Pandangan jujur tentang kenapa kami memilih TypeScript + Perry + wgpu, apa yang sudah benar-benar berjalan hari ini, dan sudut-sudut kasar yang masih kami haluskan.",
+        "lede": "Bloom genap berusia lima minggu pekan ini. Setelah tiga ratus sebelas commit, kami ingin menuliskan apa yang sudah ada, kenapa kami membuatnya seperti itu, dan bagian mana yang masih kasar.",
+        "h.pitch": "Pitch-nya, dalam satu kalimat",
+        "p.pitch1": "Tulis game-mu dalam TypeScript, kompilasi secara ahead-of-time, dan rilis binary native sungguhan di macOS, Windows, Linux, iOS dan tvOS — atau bundle WASM untuk web. Tanpa Electron, tanpa WebView, tanpa runtime JavaScript yang ditanam di game yang kamu rilis.",
+        "p.pitch2": "Kalimat itu menanggung beban yang banyak. Ia juga menjadi alasan kenapa sebagian besar keputusan desain awal kami terlihat seperti sekarang.",
+        "h.whyTs": "Kenapa TypeScript",
+        "p.whyTs1": "Kami tidak memilih TypeScript karena cinta JavaScript. Kami memilihnya karena ini bahasa bertipe statis yang paling banyak dipakai dengan sistem tipe struktural, ekosistem tooling yang luas, dan sintaks yang tidak menakuti siapa pun. Sebagian besar orang yang ingin kami ajak bikin game sudah pernah merilis TypeScript. Sangat sedikit yang pernah merilis C++.",
+        "p.whyTs2": "Kami juga ingin bahasa yang <em>bisa</em> dikompilasi ahead-of-time secara bersih, tanpa menyeret garbage collector dan interpreter bytecode ke setiap binary yang dirilis. Itu mencoret apa pun yang butuh runtime berat (Python, C#, JS-as-language). TypeScript — dikurangi bagian dynamic-by-default-nya — ternyata jadi titik manis.",
+        "h.whyPerry": "Kenapa Perry",
+        "p.whyPerry1": "Perry adalah kompiler ahead-of-time yang mengubah TypeScript-mu jadi kode native. Jalur TS-ke-binary inilah yang membuat kami bisa berjanji &ldquo;tanpa overhead runtime.&rdquo; Game-mu menjadi satu binary yang memanggil core Rust melalui C ABI yang stabil. Tidak ada V8, tidak ada Bun, tidak ada JIT.",
+        "p.whyPerry2": "Memilih Perry membuat kami bisa kejam soal permukaan bahasa yang kami ekspos. API Bloom adalah fungsi dan interface biasa — tanpa class, tanpa decorator, tanpa proxy, tanpa <code>eval</code>. Kalau ada fitur TypeScript yang tidak terkompilasi bersih ke pemanggilan native, kami tidak memakainya di API. Hasilnya: API yang muat di satu cheatsheet dan build yang muat di kepalamu.",
+        "h.whyWgpu": "Kenapa wgpu dan bukan empat renderer terpisah",
+        "p.whyWgpu1": "Insting pertama kami adalah menulis renderer Metal, lalu DirectX 12, lalu Vulkan. Kami berhasil membantah diri sendiri dalam satu akhir pekan. Empat backend berarti empat bahasa shader, empat model resource, empat permukaan bug, dan empat tempat untuk lupa soal HiDPI.",
+        "p.whyWgpu2": "Sebagai gantinya, seluruh renderer ditulis sekali di atas <strong>wgpu</strong>. Shader pakai WGSL. Kami dapat Metal di platform Apple, DirectX 12 di Windows, Vulkan di Linux dan Android, serta WebGPU (dengan fallback WebGL) di browser — dari satu codebase. Konsekuensinya, kami terikat ke set fitur wgpu, dan beberapa hal eksotis (mesh shader, ray tracing) belum bisa untuk sekarang. Buat tim kecil, kami pikir itu pertukaran yang adil.",
+        "h.box": "Apa yang sebenarnya sudah ada hari ini",
+        "p.box": "Kami berusaha tidak menaruh apa pun di situs marketing yang belum berfungsi. Berikut yang sudah nyata, hari ini:",
+        "li.box1": "<strong>Sembilan modul yang bisa diimpor</strong> — <code>bloom/core</code>, <code>bloom/shapes</code>, <code>bloom/textures</code>, <code>bloom/text</code>, <code>bloom/audio</code>, <code>bloom/models</code>, <code>bloom/math</code>, <code>bloom/physics</code> dan <code>bloom/scene</code>.",
+        "li.box2": "<strong>Renderer PBR sungguhan</strong> — material berlapis bergaya substrate, cascaded shadow map dengan caching untuk geometri statis, tone mapping ACES/AgX, auto-exposure, bloom, depth of field, motion blur, SSGI, SSAO, TAA, dan CAS sharpen pass untuk skala render pecahan.",
+        "li.box3": "<strong>Animasi skeletal di GPU</strong> — impor glTF 2.0, linear blend skinning empat-tulang di GPU, hingga 128 sendi per skeleton.",
+        "li.box4": "<strong>Physics Jolt</strong> — rigid dan soft body, character controller, kendaraan, raycast, constraint, callback kontak. Target web menggunakan fallback JoltPhysics.js sehingga kode yang sama berjalan di browser.",
+        "li.box5": "<strong>Enam platform target</strong> — macOS, Windows, Linux, iOS, tvOS, dan Web. Android sebagian sudah tersambung tetapi belum siap rilis.",
+        "li.box6": "<strong>Hot reload</strong> — simpan shader WGSL atau JSON material dan perubahan terlihat di layar dalam kurang dari satu detik selama pengembangan. Kode pemantau file dibuang dari build rilis.",
+        "li.box7": "<strong>Tujuh belas proyek contoh</strong> — dari Pong 170 baris sampai memuat scene Intel Sponza dan Bistro.",
+        "h.proud": "Beberapa hal terkini yang kami banggakan",
+        "p.proud": "Renderer-nya punya bulan yang bagus. Beberapa sorotan:",
+        "li.proud1": "<strong>Auto-DRS.</strong> Renderer menyetel sendiri render scale-nya untuk mencapai target framerate, lalu menjalankan upscale plus RCAS sharpen pass supaya gambar tetap tajam. Kamu set target FPS; engine yang melakukan sisanya.",
+        "li.proud2": "<strong>Refleksi planar.</strong> Capture mirror-plane sungguhan dengan oblique-clip dan fallback IBL ketika anggaran refleksi sudah habis. Berguna untuk air, lantai poles, dan etalase toko.",
+        "li.proud3": "<strong>Splat mapping berbasis texture-array.</strong> Layer terrain dan detail kini bisa mengikat texture array dengan mip yang benar, jadi kamu bisa melukis beberapa material per tile tanpa membayar satu draw call per layer.",
+        "li.proud4": "<strong>Imposter baker.</strong> CLI kecil yang membakar atlas imposter oktahedral untuk LOD jauh. Kami butuh ini begitu mulai menjatuhkan hutan ke dalam scene.",
+        "li.proud5": "<strong>HiDPI lintas platform.</strong> Windows, Linux dan Web akhirnya berbagi penanganan HiDPI yang sama seperti yang sudah dimiliki macOS dan iOS. UI tetap tajam di setiap layar.",
+        "h.notdone": "Hal-hal yang tidak kami pura-pura sudah selesai",
+        "p.notdone": "Kami juga berutang daftar yang kurang menarik:",
+        "li.notdone1": "<strong>Android.</strong> Crate platform-nya ada dan sebagian besar permukaan FFI sudah tersambung, tetapi lem native-activity belum selesai. Kami belum menyuruh siapa pun merilis Android dengan Bloom.",
+        "li.notdone2": "<strong>watchOS.</strong> Shader sudah terkompilasi, stub platform sudah ada, tetapi kami terhambat oleh dukungan watchOS di Perry sebelum ini benar-benar nyata.",
+        "li.notdone3": "<strong>Geometri tervirtualisasi.</strong> Tidak ada padanan Nanite, tidak ada mesh shader, tidak ada hardware ray tracing. Ini ada di roadmap, belum di binary.",
+        "li.notdone4": "<strong>Batas animasi skeletal.</strong> 128 sendi per skeleton, batas keras, karena ukuran UBO. Rig besar perlu workaround untuk saat ini.",
+        "li.notdone5": "<strong>Scene graph-nya masih muda.</strong> Transform, visibilitas, bayangan dan binding material semua jalan. Sistem query dan pass optimisasi yang lebih luas belum ada.",
+        "li.notdone6": "<strong>Shader buatan pengguna.</strong> Kamu bisa menulis WGSL secara manual dan memuatnya melalui pipeline material, tetapi belum ada shader graph di dalam engine dan belum ada kompilasi shader runtime dari TypeScript.",
+        "h.api": "Bentuk dari API",
+        "p.api1": "Kami banyak meminjam dari Raylib untuk bagian immediate-mode pada API. Kalau kamu pernah menulis game Raylib, memori ototmu langsung nyambung:",
+        "p.api2": "Untuk pekerjaan 3D dan physics, filosofi yang sama berlaku: interface biasa, fungsi murni, tanpa state machine tersembunyi. Sebuah kamera adalah object literal. Sebuah rigid body adalah handle. Pipeline rendering dikonfigurasi dengan memanggil fungsi dalam urutan tertentu, bukan dengan mendaftarkan listener pada orkestrator yang tak terlihat.",
+        "h.next": "Apa yang berikutnya",
+        "p.next": "Daftar pendek kami untuk beberapa minggu ke depan:",
+        "li.next1": "Menyelesaikan lem native-activity Android dan menyebut Android siap rilis.",
+        "li.next2": "Mendorong pekerjaan scene graph melewati &ldquo;basic&rdquo; ke yang benar-benar berguna: query, penghalusan frustum culling, helper instancing.",
+        "li.next3": "Merilis potongan pertama integrasi editor sehingga kamu bisa beriterasi pada sebuah scene tanpa me-restart game.",
+        "li.next4": "Membuka source dari game-game contoh, termasuk demo yang sedikit lebih besar daripada Pong.",
+        "li.next5": "Menulis pipeline kompilasi Perry secara detail. Beberapa orang sudah meminta.",
+        "h.try": "Coba sendiri",
+        "p.try1": "Bloom adalah open source di bawah MIT. Seluruh repository ada di <a href=\"https://github.com/Bloom-Engine\" target=\"_blank\" rel=\"noopener\">GitHub</a>. Kalau kamu mau mengikuti tanpa fork, <a data-internal=\"docs\">dokumentasi</a> punya quick start 12 baris, dan halaman <a data-internal=\"showcase\">showcase</a> mendaftarkan apa yang sedang kami bangun sendiri dengannya.",
+        "p.try2": "Apa pun pilihanmu: terima kasih sudah menengok. Kami akan terus posting di sini saat bagian-bagian besar mendarat."
+      }
+    }
+  }
+}

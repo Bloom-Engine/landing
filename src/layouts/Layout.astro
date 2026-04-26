@@ -1,37 +1,87 @@
 ---
 import "../styles/global.css";
+import {
+  defaultLocale,
+  locales,
+  localeNames,
+  localePath,
+  tFor,
+  type Locale,
+} from "../i18n/ui";
 
 interface Props {
   title: string;
   description?: string;
+  locale?: Locale;
+  /** Path within the site without locale prefix, e.g. "/", "/blog", "/blog/where-bloom-stands". Used for hreflang + language switcher. */
+  pathWithoutLocale?: string;
 }
 
-const { title, description = "Native games from TypeScript. Write TypeScript. Ship native games. No browser, no C++." } = Astro.props;
+const {
+  title,
+  locale = defaultLocale,
+  pathWithoutLocale = "/",
+} = Astro.props;
+
+const t = tFor(locale);
+const description = Astro.props.description ?? t("meta.defaultDescription");
+
+const site = "https://bloomengine.dev";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={locale}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
+    {locales.map((alt) => (
+      <link
+        rel="alternate"
+        hreflang={alt}
+        href={`${site}${localePath(alt, pathWithoutLocale)}`}
+      />
+    ))}
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href={`${site}${localePath(defaultLocale, pathWithoutLocale)}`}
+    />
   </head>
   <body>
     <header class="site-header">
       <nav class="container nav">
-        <a href="/" class="nav-logo">
+        <a href={localePath(locale, "/")} class="nav-logo">
           <img src="/favicon.svg" alt="Bloom" width="32" height="32" />
           <span>Bloom Engine</span>
         </a>
         <div class="nav-links">
-          <a href="/showcase">Showcase</a>
-          <a href="/docs">Docs</a>
-          <a href="/blog">Blog</a>
-          <a href="https://github.com/Bloom-Engine" target="_blank" rel="noopener">GitHub</a>
+          <a href={localePath(locale, "/showcase")}>{t("nav.showcase")}</a>
+          <a href="/docs">{t("nav.docs")}</a>
+          <a href={localePath(locale, "/blog")}>{t("nav.blog")}</a>
+          <a href="https://github.com/Bloom-Engine" target="_blank" rel="noopener">{t("nav.github")}</a>
+          <div class="lang-switcher">
+            <button class="lang-btn" aria-label={t("meta.languageLabel")} aria-haspopup="true" aria-expanded="false">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <span>{localeNames[locale]}</span>
+            </button>
+            <div class="lang-menu" role="menu">
+              {locales.map((alt) => (
+                <a
+                  href={`${localePath(alt, pathWithoutLocale)}`}
+                  role="menuitem"
+                  class={alt === locale ? "active" : ""}
+                  hreflang={alt}
+                >
+                  {localeNames[alt]}
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
-        <button class="nav-toggle" aria-label="Toggle menu">
+        <button class="nav-toggle" aria-label={t("nav.toggleMenu")}>
           <span></span>
           <span></span>
           <span></span>
@@ -46,29 +96,29 @@ const { title, description = "Native games from TypeScript. Write TypeScript. Sh
     <footer class="site-footer">
       <div class="container footer-inner">
         <div class="footer-brand">
-          <a href="/" class="nav-logo">
+          <a href={localePath(locale, "/")} class="nav-logo">
             <img src="/favicon.svg" alt="Bloom" width="24" height="24" />
             <span>Bloom Engine</span>
           </a>
-          <p class="footer-tagline">Native games from TypeScript.</p>
+          <p class="footer-tagline">{t("footer.tagline")}</p>
         </div>
         <div class="footer-links">
           <div class="footer-col">
-            <h4>Project</h4>
-            <a href="/showcase">Showcase</a>
-            <a href="/docs">Docs</a>
-            <a href="/blog">Blog</a>
-            <a href="https://github.com/Bloom-Engine" target="_blank" rel="noopener">GitHub</a>
+            <h4>{t("footer.project")}</h4>
+            <a href={localePath(locale, "/showcase")}>{t("nav.showcase")}</a>
+            <a href="/docs">{t("nav.docs")}</a>
+            <a href={localePath(locale, "/blog")}>{t("nav.blog")}</a>
+            <a href="https://github.com/Bloom-Engine" target="_blank" rel="noopener">{t("nav.github")}</a>
           </div>
           <div class="footer-col">
-            <h4>Community</h4>
-            <a href="https://github.com/Bloom-Engine" target="_blank" rel="noopener">Discussions</a>
-            <a href="https://github.com/Bloom-Engine" target="_blank" rel="noopener">Contributing</a>
+            <h4>{t("footer.community")}</h4>
+            <a href="https://github.com/Bloom-Engine" target="_blank" rel="noopener">{t("footer.discussions")}</a>
+            <a href="https://github.com/Bloom-Engine" target="_blank" rel="noopener">{t("footer.contributing")}</a>
           </div>
         </div>
       </div>
       <div class="footer-bottom container">
-        <p>&copy; {new Date().getFullYear()} Bloom Engine. Open source under MIT.</p>
+        <p>&copy; {new Date().getFullYear()} Bloom Engine. {t("footer.rights")}</p>
       </div>
     </footer>
 
@@ -78,6 +128,20 @@ const { title, description = "Native games from TypeScript. Write TypeScript. Sh
       toggle?.addEventListener('click', () => {
         links?.classList.toggle('open');
         toggle.classList.toggle('open');
+      });
+
+      const langBtn = document.querySelector('.lang-btn');
+      const langMenu = document.querySelector('.lang-menu');
+      langBtn?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const open = langMenu?.classList.toggle('open');
+        langBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      document.addEventListener('click', (e) => {
+        if (!(e.target as HTMLElement).closest('.lang-switcher')) {
+          langMenu?.classList.remove('open');
+          langBtn?.setAttribute('aria-expanded', 'false');
+        }
       });
     </script>
   </body>
@@ -118,10 +182,10 @@ const { title, description = "Native games from TypeScript. Write TypeScript. Sh
   .nav-links {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1.75rem;
   }
 
-  .nav-links a {
+  .nav-links > a {
     font-weight: 600;
     font-size: 0.9375rem;
     color: var(--bloom-dark);
@@ -129,8 +193,74 @@ const { title, description = "Native games from TypeScript. Write TypeScript. Sh
     transition: color 0.2s;
   }
 
-  .nav-links a:hover {
+  .nav-links > a:hover {
     color: var(--bloom-green);
+  }
+
+  /* Language switcher */
+  .lang-switcher {
+    position: relative;
+  }
+
+  .lang-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: transparent;
+    border: 1px solid rgba(27, 42, 30, 0.12);
+    border-radius: 8px;
+    padding: 0.4rem 0.7rem;
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--bloom-dark);
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .lang-btn:hover {
+    border-color: var(--bloom-green);
+    color: var(--bloom-green);
+  }
+
+  .lang-menu {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 0.5rem);
+    min-width: 180px;
+    max-height: 320px;
+    overflow-y: auto;
+    background: var(--bloom-white);
+    border: 1px solid rgba(27, 42, 30, 0.1);
+    border-radius: 10px;
+    padding: 0.4rem;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    display: none;
+  }
+
+  .lang-menu.open {
+    display: block;
+  }
+
+  .lang-menu a {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    color: var(--bloom-dark);
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .lang-menu a:hover {
+    background: var(--bloom-light);
+    color: var(--bloom-green);
+  }
+
+  .lang-menu a.active {
+    background: rgba(76, 175, 80, 0.12);
+    color: var(--bloom-green-dark);
+    font-weight: 700;
   }
 
   .nav-toggle {
@@ -164,6 +294,12 @@ const { title, description = "Native games from TypeScript. Write TypeScript. Sh
     transform: translateY(-7px) rotate(-45deg);
   }
 
+  @media (max-width: 768px) {
+    .nav-links {
+      gap: 1rem;
+    }
+  }
+
   @media (max-width: 640px) {
     .nav-toggle {
       display: flex;
@@ -180,10 +316,27 @@ const { title, description = "Native games from TypeScript. Write TypeScript. Sh
       padding: 1.5rem;
       gap: 1rem;
       border-bottom: 1px solid rgba(27, 42, 30, 0.08);
+      align-items: stretch;
     }
 
     .nav-links.open {
       display: flex;
+    }
+
+    .lang-switcher {
+      width: 100%;
+    }
+
+    .lang-btn {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    .lang-menu {
+      position: static;
+      margin-top: 0.5rem;
+      width: 100%;
+      box-shadow: none;
     }
   }
 

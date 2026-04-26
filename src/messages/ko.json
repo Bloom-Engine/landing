@@ -1,0 +1,181 @@
+{
+  "meta": {
+    "defaultDescription": "TypeScript로 만드는 네이티브 게임. TypeScript로 작성하고, 네이티브 게임으로 출시하세요. 브라우저도, C++도 필요 없습니다.",
+    "languageLabel": "언어"
+  },
+  "nav": {
+    "showcase": "쇼케이스",
+    "docs": "문서",
+    "blog": "블로그",
+    "github": "GitHub",
+    "toggleMenu": "메뉴 열기/닫기"
+  },
+  "footer": {
+    "tagline": "TypeScript로 만드는 네이티브 게임.",
+    "project": "프로젝트",
+    "community": "커뮤니티",
+    "discussions": "토론",
+    "contributing": "기여하기",
+    "rights": "MIT 라이선스 기반 오픈 소스."
+  },
+  "home": {
+    "title": "Bloom Engine — TypeScript로 만드는 네이티브 게임",
+    "heroBadge": "오픈 소스 게임 엔진",
+    "heroTitlePrefix": "네이티브 게임을 만드는 언어, ",
+    "heroTitleHighlight": "TypeScript",
+    "heroDesc": "TypeScript로 작성하고, 네이티브 게임으로 출시하세요. 브라우저도, C++도 필요 없습니다. Bloom은 게임을 사전 컴파일(AOT)하여 Metal, DirectX 12, Vulkan, WebGPU에서 실행합니다 — 하나의 코드베이스로 6개의 타깃, 진짜 PBR 렌더링과 물리를 기본 제공합니다.",
+    "getStarted": "시작하기",
+    "viewOnGithub": "GitHub에서 보기",
+    "proof": {
+      "runtimeOverhead": "런타임 오버헤드",
+      "targetPlatforms": "지원 플랫폼",
+      "modules": "모듈형 서브시스템",
+      "codebase": "유지보수할 코드베이스"
+    },
+    "why": {
+      "title": "왜 Bloom인가?",
+      "desc": "Bloom은 TypeScript로 작성하면서도 진짜 네이티브 게임을 출시할 수 있는 유일한 게임 엔진입니다. Electron도, WebView도, 브라우저 런타임도 없습니다. 코드는 Perry 컴파일러로 사전 컴파일되어 Rust 코어 위에서 실행됩니다.",
+      "simpleApi": {
+        "title": "간결한 API",
+        "desc": "전체 API가 치트시트 한 장에 들어갑니다. 클래스도, 상속도, 마법 같은 동작도 없습니다. 호출하는 함수들뿐입니다."
+      },
+      "trueNative": {
+        "title": "진짜 네이티브",
+        "desc": "하나의 렌더러, 네 개의 백엔드 — Metal, DirectX 12, Vulkan, WebGPU. PBR 머티리얼, 캐스케이드 섀도, TAA, 포스트 이펙트가 기본 제공됩니다."
+      },
+      "shipEverywhere": {
+        "title": "모든 곳으로 출시",
+        "desc": "macOS, Windows, Linux, iOS, tvOS, 웹까지 하나의 코드베이스로. Steam, App Store, itch.io 출시 준비 완료."
+      }
+    },
+    "modules": {
+      "title": "필요한 모든 것",
+      "desc": "9개의 모듈형 서브시스템, 각각 독립적으로 임포트 가능합니다. 필요한 것만 골라 쓰세요.",
+      "items": [
+        { "id": "core", "title": "Core", "desc": "윈도우 생성, 게임 루프, 입력 처리, 타이밍, 프레임 제어." },
+        { "id": "shapes", "title": "Shapes", "desc": "2D 도형 그리기 — 선, 사각형, 원, 다각형 — 그리고 충돌 감지까지." },
+        { "id": "textures", "title": "Textures", "desc": "이미지 로딩, 텍스처 관리, 스프라이트 배칭, 렌더 투 텍스처." },
+        { "id": "text", "title": "Text", "desc": "TTF/OTF 폰트 로딩, 텍스트 렌더링, 측정." },
+        { "id": "audio", "title": "Audio", "desc": "효과음, 음악 스트리밍, 3D 위치 기반 오디오, WAV / OGG / MP3." },
+        { "id": "models", "title": "Models", "desc": "glTF 2.0 로딩, GPU 스켈레탈 애니메이션, PBR 머티리얼, 메시 프리미티브." },
+        { "id": "math", "title": "Math", "desc": "벡터, 행렬, 쿼터니언, 이징 함수, 난수 생성." },
+        { "id": "physics", "title": "Physics", "desc": "Jolt 기반 강체 및 연체, 캐릭터 컨트롤러, 차량, 레이캐스트, 컨스트레인트." },
+        { "id": "scene", "title": "Scene", "desc": "리테인드 모드 씬 그래프 — 트랜스폼, 가시성, 그림자, 머티리얼 바인딩." }
+      ]
+    },
+    "platforms": {
+      "title": "하나의 코드베이스. 모든 플랫폼.",
+      "desc": "Bloom은 단일 wgpu 기반 렌더러를 통해 각 플랫폼의 네이티브 그래픽 API에 매핑됩니다. TypeScript는 진짜 바이너리로 컴파일됩니다 — 또는 웹용 WASM 번들로도 만들 수 있습니다."
+    },
+    "whatsnew": {
+      "title": "새로운 소식",
+      "desc": "Bloom은 활발히 개발 중입니다 — 최근 몇 주 사이에만 300+ 커밋이 있었습니다. 최근 하이라이트:",
+      "items": [
+        { "tag": "Renderer", "title": "Auto-DRS 및 CAS 샤픈", "desc": "동적 렌더 스케일이 타깃 FPS에 맞춰 자동으로 조정되며, 업스케일과 RCAS 샤픈 패스로 분수 해상도에서도 선명함을 유지합니다." },
+        { "tag": "Materials", "title": "평면 반사 + 텍스처 어레이", "desc": "오블리크 클립과 IBL 폴백을 지원하는 거울 같은 평면 반사. 밉 포함 텍스처 어레이 바인딩으로 스플랫 매핑 지형을 구현합니다." },
+        { "tag": "Tools", "title": "임포스터 베이커 CLI", "desc": "원거리 LOD를 위한 옥타헤드럴 아틀라스 — 드로우콜 예산을 초과하지 않고도 빽빽한 숲과 군중을 출시할 수 있습니다." },
+        { "tag": "Post-FX", "title": "스택 가능한 포스트 패스", "desc": "ACES / AgX 톤 매핑, 자동 노출, 블룸, 피사계 심도, 모션 블러, SSGI, SSAO, TAA — 핑퐁 렌더 타깃으로 합성됩니다." },
+        { "tag": "Platform", "title": "크로스 플랫폼 HiDPI", "desc": "Windows, Linux, 웹도 이제 macOS와 iOS가 가지고 있던 동일한 HiDPI 처리를 공유합니다. 모든 디스플레이에서 UI가 선명하게 유지됩니다." },
+        { "tag": "DX", "title": "WGSL 셰이더 핫 리로드", "desc": "셰이더를 저장하면 1초 안에 결과를 볼 수 있습니다. 개발 중 머티리얼이 그 자리에서 재컴파일됩니다." }
+      ]
+    },
+    "examples": {
+      "title": "익숙한 패턴, 네이티브의 힘",
+      "desc": "단순한 인터페이스, 순수 함수, 마법 같은 동작 없음. TypeScript를 안다면 Bloom도 안다는 뜻입니다.",
+      "shapes": "2D 도형 & 충돌",
+      "camera": "3D 카메라 & 모델"
+    },
+    "cta": {
+      "title": "게임을 만들 준비가 되셨나요?",
+      "desc": "Bloom은 오픈 소스이며 무료입니다. 바로 뛰어들어 무언가를 만들고, 어디든 출시하세요.",
+      "button": "GitHub에서 시작하기"
+    }
+  },
+  "showcase": {
+    "title": "쇼케이스",
+    "desc": "Bloom Engine으로 만든 게임과 프로젝트들.",
+    "metaDescription": "Bloom Engine으로 만든 게임과 프로젝트들.",
+    "featured": "주요 작품",
+    "viewLink": "GitHub에서 보기 →",
+    "garden": {
+      "title": "Bloom Garden",
+      "desc": "작은 정원 어드벤처. Bloom Engine만으로 제작한 플래그십 데모 게임 — 따스한 골든아워 조명이 어우러진 아늑한 로우폴리 탐험."
+    },
+    "pong": {
+      "title": "Pong",
+      "desc": "고전 2인용 Pong. 약 170줄로 입력 처리, 2D 도형, 충돌 감지, 오디오, 게임 상태 관리를 보여줍니다."
+    },
+    "cta": {
+      "title": "Bloom으로 무언가를 만드셨나요?",
+      "desc": "여러분의 프로젝트를 이곳에 소개하고 싶습니다. GitHub에 공유하고 알려주세요!",
+      "button": "프로젝트 제출하기"
+    }
+  },
+  "blog": {
+    "title": "블로그",
+    "desc": "Bloom Engine 팀의 소식, 디자인 노트, 진행 상황 업데이트.",
+    "metaDescription": "Bloom Engine 팀의 소식, 디자인 노트, 진행 상황 업데이트.",
+    "back": "← 블로그로 돌아가기",
+    "tag": {
+      "update": "업데이트"
+    },
+    "posts": {
+      "where-bloom-stands": {
+        "title": "Bloom의 현재 위치: 디자인 선택, 진행 상황, 그리고 다음 단계",
+        "dateLabel": "2026년 4월 26일",
+        "author": "Bloom 팀",
+        "excerpt": "5주가 지났고, 311개의 커밋이 쌓였습니다. 왜 TypeScript + Perry + wgpu를 선택했는지, 오늘 실제로 동작하는 것은 무엇인지, 그리고 아직 다듬고 있는 거친 부분들을 솔직하게 들여다봅니다.",
+        "lede": "Bloom이 이번 주로 5주가 되었습니다. 311개의 커밋을 쌓은 시점에서, 우리가 가진 것, 왜 이렇게 만들었는지, 그리고 어떤 부분이 아직 거친지 정리해두고 싶었습니다.",
+        "h.pitch": "한 문장으로 요약하는 핵심",
+        "p.pitch1": "TypeScript로 게임을 작성하고, 사전 컴파일하여 macOS, Windows, Linux, iOS, tvOS에서 진짜 네이티브 바이너리로 출시하거나 — 웹용 WASM 번들로 빌드합니다. 출시되는 게임에 Electron도, WebView도, 임베디드 자바스크립트 런타임도 들어가지 않습니다.",
+        "p.pitch2": "이 한 문장이 많은 일을 해냈습니다. 그리고 초기 디자인 결정 대부분이 지금과 같은 모습인 이유이기도 합니다.",
+        "h.whyTs": "왜 TypeScript인가",
+        "p.whyTs1": "JavaScript를 좋아해서 TypeScript를 고른 것은 아닙니다. 구조적 타입 시스템을 가진 정적 타입 언어 중 가장 널리 쓰이고, 방대한 도구 생태계를 가지며, 사람들이 거부감 없이 받아들일 수 있는 문법을 가졌기 때문에 골랐습니다. 우리가 함께 게임을 만들고 싶은 사람들 대부분은 이미 TypeScript로 무언가를 출시해본 경험이 있습니다. C++를 출시해본 사람은 거의 없습니다.",
+        "p.whyTs2": "또한 가비지 컬렉터와 바이트코드 인터프리터를 모든 출시 바이너리에 끌고 다니지 않으면서도 깔끔하게 사전 컴파일이 <em>가능한</em> 언어를 원했습니다. 그래서 무거운 런타임이 필요한 것들(Python, C#, JS-그-언어 자체)은 제외되었습니다. TypeScript는 — 기본적으로 동적인 부분들을 빼고 나면 — 딱 알맞은 균형점이었습니다.",
+        "h.whyPerry": "왜 Perry인가",
+        "p.whyPerry1": "Perry는 TypeScript를 네이티브 코드로 변환하는 사전 컴파일러입니다. TS-바이너리 경로가 바로 우리가 &ldquo;런타임 오버헤드 없음&rdquo;을 약속할 수 있는 이유입니다. 게임은 안정적인 C ABI를 통해 Rust 코어를 호출하는 단일 바이너리가 됩니다. V8도, Bun도, JIT도 없습니다.",
+        "p.whyPerry2": "Perry를 선택한 덕분에 노출하는 언어 표면을 가차없이 줄일 수 있었습니다. Bloom API는 함수와 평범한 인터페이스로 이루어져 있습니다 — 클래스도, 데코레이터도, 프록시도, <code>eval</code>도 없습니다. 어떤 TypeScript 기능이 네이티브 호출로 깔끔하게 컴파일되지 않는다면, API에서 사용하지 않습니다. 그 결과로 치트시트 한 장에 들어가는 API와 머릿속에 그려지는 빌드를 얻었습니다.",
+        "h.whyWgpu": "왜 wgpu이고, 왜 네 개의 전용 렌더러가 아닌가",
+        "p.whyWgpu1": "처음에는 Metal 렌더러를 만들고, 그다음 DirectX 12 렌더러, 그다음 Vulkan 렌더러를 따로 만들 생각이었습니다. 한 주말 만에 그 생각을 접었습니다. 백엔드가 네 개라는 건 셰이더 언어가 네 개, 리소스 모델이 네 개, 버그가 발생할 표면이 네 개, HiDPI를 잊어버릴 곳이 네 개라는 뜻입니다.",
+        "p.whyWgpu2": "대신 전체 렌더러를 <strong>wgpu</strong> 위에서 한 번만 작성했습니다. 셰이더는 WGSL입니다. 그 결과 Apple 플랫폼에서는 Metal, Windows에서는 DirectX 12, Linux와 Android에서는 Vulkan, 브라우저에서는 WebGPU(WebGL 폴백 포함)를 — 하나의 코드베이스로 얻습니다. 비용은 wgpu의 기능 집합에 묶인다는 점이고, 일부 특수한 기능들(메시 셰이더, 레이 트레이싱)은 당분간 사용할 수 없습니다. 작은 팀에게는 충분히 합리적인 거래라고 생각합니다.",
+        "h.box": "오늘 실제로 들어 있는 것",
+        "p.box": "마케팅 사이트에 동작하지 않는 것은 올리지 않으려고 합니다. 오늘 실제로 동작하는 것은 다음과 같습니다:",
+        "li.box1": "<strong>임포트 가능한 9개의 모듈</strong> — <code>bloom/core</code>, <code>bloom/shapes</code>, <code>bloom/textures</code>, <code>bloom/text</code>, <code>bloom/audio</code>, <code>bloom/models</code>, <code>bloom/math</code>, <code>bloom/physics</code>, 그리고 <code>bloom/scene</code>.",
+        "li.box2": "<strong>진짜 PBR 렌더러</strong> — substrate 스타일의 레이어드 머티리얼, 정적 지오메트리에 대한 캐싱이 적용된 캐스케이드 섀도 맵, ACES/AgX 톤 매핑, 자동 노출, 블룸, 피사계 심도, 모션 블러, SSGI, SSAO, TAA, 그리고 분수 렌더 스케일을 위한 CAS 샤픈 패스.",
+        "li.box3": "<strong>GPU 스켈레탈 애니메이션</strong> — glTF 2.0 임포트, GPU 위에서의 4본 선형 블렌드 스키닝, 스켈레톤당 최대 128개의 조인트.",
+        "li.box4": "<strong>Jolt 물리</strong> — 강체 및 연체, 캐릭터 컨트롤러, 차량, 레이캐스트, 컨스트레인트, 컨택트 콜백. 웹 타깃은 JoltPhysics.js 폴백을 사용하여 동일한 코드가 브라우저에서도 실행됩니다.",
+        "li.box5": "<strong>6개의 타깃 플랫폼</strong> — macOS, Windows, Linux, iOS, tvOS, 웹. Android는 일부 연결되어 있지만 아직 출시 가능한 상태는 아닙니다.",
+        "li.box6": "<strong>핫 리로드</strong> — WGSL 셰이더나 머티리얼 JSON을 저장하면 개발 중 1초 안에 화면에 반영됩니다. 파일 감시 코드는 릴리스 빌드에서 제거됩니다.",
+        "li.box7": "<strong>17개의 예제 프로젝트</strong> — 170줄짜리 Pong부터 Intel Sponza와 Bistro 씬을 로드하는 것까지.",
+        "h.proud": "최근 우리가 자랑하고 싶은 것들",
+        "p.proud": "이번 달 렌더러는 좋은 한 달을 보냈습니다. 몇 가지 하이라이트:",
+        "li.proud1": "<strong>Auto-DRS.</strong> 렌더러가 타깃 프레임레이트에 맞춰 렌더 스케일을 스스로 조정하고, 업스케일에 RCAS 샤픈 패스를 더해 이미지가 선명하게 유지되도록 합니다. 타깃 FPS만 설정하면 나머지는 엔진이 알아서 합니다.",
+        "li.proud2": "<strong>평면 반사.</strong> 오블리크 클립과 함께 진짜 거울면 캡처를 수행하며, 반사 예산이 소진되면 IBL로 폴백합니다. 물, 광택 바닥, 상점 진열창 등에 유용합니다.",
+        "li.proud3": "<strong>텍스처 어레이 스플랫 매핑.</strong> 지형과 디테일 레이어를 이제 적절한 밉을 가진 텍스처 어레이로 바인딩할 수 있어, 레이어마다 드로우콜을 지불하지 않고도 타일당 여러 머티리얼을 칠할 수 있습니다.",
+        "li.proud4": "<strong>임포스터 베이커.</strong> 원거리 LOD를 위한 옥타헤드럴 임포스터 아틀라스를 굽는 작은 CLI입니다. 씬에 숲을 떨구기 시작한 순간부터 필요했던 도구입니다.",
+        "li.proud5": "<strong>크로스 플랫폼 HiDPI.</strong> Windows, Linux, 웹이 마침내 macOS와 iOS가 이미 가지고 있던 동일한 HiDPI 처리를 공유합니다. 모든 디스플레이에서 UI가 선명하게 유지됩니다.",
+        "h.notdone": "아직 끝났다고 말할 수 없는 것들",
+        "p.notdone": "마음에 들지 않는 목록도 솔직히 공유해야겠지요:",
+        "li.notdone1": "<strong>Android.</strong> 플랫폼 크레이트는 존재하고 FFI 표면 대부분이 연결되어 있지만, 네이티브 액티비티 글루가 아직 끝나지 않았습니다. 아직 누구에게도 Bloom으로 Android에 출시하라고 권하지는 않습니다.",
+        "li.notdone2": "<strong>watchOS.</strong> 셰이더는 컴파일되고 플랫폼 스텁도 있지만, Perry의 watchOS 지원이 갖춰지기 전까지는 막혀 있습니다.",
+        "li.notdone3": "<strong>버추얼라이즈드 지오메트리.</strong> Nanite에 해당하는 것도 없고, 메시 셰이더도, 하드웨어 레이 트레이싱도 없습니다. 이는 로드맵에 있을 뿐, 바이너리에 있는 것은 아닙니다.",
+        "li.notdone4": "<strong>스켈레탈 애니메이션 한계.</strong> UBO 크기 때문에 스켈레톤당 128 조인트가 하드 리밋입니다. 큰 리그는 오늘 우회 방법이 필요합니다.",
+        "li.notdone5": "<strong>씬 그래프는 아직 어립니다.</strong> 트랜스폼, 가시성, 그림자, 머티리얼 바인딩은 모두 동작합니다. 쿼리 시스템과 더 폭넓은 최적화 패스는 아직 존재하지 않습니다.",
+        "li.notdone6": "<strong>사용자 셰이더.</strong> WGSL을 직접 작성해 머티리얼 파이프라인을 통해 로드할 수 있지만, 엔진 내장 셰이더 그래프나 TypeScript에서의 런타임 셰이더 컴파일은 없습니다.",
+        "h.api": "API의 모양",
+        "p.api1": "이미디어트 모드 부분의 API는 Raylib에서 많이 차용했습니다. Raylib으로 게임을 만들어본 적이 있다면 손에 익은 감각이 그대로 옮겨집니다:",
+        "p.api2": "3D와 물리 작업도 같은 철학을 따릅니다: 평범한 인터페이스, 순수 함수, 숨겨진 상태 머신 없음. 카메라는 객체 리터럴입니다. 강체는 핸들입니다. 렌더링 파이프라인은 보이지 않는 오케스트레이터에 리스너를 등록하는 것이 아니라, 함수를 특정 순서로 호출하여 구성합니다.",
+        "h.next": "다음 단계",
+        "p.next": "앞으로 몇 주 동안의 짧은 우선순위 목록:",
+        "li.next1": "Android 네이티브 액티비티 글루를 마무리하고 Android를 출시 가능 상태로 만들기.",
+        "li.next2": "씬 그래프 작업을 &ldquo;기본&rdquo; 단계 너머로 끌어올려 실제로 유용하게 만들기: 쿼리, 절두체 컬링 정교화, 인스턴싱 헬퍼.",
+        "li.next3": "에디터 통합의 첫 번째 버전을 안착시켜, 게임을 재시작하지 않고도 씬을 반복 작업할 수 있도록 하기.",
+        "li.next4": "예제 게임들을 오픈소스화하기. Pong보다 약간 더 큰 데모도 포함합니다.",
+        "li.next5": "Perry 컴파일 파이프라인을 자세히 정리하기. 여러 분이 물어봤습니다.",
+        "h.try": "사용해보기",
+        "p.try1": "Bloom은 MIT 라이선스 기반 오픈 소스입니다. 전체 저장소는 <a href=\"https://github.com/Bloom-Engine\" target=\"_blank\" rel=\"noopener\">GitHub</a>에 있습니다. 포크 없이 따라가고 싶다면 <a data-internal=\"docs\">문서</a>에 12줄짜리 빠른 시작 가이드가 있고, <a data-internal=\"showcase\">쇼케이스</a> 페이지에는 우리가 직접 Bloom으로 만들고 있는 것들이 정리되어 있습니다.",
+        "p.try2": "어느 쪽이든: 살펴봐 주셔서 감사합니다. 더 큰 조각들이 자리잡으면 이곳에 계속 글을 올리겠습니다."
+      }
+    }
+  }
+}

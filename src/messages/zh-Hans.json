@@ -1,0 +1,181 @@
+{
+  "meta": {
+    "defaultDescription": "使用 TypeScript 构建原生游戏。编写 TypeScript,发布原生游戏。无需浏览器,无需 C++。",
+    "languageLabel": "语言"
+  },
+  "nav": {
+    "showcase": "案例展示",
+    "docs": "文档",
+    "blog": "博客",
+    "github": "GitHub",
+    "toggleMenu": "切换菜单"
+  },
+  "footer": {
+    "tagline": "使用 TypeScript 构建原生游戏。",
+    "project": "项目",
+    "community": "社区",
+    "discussions": "讨论",
+    "contributing": "参与贡献",
+    "rights": "基于 MIT 协议开源。"
+  },
+  "home": {
+    "title": "Bloom Engine — 使用 TypeScript 构建原生游戏",
+    "heroBadge": "开源游戏引擎",
+    "heroTitlePrefix": "原生游戏,源自 ",
+    "heroTitleHighlight": "TypeScript",
+    "heroDesc": "编写 TypeScript,发布原生游戏。无需浏览器,无需 C++。Bloom 会提前编译你的游戏,并在 Metal、DirectX 12、Vulkan 和 WebGPU 上运行 —— 一套代码库,六个目标平台,开箱即用的真正 PBR 渲染与物理。",
+    "getStarted": "立即开始",
+    "viewOnGithub": "在 GitHub 上查看",
+    "proof": {
+      "runtimeOverhead": "运行时开销",
+      "targetPlatforms": "目标平台",
+      "modules": "模块化子系统",
+      "codebase": "需要维护的代码库"
+    },
+    "why": {
+      "title": "为什么选择 Bloom?",
+      "desc": "Bloom 是唯一一款让你用 TypeScript 编写并发布真正原生游戏的引擎。无需 Electron、无需 WebView、无需浏览器运行时。你的代码由 Perry 编译器提前编译,并基于 Rust 核心运行。",
+      "simpleApi": {
+        "title": "简洁 API",
+        "desc": "整个 API 一张速查表就能装下。没有类,没有继承,没有黑魔法,只有你调用的函数。"
+      },
+      "trueNative": {
+        "title": "真正原生",
+        "desc": "一套渲染器,四个后端 —— Metal、DirectX 12、Vulkan 和 WebGPU。开箱即用的 PBR 材质、级联阴影、TAA 与后处理特效。"
+      },
+      "shipEverywhere": {
+        "title": "处处可发布",
+        "desc": "一套代码库即可覆盖 macOS、Windows、Linux、iOS、tvOS 和 Web。Steam、App Store 和 itch.io 均可发布。"
+      }
+    },
+    "modules": {
+      "title": "你需要的一切",
+      "desc": "九个模块化子系统,均可独立导入。只用你需要的部分。",
+      "items": [
+        { "id": "core", "title": "Core", "desc": "窗口创建、游戏循环、输入处理、计时与帧控制。" },
+        { "id": "shapes", "title": "Shapes", "desc": "2D 图形绘制 —— 直线、矩形、圆形、多边形 —— 以及碰撞检测。" },
+        { "id": "textures", "title": "Textures", "desc": "图像加载、纹理管理、精灵批处理与渲染到纹理。" },
+        { "id": "text", "title": "Text", "desc": "TTF 与 OTF 字体加载、文本渲染与度量。" },
+        { "id": "audio", "title": "Audio", "desc": "音效、音乐流播放、3D 位置音频,支持 WAV / OGG / MP3。" },
+        { "id": "models", "title": "Models", "desc": "glTF 2.0 加载、GPU 骨骼动画、PBR 材质、网格基本体。" },
+        { "id": "math", "title": "Math", "desc": "向量、矩阵、四元数、缓动函数与随机数生成。" },
+        { "id": "physics", "title": "Physics", "desc": "由 Jolt 驱动的刚体与软体、角色控制器、载具、射线检测、约束。" },
+        { "id": "scene", "title": "Scene", "desc": "保留模式场景图 —— 变换、可见性、阴影、材质绑定。" }
+      ]
+    },
+    "platforms": {
+      "title": "一套代码库,所有平台。",
+      "desc": "Bloom 通过单一的 wgpu 渲染器在每个平台上映射到原生图形 API。你的 TypeScript 编译为真正的二进制文件 —— 或为 Web 编译为 WASM 包。"
+    },
+    "whatsnew": {
+      "title": "最新动态",
+      "desc": "Bloom 正在积极开发中 —— 仅最近几周就有 300 多次提交。近期亮点:",
+      "items": [
+        { "tag": "Renderer", "title": "Auto-DRS 与 CAS 锐化", "desc": "动态渲染缩放会自动调整以匹配你的目标 FPS,并通过升采样加 RCAS 锐化通道在分数分辨率下保持清晰。" },
+        { "tag": "Materials", "title": "平面反射 + 纹理数组", "desc": "类似镜面的平面反射,支持斜裁剪与 IBL 回退。通过带 mips 的纹理数组绑定实现地形 splat 贴图。" },
+        { "tag": "Tools", "title": "Imposter baker 命令行工具", "desc": "为远距离 LOD 烘焙八面体图集 —— 在不撑爆绘制调用预算的前提下发布茂密森林与人群。" },
+        { "tag": "Post-FX", "title": "可堆叠的后处理通道", "desc": "ACES / AgX 色调映射、自动曝光、bloom、景深、运动模糊、SSGI、SSAO、TAA —— 通过乒乓渲染目标进行组合。" },
+        { "tag": "Platform", "title": "跨平台 HiDPI", "desc": "Windows、Linux 和 Web 现在共享与 macOS、iOS 一致的 HiDPI 处理方式。你的 UI 在每种显示器上都保持锐利。" },
+        { "tag": "DX", "title": "WGSL 着色器热重载", "desc": "保存着色器,一秒内即可看到效果。开发期间材质会就地重新编译。" }
+      ]
+    },
+    "examples": {
+      "title": "熟悉的模式,原生的力量",
+      "desc": "纯接口、纯函数,零黑魔法。如果你懂 TypeScript,你就懂 Bloom。",
+      "shapes": "2D 图形与碰撞",
+      "camera": "3D 相机与模型"
+    },
+    "cta": {
+      "title": "准备好开发你的游戏了吗?",
+      "desc": "Bloom 开源且免费。加入进来,做点东西,然后发布到任何平台。",
+      "button": "在 GitHub 上立即开始"
+    }
+  },
+  "showcase": {
+    "title": "案例展示",
+    "desc": "使用 Bloom Engine 构建的游戏与项目。",
+    "metaDescription": "使用 Bloom Engine 构建的游戏与项目。",
+    "featured": "精选",
+    "viewLink": "在 GitHub 上查看 →",
+    "garden": {
+      "title": "Bloom Garden",
+      "desc": "一段小巧的花园冒险。完全使用 Bloom Engine 构建的旗舰演示游戏 —— 温暖黄金时刻光照下的惬意低多边形探索。"
+    },
+    "pong": {
+      "title": "Pong",
+      "desc": "经典的双人 Pong。在约 170 行代码中演示输入处理、2D 图形、碰撞检测、音频与游戏状态管理。"
+    },
+    "cta": {
+      "title": "用 Bloom 做了点什么?",
+      "desc": "我们很乐意在这里展示你的项目。把它发到 GitHub 并告诉我们!",
+      "button": "提交你的项目"
+    }
+  },
+  "blog": {
+    "title": "博客",
+    "desc": "来自 Bloom Engine 团队的新闻、设计笔记与进展更新。",
+    "metaDescription": "来自 Bloom Engine 团队的新闻、设计笔记与进展更新。",
+    "back": "← 返回博客",
+    "tag": {
+      "update": "更新"
+    },
+    "posts": {
+      "where-bloom-stands": {
+        "title": "Bloom 现状:设计选择、进展与下一步计划",
+        "dateLabel": "2026年4月26日",
+        "author": "Bloom 团队",
+        "excerpt": "五周时间,311 次提交。坦诚回顾我们为何选择 TypeScript + Perry + wgpu,今天哪些功能真正可用,以及我们仍在打磨的粗糙之处。",
+        "lede": "本周,Bloom 满五周了。在三百一十一次提交之后,我们想把现在拥有的一切、当初为何这样构建、以及哪些部分仍然粗糙记录下来。",
+        "h.pitch": "一句话定位",
+        "p.pitch1": "用 TypeScript 编写你的游戏,提前编译,然后在 macOS、Windows、Linux、iOS 和 tvOS 上发布真正的原生二进制 —— 或为 Web 发布 WASM 包。无需 Electron、无需 WebView,你发布的游戏中也不嵌入 JavaScript 运行时。",
+        "p.pitch2": "这句话承担了很多分量。它也是我们早期大多数设计决策呈现这般面貌的原因。",
+        "h.whyTs": "为什么选择 TypeScript",
+        "p.whyTs1": "我们选择 TypeScript 并非因为热爱 JavaScript,而是因为它是使用最广泛、具备结构化类型系统、拥有庞大工具生态、并且语法不会吓跑任何人的静态类型语言。我们想一起做游戏的大多数人都发布过 TypeScript 项目,而发布过 C++ 项目的人寥寥无几。",
+        "p.whyTs2": "我们还希望选择一种<em>能够</em>干净地提前编译的语言,而不必把垃圾回收器和字节码解释器塞进每个发布的二进制中。这就排除了所有需要重型运行时的语言(Python、C#、JS 本身)。TypeScript —— 去掉那些默认动态的部分 —— 恰好是甜蜜点。",
+        "h.whyPerry": "为什么选择 Perry",
+        "p.whyPerry1": "Perry 是把你的 TypeScript 转换为原生代码的提前编译器。这条 TS 到二进制的路径,正是让我们能够承诺&ldquo;无运行时开销&rdquo;的关键。你的游戏会成为一个单独的二进制文件,通过稳定的 C ABI 调用 Rust 核心。没有 V8、没有 Bun、没有 JIT。",
+        "p.whyPerry2": "选择 Perry 让我们可以毫不留情地裁剪所暴露的语言表面。Bloom 的 API 由函数和纯接口构成 —— 没有类、没有装饰器、没有代理,也没有 <code>eval</code>。如果某个 TypeScript 特性无法干净地编译为原生调用,我们就不会在 API 中使用它。结果是一份能装进速查表的 API,以及一份能装进你脑子里的构建过程。",
+        "h.whyWgpu": "为什么用 wgpu 而不是四个定制渲染器",
+        "p.whyWgpu1": "我们最初的本能是先写一个 Metal 渲染器,然后是 DirectX 12 渲染器,接着是 Vulkan 渲染器。我们在一个周末内说服了自己放弃这个想法。四个后端意味着四种着色器语言、四种资源模型、四个 Bug 暴露面,以及四处可能忘记 HiDPI 的地方。",
+        "p.whyWgpu2": "取而代之的是,整个渲染器只在 <strong>wgpu</strong> 之上写了一遍。着色器使用 WGSL。我们在 Apple 平台获得 Metal,在 Windows 上获得 DirectX 12,在 Linux 与 Android 上获得 Vulkan,在浏览器中获得 WebGPU(并以 WebGL 作为回退) —— 全部来自一套代码库。代价是我们被绑定在 wgpu 的特性集上,一些奇特的功能(网格着色器、光线追踪)目前无法实现。对于一个小团队来说,我们认为这是一笔公平的交易。",
+        "h.box": "今天盒子里实际有什么",
+        "p.box": "我们尽量不在营销网站上放任何不能用的东西。以下是今天真正可用的内容:",
+        "li.box1": "<strong>九个可导入模块</strong> —— <code>bloom/core</code>、<code>bloom/shapes</code>、<code>bloom/textures</code>、<code>bloom/text</code>、<code>bloom/audio</code>、<code>bloom/models</code>、<code>bloom/math</code>、<code>bloom/physics</code> 与 <code>bloom/scene</code>。",
+        "li.box2": "<strong>一套真正的 PBR 渲染器</strong> —— substrate 风格的分层材质、为静态几何体缓存的级联阴影贴图、ACES/AgX 色调映射、自动曝光、bloom、景深、运动模糊、SSGI、SSAO、TAA,以及用于分数渲染缩放的 CAS 锐化通道。",
+        "li.box3": "<strong>GPU 骨骼动画</strong> —— glTF 2.0 导入、GPU 上的四骨骼线性混合蒙皮,每副骨架最多 128 个关节。",
+        "li.box4": "<strong>Jolt 物理</strong> —— 刚体与软体、角色控制器、载具、射线检测、约束、接触回调。Web 目标使用 JoltPhysics.js 回退,因此同一份代码也能在浏览器中运行。",
+        "li.box5": "<strong>六个目标平台</strong> —— macOS、Windows、Linux、iOS、tvOS 与 Web。Android 已部分接入但尚不可发布。",
+        "li.box6": "<strong>热重载</strong> —— 保存一个 WGSL 着色器或材质 JSON,开发期间一秒内即可看到屏幕上的变化。文件监听代码会从发布构建中剥离。",
+        "li.box7": "<strong>十七个示例项目</strong> —— 从 170 行的 Pong 到加载 Intel Sponza 与 Bistro 场景。",
+        "h.proud": "近期我们引以为傲的一些进展",
+        "p.proud": "渲染器度过了不错的一个月。一些亮点:",
+        "li.proud1": "<strong>Auto-DRS。</strong>渲染器会自调节渲染缩放以达到目标帧率,然后运行升采样加 RCAS 锐化通道,使图像保持清晰。你设定目标 FPS,引擎搞定剩下的事。",
+        "li.proud2": "<strong>平面反射。</strong>真正的镜面平面捕获,带斜裁剪,在反射预算耗尽时回退到 IBL。适用于水面、抛光地板与店面。",
+        "li.proud3": "<strong>纹理数组 splat 贴图。</strong>地形与细节图层现在可以绑定带正确 mips 的纹理数组,因此可以在每个 tile 上绘制多种材质,而无需为每一层支付一次绘制调用。",
+        "li.proud4": "<strong>Imposter baker。</strong>一个小型 CLI,为远距离 LOD 烘焙八面体 imposter 图集。我们一开始往场景里塞森林,就立刻需要它。",
+        "li.proud5": "<strong>跨平台 HiDPI。</strong>Windows、Linux 和 Web 终于和 macOS、iOS 一样共享相同的 HiDPI 处理方式。UI 在每种显示器上都保持锐利。",
+        "h.notdone": "我们不假装已经完成的部分",
+        "p.notdone": "我们也欠你一份不那么光鲜的清单:",
+        "li.notdone1": "<strong>Android。</strong>平台 crate 已存在,大部分 FFI 表面也已接入,但 native-activity 胶水代码尚未完成。我们目前还不会建议任何人用 Bloom 发布 Android 游戏。",
+        "li.notdone2": "<strong>watchOS。</strong>着色器可以编译,平台桩代码已就位,但在 Perry 支持 watchOS 之前,这部分还无法成真。",
+        "li.notdone3": "<strong>虚拟化几何体。</strong>没有 Nanite 等价物,没有网格着色器,也没有硬件光线追踪。这些在路线图上,但不在二进制中。",
+        "li.notdone4": "<strong>骨骼动画上限。</strong>每副骨架 128 个关节,这是受 UBO 大小限制的硬上限。大型骨骼当前需要变通方案。",
+        "li.notdone5": "<strong>场景图还很年轻。</strong>变换、可见性、阴影与材质绑定都已工作。查询系统和更广泛的优化通道尚未存在。",
+        "li.notdone6": "<strong>用户着色器。</strong>你可以手写 WGSL 并通过材质流水线加载,但目前没有引擎内的着色器图,也没有从 TypeScript 进行的运行时着色器编译。",
+        "h.api": "API 的样貌",
+        "p.api1": "API 的即时模式部分大量借鉴了 Raylib。如果你写过 Raylib 游戏,肌肉记忆可以无缝迁移:",
+        "p.api2": "对于 3D 与物理工作,同样的哲学依然适用:纯接口、纯函数,没有隐藏的状态机。相机就是一个对象字面量。刚体就是一个句柄。渲染管线通过按特定顺序调用函数来配置,而不是通过在某个无形的协调器上注册监听器。",
+        "h.next": "下一步计划",
+        "p.next": "我们未来几周的简短清单:",
+        "li.next1": "完成 Android 的 native-activity 胶水代码,并将 Android 标记为可发布。",
+        "li.next2": "把场景图的工作从&ldquo;基础&rdquo;推进到真正实用:查询、视锥剔除细化、实例化辅助。",
+        "li.next3": "落地编辑器集成的初版,让你无需重启游戏即可迭代场景。",
+        "li.next4": "开源示例游戏,包括一个比 Pong 略大一些的演示。",
+        "li.next5": "详细介绍 Perry 的编译流水线。已经有几位读者问过了。",
+        "h.try": "试试看",
+        "p.try1": "Bloom 基于 MIT 开源。整个仓库托管在 <a href=\"https://github.com/Bloom-Engine\" target=\"_blank\" rel=\"noopener\">GitHub</a> 上。如果你想先关注而不分叉,<a data-internal=\"docs\">文档</a>里有 12 行的快速上手,<a data-internal=\"showcase\">案例展示</a>页面列出了我们自己用它构建的项目。",
+        "p.try2": "无论怎样:感谢你来看一眼。随着更大的部分落地,我们会继续在这里更新。"
+      }
+    }
+  }
+}
