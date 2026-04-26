@@ -11,8 +11,9 @@ import Layout from "../layouts/Layout.astro";
         <h1>Native games from <span class="highlight">TypeScript</span></h1>
         <p class="hero-desc">
           Write TypeScript. Ship native games. No browser, no C++.
-          Bloom compiles your game to Metal, DirectX 12, Vulkan, and OpenGL
-          — one codebase for every platform.
+          Bloom compiles your game ahead-of-time and runs it on Metal, DirectX 12,
+          Vulkan and WebGPU &mdash; one codebase, six targets, real PBR rendering and
+          physics out of the box.
         </p>
         <div class="hero-actions">
           <a href="https://github.com/Bloom-Engine" target="_blank" rel="noopener" class="btn btn-primary">
@@ -60,11 +61,11 @@ initWindow(<span class="num">800</span>, <span class="num">450</span>, <span cla
           <span class="proof-label">Runtime overhead</span>
         </div>
         <div class="proof-card">
-          <span class="proof-number">5</span>
+          <span class="proof-number">6</span>
           <span class="proof-label">Target platforms</span>
         </div>
         <div class="proof-card">
-          <span class="proof-number">7</span>
+          <span class="proof-number">9</span>
           <span class="proof-label">Modular subsystems</span>
         </div>
         <div class="proof-card">
@@ -81,7 +82,8 @@ initWindow(<span class="num">800</span>, <span class="num">450</span>, <span cla
       <h2 class="section-title">Why Bloom?</h2>
       <p class="section-desc">
         Bloom is the only game engine that lets you write TypeScript and ship truly native games.
-        No Electron, no WebView, no browser runtime. Just your code, compiled to native.
+        No Electron, no WebView, no browser runtime. Your code is compiled ahead-of-time
+        by the Perry compiler and runs against a Rust core.
       </p>
       <div class="why-grid">
         <div class="why-card">
@@ -96,14 +98,14 @@ initWindow(<span class="num">800</span>, <span class="num">450</span>, <span cla
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
           </div>
           <h3>True Native</h3>
-          <p>Compiles to Metal, DirectX 12, Vulkan, and OpenGL. Real GPU acceleration, real performance.</p>
+          <p>One renderer, four backends &mdash; Metal, DirectX 12, Vulkan and WebGPU. PBR materials, cascaded shadows, TAA and post-FX in the box.</p>
         </div>
         <div class="why-card">
           <div class="why-icon">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
           </div>
           <h3>Ship Everywhere</h3>
-          <p>macOS, Windows, Linux, iOS, and Android from one codebase. Steam, App Store, Play Store ready.</p>
+          <p>macOS, Windows, Linux, iOS, tvOS and the Web from one codebase. Steam, App Store and itch.io ready.</p>
         </div>
       </div>
     </div>
@@ -114,7 +116,7 @@ initWindow(<span class="num">800</span>, <span class="num">450</span>, <span cla
     <div class="container">
       <h2 class="section-title">Everything you need</h2>
       <p class="section-desc">
-        Seven modular subsystems, each independently importable. Use only what you need.
+        Nine modular subsystems, each independently importable. Use only what you need.
       </p>
       <div class="modules-grid">
         <div class="module-card">
@@ -132,7 +134,7 @@ initWindow(<span class="num">800</span>, <span class="num">450</span>, <span cla
         <div class="module-card">
           <div class="module-icon textures"></div>
           <h3>Textures</h3>
-          <p>Image loading, texture management, and efficient sprite batching.</p>
+          <p>Image loading, texture management, sprite batching, and render-to-texture.</p>
           <code class="module-import">bloom/textures</code>
         </div>
         <div class="module-card">
@@ -144,13 +146,13 @@ initWindow(<span class="num">800</span>, <span class="num">450</span>, <span cla
         <div class="module-card">
           <div class="module-icon audio"></div>
           <h3>Audio</h3>
-          <p>Sound effects, music streaming, and volume control. WAV, OGG, and MP3.</p>
+          <p>Sound effects, music streaming, 3D positional audio, WAV / OGG / MP3.</p>
           <code class="module-import">bloom/audio</code>
         </div>
         <div class="module-card">
           <div class="module-icon models"></div>
           <h3>Models</h3>
-          <p>3D model loading (glTF, OBJ), mesh generation, and animations.</p>
+          <p>glTF 2.0 loading, GPU skeletal animation, PBR materials, mesh primitives.</p>
           <code class="module-import">bloom/models</code>
         </div>
         <div class="module-card">
@@ -158,6 +160,18 @@ initWindow(<span class="num">800</span>, <span class="num">450</span>, <span cla
           <h3>Math</h3>
           <p>Vectors, matrices, quaternions, easing functions, and random number generation.</p>
           <code class="module-import">bloom/math</code>
+        </div>
+        <div class="module-card">
+          <div class="module-icon physics"></div>
+          <h3>Physics</h3>
+          <p>Jolt-powered rigid &amp; soft bodies, character controllers, vehicles, raycasts, constraints.</p>
+          <code class="module-import">bloom/physics</code>
+        </div>
+        <div class="module-card">
+          <div class="module-icon scene"></div>
+          <h3>Scene</h3>
+          <p>Retained-mode scene graph &mdash; transforms, visibility, shadows, material binding.</p>
+          <code class="module-import">bloom/scene</code>
         </div>
       </div>
     </div>
@@ -168,7 +182,8 @@ initWindow(<span class="num">800</span>, <span class="num">450</span>, <span cla
     <div class="container">
       <h2 class="section-title">One codebase. Every platform.</h2>
       <p class="section-desc">
-        Bloom maps to the native graphics API on each platform. Your TypeScript compiles to real binaries.
+        Bloom maps to the native graphics API on each platform via a single wgpu-backed
+        renderer. Your TypeScript compiles to real binaries &mdash; or to a WASM bundle for the web.
       </p>
       <div class="platform-grid">
         <div class="platform-card">
@@ -181,15 +196,61 @@ initWindow(<span class="num">800</span>, <span class="num">450</span>, <span cla
         </div>
         <div class="platform-card">
           <div class="platform-name">Linux</div>
-          <div class="platform-api">Vulkan / OpenGL</div>
+          <div class="platform-api">Vulkan</div>
         </div>
         <div class="platform-card">
           <div class="platform-name">iOS</div>
           <div class="platform-api">Metal</div>
         </div>
         <div class="platform-card">
-          <div class="platform-name">Android</div>
-          <div class="platform-api">Vulkan / OpenGL ES</div>
+          <div class="platform-name">tvOS</div>
+          <div class="platform-api">Metal</div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-name">Web</div>
+          <div class="platform-api">WebGPU / WASM</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's new -->
+  <section class="whatsnew">
+    <div class="container">
+      <h2 class="section-title">What's new</h2>
+      <p class="section-desc">
+        Bloom is in active development &mdash; 300+ commits in the last few weeks alone. Recent highlights:
+      </p>
+      <div class="whatsnew-grid">
+        <div class="whatsnew-card">
+          <span class="whatsnew-tag">Renderer</span>
+          <h3>Auto-DRS &amp; CAS sharpen</h3>
+          <p>Dynamic render scale auto-tunes to your target FPS, with an upscale + RCAS sharpen pass to stay crisp at fractional resolutions.</p>
+        </div>
+        <div class="whatsnew-card">
+          <span class="whatsnew-tag">Materials</span>
+          <h3>Planar reflections + texture arrays</h3>
+          <p>Mirror-like planar reflections with oblique-clip and IBL fallback. Splat-mapped terrain via texture-array bindings with mips.</p>
+        </div>
+        <div class="whatsnew-card">
+          <span class="whatsnew-tag">Tools</span>
+          <h3>Imposter baker CLI</h3>
+          <p>Octahedral atlases for distant LODs &mdash; ship dense forests and crowds without choking your draw-call budget.</p>
+        </div>
+        <div class="whatsnew-card">
+          <span class="whatsnew-tag">Post-FX</span>
+          <h3>Stackable post passes</h3>
+          <p>ACES / AgX tone mapping, auto-exposure, bloom, DoF, motion blur, SSGI, SSAO, TAA &mdash; composed via ping-pong render targets.</p>
+        </div>
+        <div class="whatsnew-card">
+          <span class="whatsnew-tag">Platform</span>
+          <h3>Cross-platform HiDPI</h3>
+          <p>Windows, Linux and Web now share the same HiDPI handling that macOS and iOS already had. Your UI stays sharp on every display.</p>
+        </div>
+        <div class="whatsnew-card">
+          <span class="whatsnew-tag">DX</span>
+          <h3>WGSL shader hot reload</h3>
+          <p>Save a shader, see the result in under a second. Materials recompile in place during development.</p>
         </div>
       </div>
     </div>
@@ -480,6 +541,8 @@ endMode3D();</code></pre>
   .module-icon.audio { background: rgba(180, 212, 231, 0.15); }
   .module-icon.models { background: rgba(184, 175, 166, 0.15); }
   .module-icon.math { background: rgba(76, 175, 80, 0.1); }
+  .module-icon.physics { background: rgba(255, 138, 101, 0.1); }
+  .module-icon.scene { background: rgba(179, 157, 219, 0.1); }
 
   .module-card h3 {
     font-size: 1.125rem;
@@ -508,7 +571,7 @@ endMode3D();</code></pre>
 
   .platform-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 1rem;
   }
 
@@ -535,6 +598,53 @@ endMode3D();</code></pre>
     font-size: 0.8125rem;
     color: var(--bloom-green-dark);
     font-weight: 600;
+  }
+
+  /* What's new */
+  .whatsnew {
+    padding: 5rem 0;
+  }
+
+  .whatsnew-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .whatsnew-card {
+    padding: 1.75rem;
+    border-radius: 12px;
+    background: var(--bloom-light);
+    border: 1px solid rgba(27, 42, 30, 0.06);
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .whatsnew-card:hover {
+    border-color: var(--bloom-green);
+    transform: translateY(-2px);
+  }
+
+  .whatsnew-tag {
+    display: inline-block;
+    padding: 0.15rem 0.55rem;
+    background: rgba(76, 175, 80, 0.12);
+    color: var(--bloom-green-dark);
+    border-radius: 999px;
+    font-size: 0.6875rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+  }
+
+  .whatsnew-card h3 {
+    font-size: 1.0625rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .whatsnew-card p {
+    color: rgba(27, 42, 30, 0.65);
+    font-size: 0.9rem;
   }
 
   /* Examples */
@@ -612,6 +722,16 @@ endMode3D();</code></pre>
 
     .examples-grid {
       grid-template-columns: 1fr;
+    }
+
+    .whatsnew-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .whatsnew-grid {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 

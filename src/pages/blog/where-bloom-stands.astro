@@ -1,0 +1,384 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title="Where Bloom stands — Bloom Engine Blog"
+  description="Five weeks in, 311 commits later. A candid look at why we picked TypeScript + Perry + wgpu, what's actually working today, and the rough edges we're still planing down."
+>
+  <article class="post">
+    <header class="post-header">
+      <div class="container post-header-inner">
+        <a href="/blog" class="back-link">&larr; Back to blog</a>
+        <div class="post-meta">
+          <span class="post-tag">Update</span>
+          <time datetime="2026-04-26">April 26, 2026</time>
+          <span class="dot">&middot;</span>
+          <span>The Bloom team</span>
+        </div>
+        <h1>Where Bloom stands: design choices, progress, and what comes next</h1>
+        <p class="lede">
+          Bloom turned five weeks old this week. Three hundred and eleven commits in,
+          we wanted to write down what we have, why we built it the way we did, and
+          which pieces are still rough.
+        </p>
+      </div>
+    </header>
+
+    <div class="container post-body">
+      <h2>The pitch, in one sentence</h2>
+      <p>
+        Write your game in TypeScript, compile it ahead of time, and ship a real
+        native binary on macOS, Windows, Linux, iOS and tvOS &mdash; or a WASM bundle
+        for the web. No Electron, no WebView, no embedded JavaScript runtime in your
+        shipped game.
+      </p>
+      <p>
+        That sentence has done a lot of work. It is also the reason most of our early
+        design decisions look the way they do.
+      </p>
+
+      <h2>Why TypeScript</h2>
+      <p>
+        We did not pick TypeScript because we love JavaScript. We picked it because
+        it is the most widely-used statically-typed language with a structural type
+        system, an enormous tooling story, and a syntax that does not scare anyone
+        away. Most of the people we want to make games with have shipped TypeScript
+        before. Very few have shipped C++.
+      </p>
+      <p>
+        We also wanted a language that <em>could</em> be compiled ahead of time
+        cleanly, without dragging a garbage collector and a bytecode interpreter into
+        every shipped binary. That ruled out anything that requires a heavy runtime
+        (Python, C#, JS-the-language). TypeScript &mdash; minus the dynamic-by-default
+        bits &mdash; turned out to be a sweet spot.
+      </p>
+
+      <h2>Why Perry</h2>
+      <p>
+        Perry is the ahead-of-time compiler that turns your TypeScript into native
+        code. The TS-to-binary path is the part that lets us promise &ldquo;no
+        runtime overhead.&rdquo; Your game becomes a single binary that calls into a
+        Rust core through a stable C ABI. There is no V8, no Bun, no JIT.
+      </p>
+      <p>
+        Picking Perry let us be ruthless about the language surface we exposed. The
+        Bloom API is functions and plain interfaces &mdash; no classes, no
+        decorators, no proxies, no <code>eval</code>. If a TypeScript feature does
+        not compile cleanly to a native call, we do not use it in the API. The
+        result is an API that fits on a cheatsheet and a build that fits in your
+        head.
+      </p>
+
+      <h2>Why wgpu and not four bespoke renderers</h2>
+      <p>
+        Our first instinct was to write a Metal renderer, then a DirectX 12
+        renderer, then a Vulkan renderer. We talked ourselves out of it within a
+        weekend. Four backends mean four shader languages, four resource models,
+        four bug surfaces, and four places to forget about HiDPI.
+      </p>
+      <p>
+        Instead, the entire renderer is written once on top of <strong>wgpu</strong>.
+        Shaders are WGSL. We get Metal on Apple platforms, DirectX 12 on Windows,
+        Vulkan on Linux and Android, and WebGPU (with a WebGL fallback) in the
+        browser &mdash; from one codebase. The cost is that we are bound to wgpu's
+        feature set, and a few exotic things (mesh shaders, ray tracing) are off the
+        table for now. We think that's a fair trade for a small team.
+      </p>
+
+      <h2>What's actually in the box today</h2>
+      <p>
+        We try not to put anything on the marketing site that does not work. Here is
+        what is real, today:
+      </p>
+      <ul>
+        <li>
+          <strong>Nine importable modules</strong> &mdash; <code>bloom/core</code>,
+          <code>bloom/shapes</code>, <code>bloom/textures</code>,
+          <code>bloom/text</code>, <code>bloom/audio</code>,
+          <code>bloom/models</code>, <code>bloom/math</code>,
+          <code>bloom/physics</code> and <code>bloom/scene</code>.
+        </li>
+        <li>
+          <strong>A real PBR renderer</strong> &mdash; substrate-style layered
+          materials, cascaded shadow maps with caching for static geometry,
+          ACES/AgX tone mapping, auto-exposure, bloom, depth of field, motion blur,
+          SSGI, SSAO, TAA, and a CAS sharpen pass for fractional render scales.
+        </li>
+        <li>
+          <strong>GPU skeletal animation</strong> &mdash; glTF 2.0 import, four-bone
+          linear blend skinning on the GPU, up to 128 joints per skeleton.
+        </li>
+        <li>
+          <strong>Jolt physics</strong> &mdash; rigid and soft bodies, character
+          controllers, vehicles, raycasts, constraints, contact callbacks. The web
+          target uses the JoltPhysics.js fallback so the same code runs in the
+          browser.
+        </li>
+        <li>
+          <strong>Six target platforms</strong> &mdash; macOS, Windows, Linux, iOS,
+          tvOS, and Web. Android is partially wired up but not yet shippable.
+        </li>
+        <li>
+          <strong>Hot reload</strong> &mdash; save a WGSL shader or a material JSON
+          and the change is on screen in under a second during development. The
+          file-watching code is stripped out of release builds.
+        </li>
+        <li>
+          <strong>Seventeen example projects</strong> &mdash; from a 170-line Pong to
+          loading the Intel Sponza and Bistro scenes.
+        </li>
+      </ul>
+
+      <h2>Some recent things we're proud of</h2>
+      <p>
+        The renderer has had a good month. A few highlights:
+      </p>
+      <ul>
+        <li>
+          <strong>Auto-DRS.</strong> The renderer self-tunes its render scale to hit
+          your target framerate, then runs an upscale plus RCAS sharpen pass so the
+          image stays crisp. You set a target FPS; the engine does the rest.
+        </li>
+        <li>
+          <strong>Planar reflections.</strong> Real mirror-plane captures with
+          oblique-clip and IBL fallback when the reflection budget is exhausted.
+          Useful for water, polished floors, and shopfronts.
+        </li>
+        <li>
+          <strong>Texture-array splat mapping.</strong> Terrain and detail layers
+          can now bind a texture array with proper mips, so you can paint several
+          materials per tile without paying for one draw call per layer.
+        </li>
+        <li>
+          <strong>Imposter baker.</strong> A small CLI that bakes octahedral
+          impostor atlases for distant LODs. We needed this the moment we started
+          dropping forests into scenes.
+        </li>
+        <li>
+          <strong>Cross-platform HiDPI.</strong> Windows, Linux and Web finally
+          share the same HiDPI handling that macOS and iOS already had. UI stays
+          sharp on every display.
+        </li>
+      </ul>
+
+      <h2>Things we're not pretending are done</h2>
+      <p>
+        We owe you the unflattering list too:
+      </p>
+      <ul>
+        <li>
+          <strong>Android.</strong> The platform crate exists and most of the FFI
+          surface is wired up, but the native-activity glue is not finished. We
+          are not telling anyone to ship Android with Bloom yet.
+        </li>
+        <li>
+          <strong>watchOS.</strong> Shaders compile, the platform stub is there,
+          but we are blocked on Perry's watchOS support before this is real.
+        </li>
+        <li>
+          <strong>Virtualized geometry.</strong> No Nanite-equivalent, no mesh
+          shaders, no hardware ray tracing. This is on the roadmap, not in the
+          binary.
+        </li>
+        <li>
+          <strong>Skeletal animation cap.</strong> 128 joints per skeleton, hard
+          limit, because of the UBO size. Big rigs need workarounds today.
+        </li>
+        <li>
+          <strong>The scene graph is young.</strong> Transforms, visibility,
+          shadows and material binding all work. Query systems and broader
+          optimization passes do not exist yet.
+        </li>
+        <li>
+          <strong>User shaders.</strong> You can hand-write WGSL and load it
+          through the material pipeline, but there is no in-engine shader graph
+          and no runtime shader compilation from TypeScript.
+        </li>
+      </ul>
+
+      <h2>The shape of the API</h2>
+      <p>
+        We borrowed heavily from Raylib for the immediate-mode parts of the API. If
+        you have written a Raylib game, the muscle memory transfers:
+      </p>
+      <pre class="snippet"><code><span class="kw">import</span> {"{"} initWindow, windowShouldClose, beginDrawing,
+         endDrawing, clearBackground, drawText, Colors {"}"} <span class="kw">from</span> <span class="str">"bloom"</span>;
+
+initWindow(<span class="num">800</span>, <span class="num">450</span>, <span class="str">"Hello Bloom"</span>);
+
+<span class="kw">while</span> (!windowShouldClose()) {"{"}
+  beginDrawing();
+  clearBackground(Colors.<span class="prop">RAYWHITE</span>);
+  drawText(<span class="str">"Hello, Bloom!"</span>, <span class="num">190</span>, <span class="num">200</span>, <span class="num">20</span>, Colors.<span class="prop">DARKGRAY</span>);
+  endDrawing();
+{"}"}</code></pre>
+      <p>
+        For 3D and physics work, the same philosophy applies: plain interfaces,
+        pure functions, no hidden state machines. A camera is an object literal. A
+        rigid body is a handle. The rendering pipeline is configured by calling
+        functions in a specific order, not by registering listeners on an
+        invisible orchestrator.
+      </p>
+
+      <h2>What's next</h2>
+      <p>
+        Our short list for the next few weeks:
+      </p>
+      <ul>
+        <li>Finish the Android native-activity glue and call Android shippable.</li>
+        <li>Push the scene-graph work past &ldquo;basic&rdquo; into actually useful: queries, frustum culling refinement, instancing helpers.</li>
+        <li>Land a first cut of the editor integration so you can iterate on a scene without restarting your game.</li>
+        <li>Open-source the example games, including a slightly bigger demo than Pong.</li>
+        <li>Write up the Perry compilation pipeline in detail. Several people have asked.</li>
+      </ul>
+
+      <h2>Try it</h2>
+      <p>
+        Bloom is open source under MIT. The whole repository is on
+        <a href="https://github.com/Bloom-Engine" target="_blank" rel="noopener">GitHub</a>.
+        If you want to follow along without forking, the
+        <a href="/docs">docs</a> have a 12-line quick start, and the
+        <a href="/showcase">showcase</a> page lists what we are building with it
+        ourselves.
+      </p>
+      <p>
+        Either way: thanks for taking a look. We will keep posting here as bigger
+        pieces land.
+      </p>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .post-header {
+    padding: 4rem 0 2.5rem;
+    background: var(--bloom-light);
+  }
+
+  .post-header-inner {
+    max-width: 760px;
+  }
+
+  .back-link {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--bloom-green-dark);
+    margin-bottom: 1.5rem;
+  }
+
+  .post-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    font-size: 0.8125rem;
+    color: rgba(27, 42, 30, 0.6);
+    margin-bottom: 1rem;
+  }
+
+  .post-tag {
+    padding: 0.15rem 0.55rem;
+    background: rgba(76, 175, 80, 0.12);
+    color: var(--bloom-green-dark);
+    border-radius: 999px;
+    font-size: 0.6875rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .post-meta .dot {
+    opacity: 0.5;
+  }
+
+  .post-header h1 {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+    line-height: 1.25;
+  }
+
+  .lede {
+    font-size: 1.1875rem;
+    color: rgba(27, 42, 30, 0.75);
+    line-height: 1.6;
+    max-width: 640px;
+  }
+
+  .post-body {
+    max-width: 760px;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+  }
+
+  .post-body h2 {
+    font-size: 1.375rem;
+    margin: 2.5rem 0 0.75rem;
+  }
+
+  .post-body h2:first-child {
+    margin-top: 0;
+  }
+
+  .post-body p {
+    color: rgba(27, 42, 30, 0.85);
+    margin-bottom: 1.1rem;
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .post-body ul {
+    margin: 0 0 1.25rem 1.25rem;
+    color: rgba(27, 42, 30, 0.85);
+  }
+
+  .post-body li {
+    margin-bottom: 0.6rem;
+    line-height: 1.7;
+  }
+
+  .post-body code {
+    background: rgba(27, 42, 30, 0.06);
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+  }
+
+  .post-body strong {
+    color: var(--bloom-dark);
+  }
+
+  .snippet {
+    background: #0D1A10;
+    color: #E8F0E9;
+    padding: 1.25rem 1.5rem;
+    border-radius: 12px;
+    overflow-x: auto;
+    margin: 1.25rem 0 1.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    line-height: 1.6;
+  }
+
+  .snippet code {
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+  }
+
+  .snippet .kw { color: #B39DDB; }
+  .snippet .str { color: #66BB6A; }
+  .snippet .num { color: #FFD54F; }
+  .snippet .prop { color: #FF8A65; }
+
+  @media (max-width: 640px) {
+    .post-header h1 {
+      font-size: 1.75rem;
+    }
+
+    .lede {
+      font-size: 1.0625rem;
+    }
+  }
+</style>
