@@ -16,7 +16,9 @@
     "community": "커뮤니티",
     "discussions": "토론",
     "contributing": "기여하기",
-    "rights": "MIT 라이선스 기반 오픈 소스."
+    "rights": "MIT 라이선스 기반 오픈 소스.",
+    "impressum": "법적 고지",
+    "privacy": "개인정보 처리방침"
   },
   "home": {
     "title": "Bloom Engine — TypeScript로 만드는 네이티브 게임",

@@ -16,7 +16,9 @@
     "community": "Communauté",
     "discussions": "Discussions",
     "contributing": "Contribuer",
-    "rights": "Open source sous licence MIT."
+    "rights": "Open source sous licence MIT.",
+    "impressum": "Mentions légales",
+    "privacy": "Confidentialité"
   },
   "home": {
     "title": "Bloom Engine — Des jeux natifs en TypeScript",

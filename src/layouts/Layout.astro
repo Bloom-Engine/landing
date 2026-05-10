@@ -49,6 +49,12 @@ const site = "https://bloomengine.dev";
       hreflang="x-default"
       href={`${site}${localePath(defaultLocale, pathWithoutLocale)}`}
     />
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script async is:inline src="https://plausible.io/js/pa-_05l1AgasM1zQHW_OOoaB.js"></script>
+    <script is:inline>
+      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+      plausible.init()
+    </script>
   </head>
   <body>
     <header class="site-header">
@@ -119,6 +125,11 @@ const site = "https://bloomengine.dev";
       </div>
       <div class="footer-bottom container">
         <p>&copy; {new Date().getFullYear()} Bloom Engine. {t("footer.rights")}</p>
+        <p class="footer-legal">
+          <a href="/impressum">{t("footer.impressum")}</a>
+          <span>·</span>
+          <a href="/privacy">{t("footer.privacy")}</a>
+        </p>
       </div>
     </footer>
 
@@ -400,6 +411,22 @@ const site = "https://bloomengine.dev";
     text-align: center;
     font-size: 0.8125rem;
     opacity: 0.5;
+  }
+
+  .footer-legal {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .footer-legal a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .footer-legal a:hover {
+    color: var(--bloom-green-light);
   }
 
   @media (max-width: 640px) {

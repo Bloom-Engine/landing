@@ -16,7 +16,9 @@
     "community": "Cộng đồng",
     "discussions": "Thảo luận",
     "contributing": "Đóng góp",
-    "rights": "Mã nguồn mở theo giấy phép MIT."
+    "rights": "Mã nguồn mở theo giấy phép MIT.",
+    "impressum": "Thông tin pháp lý",
+    "privacy": "Quyền riêng tư"
   },
   "home": {
     "title": "Bloom Engine — Game native từ TypeScript",

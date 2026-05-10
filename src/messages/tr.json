@@ -16,7 +16,9 @@
     "community": "Topluluk",
     "discussions": "Tartışmalar",
     "contributing": "Katkıda Bulunma",
-    "rights": "MIT lisansı altında açık kaynak."
+    "rights": "MIT lisansı altında açık kaynak.",
+    "impressum": "Künye",
+    "privacy": "Gizlilik"
   },
   "home": {
     "title": "Bloom Engine — TypeScript ile native oyunlar",

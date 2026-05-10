@@ -16,7 +16,9 @@
     "community": "コミュニティ",
     "discussions": "ディスカッション",
     "contributing": "コントリビュート",
-    "rights": "MIT ライセンスのオープンソースです。"
+    "rights": "MIT ライセンスのオープンソースです。",
+    "impressum": "法的情報",
+    "privacy": "プライバシー"
   },
   "home": {
     "title": "Bloom Engine — TypeScript で作るネイティブゲーム",

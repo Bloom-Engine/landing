@@ -1,0 +1,139 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Legal Notice — Bloom Engine" description="Legal notice / Impressum for Bloom Engine.">
+  <section class="page-hero">
+    <div class="container">
+      <h1>Legal Notice</h1>
+      <p class="page-desc">Impressum gemäß § 5 TMG</p>
+    </div>
+  </section>
+
+  <section class="legal">
+    <div class="container legal-content">
+      <h2>Provider</h2>
+      <p>
+        Skelpo GmbH<br />
+        Köttingstraße 41<br />
+        58339 Breckerfeld<br />
+        Deutschland
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Phone: +49 (0) 2338 8733446<br />
+        Email: <a href="mailto:info@skelpo.com">info@skelpo.com</a><br />
+        Web: <a href="https://www.skelpo.com" target="_blank" rel="noopener">www.skelpo.com</a>
+      </p>
+
+      <h2>Commercial Register</h2>
+      <p>
+        Registered at: Amtsgericht Hagen<br />
+        Register number: HRB 8266
+      </p>
+
+      <h2>VAT ID</h2>
+      <p>
+        VAT identification number according to §27a Umsatzsteuergesetz:<br />
+        DE266573808
+      </p>
+
+      <h2>Authorised Representative</h2>
+      <p>Vertretungsberechtigter Geschäftsführer: Ralph Küpper</p>
+
+      <h2>Responsible for Content according to § 55 Abs. 2 RStV</h2>
+      <p>
+        Ralph Küpper<br />
+        Skelpo GmbH<br />
+        Köttingstraße 41<br />
+        58339 Breckerfeld<br />
+        Deutschland
+      </p>
+
+      <h2>Disclaimer</h2>
+      <h3>Liability for Content</h3>
+      <p>
+        We have created the content of this website with care. However, we
+        assume no liability for the accuracy, completeness or timeliness of the
+        content provided. As a service provider, we are responsible for our own
+        content on these pages in accordance with § 7 paragraph 1 of the German
+        Telemedia Act (TMG). According to §§ 8 to 10 TMG, however, we are not
+        obligated to monitor transmitted or stored third-party information or
+        to investigate circumstances that indicate illegal activity.
+      </p>
+
+      <h3>Liability for Links</h3>
+      <p>
+        Our offer contains links to external websites of third parties, on
+        whose content we have no influence. Therefore, we cannot assume any
+        liability for this external content. The respective provider or
+        operator of the linked pages is always responsible for the content.
+      </p>
+
+      <h3>Copyright</h3>
+      <p>
+        The content and works on these pages created by the site operator are
+        subject to German copyright law. Reproduction, editing, distribution
+        and any kind of use outside the limits of copyright law require the
+        written consent of the respective author or creator.
+      </p>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    padding: 4rem 0 3rem;
+    background: var(--bloom-light);
+    text-align: center;
+  }
+
+  .page-desc {
+    color: rgba(27, 42, 30, 0.6);
+    font-size: 1.125rem;
+    margin-top: 0.75rem;
+  }
+
+  .legal {
+    padding: 3rem 0 5rem;
+  }
+
+  .legal-content {
+    max-width: 720px;
+  }
+
+  .legal-content h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+    color: var(--bloom-dark);
+  }
+
+  .legal-content h2:first-child {
+    margin-top: 0;
+  }
+
+  .legal-content h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: rgba(27, 42, 30, 0.85);
+  }
+
+  .legal-content p {
+    color: rgba(27, 42, 30, 0.7);
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .legal-content a {
+    color: var(--bloom-green-dark);
+    text-decoration: none;
+  }
+
+  .legal-content a:hover {
+    text-decoration: underline;
+  }
+</style>

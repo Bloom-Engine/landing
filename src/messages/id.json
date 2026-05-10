@@ -16,7 +16,9 @@
     "community": "Komunitas",
     "discussions": "Diskusi",
     "contributing": "Kontribusi",
-    "rights": "Open source di bawah MIT."
+    "rights": "Open source di bawah MIT.",
+    "impressum": "Informasi Hukum",
+    "privacy": "Privasi"
   },
   "home": {
     "title": "Bloom Engine — Game native dari TypeScript",

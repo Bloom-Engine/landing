@@ -16,7 +16,9 @@
     "community": "社区",
     "discussions": "讨论",
     "contributing": "参与贡献",
-    "rights": "基于 MIT 协议开源。"
+    "rights": "基于 MIT 协议开源。",
+    "impressum": "法律声明",
+    "privacy": "隐私政策"
   },
   "home": {
     "title": "Bloom Engine — 使用 TypeScript 构建原生游戏",

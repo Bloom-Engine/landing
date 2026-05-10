@@ -16,7 +16,9 @@
     "community": "ชุมชน",
     "discussions": "การสนทนา",
     "contributing": "การมีส่วนร่วม",
-    "rights": "โอเพนซอร์สภายใต้ MIT"
+    "rights": "โอเพนซอร์สภายใต้ MIT",
+    "impressum": "ข้อมูลทางกฎหมาย",
+    "privacy": "นโยบายความเป็นส่วนตัว"
   },
   "home": {
     "title": "Bloom Engine — เกมเนทีฟจาก TypeScript",
