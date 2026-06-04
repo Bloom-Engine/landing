@@ -1,120 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
-const modules = [
-  {
-    name: "Core",
-    import: "bloom/core",
-    description: "Window management, game loop, input, and timing.",
-    functions: [
-      "initWindow(width, height, title)",
-      "windowShouldClose()",
-      "closeWindow()",
-      "beginDrawing() / endDrawing()",
-      "clearBackground(color)",
-      "getDeltaTime()",
-      "getFPS()",
-      "setTargetFPS(fps)",
-      "toggleFullscreen()",
-      "isKeyPressed(key) / isKeyDown(key)",
-      "isMouseButtonPressed(btn)",
-      "getMousePosition()",
-      "beginMode2D(camera) / endMode2D()",
-      "beginMode3D(camera) / endMode3D()",
-    ],
-  },
-  {
-    name: "Shapes",
-    import: "bloom/shapes",
-    description: "2D shape drawing and collision detection.",
-    functions: [
-      "drawLine(x1, y1, x2, y2, color)",
-      "drawRect(x, y, w, h, color)",
-      "drawCircle(cx, cy, radius, color)",
-      "drawTriangle(v1, v2, v3, color)",
-      "drawPoly(center, sides, radius, rotation, color)",
-      "checkCollisionRecs(r1, r2)",
-      "checkCollisionCircles(c1, r1, c2, r2)",
-      "checkCollisionPointRec(point, rect)",
-    ],
-  },
-  {
-    name: "Textures",
-    import: "bloom/textures",
-    description: "Image loading and sprite rendering.",
-    functions: [
-      "loadTexture(path)",
-      "unloadTexture(texture)",
-      "drawTexture(texture, x, y, tint)",
-      "drawTexturePro(texture, src, dest, origin, rotation, tint)",
-      "drawTextureRec(texture, src, pos, tint)",
-    ],
-  },
-  {
-    name: "Text",
-    import: "bloom/text",
-    description: "Font loading and text rendering.",
-    functions: [
-      "drawText(text, x, y, fontSize, color)",
-      "measureText(text, fontSize)",
-      "loadFont(path)",
-    ],
-  },
-  {
-    name: "Audio",
-    import: "bloom/audio",
-    description: "Sound effects and music streaming.",
-    functions: [
-      "initAudio()",
-      "loadSound(path)",
-      "playSound(sound)",
-      "stopSound(sound)",
-      "setSoundVolume(sound, volume)",
-      "setMasterVolume(volume)",
-      "loadMusic(path)",
-      "playMusic(music)",
-      "updateMusicStream(music)",
-    ],
-  },
-  {
-    name: "Models",
-    import: "bloom/models",
-    description: "3D model loading and rendering.",
-    functions: [
-      "loadModel(path)",
-      "unloadModel(model)",
-      "drawModel(model, position)",
-      "drawCube(position, w, h, l, color)",
-      "drawSphere(center, radius, color)",
-      "drawGrid(slices, spacing)",
-    ],
-  },
-  {
-    name: "Math",
-    import: "bloom/math",
-    description: "Vectors, matrices, quaternions, and utilities.",
-    functions: [
-      "vec2Add / vec2Sub / vec2Scale / vec2Normalize",
-      "vec3Add / vec3Sub / vec3Cross / vec3Dot",
-      "mat4Identity / mat4Multiply / mat4Perspective",
-      "mat4LookAt / mat4Translate / mat4Rotate",
-      "quaternionFromEuler / quaternionSlerp",
-      "lerp / clamp / remap",
-      "easeInQuad / easeOutElastic / easeBounce",
-      "randomFloat / randomInt",
-    ],
-  },
-];
 ---
 
-<Layout title="Docs — Bloom Engine" description="Bloom Engine API reference and documentation.">
+<Layout title="Docs — Bloom Engine" description="Complete documentation and API reference for Bloom Engine.">
   <section class="page-hero">
     <div class="container">
       <h1>Documentation</h1>
-      <p class="page-desc">API reference for every Bloom module. Full docs are coming soon.</p>
-      <a href="https://github.com/Bloom-Engine" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top: 1.5rem;">
-        Full Docs on GitHub
-      </a>
+      <p class="page-desc">Everything you need to build native games with TypeScript.</p>
     </div>
   </section>
 
@@ -122,26 +14,58 @@ const modules = [
     <div class="container docs-layout">
       <aside class="docs-sidebar">
         <nav>
-          <h4>Modules</h4>
-          {modules.map((m) => (
-            <a href={`#${m.name.toLowerCase()}`} class="sidebar-link">{m.name}</a>
-          ))}
+          <h4>Getting Started</h4>
+          <a href="#quick-start" class="sidebar-link">Quick Start</a>
+          <a href="#concepts" class="sidebar-link">Core Concepts</a>
+          <a href="#project-structure" class="sidebar-link">Project Structure</a>
         </nav>
         <nav>
-          <h4>Resources</h4>
+          <h4>API Reference</h4>
+          <a href="#core" class="sidebar-link">Core</a>
+          <a href="#shapes" class="sidebar-link">Shapes</a>
+          <a href="#textures" class="sidebar-link">Textures</a>
+          <a href="#text" class="sidebar-link">Text</a>
+          <a href="#audio" class="sidebar-link">Audio</a>
+          <a href="#models" class="sidebar-link">Models</a>
+          <a href="#math" class="sidebar-link">Math</a>
+        </nav>
+        <nav>
+          <h4>Reference</h4>
+          <a href="#types" class="sidebar-link">Types</a>
+          <a href="#colors" class="sidebar-link">Colors</a>
+          <a href="#keys" class="sidebar-link">Keys</a>
+        </nav>
+        <nav>
+          <h4>Guides</h4>
+          <a href="#guide-input" class="sidebar-link">Input Handling</a>
+          <a href="#guide-camera" class="sidebar-link">Cameras</a>
+          <a href="#guide-collision" class="sidebar-link">Collision</a>
+          <a href="#guide-audio" class="sidebar-link">Audio</a>
+        </nav>
+        <nav>
+          <h4>Examples</h4>
+          <a href="#example-pong" class="sidebar-link">Pong</a>
+          <a href="#example-dungeon" class="sidebar-link">Dungeon Crawl</a>
+          <a href="#example-space" class="sidebar-link">Space Blaster</a>
+        </nav>
+        <nav>
+          <h4>Links</h4>
           <a href="https://github.com/Bloom-Engine" target="_blank" rel="noopener" class="sidebar-link">GitHub</a>
-          <a href="https://github.com/Bloom-Engine" target="_blank" rel="noopener" class="sidebar-link">Examples</a>
         </nav>
       </aside>
 
       <div class="docs-content">
-        <div class="docs-quickstart">
+
+        <!-- ==================== GETTING STARTED ==================== -->
+
+        <div id="quick-start" class="docs-section">
           <h2>Quick Start</h2>
+          <p>A complete Bloom game in 12 lines. This opens a window, clears it each frame, draws text, and exits when the user closes the window.</p>
           <div class="code-window">
             <div class="code-header">
-              <span class="code-dot" style="background: #FF5F57"></span>
-              <span class="code-dot" style="background: #FEBC2E"></span>
-              <span class="code-dot" style="background: #28C840"></span>
+              <span class="code-dot r"></span>
+              <span class="code-dot y"></span>
+              <span class="code-dot g"></span>
               <span class="code-title">main.ts</span>
             </div>
             <pre><code><span class="kw">import</span> {"{"} initWindow, windowShouldClose, beginDrawing,
@@ -161,43 +85,1203 @@ closeWindow();</code></pre>
           </div>
         </div>
 
-        <div class="docs-types">
-          <h2>Core Types</h2>
+        <div id="concepts" class="docs-section">
+          <h2>Core Concepts</h2>
+
+          <h3>The Game Loop</h3>
+          <p>Every Bloom game follows the same pattern: initialize, loop, clean up. There's no hidden framework — you own the loop.</p>
           <div class="code-window">
             <div class="code-header">
-              <span class="code-dot" style="background: #FF5F57"></span>
-              <span class="code-dot" style="background: #FEBC2E"></span>
-              <span class="code-dot" style="background: #28C840"></span>
-              <span class="code-title">types.ts</span>
+              <span class="code-dot r"></span><span class="code-dot y"></span><span class="code-dot g"></span>
             </div>
-            <pre><code><span class="kw">interface</span> <span class="prop">Vec2</span> {"{"} x: <span class="num">number</span>; y: <span class="num">number</span> {"}"}
-<span class="kw">interface</span> <span class="prop">Vec3</span> {"{"} x: <span class="num">number</span>; y: <span class="num">number</span>; z: <span class="num">number</span> {"}"}
-<span class="kw">interface</span> <span class="prop">Color</span> {"{"} r: <span class="num">number</span>; g: <span class="num">number</span>; b: <span class="num">number</span>; a: <span class="num">number</span> {"}"}
-<span class="kw">interface</span> <span class="prop">Rect</span> {"{"} x: <span class="num">number</span>; y: <span class="num">number</span>; width: <span class="num">number</span>; height: <span class="num">number</span> {"}"}
-<span class="kw">interface</span> <span class="prop">Camera2D</span> {"{"} offset: Vec2; target: Vec2; rotation: <span class="num">number</span>; zoom: <span class="num">number</span> {"}"}
-<span class="kw">interface</span> <span class="prop">Camera3D</span> {"{"} position: Vec3; target: Vec3; up: Vec3; fovy: <span class="num">number</span>; projection: <span class="num">number</span> {"}"}
-<span class="kw">interface</span> <span class="prop">Texture</span> {"{"} handle: <span class="num">number</span>; width: <span class="num">number</span>; height: <span class="num">number</span> {"}"}
-<span class="kw">interface</span> <span class="prop">Sound</span> {"{"} handle: <span class="num">number</span> {"}"}
-<span class="kw">interface</span> <span class="prop">Model</span> {"{"} handle: <span class="num">number</span> {"}"}</code></pre>
+            <pre><code>initWindow(<span class="num">800</span>, <span class="num">600</span>, <span class="str">"My Game"</span>);
+setTargetFPS(<span class="num">60</span>);
+
+<span class="kw">while</span> (!windowShouldClose()) {"{"}
+  <span class="kw">const</span> dt = getDeltaTime();  <span class="cmt">// seconds since last frame</span>
+
+  <span class="cmt">// 1. Update game state</span>
+  playerX = playerX + speed * dt;
+
+  <span class="cmt">// 2. Draw everything</span>
+  beginDrawing();
+  clearBackground(Colors.<span class="prop">BLACK</span>);
+  <span class="cmt">// ... draw calls here ...</span>
+  endDrawing();
+{"}"}
+
+closeWindow();</code></pre>
+          </div>
+
+          <h3>Delta Time</h3>
+          <p><code>getDeltaTime()</code> returns the time in seconds since the last frame. Always multiply movement and animation values by delta time to keep behavior consistent regardless of frame rate.</p>
+
+          <h3>Drawing Lifecycle</h3>
+          <p>All draw calls must happen between <code>beginDrawing()</code> and <code>endDrawing()</code>. Bloom batches and submits GPU commands when you call <code>endDrawing()</code>.</p>
+
+          <h3>No Classes, No Magic</h3>
+          <p>Bloom uses plain interfaces and pure functions. Types like <code>Vec2</code>, <code>Color</code>, and <code>Rect</code> are plain objects. Functions never mutate their inputs — they return new values. There are no classes, no inheritance, no lifecycle hooks.</p>
+        </div>
+
+        <div id="project-structure" class="docs-section">
+          <h2>Project Structure</h2>
+          <div class="code-window">
+            <div class="code-header">
+              <span class="code-dot r"></span><span class="code-dot y"></span><span class="code-dot g"></span>
+            </div>
+            <pre><code>my-game/
+  src/
+    main.ts           <span class="cmt"># Entry point</span>
+    player.ts
+    enemies.ts
+  assets/
+    sprites/          <span class="cmt"># PNG, JPG</span>
+    models/           <span class="cmt"># glTF, OBJ</span>
+    sounds/           <span class="cmt"># WAV, OGG, MP3</span>
+    fonts/            <span class="cmt"># TTF, OTF</span>
+  package.json</code></pre>
+          </div>
+          <p>Bloom modules are independently importable. Use only what you need:</p>
+          <div class="code-window">
+            <div class="code-header">
+              <span class="code-dot r"></span><span class="code-dot y"></span><span class="code-dot g"></span>
+            </div>
+            <pre><code><span class="kw">import</span> {"{"} initWindow {"}"} <span class="kw">from</span> <span class="str">"bloom/core"</span>;
+<span class="kw">import</span> {"{"} drawRect {"}"} <span class="kw">from</span> <span class="str">"bloom/shapes"</span>;
+<span class="kw">import</span> {"{"} vec3Add {"}"} <span class="kw">from</span> <span class="str">"bloom/math"</span>;
+
+<span class="cmt">// Or import everything from the barrel export:</span>
+<span class="kw">import</span> {"{"} initWindow, drawRect, vec3Add {"}"} <span class="kw">from</span> <span class="str">"bloom"</span>;</code></pre>
           </div>
         </div>
 
-        {modules.map((mod) => (
-          <div class="docs-module" id={mod.name.toLowerCase()}>
-            <div class="docs-module-header">
-              <h2>{mod.name}</h2>
-              <code class="module-import">{mod.import}</code>
+        <!-- ==================== API REFERENCE ==================== -->
+
+        <div class="docs-divider">
+          <h2>API Reference</h2>
+        </div>
+
+        <!-- CORE -->
+        <div id="core" class="docs-section">
+          <div class="docs-module-header">
+            <h2>Core</h2>
+            <code class="module-import">bloom/core</code>
+          </div>
+          <p class="docs-module-desc">Window management, game loop, input handling, timing, and utility functions.</p>
+
+          <h3>Window</h3>
+          <div class="fn-group">
+            <div class="fn">
+              <div class="fn-sig">initWindow(width: <span class="t">number</span>, height: <span class="t">number</span>, title: <span class="t">string</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Creates a window with the given dimensions and title. Call this before anything else.</div>
             </div>
-            <p class="docs-module-desc">{mod.description}</p>
-            <div class="function-list">
-              {mod.functions.map((fn) => (
-                <div class="function-item">
-                  <code>{fn}</code>
-                </div>
-              ))}
+            <div class="fn">
+              <div class="fn-sig">closeWindow(): <span class="t">void</span></div>
+              <div class="fn-desc">Closes the window and releases all resources.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">windowShouldClose(): <span class="t">boolean</span></div>
+              <div class="fn-desc">Returns true if the user has requested to close the window (close button or ESC).</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">getScreenWidth(): <span class="t">number</span></div>
+              <div class="fn-desc">Returns the current window width in pixels.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">getScreenHeight(): <span class="t">number</span></div>
+              <div class="fn-desc">Returns the current window height in pixels.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">toggleFullscreen(): <span class="t">void</span></div>
+              <div class="fn-desc">Toggles between windowed and fullscreen mode.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">setWindowTitle(title: <span class="t">string</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Changes the window title.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">setWindowIcon(path: <span class="t">string</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Sets the window icon from a file path.</div>
             </div>
           </div>
-        ))}
+
+          <h3>Drawing</h3>
+          <div class="fn-group">
+            <div class="fn">
+              <div class="fn-sig">beginDrawing(): <span class="t">void</span></div>
+              <div class="fn-desc">Begins a new drawing frame. All draw calls go between this and <code>endDrawing()</code>.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">endDrawing(): <span class="t">void</span></div>
+              <div class="fn-desc">Ends the frame, submits GPU commands, and presents to screen.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">clearBackground(color: <span class="t">Color</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Fills the entire screen with the given color.</div>
+            </div>
+          </div>
+
+          <h3>Timing</h3>
+          <div class="fn-group">
+            <div class="fn">
+              <div class="fn-sig">setTargetFPS(fps: <span class="t">number</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Sets the target frame rate. The engine will sleep to maintain this rate.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">getDeltaTime(): <span class="t">number</span></div>
+              <div class="fn-desc">Returns time elapsed since the last frame, in seconds.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">getFPS(): <span class="t">number</span></div>
+              <div class="fn-desc">Returns the current frames per second.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">getTime(): <span class="t">number</span></div>
+              <div class="fn-desc">Returns total elapsed time since window creation, in seconds.</div>
+            </div>
+          </div>
+
+          <h3>Keyboard Input</h3>
+          <div class="fn-group">
+            <div class="fn">
+              <div class="fn-sig">isKeyPressed(key: <span class="t">number</span>): <span class="t">boolean</span></div>
+              <div class="fn-desc">Returns true if the key was pressed this frame (single event, not held).</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">isKeyDown(key: <span class="t">number</span>): <span class="t">boolean</span></div>
+              <div class="fn-desc">Returns true if the key is currently held down.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">isKeyReleased(key: <span class="t">number</span>): <span class="t">boolean</span></div>
+              <div class="fn-desc">Returns true if the key was released this frame.</div>
+            </div>
+          </div>
+
+          <h3>Mouse Input</h3>
+          <div class="fn-group">
+            <div class="fn">
+              <div class="fn-sig">getMouseX(): <span class="t">number</span></div>
+              <div class="fn-desc">Returns current mouse X position.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">getMouseY(): <span class="t">number</span></div>
+              <div class="fn-desc">Returns current mouse Y position.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">getMousePosition(): <span class="t">Vec2</span></div>
+              <div class="fn-desc">Returns current mouse position.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">getMouseDeltaX(): <span class="t">number</span></div>
+              <div class="fn-desc">Returns mouse X movement since last frame.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">getMouseDeltaY(): <span class="t">number</span></div>
+              <div class="fn-desc">Returns mouse Y movement since last frame.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">isMouseButtonPressed(button: <span class="t">number</span>): <span class="t">boolean</span></div>
+              <div class="fn-desc">Returns true if the mouse button was pressed this frame.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">isMouseButtonDown(button: <span class="t">number</span>): <span class="t">boolean</span></div>
+              <div class="fn-desc">Returns true if the mouse button is currently held down.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">isMouseButtonReleased(button: <span class="t">number</span>): <span class="t">boolean</span></div>
+              <div class="fn-desc">Returns true if the mouse button was released this frame.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">disableCursor(): <span class="t">void</span></div>
+              <div class="fn-desc">Hides and locks the cursor (useful for first-person cameras).</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">enableCursor(): <span class="t">void</span></div>
+              <div class="fn-desc">Shows and unlocks the cursor.</div>
+            </div>
+          </div>
+
+          <h3>Touch Input</h3>
+          <div class="fn-group">
+            <div class="fn">
+              <div class="fn-sig">getTouchX(index: <span class="t">number</span>): <span class="t">number</span></div>
+              <div class="fn-desc">Returns X position of touch point at index.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">getTouchY(index: <span class="t">number</span>): <span class="t">number</span></div>
+              <div class="fn-desc">Returns Y position of touch point at index.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">getTouchPosition(index: <span class="t">number</span>): <span class="t">Vec2</span></div>
+              <div class="fn-desc">Returns position of touch point at index.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">getTouchCount(): <span class="t">number</span></div>
+              <div class="fn-desc">Returns number of active touch points.</div>
+            </div>
+          </div>
+
+          <h3>Gamepad Input</h3>
+          <div class="fn-group">
+            <div class="fn">
+              <div class="fn-sig">isGamepadAvailable(): <span class="t">boolean</span></div>
+              <div class="fn-desc">Returns true if a gamepad is connected.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">getGamepadAxis(axis: <span class="t">number</span>): <span class="t">number</span></div>
+              <div class="fn-desc">Returns the value of a gamepad axis (-1.0 to 1.0).</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">getGamepadAxisCount(): <span class="t">number</span></div>
+              <div class="fn-desc">Returns the number of available gamepad axes.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">isGamepadButtonPressed(button: <span class="t">number</span>): <span class="t">boolean</span></div>
+              <div class="fn-desc">Returns true if gamepad button was pressed this frame.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">isGamepadButtonDown(button: <span class="t">number</span>): <span class="t">boolean</span></div>
+              <div class="fn-desc">Returns true if gamepad button is currently held.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">isGamepadButtonReleased(button: <span class="t">number</span>): <span class="t">boolean</span></div>
+              <div class="fn-desc">Returns true if gamepad button was released this frame.</div>
+            </div>
+          </div>
+
+          <h3>Camera Modes</h3>
+          <div class="fn-group">
+            <div class="fn">
+              <div class="fn-sig">beginMode2D(camera: <span class="t">Camera2D</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Activates 2D camera mode. All subsequent draw calls are transformed by the camera.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">endMode2D(): <span class="t">void</span></div>
+              <div class="fn-desc">Deactivates 2D camera mode.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">getScreenToWorld2D(pos: <span class="t">Vec2</span>, camera: <span class="t">Camera2D</span>): <span class="t">Vec2</span></div>
+              <div class="fn-desc">Converts screen coordinates to world coordinates using the camera transform.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">getWorldToScreen2D(pos: <span class="t">Vec2</span>, camera: <span class="t">Camera2D</span>): <span class="t">Vec2</span></div>
+              <div class="fn-desc">Converts world coordinates to screen coordinates using the camera transform.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">beginMode3D(camera: <span class="t">Camera3D</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Activates 3D camera mode with perspective or orthographic projection.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">endMode3D(): <span class="t">void</span></div>
+              <div class="fn-desc">Deactivates 3D camera mode.</div>
+            </div>
+          </div>
+
+          <h3>File I/O</h3>
+          <div class="fn-group">
+            <div class="fn">
+              <div class="fn-sig">writeFile(path: <span class="t">string</span>, data: <span class="t">string</span>): <span class="t">boolean</span></div>
+              <div class="fn-desc">Writes string data to a file. Returns true on success.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">fileExists(path: <span class="t">string</span>): <span class="t">boolean</span></div>
+              <div class="fn-desc">Returns true if a file exists at the given path.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SHAPES -->
+        <div id="shapes" class="docs-section">
+          <div class="docs-module-header">
+            <h2>Shapes</h2>
+            <code class="module-import">bloom/shapes</code>
+          </div>
+          <p class="docs-module-desc">2D shape drawing and collision detection.</p>
+
+          <h3>Drawing</h3>
+          <div class="fn-group">
+            <div class="fn">
+              <div class="fn-sig">drawLine(startX: <span class="t">number</span>, startY: <span class="t">number</span>, endX: <span class="t">number</span>, endY: <span class="t">number</span>, thickness: <span class="t">number</span>, color: <span class="t">Color</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Draws a line segment with the given thickness.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">drawRect(x: <span class="t">number</span>, y: <span class="t">number</span>, width: <span class="t">number</span>, height: <span class="t">number</span>, color: <span class="t">Color</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Draws a filled rectangle.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">drawRectRec(rec: <span class="t">Rect</span>, color: <span class="t">Color</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Draws a filled rectangle from a Rect object.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">drawRectLines(x: <span class="t">number</span>, y: <span class="t">number</span>, width: <span class="t">number</span>, height: <span class="t">number</span>, thickness: <span class="t">number</span>, color: <span class="t">Color</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Draws a rectangle outline.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">drawCircle(cx: <span class="t">number</span>, cy: <span class="t">number</span>, radius: <span class="t">number</span>, color: <span class="t">Color</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Draws a filled circle.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">drawCircleLines(cx: <span class="t">number</span>, cy: <span class="t">number</span>, radius: <span class="t">number</span>, color: <span class="t">Color</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Draws a circle outline.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">drawTriangle(x1: <span class="t">number</span>, y1: <span class="t">number</span>, x2: <span class="t">number</span>, y2: <span class="t">number</span>, x3: <span class="t">number</span>, y3: <span class="t">number</span>, color: <span class="t">Color</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Draws a filled triangle.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">drawPoly(cx: <span class="t">number</span>, cy: <span class="t">number</span>, sides: <span class="t">number</span>, radius: <span class="t">number</span>, rotation: <span class="t">number</span>, color: <span class="t">Color</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Draws a filled regular polygon.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">drawBezier(startX: <span class="t">number</span>, startY: <span class="t">number</span>, cp1X: <span class="t">number</span>, cp1Y: <span class="t">number</span>, cp2X: <span class="t">number</span>, cp2Y: <span class="t">number</span>, endX: <span class="t">number</span>, endY: <span class="t">number</span>, thickness: <span class="t">number</span>, color: <span class="t">Color</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Draws a cubic Bezier curve.</div>
+            </div>
+          </div>
+
+          <h3>2D Collision Detection</h3>
+          <div class="fn-group">
+            <div class="fn">
+              <div class="fn-sig">checkCollisionRecs(rec1: <span class="t">Rect</span>, rec2: <span class="t">Rect</span>): <span class="t">boolean</span></div>
+              <div class="fn-desc">Returns true if two rectangles overlap.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">checkCollisionCircles(center1: <span class="t">Vec2</span>, r1: <span class="t">number</span>, center2: <span class="t">Vec2</span>, r2: <span class="t">number</span>): <span class="t">boolean</span></div>
+              <div class="fn-desc">Returns true if two circles overlap.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">checkCollisionCircleRec(center: <span class="t">Vec2</span>, radius: <span class="t">number</span>, rec: <span class="t">Rect</span>): <span class="t">boolean</span></div>
+              <div class="fn-desc">Returns true if a circle and rectangle overlap.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">checkCollisionPointRec(point: <span class="t">Vec2</span>, rec: <span class="t">Rect</span>): <span class="t">boolean</span></div>
+              <div class="fn-desc">Returns true if a point is inside a rectangle.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">checkCollisionPointCircle(point: <span class="t">Vec2</span>, center: <span class="t">Vec2</span>, radius: <span class="t">number</span>): <span class="t">boolean</span></div>
+              <div class="fn-desc">Returns true if a point is inside a circle.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">getCollisionRec(rec1: <span class="t">Rect</span>, rec2: <span class="t">Rect</span>): <span class="t">Rect</span></div>
+              <div class="fn-desc">Returns the overlapping rectangle between two rects, or an empty rect if none.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TEXTURES -->
+        <div id="textures" class="docs-section">
+          <div class="docs-module-header">
+            <h2>Textures</h2>
+            <code class="module-import">bloom/textures</code>
+          </div>
+          <p class="docs-module-desc">Image loading, texture management, and sprite rendering. Supports PNG, JPG, BMP, and TGA.</p>
+
+          <h3>Textures</h3>
+          <div class="fn-group">
+            <div class="fn">
+              <div class="fn-sig">loadTexture(path: <span class="t">string</span>): <span class="t">Texture</span></div>
+              <div class="fn-desc">Loads an image file and uploads it to the GPU as a texture.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">unloadTexture(texture: <span class="t">Texture</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Frees the GPU texture.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">drawTexture(texture: <span class="t">Texture</span>, x: <span class="t">number</span>, y: <span class="t">number</span>, tint: <span class="t">Color</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Draws a texture at the given position with a color tint. Use <code>Colors.WHITE</code> for no tint.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">drawTextureRec(texture: <span class="t">Texture</span>, source: <span class="t">Rect</span>, position: <span class="t">Vec2</span>, tint: <span class="t">Color</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Draws a region of a texture (useful for sprite sheets).</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">drawTexturePro(texture: <span class="t">Texture</span>, source: <span class="t">Rect</span>, dest: <span class="t">Rect</span>, origin: <span class="t">Vec2</span>, rotation: <span class="t">number</span>, tint: <span class="t">Color</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Draws a texture with full control over source rect, destination rect, rotation origin, and rotation angle.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">getTextureWidth(texture: <span class="t">Texture</span>): <span class="t">number</span></div>
+              <div class="fn-desc">Returns the texture width in pixels.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">getTextureHeight(texture: <span class="t">Texture</span>): <span class="t">number</span></div>
+              <div class="fn-desc">Returns the texture height in pixels.</div>
+            </div>
+          </div>
+
+          <h3>Images (CPU-side)</h3>
+          <div class="fn-group">
+            <div class="fn">
+              <div class="fn-sig">loadImage(path: <span class="t">string</span>): <span class="t">number</span></div>
+              <div class="fn-desc">Loads an image into CPU memory. Returns a handle for manipulation before uploading to GPU.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">loadTextureFromImage(imageHandle: <span class="t">number</span>): <span class="t">Texture</span></div>
+              <div class="fn-desc">Uploads a CPU image to the GPU as a texture.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">imageResize(imageHandle: <span class="t">number</span>, width: <span class="t">number</span>, height: <span class="t">number</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Resizes an image.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">imageCrop(imageHandle: <span class="t">number</span>, x: <span class="t">number</span>, y: <span class="t">number</span>, width: <span class="t">number</span>, height: <span class="t">number</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Crops an image to the given rectangle.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">imageFlipH(imageHandle: <span class="t">number</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Flips an image horizontally.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">imageFlipV(imageHandle: <span class="t">number</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Flips an image vertically.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TEXT -->
+        <div id="text" class="docs-section">
+          <div class="docs-module-header">
+            <h2>Text</h2>
+            <code class="module-import">bloom/text</code>
+          </div>
+          <p class="docs-module-desc">Font loading and text rendering. Supports TTF and OTF fonts.</p>
+
+          <div class="fn-group">
+            <div class="fn">
+              <div class="fn-sig">drawText(text: <span class="t">string</span>, x: <span class="t">number</span>, y: <span class="t">number</span>, size: <span class="t">number</span>, color: <span class="t">Color</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Draws text with the built-in default font.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">measureText(text: <span class="t">string</span>, size: <span class="t">number</span>): <span class="t">number</span></div>
+              <div class="fn-desc">Returns the width of text in pixels using the default font. Useful for centering.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">loadFont(path: <span class="t">string</span>, size: <span class="t">number</span>): <span class="t">Font</span></div>
+              <div class="fn-desc">Loads a TTF or OTF font at the given size.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">loadFontEx(path: <span class="t">string</span>, size: <span class="t">number</span>): <span class="t">Font</span></div>
+              <div class="fn-desc">Extended font loading (same as loadFont).</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">unloadFont(font: <span class="t">Font</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Frees font resources.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">drawTextEx(font: <span class="t">Font</span>, text: <span class="t">string</span>, pos: <span class="t">Vec2</span>, size: <span class="t">number</span>, spacing: <span class="t">number</span>, color: <span class="t">Color</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Draws text with a custom font, size, and letter spacing.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">measureTextEx(font: <span class="t">Font</span>, text: <span class="t">string</span>, size: <span class="t">number</span>, spacing: <span class="t">number</span>): <span class="t">Vec2</span></div>
+              <div class="fn-desc">Returns the dimensions of text with a custom font (width in x, height in y).</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AUDIO -->
+        <div id="audio" class="docs-section">
+          <div class="docs-module-header">
+            <h2>Audio</h2>
+            <code class="module-import">bloom/audio</code>
+          </div>
+          <p class="docs-module-desc">Sound effects and music streaming. Supports WAV, OGG, and MP3.</p>
+
+          <h3>System</h3>
+          <div class="fn-group">
+            <div class="fn">
+              <div class="fn-sig">initAudio(): <span class="t">void</span></div>
+              <div class="fn-desc">Initializes the audio system. Call before loading any sounds or music.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">closeAudio(): <span class="t">void</span></div>
+              <div class="fn-desc">Shuts down the audio system.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">setMasterVolume(volume: <span class="t">number</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Sets the master volume (0.0 to 1.0).</div>
+            </div>
+          </div>
+
+          <h3>Sound Effects</h3>
+          <div class="fn-group">
+            <div class="fn">
+              <div class="fn-sig">loadSound(path: <span class="t">string</span>): <span class="t">Sound</span></div>
+              <div class="fn-desc">Loads a sound file fully into memory. Best for short sound effects.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">playSound(sound: <span class="t">Sound</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Plays a sound.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">stopSound(sound: <span class="t">Sound</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Stops a sound.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">setSoundVolume(sound: <span class="t">Sound</span>, volume: <span class="t">number</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Sets the volume for a specific sound (0.0 to 1.0).</div>
+            </div>
+          </div>
+
+          <h3>Music Streaming</h3>
+          <div class="fn-group">
+            <div class="fn">
+              <div class="fn-sig">loadMusic(path: <span class="t">string</span>): <span class="t">Music</span></div>
+              <div class="fn-desc">Loads a music file for streaming (not fully loaded into memory).</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">playMusic(music: <span class="t">Music</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Starts playing music.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">stopMusic(music: <span class="t">Music</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Stops music playback.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">updateMusicStream(music: <span class="t">Music</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Updates the music stream buffer. <strong>Must be called every frame</strong> while music is playing.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">setMusicVolume(music: <span class="t">Music</span>, volume: <span class="t">number</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Sets the volume for music (0.0 to 1.0).</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">isMusicPlaying(music: <span class="t">Music</span>): <span class="t">boolean</span></div>
+              <div class="fn-desc">Returns true if music is currently playing.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MODELS -->
+        <div id="models" class="docs-section">
+          <div class="docs-module-header">
+            <h2>Models</h2>
+            <code class="module-import">bloom/models</code>
+          </div>
+          <p class="docs-module-desc">3D model loading, primitive drawing, mesh generation, and shaders. Supports glTF and OBJ.</p>
+
+          <h3>3D Models</h3>
+          <div class="fn-group">
+            <div class="fn">
+              <div class="fn-sig">loadModel(path: <span class="t">string</span>): <span class="t">Model</span></div>
+              <div class="fn-desc">Loads a 3D model from a glTF or OBJ file.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">drawModel(model: <span class="t">Model</span>, position: <span class="t">Vec3</span>, scale: <span class="t">number</span>, tint: <span class="t">Color</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Draws a 3D model at the given position with scale and tint.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">unloadModel(model: <span class="t">Model</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Frees model resources.</div>
+            </div>
+          </div>
+
+          <h3>3D Primitives</h3>
+          <div class="fn-group">
+            <div class="fn">
+              <div class="fn-sig">drawCube(pos: <span class="t">Vec3</span>, width: <span class="t">number</span>, height: <span class="t">number</span>, depth: <span class="t">number</span>, color: <span class="t">Color</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Draws a filled cube.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">drawCubeWires(pos: <span class="t">Vec3</span>, width: <span class="t">number</span>, height: <span class="t">number</span>, depth: <span class="t">number</span>, color: <span class="t">Color</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Draws a wireframe cube.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">drawSphere(pos: <span class="t">Vec3</span>, radius: <span class="t">number</span>, color: <span class="t">Color</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Draws a filled sphere.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">drawSphereWires(pos: <span class="t">Vec3</span>, radius: <span class="t">number</span>, color: <span class="t">Color</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Draws a wireframe sphere.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">drawCylinder(pos: <span class="t">Vec3</span>, radiusTop: <span class="t">number</span>, radiusBottom: <span class="t">number</span>, height: <span class="t">number</span>, color: <span class="t">Color</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Draws a cylinder (can be a cone if one radius is 0).</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">drawPlane(pos: <span class="t">Vec3</span>, width: <span class="t">number</span>, depth: <span class="t">number</span>, color: <span class="t">Color</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Draws a flat plane.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">drawGrid(slices: <span class="t">number</span>, spacing: <span class="t">number</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Draws a reference grid on the XZ plane.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">drawRay(origin: <span class="t">Vec3</span>, direction: <span class="t">Vec3</span>, color: <span class="t">Color</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Draws a ray as a line.</div>
+            </div>
+          </div>
+
+          <h3>Mesh Generation</h3>
+          <div class="fn-group">
+            <div class="fn">
+              <div class="fn-sig">genMeshCube(width: <span class="t">number</span>, height: <span class="t">number</span>, depth: <span class="t">number</span>): <span class="t">Model</span></div>
+              <div class="fn-desc">Generates a cube mesh as a Model.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">genMeshHeightmap(imageHandle: <span class="t">number</span>, sizeX: <span class="t">number</span>, sizeY: <span class="t">number</span>, sizeZ: <span class="t">number</span>): <span class="t">Model</span></div>
+              <div class="fn-desc">Generates terrain mesh from a heightmap image.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">createMesh(vertices: <span class="t">number[]</span>, indices: <span class="t">number[]</span>): <span class="t">Model</span></div>
+              <div class="fn-desc">Creates a mesh from raw vertex data. Each vertex is 12 floats: x, y, z, nx, ny, nz, r, g, b, a, u, v.</div>
+            </div>
+          </div>
+
+          <h3>Shaders & Animation</h3>
+          <div class="fn-group">
+            <div class="fn">
+              <div class="fn-sig">loadShader(wgslSource: <span class="t">string</span>): <span class="t">number</span></div>
+              <div class="fn-desc">Loads a shader from WGSL source code.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">loadModelAnimation(path: <span class="t">string</span>): <span class="t">number</span></div>
+              <div class="fn-desc">Loads model animation data from a file.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">updateModelAnimation(handle: <span class="t">number</span>, animIndex: <span class="t">number</span>, time: <span class="t">number</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Updates the animation state for a model.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MATH -->
+        <div id="math" class="docs-section">
+          <div class="docs-module-header">
+            <h2>Math</h2>
+            <code class="module-import">bloom/math</code>
+          </div>
+          <p class="docs-module-desc">Vectors, matrices, quaternions, easing functions, collision, and utilities. All functions are pure — they return new values and never mutate inputs.</p>
+
+          <h3>Vector 2D</h3>
+          <div class="fn-group">
+            <div class="fn"><div class="fn-sig">vec2(x: <span class="t">number</span>, y: <span class="t">number</span>): <span class="t">Vec2</span></div></div>
+            <div class="fn"><div class="fn-sig">vec2Add(a: <span class="t">Vec2</span>, b: <span class="t">Vec2</span>): <span class="t">Vec2</span></div></div>
+            <div class="fn"><div class="fn-sig">vec2Sub(a: <span class="t">Vec2</span>, b: <span class="t">Vec2</span>): <span class="t">Vec2</span></div></div>
+            <div class="fn"><div class="fn-sig">vec2Scale(v: <span class="t">Vec2</span>, s: <span class="t">number</span>): <span class="t">Vec2</span></div></div>
+            <div class="fn"><div class="fn-sig">vec2Length(v: <span class="t">Vec2</span>): <span class="t">number</span></div></div>
+            <div class="fn"><div class="fn-sig">vec2LengthSq(v: <span class="t">Vec2</span>): <span class="t">number</span></div></div>
+            <div class="fn"><div class="fn-sig">vec2Normalize(v: <span class="t">Vec2</span>): <span class="t">Vec2</span></div></div>
+            <div class="fn"><div class="fn-sig">vec2Dot(a: <span class="t">Vec2</span>, b: <span class="t">Vec2</span>): <span class="t">number</span></div></div>
+            <div class="fn"><div class="fn-sig">vec2Distance(a: <span class="t">Vec2</span>, b: <span class="t">Vec2</span>): <span class="t">number</span></div></div>
+            <div class="fn"><div class="fn-sig">vec2Lerp(a: <span class="t">Vec2</span>, b: <span class="t">Vec2</span>, t: <span class="t">number</span>): <span class="t">Vec2</span></div></div>
+          </div>
+
+          <h3>Vector 3D</h3>
+          <div class="fn-group">
+            <div class="fn"><div class="fn-sig">vec3(x: <span class="t">number</span>, y: <span class="t">number</span>, z: <span class="t">number</span>): <span class="t">Vec3</span></div></div>
+            <div class="fn"><div class="fn-sig">vec3Add(a: <span class="t">Vec3</span>, b: <span class="t">Vec3</span>): <span class="t">Vec3</span></div></div>
+            <div class="fn"><div class="fn-sig">vec3Sub(a: <span class="t">Vec3</span>, b: <span class="t">Vec3</span>): <span class="t">Vec3</span></div></div>
+            <div class="fn"><div class="fn-sig">vec3Scale(v: <span class="t">Vec3</span>, s: <span class="t">number</span>): <span class="t">Vec3</span></div></div>
+            <div class="fn"><div class="fn-sig">vec3Length(v: <span class="t">Vec3</span>): <span class="t">number</span></div></div>
+            <div class="fn"><div class="fn-sig">vec3LengthSq(v: <span class="t">Vec3</span>): <span class="t">number</span></div></div>
+            <div class="fn"><div class="fn-sig">vec3Normalize(v: <span class="t">Vec3</span>): <span class="t">Vec3</span></div></div>
+            <div class="fn"><div class="fn-sig">vec3Dot(a: <span class="t">Vec3</span>, b: <span class="t">Vec3</span>): <span class="t">number</span></div></div>
+            <div class="fn"><div class="fn-sig">vec3Cross(a: <span class="t">Vec3</span>, b: <span class="t">Vec3</span>): <span class="t">Vec3</span></div></div>
+            <div class="fn"><div class="fn-sig">vec3Distance(a: <span class="t">Vec3</span>, b: <span class="t">Vec3</span>): <span class="t">number</span></div></div>
+            <div class="fn"><div class="fn-sig">vec3Lerp(a: <span class="t">Vec3</span>, b: <span class="t">Vec3</span>, t: <span class="t">number</span>): <span class="t">Vec3</span></div></div>
+          </div>
+
+          <h3>Vector 4D</h3>
+          <div class="fn-group">
+            <div class="fn"><div class="fn-sig">vec4(x: <span class="t">number</span>, y: <span class="t">number</span>, z: <span class="t">number</span>, w: <span class="t">number</span>): <span class="t">Vec4</span></div></div>
+            <div class="fn"><div class="fn-sig">vec4Add(a: <span class="t">Vec4</span>, b: <span class="t">Vec4</span>): <span class="t">Vec4</span></div></div>
+            <div class="fn"><div class="fn-sig">vec4Scale(v: <span class="t">Vec4</span>, s: <span class="t">number</span>): <span class="t">Vec4</span></div></div>
+            <div class="fn"><div class="fn-sig">vec4Length(v: <span class="t">Vec4</span>): <span class="t">number</span></div></div>
+            <div class="fn"><div class="fn-sig">vec4Normalize(v: <span class="t">Vec4</span>): <span class="t">Vec4</span></div></div>
+          </div>
+
+          <h3>Matrix 4x4</h3>
+          <p class="docs-module-desc"><code>Mat4</code> is a <code>number[]</code> with 16 elements in column-major order.</p>
+          <div class="fn-group">
+            <div class="fn"><div class="fn-sig">mat4Identity(): <span class="t">Mat4</span></div></div>
+            <div class="fn"><div class="fn-sig">mat4Multiply(a: <span class="t">Mat4</span>, b: <span class="t">Mat4</span>): <span class="t">Mat4</span></div></div>
+            <div class="fn"><div class="fn-sig">mat4Translate(m: <span class="t">Mat4</span>, v: <span class="t">Vec3</span>): <span class="t">Mat4</span></div></div>
+            <div class="fn"><div class="fn-sig">mat4Scale(m: <span class="t">Mat4</span>, v: <span class="t">Vec3</span>): <span class="t">Mat4</span></div></div>
+            <div class="fn"><div class="fn-sig">mat4RotateX(m: <span class="t">Mat4</span>, angle: <span class="t">number</span>): <span class="t">Mat4</span></div></div>
+            <div class="fn"><div class="fn-sig">mat4RotateY(m: <span class="t">Mat4</span>, angle: <span class="t">number</span>): <span class="t">Mat4</span></div></div>
+            <div class="fn"><div class="fn-sig">mat4RotateZ(m: <span class="t">Mat4</span>, angle: <span class="t">number</span>): <span class="t">Mat4</span></div></div>
+            <div class="fn"><div class="fn-sig">mat4Perspective(fovy: <span class="t">number</span>, aspect: <span class="t">number</span>, near: <span class="t">number</span>, far: <span class="t">number</span>): <span class="t">Mat4</span></div></div>
+            <div class="fn"><div class="fn-sig">mat4Ortho(left: <span class="t">number</span>, right: <span class="t">number</span>, bottom: <span class="t">number</span>, top: <span class="t">number</span>, near: <span class="t">number</span>, far: <span class="t">number</span>): <span class="t">Mat4</span></div></div>
+            <div class="fn"><div class="fn-sig">mat4LookAt(eye: <span class="t">Vec3</span>, center: <span class="t">Vec3</span>, up: <span class="t">Vec3</span>): <span class="t">Mat4</span></div></div>
+            <div class="fn"><div class="fn-sig">mat4Invert(m: <span class="t">Mat4</span>): <span class="t">Mat4</span></div></div>
+          </div>
+
+          <h3>Quaternions</h3>
+          <div class="fn-group">
+            <div class="fn"><div class="fn-sig">quatIdentity(): <span class="t">Quat</span></div></div>
+            <div class="fn"><div class="fn-sig">quatFromEuler(pitch: <span class="t">number</span>, yaw: <span class="t">number</span>, roll: <span class="t">number</span>): <span class="t">Quat</span></div></div>
+            <div class="fn"><div class="fn-sig">quatToMat4(q: <span class="t">Quat</span>): <span class="t">Mat4</span></div></div>
+            <div class="fn"><div class="fn-sig">quatSlerp(a: <span class="t">Quat</span>, b: <span class="t">Quat</span>, t: <span class="t">number</span>): <span class="t">Quat</span></div></div>
+            <div class="fn"><div class="fn-sig">quatNormalize(q: <span class="t">Quat</span>): <span class="t">Quat</span></div></div>
+            <div class="fn"><div class="fn-sig">quatMultiply(a: <span class="t">Quat</span>, b: <span class="t">Quat</span>): <span class="t">Quat</span></div></div>
+          </div>
+
+          <h3>3D Collision & Raycasting</h3>
+          <div class="fn-group">
+            <div class="fn">
+              <div class="fn-sig">rayIntersectsBox(ray: <span class="t">Ray</span>, box: <span class="t">BoundingBox</span>): <span class="t">boolean</span></div>
+              <div class="fn-desc">Returns true if a ray intersects an axis-aligned bounding box.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">rayIntersectsSphere(ray: <span class="t">Ray</span>, center: <span class="t">Vec3</span>, radius: <span class="t">number</span>): <span class="t">boolean</span></div>
+              <div class="fn-desc">Returns true if a ray intersects a sphere.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">rayIntersectsTriangle(ray: <span class="t">Ray</span>, v0: <span class="t">Vec3</span>, v1: <span class="t">Vec3</span>, v2: <span class="t">Vec3</span>): <span class="t">RayHit</span></div>
+              <div class="fn-desc">Ray-triangle intersection using the M&ouml;ller-Trumbore algorithm. Returns hit details.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">getRayCollisionBox(ray: <span class="t">Ray</span>, box: <span class="t">BoundingBox</span>): <span class="t">RayHit</span></div>
+              <div class="fn-desc">Returns detailed ray-box intersection info (hit point, normal, distance).</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">checkCollisionSpheres(c1: <span class="t">Vec3</span>, r1: <span class="t">number</span>, c2: <span class="t">Vec3</span>, r2: <span class="t">number</span>): <span class="t">boolean</span></div>
+              <div class="fn-desc">Returns true if two spheres overlap.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">checkCollisionBoxes(a: <span class="t">BoundingBox</span>, b: <span class="t">BoundingBox</span>): <span class="t">boolean</span></div>
+              <div class="fn-desc">Returns true if two bounding boxes overlap.</div>
+            </div>
+          </div>
+
+          <h3>Frustum Culling</h3>
+          <div class="fn-group">
+            <div class="fn">
+              <div class="fn-sig">extractFrustumPlanes(mvp: <span class="t">Mat4</span>): <span class="t">FrustumPlanes</span></div>
+              <div class="fn-desc">Extracts the 6 frustum planes from a model-view-projection matrix.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">isBoxInFrustum(box: <span class="t">BoundingBox</span>, frustum: <span class="t">FrustumPlanes</span>): <span class="t">boolean</span></div>
+              <div class="fn-desc">Returns true if a bounding box is visible within the frustum.</div>
+            </div>
+          </div>
+
+          <h3>Scalar Utilities</h3>
+          <div class="fn-group">
+            <div class="fn">
+              <div class="fn-sig">lerp(a: <span class="t">number</span>, b: <span class="t">number</span>, t: <span class="t">number</span>): <span class="t">number</span></div>
+              <div class="fn-desc">Linear interpolation between a and b.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">clamp(value: <span class="t">number</span>, min: <span class="t">number</span>, max: <span class="t">number</span>): <span class="t">number</span></div>
+              <div class="fn-desc">Constrains a value between min and max.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">remap(value: <span class="t">number</span>, inMin: <span class="t">number</span>, inMax: <span class="t">number</span>, outMin: <span class="t">number</span>, outMax: <span class="t">number</span>): <span class="t">number</span></div>
+              <div class="fn-desc">Remaps a value from one range to another.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">randomFloat(min: <span class="t">number</span>, max: <span class="t">number</span>): <span class="t">number</span></div>
+              <div class="fn-desc">Returns a random float between min and max.</div>
+            </div>
+            <div class="fn">
+              <div class="fn-sig">randomInt(min: <span class="t">number</span>, max: <span class="t">number</span>): <span class="t">number</span></div>
+              <div class="fn-desc">Returns a random integer between min and max (inclusive).</div>
+            </div>
+          </div>
+
+          <h3>Easing Functions</h3>
+          <p class="docs-module-desc">All easing functions take a <code>t</code> value from 0.0 to 1.0 and return a transformed value.</p>
+          <div class="fn-group compact">
+            <div class="fn"><div class="fn-sig">easeInQuad(t) &middot; easeOutQuad(t) &middot; easeInOutQuad(t)</div></div>
+            <div class="fn"><div class="fn-sig">easeInCubic(t) &middot; easeOutCubic(t) &middot; easeInOutCubic(t)</div></div>
+            <div class="fn"><div class="fn-sig">easeInElastic(t) &middot; easeOutElastic(t)</div></div>
+            <div class="fn"><div class="fn-sig">easeBounce(t)</div></div>
+          </div>
+        </div>
+
+        <!-- ==================== REFERENCE ==================== -->
+
+        <div class="docs-divider">
+          <h2>Reference</h2>
+        </div>
+
+        <!-- TYPES -->
+        <div id="types" class="docs-section">
+          <h2>Types</h2>
+          <p>All types are plain interfaces. No classes, no constructors — just object literals.</p>
+          <div class="code-window">
+            <div class="code-header">
+              <span class="code-dot r"></span><span class="code-dot y"></span><span class="code-dot g"></span>
+              <span class="code-title">types.ts</span>
+            </div>
+            <pre><code><span class="cmt">// Vectors</span>
+<span class="kw">interface</span> <span class="prop">Vec2</span>  {"{"} x: <span class="num">number</span>; y: <span class="num">number</span> {"}"}
+<span class="kw">interface</span> <span class="prop">Vec3</span>  {"{"} x: <span class="num">number</span>; y: <span class="num">number</span>; z: <span class="num">number</span> {"}"}
+<span class="kw">interface</span> <span class="prop">Vec4</span>  {"{"} x: <span class="num">number</span>; y: <span class="num">number</span>; z: <span class="num">number</span>; w: <span class="num">number</span> {"}"}
+
+<span class="cmt">// Visual</span>
+<span class="kw">interface</span> <span class="prop">Color</span> {"{"} r: <span class="num">number</span>; g: <span class="num">number</span>; b: <span class="num">number</span>; a: <span class="num">number</span> {"}"}  <span class="cmt">// 0-255</span>
+<span class="kw">interface</span> <span class="prop">Rect</span>  {"{"} x: <span class="num">number</span>; y: <span class="num">number</span>; width: <span class="num">number</span>; height: <span class="num">number</span> {"}"}
+
+<span class="cmt">// Cameras</span>
+<span class="kw">interface</span> <span class="prop">Camera2D</span> {"{"}
+  offset: Vec2;    <span class="cmt">// camera offset (screen center)</span>
+  target: Vec2;    <span class="cmt">// camera target (world position)</span>
+  rotation: <span class="num">number</span>; <span class="cmt">// rotation in degrees</span>
+  zoom: <span class="num">number</span>;     <span class="cmt">// zoom level (1.0 = no zoom)</span>
+{"}"}
+
+<span class="kw">interface</span> <span class="prop">Camera3D</span> {"{"}
+  position: Vec3;   <span class="cmt">// camera position</span>
+  target: Vec3;     <span class="cmt">// look-at point</span>
+  up: Vec3;         <span class="cmt">// up direction</span>
+  fovy: <span class="num">number</span>;     <span class="cmt">// field of view Y (degrees)</span>
+  projection: <span class="num">number</span>; <span class="cmt">// 0 = perspective, 1 = orthographic</span>
+{"}"}
+
+<span class="cmt">// Resources (handle-based)</span>
+<span class="kw">interface</span> <span class="prop">Texture</span> {"{"} handle: <span class="num">number</span>; width: <span class="num">number</span>; height: <span class="num">number</span> {"}"}
+<span class="kw">interface</span> <span class="prop">Font</span>    {"{"} handle: <span class="num">number</span>; size: <span class="num">number</span> {"}"}
+<span class="kw">interface</span> <span class="prop">Sound</span>   {"{"} handle: <span class="num">number</span> {"}"}
+<span class="kw">interface</span> <span class="prop">Music</span>   {"{"} handle: <span class="num">number</span> {"}"}
+<span class="kw">interface</span> <span class="prop">Model</span>   {"{"} handle: <span class="num">number</span> {"}"}
+
+<span class="cmt">// Quaternion</span>
+<span class="kw">interface</span> <span class="prop">Quat</span> {"{"} x: <span class="num">number</span>; y: <span class="num">number</span>; z: <span class="num">number</span>; w: <span class="num">number</span> {"}"}
+
+<span class="cmt">// 3D Geometry</span>
+<span class="kw">interface</span> <span class="prop">Ray</span>         {"{"} position: Vec3; direction: Vec3 {"}"}
+<span class="kw">interface</span> <span class="prop">BoundingBox</span> {"{"} min: Vec3; max: Vec3 {"}"}
+<span class="kw">interface</span> <span class="prop">RayHit</span> {"{"}
+  hit: <span class="num">boolean</span>; distance: <span class="num">number</span>;
+  point: Vec3; normal: Vec3;
+{"}"}
+<span class="kw">interface</span> <span class="prop">FrustumPlanes</span> {"{"} planes: Vec4[] {"}"}
+
+<span class="cmt">// Matrix (column-major, 16 elements)</span>
+<span class="kw">type</span> <span class="prop">Mat4</span> = <span class="num">number</span>[];</code></pre>
+          </div>
+        </div>
+
+        <!-- COLORS -->
+        <div id="colors" class="docs-section">
+          <h2>Colors</h2>
+          <p>Pre-defined colors available via <code>Colors.NAME</code>. Import from <code>bloom/core</code>.</p>
+          <div class="color-grid">
+            <div class="color-swatch"><div class="swatch" style="background: rgb(255,255,255); border: 1px solid #ddd"></div><span>WHITE</span></div>
+            <div class="color-swatch"><div class="swatch" style="background: rgb(0,0,0)"></div><span>BLACK</span></div>
+            <div class="color-swatch"><div class="swatch" style="background: rgb(230,41,55)"></div><span>RED</span></div>
+            <div class="color-swatch"><div class="swatch" style="background: rgb(0,228,48)"></div><span>GREEN</span></div>
+            <div class="color-swatch"><div class="swatch" style="background: rgb(0,121,241)"></div><span>BLUE</span></div>
+            <div class="color-swatch"><div class="swatch" style="background: rgb(253,249,0)"></div><span>YELLOW</span></div>
+            <div class="color-swatch"><div class="swatch" style="background: rgb(255,161,0)"></div><span>ORANGE</span></div>
+            <div class="color-swatch"><div class="swatch" style="background: rgb(255,109,194)"></div><span>PINK</span></div>
+            <div class="color-swatch"><div class="swatch" style="background: rgb(200,122,255)"></div><span>PURPLE</span></div>
+            <div class="color-swatch"><div class="swatch" style="background: rgb(255,0,255)"></div><span>MAGENTA</span></div>
+            <div class="color-swatch"><div class="swatch" style="background: rgb(135,60,190)"></div><span>VIOLET</span></div>
+            <div class="color-swatch"><div class="swatch" style="background: rgb(255,203,0)"></div><span>GOLD</span></div>
+            <div class="color-swatch"><div class="swatch" style="background: rgb(102,191,255)"></div><span>SKYBLUE</span></div>
+            <div class="color-swatch"><div class="swatch" style="background: rgb(0,82,172)"></div><span>DARKBLUE</span></div>
+            <div class="color-swatch"><div class="swatch" style="background: rgb(0,158,47)"></div><span>LIME</span></div>
+            <div class="color-swatch"><div class="swatch" style="background: rgb(0,117,44)"></div><span>DARKGREEN</span></div>
+            <div class="color-swatch"><div class="swatch" style="background: rgb(190,33,55)"></div><span>MAROON</span></div>
+            <div class="color-swatch"><div class="swatch" style="background: rgb(127,106,79)"></div><span>BROWN</span></div>
+            <div class="color-swatch"><div class="swatch" style="background: rgb(211,176,131)"></div><span>BEIGE</span></div>
+            <div class="color-swatch"><div class="swatch" style="background: rgb(200,200,200)"></div><span>LIGHTGRAY</span></div>
+            <div class="color-swatch"><div class="swatch" style="background: rgb(130,130,130)"></div><span>GRAY</span></div>
+            <div class="color-swatch"><div class="swatch" style="background: rgb(80,80,80)"></div><span>DARKGRAY</span></div>
+            <div class="color-swatch"><div class="swatch" style="background: rgb(245,245,245); border: 1px solid #ddd"></div><span>RAYWHITE</span></div>
+            <div class="color-swatch"><div class="swatch" style="background: repeating-conic-gradient(#ccc 0% 25%, transparent 0% 50%) 50%/8px 8px"></div><span>BLANK</span></div>
+          </div>
+          <p style="margin-top: 1rem">Custom colors are plain objects: <code>{"{"} r: 255, g: 100, b: 50, a: 255 {"}"}</code></p>
+        </div>
+
+        <!-- KEYS -->
+        <div id="keys" class="docs-section">
+          <h2>Key Constants</h2>
+          <p>Import <code>Key</code> and <code>MouseButton</code> from <code>bloom/core</code>.</p>
+
+          <h3>Keyboard</h3>
+          <div class="key-grid">
+            <div class="key-group">
+              <h4>Letters</h4>
+              <code>Key.A</code> &ndash; <code>Key.Z</code>
+            </div>
+            <div class="key-group">
+              <h4>Numbers</h4>
+              <code>Key.ZERO</code> &ndash; <code>Key.NINE</code>
+            </div>
+            <div class="key-group">
+              <h4>Function Keys</h4>
+              <code>Key.F1</code> &ndash; <code>Key.F12</code>
+            </div>
+            <div class="key-group">
+              <h4>Arrows</h4>
+              <code>Key.UP</code>, <code>Key.DOWN</code>, <code>Key.LEFT</code>, <code>Key.RIGHT</code>
+            </div>
+            <div class="key-group">
+              <h4>Common</h4>
+              <code>Key.SPACE</code>, <code>Key.ENTER</code>, <code>Key.ESCAPE</code>, <code>Key.TAB</code>, <code>Key.BACKSPACE</code>, <code>Key.DELETE</code>
+            </div>
+            <div class="key-group">
+              <h4>Navigation</h4>
+              <code>Key.INSERT</code>, <code>Key.HOME</code>, <code>Key.END</code>, <code>Key.PAGE_UP</code>, <code>Key.PAGE_DOWN</code>
+            </div>
+            <div class="key-group">
+              <h4>Modifiers</h4>
+              <code>Key.LEFT_SHIFT</code>, <code>Key.RIGHT_SHIFT</code>, <code>Key.LEFT_CONTROL</code>, <code>Key.RIGHT_CONTROL</code>, <code>Key.LEFT_ALT</code>, <code>Key.RIGHT_ALT</code>, <code>Key.LEFT_SUPER</code>, <code>Key.RIGHT_SUPER</code>
+            </div>
+            <div class="key-group">
+              <h4>Punctuation</h4>
+              <code>Key.COMMA</code>, <code>Key.PERIOD</code>, <code>Key.SLASH</code>, <code>Key.SEMICOLON</code>, <code>Key.APOSTROPHE</code>, <code>Key.MINUS</code>, <code>Key.EQUAL</code>, <code>Key.LEFT_BRACKET</code>, <code>Key.RIGHT_BRACKET</code>, <code>Key.BACKSLASH</code>, <code>Key.GRAVE</code>
+            </div>
+          </div>
+
+          <h3>Mouse Buttons</h3>
+          <div class="key-grid">
+            <div class="key-group">
+              <code>MouseButton.LEFT</code>, <code>MouseButton.RIGHT</code>, <code>MouseButton.MIDDLE</code>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== GUIDES ==================== -->
+
+        <div class="docs-divider">
+          <h2>Guides</h2>
+        </div>
+
+        <div id="guide-input" class="docs-section">
+          <h2>Input Handling</h2>
+          <p>Bloom distinguishes between <strong>pressed</strong> (single frame), <strong>down</strong> (held), and <strong>released</strong> (single frame) states.</p>
+          <div class="code-window">
+            <div class="code-header"><span class="code-dot r"></span><span class="code-dot y"></span><span class="code-dot g"></span></div>
+            <pre><code><span class="cmt">// One-shot actions (menus, jumping, shooting)</span>
+<span class="kw">if</span> (isKeyPressed(Key.<span class="prop">SPACE</span>)) jump();
+<span class="kw">if</span> (isKeyPressed(Key.<span class="prop">ENTER</span>)) selectMenuItem();
+
+<span class="cmt">// Continuous movement (hold to move)</span>
+<span class="kw">if</span> (isKeyDown(Key.<span class="prop">LEFT</span>))  x -= speed * dt;
+<span class="kw">if</span> (isKeyDown(Key.<span class="prop">RIGHT</span>)) x += speed * dt;
+<span class="kw">if</span> (isKeyDown(Key.<span class="prop">W</span>))     y -= speed * dt;
+<span class="kw">if</span> (isKeyDown(Key.<span class="prop">S</span>))     y += speed * dt;
+
+<span class="cmt">// Mouse</span>
+<span class="kw">const</span> mouse = getMousePosition();
+<span class="kw">if</span> (isMouseButtonPressed(MouseButton.<span class="prop">LEFT</span>)) {"{"}
+  shoot(mouse.x, mouse.y);
+{"}"}</code></pre>
+          </div>
+        </div>
+
+        <div id="guide-camera" class="docs-section">
+          <h2>Cameras</h2>
+
+          <h3>2D Camera</h3>
+          <p>The 2D camera transforms all draw calls between <code>beginMode2D</code> and <code>endMode2D</code>. Set <code>offset</code> to the screen center and <code>target</code> to the world position you want to follow.</p>
+          <div class="code-window">
+            <div class="code-header"><span class="code-dot r"></span><span class="code-dot y"></span><span class="code-dot g"></span></div>
+            <pre><code><span class="kw">const</span> camera: Camera2D = {"{"}
+  offset: {"{"} x: <span class="num">400</span>, y: <span class="num">300</span> {"}"},    <span class="cmt">// center of 800x600 screen</span>
+  target: {"{"} x: player.x, y: player.y {"}"}, <span class="cmt">// follow player</span>
+  rotation: <span class="num">0</span>,
+  zoom: <span class="num">1.0</span>
+{"}"};
+
+<span class="cmt">// Smooth follow</span>
+camera.target.x += (player.x - camera.target.x) * <span class="num">8</span> * dt;
+camera.target.y += (player.y - camera.target.y) * <span class="num">8</span> * dt;
+
+beginMode2D(camera);
+<span class="cmt">// World-space drawing here — moves with camera</span>
+drawRect(player.x, player.y, <span class="num">32</span>, <span class="num">32</span>, Colors.<span class="prop">BLUE</span>);
+endMode2D();
+
+<span class="cmt">// Screen-space drawing here — stays fixed (HUD)</span>
+drawText(<span class="str">"Score: 100"</span>, <span class="num">10</span>, <span class="num">10</span>, <span class="num">20</span>, Colors.<span class="prop">WHITE</span>);</code></pre>
+          </div>
+
+          <h3>3D Camera</h3>
+          <div class="code-window">
+            <div class="code-header"><span class="code-dot r"></span><span class="code-dot y"></span><span class="code-dot g"></span></div>
+            <pre><code><span class="kw">const</span> camera: Camera3D = {"{"}
+  position: {"{"} x: <span class="num">10</span>, y: <span class="num">10</span>, z: <span class="num">10</span> {"}"}, <span class="cmt">// eye position</span>
+  target: {"{"} x: <span class="num">0</span>, y: <span class="num">0</span>, z: <span class="num">0</span> {"}"},     <span class="cmt">// look-at point</span>
+  up: {"{"} x: <span class="num">0</span>, y: <span class="num">1</span>, z: <span class="num">0</span> {"}"},         <span class="cmt">// up direction</span>
+  fovy: <span class="num">45</span>,                       <span class="cmt">// field of view (degrees)</span>
+  projection: <span class="num">0</span>                   <span class="cmt">// 0=perspective, 1=orthographic</span>
+{"}"};
+
+beginMode3D(camera);
+drawCube({"{"} x: <span class="num">0</span>, y: <span class="num">0</span>, z: <span class="num">0</span> {"}"}, <span class="num">2</span>, <span class="num">2</span>, <span class="num">2</span>, Colors.<span class="prop">RED</span>);
+drawGrid(<span class="num">10</span>, <span class="num">1</span>);
+endMode3D();</code></pre>
+          </div>
+        </div>
+
+        <div id="guide-collision" class="docs-section">
+          <h2>Collision Detection</h2>
+          <p>Bloom provides both 2D and 3D collision detection. All collision functions are pure and return results without side effects.</p>
+          <div class="code-window">
+            <div class="code-header"><span class="code-dot r"></span><span class="code-dot y"></span><span class="code-dot g"></span></div>
+            <pre><code><span class="cmt">// Rectangle vs Rectangle (AABB)</span>
+<span class="kw">const</span> player: Rect = {"{"} x: <span class="num">100</span>, y: <span class="num">100</span>, width: <span class="num">32</span>, height: <span class="num">32</span> {"}"};
+<span class="kw">const</span> enemy: Rect  = {"{"} x: <span class="num">120</span>, y: <span class="num">110</span>, width: <span class="num">32</span>, height: <span class="num">32</span> {"}"};
+
+<span class="kw">if</span> (checkCollisionRecs(player, enemy)) {"{"}
+  <span class="cmt">// Get the overlap area</span>
+  <span class="kw">const</span> overlap = getCollisionRec(player, enemy);
+{"}"}
+
+<span class="cmt">// Circle vs Circle</span>
+<span class="kw">if</span> (checkCollisionCircles(
+  {"{"} x: <span class="num">100</span>, y: <span class="num">100</span> {"}"}, <span class="num">20</span>,  <span class="cmt">// center1, radius1</span>
+  {"{"} x: <span class="num">130</span>, y: <span class="num">110</span> {"}"}, <span class="num">15</span>   <span class="cmt">// center2, radius2</span>
+)) {"{"}
+  <span class="cmt">// collision!</span>
+{"}"}
+
+<span class="cmt">// Point in rectangle (mouse clicks, UI)</span>
+<span class="kw">const</span> mouse = getMousePosition();
+<span class="kw">if</span> (checkCollisionPointRec(mouse, button)) {"{"}
+  <span class="cmt">// hovering over button</span>
+{"}"}</code></pre>
+          </div>
+        </div>
+
+        <div id="guide-audio" class="docs-section">
+          <h2>Audio</h2>
+          <p>Sound effects are fully loaded into memory — use them for short clips. Music is streamed — use it for background tracks. Always call <code>updateMusicStream</code> every frame.</p>
+          <div class="code-window">
+            <div class="code-header"><span class="code-dot r"></span><span class="code-dot y"></span><span class="code-dot g"></span></div>
+            <pre><code>initAudio();
+
+<span class="cmt">// Sound effects (loaded fully, play instantly)</span>
+<span class="kw">const</span> hitSound = loadSound(<span class="str">"sounds/hit.wav"</span>);
+<span class="kw">const</span> coinSound = loadSound(<span class="str">"sounds/coin.ogg"</span>);
+setSoundVolume(coinSound, <span class="num">0.7</span>);
+
+<span class="cmt">// Background music (streamed)</span>
+<span class="kw">const</span> bgm = loadMusic(<span class="str">"music/theme.ogg"</span>);
+setMusicVolume(bgm, <span class="num">0.5</span>);
+playMusic(bgm);
+
+<span class="kw">while</span> (!windowShouldClose()) {"{"}
+  updateMusicStream(bgm);  <span class="cmt">// REQUIRED every frame</span>
+
+  <span class="kw">if</span> (playerHit) playSound(hitSound);
+  <span class="kw">if</span> (coinCollected) playSound(coinSound);
+
+  <span class="cmt">// ... drawing ...</span>
+{"}"}
+
+closeAudio();</code></pre>
+          </div>
+        </div>
+
+        <!-- ==================== EXAMPLES ==================== -->
+
+        <div class="docs-divider">
+          <h2>Examples</h2>
+        </div>
+
+        <div id="example-pong" class="docs-section">
+          <h2>Pong</h2>
+          <p class="example-meta">~170 lines &middot; Beginner &middot; <a href="https://github.com/Bloom-Engine/engine/blob/main/examples/pong/main.ts" target="_blank" rel="noopener">View source</a></p>
+          <p>Classic two-player Pong. Demonstrates the game loop, keyboard input, delta-time movement, 2D shapes, collision detection, text rendering, and score tracking.</p>
+          <div class="example-teaches">
+            <h4>What you'll learn</h4>
+            <ul>
+              <li>Game loop with <code>getDeltaTime()</code> for frame-rate independence</li>
+              <li>Continuous input with <code>isKeyDown()</code> for paddle movement</li>
+              <li>Rectangle collision with <code>checkCollisionRecs()</code></li>
+              <li>Centered text using <code>measureText()</code></li>
+              <li>Game state management (pause, scoring, ball reset)</li>
+              <li>Value clamping with <code>clamp()</code> to keep paddles on screen</li>
+            </ul>
+          </div>
+          <div class="code-window">
+            <div class="code-header"><span class="code-dot r"></span><span class="code-dot y"></span><span class="code-dot g"></span><span class="code-title">Key pattern: paddle-ball collision</span></div>
+            <pre><code><span class="kw">const</span> ballRect: Rect = {"{"}
+  x: ballX - BALL_RADIUS, y: ballY - BALL_RADIUS,
+  width: BALL_RADIUS * <span class="num">2</span>, height: BALL_RADIUS * <span class="num">2</span>
+{"}"};
+
+<span class="kw">if</span> (checkCollisionRecs(ballRect, leftPaddle) &amp;&amp; ballVelX &lt; <span class="num">0</span>) {"{"}
+  ballVelX = -ballVelX;
+  <span class="cmt">// Angle varies based on where ball hits paddle</span>
+  <span class="kw">const</span> hitPos = (ballY - leftPaddleY) / PADDLE_HEIGHT;
+  ballVelY = BALL_SPEED * (hitPos - <span class="num">0.5</span>) * <span class="num">2</span>;
+{"}"}</code></pre>
+          </div>
+        </div>
+
+        <div id="example-dungeon" class="docs-section">
+          <h2>Dungeon Crawl</h2>
+          <p class="example-meta">~300 lines &middot; Intermediate &middot; <a href="https://github.com/Bloom-Engine/engine/blob/main/examples/dungeon-crawl/main.ts" target="_blank" rel="noopener">View source</a></p>
+          <p>A turn-based dungeon crawler with procedural map generation, fog of war, enemy AI, and 2D camera. Descend through floors of increasing difficulty.</p>
+          <div class="example-teaches">
+            <h4>What you'll learn</h4>
+            <ul>
+              <li>Procedural dungeon generation (rooms + corridors)</li>
+              <li>Raycasting field-of-view with fog of war and exploration memory</li>
+              <li>Turn-based logic using <code>isKeyPressed()</code> (one action per press)</li>
+              <li>2D camera with smooth follow and zoom (<code>beginMode2D</code>/<code>endMode2D</code>)</li>
+              <li>Flat-array tile maps with <code>y * WIDTH + x</code> indexing</li>
+              <li>Entity AI (enemies chase visible player, attack when adjacent)</li>
+              <li>HUD overlay drawn outside camera mode</li>
+            </ul>
+          </div>
+          <div class="code-window">
+            <div class="code-header"><span class="code-dot r"></span><span class="code-dot y"></span><span class="code-dot g"></span><span class="code-title">Key pattern: smooth camera follow</span></div>
+            <pre><code><span class="kw">const</span> camera: Camera2D = {"{"}
+  offset: {"{"} x: SCREEN_WIDTH / <span class="num">2</span>, y: SCREEN_HEIGHT / <span class="num">2</span> {"}"},
+  target: {"{"} x: player.x * TILE_SIZE, y: player.y * TILE_SIZE {"}"},
+  rotation: <span class="num">0</span>, zoom: <span class="num">1.0</span>
+{"}"};
+
+<span class="cmt">// Smooth easing toward player each frame</span>
+camera.target.x += (targetX - camera.target.x) * <span class="num">8</span> * dt;
+camera.target.y += (targetY - camera.target.y) * <span class="num">8</span> * dt;
+
+<span class="cmt">// Zoom with +/- keys</span>
+<span class="kw">if</span> (isKeyDown(Key.<span class="prop">EQUAL</span>)) camera.zoom = clamp(camera.zoom + dt, <span class="num">0.5</span>, <span class="num">3.0</span>);
+<span class="kw">if</span> (isKeyDown(Key.<span class="prop">MINUS</span>)) camera.zoom = clamp(camera.zoom - dt, <span class="num">0.5</span>, <span class="num">3.0</span>);</code></pre>
+          </div>
+        </div>
+
+        <div id="example-space" class="docs-section">
+          <h2>Space Blaster</h2>
+          <p class="example-meta">~350 lines &middot; Intermediate &middot; <a href="https://github.com/Bloom-Engine/engine/blob/main/examples/space-blaster/main.ts" target="_blank" rel="noopener">View source</a></p>
+          <p>A fast-paced vertical shooter with wave-based enemy spawning, particle explosions, object pooling, and a scrolling star field.</p>
+          <div class="example-teaches">
+            <h4>What you'll learn</h4>
+            <ul>
+              <li>Object pooling with fixed-size arrays and <code>active</code> flags (zero GC)</li>
+              <li>Particle system with velocity, lifetime, and alpha fade-out</li>
+              <li>Wave-based difficulty progression (more enemies, new types per wave)</li>
+              <li>Multiple entity types with different behavior (basic, fast, tank)</li>
+              <li>Cooldown-based shooting (<code>bulletCooldown -= dt</code>)</li>
+              <li>Parallax scrolling star background</li>
+              <li>Triangle drawing for the player ship with <code>drawTriangle()</code></li>
+            </ul>
+          </div>
+          <div class="code-window">
+            <div class="code-header"><span class="code-dot r"></span><span class="code-dot y"></span><span class="code-dot g"></span><span class="code-title">Key pattern: object pool + particle spawn</span></div>
+            <pre><code><span class="cmt">// Pre-allocate pool (no allocations during gameplay)</span>
+<span class="kw">const</span> particles: Particle[] = [];
+<span class="kw">for</span> (<span class="kw">let</span> i = <span class="num">0</span>; i < MAX_PARTICLES; i++) {"{"}
+  particles.push({"{"} x: <span class="num">0</span>, y: <span class="num">0</span>, vx: <span class="num">0</span>, vy: <span class="num">0</span>,
+    life: <span class="num">0</span>, maxLife: <span class="num">0</span>, color: Colors.<span class="prop">WHITE</span>, active: <span class="kw">false</span> {"}"});
+{"}"}
+
+<span class="cmt">// Spawn by reusing inactive entries</span>
+<span class="kw">function</span> spawnExplosion(x: <span class="num">number</span>, y: <span class="num">number</span>) {"{"}
+  <span class="kw">for</span> (<span class="kw">let</span> i = <span class="num">0</span>; i < MAX_PARTICLES; i++) {"{"}
+    <span class="kw">if</span> (!particles[i].active) {"{"}
+      <span class="kw">const</span> angle = randomFloat(<span class="num">0</span>, Math.PI * <span class="num">2</span>);
+      <span class="kw">const</span> speed = randomFloat(<span class="num">50</span>, <span class="num">200</span>);
+      particles[i].x = x; particles[i].y = y;
+      particles[i].vx = Math.cos(angle) * speed;
+      particles[i].vy = Math.sin(angle) * speed;
+      particles[i].life = randomFloat(<span class="num">0.3</span>, <span class="num">0.8</span>);
+      particles[i].active = <span class="kw">true</span>;
+      <span class="kw">break</span>;
+    {"}"}
+  {"}"}
+{"}"}</code></pre>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -232,7 +1316,9 @@ closeWindow();</code></pre>
     top: 80px;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
   }
 
   .docs-sidebar h4 {
@@ -240,15 +1326,15 @@ closeWindow();</code></pre>
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: rgba(27, 42, 30, 0.4);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
   }
 
   .sidebar-link {
     display: block;
-    padding: 0.3rem 0;
-    font-size: 0.875rem;
+    padding: 0.2rem 0;
+    font-size: 0.8125rem;
     font-weight: 600;
-    color: rgba(27, 42, 30, 0.65);
+    color: rgba(27, 42, 30, 0.6);
     text-decoration: none;
     transition: color 0.15s;
   }
@@ -264,11 +1350,105 @@ closeWindow();</code></pre>
     min-width: 0;
   }
 
-  /* Code window styles */
+  .docs-section {
+    scroll-margin-top: 80px;
+  }
+
+  .docs-section h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.0625rem;
+    color: rgba(27, 42, 30, 0.8);
+  }
+
+  .docs-section p {
+    color: rgba(27, 42, 30, 0.65);
+    font-size: 0.9375rem;
+    margin-bottom: 1rem;
+  }
+
+  .docs-divider {
+    padding-top: 1rem;
+    border-top: 2px solid var(--bloom-green);
+    scroll-margin-top: 80px;
+  }
+
+  .docs-divider h2 {
+    color: var(--bloom-green-dark);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  /* Module headers */
+  .docs-module-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .docs-module-header h2 { font-size: 1.375rem; }
+
+  .module-import {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    background: #0D1A10;
+    color: var(--bloom-green-light);
+    border-radius: 4px;
+    font-size: 0.75rem;
+  }
+
+  .docs-module-desc {
+    color: rgba(27, 42, 30, 0.6);
+    margin-bottom: 1rem;
+    font-size: 0.9375rem;
+  }
+
+  /* Function list */
+  .fn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .fn-group.compact { gap: 0; }
+
+  .fn {
+    padding: 0.5rem 0.75rem;
+    background: var(--bloom-light);
+    border-radius: 6px;
+    border-left: 3px solid transparent;
+    transition: border-color 0.15s;
+  }
+
+  .fn:hover { border-left-color: var(--bloom-green); }
+
+  .fn-sig {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--bloom-dark);
+  }
+
+  .fn-sig .t {
+    color: var(--bloom-green-dark);
+    font-weight: 600;
+  }
+
+  .fn-desc {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    color: rgba(27, 42, 30, 0.55);
+    margin-top: 0.15rem;
+  }
+
+  /* Code window */
   .code-window {
     background: #0D1A10;
     border-radius: 12px;
     overflow: hidden;
+    margin-bottom: 1rem;
   }
 
   .code-header {
@@ -279,11 +1459,10 @@ closeWindow();</code></pre>
     background: rgba(255, 255, 255, 0.05);
   }
 
-  .code-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-  }
+  .code-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .code-dot.r { background: #FF5F57; }
+  .code-dot.y { background: #FEBC2E; }
+  .code-dot.g { background: #28C840; }
 
   .code-title {
     margin-left: auto;
@@ -307,60 +1486,125 @@ closeWindow();</code></pre>
   .code-window .str { color: #66BB6A; }
   .code-window .num { color: #FFD54F; }
   .code-window .prop { color: #FF8A65; }
+  .code-window .cmt { color: #5A7A5E; }
 
-  .docs-module {
-    scroll-margin-top: 80px;
+  /* Colors */
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 0.75rem;
   }
 
-  .docs-module-header {
+  .color-swatch {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 0.35rem;
+  }
+
+  .swatch {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 8px;
+  }
+
+  .color-swatch span {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    color: rgba(27, 42, 30, 0.6);
+  }
+
+  /* Keys */
+  .key-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .key-group {
+    padding: 0.75rem 1rem;
+    background: var(--bloom-light);
+    border-radius: 8px;
+    font-size: 0.8125rem;
+  }
+
+  .key-group h4 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(27, 42, 30, 0.4);
+    margin-bottom: 0.25rem;
+  }
+
+  .key-group code {
+    background: var(--bloom-white);
+    padding: 0.1rem 0.35rem;
+    border-radius: 3px;
+    font-size: 0.75rem;
+    border: 1px solid rgba(27, 42, 30, 0.08);
+  }
+
+  /* Examples */
+  .example-meta {
+    font-size: 0.8125rem !important;
+    color: rgba(27, 42, 30, 0.5) !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .example-meta a {
+    color: var(--bloom-green);
+    font-weight: 600;
+  }
+
+  .example-teaches {
+    background: var(--bloom-light);
+    padding: 1.25rem 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+
+  .example-teaches h4 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(27, 42, 30, 0.4);
     margin-bottom: 0.5rem;
   }
 
-  .docs-module-header h2 {
-    font-size: 1.375rem;
-  }
-
-  .module-import {
-    display: inline-block;
-    padding: 0.2rem 0.5rem;
-    background: #0D1A10;
-    color: var(--bloom-green-light);
-    border-radius: 4px;
-    font-size: 0.75rem;
-  }
-
-  .docs-module-desc {
-    color: rgba(27, 42, 30, 0.6);
-    margin-bottom: 1rem;
-    font-size: 0.9375rem;
-  }
-
-  .function-list {
+  .example-teaches ul {
+    list-style: none;
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
   }
 
-  .function-item {
-    padding: 0.5rem 0.75rem;
-    background: var(--bloom-light);
-    border-radius: 6px;
-    border-left: 3px solid transparent;
-    transition: border-color 0.15s;
+  .example-teaches li {
+    font-size: 0.875rem;
+    color: rgba(27, 42, 30, 0.7);
+    padding-left: 1rem;
+    position: relative;
   }
 
-  .function-item:hover {
-    border-left-color: var(--bloom-green);
+  .example-teaches li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--bloom-green);
   }
 
-  .function-item code {
+  .example-teaches li code {
+    background: var(--bloom-white);
+    padding: 0.05rem 0.3rem;
+    border-radius: 3px;
     font-size: 0.8125rem;
-    color: var(--bloom-dark);
   }
 
+  /* Responsive */
   @media (max-width: 768px) {
     .docs-layout {
       grid-template-columns: 1fr;
@@ -369,9 +1613,16 @@ closeWindow();</code></pre>
     .docs-sidebar {
       position: static;
       flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1rem;
       overflow-x: auto;
       padding-bottom: 1rem;
       border-bottom: 1px solid rgba(27, 42, 30, 0.08);
+      max-height: none;
+    }
+
+    .color-grid {
+      grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
     }
   }
 </style>
