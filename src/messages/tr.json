@@ -102,17 +102,11 @@
   },
   "showcase": {
     "title": "Vitrin",
-    "desc": "Bloom Engine ile yapılmış oyunlar ve projeler.",
-    "metaDescription": "Bloom Engine ile yapılmış oyunlar ve projeler.",
-    "featured": "Öne Çıkan",
-    "viewLink": "GitHub'da Görüntüle →",
-    "garden": {
-      "title": "Bloom Garden",
-      "desc": "Küçük bir bahçe macerası. Tamamen Bloom Engine ile yapılmış amiral gemisi demo oyunu — sıcak altın saat aydınlatması ile rahat, low-poly keşif."
-    },
-    "pong": {
-      "title": "Pong",
-      "desc": "Klasik iki oyunculu Pong. ~170 satırda girdi yönetimi, 2B şekiller, çarpışma tespiti, ses ve oyun durumu yönetimini gösterir."
+    "desc": "Bloom ile geliştirilen, yayında olan oyunlar — şimdi ücretsiz oynanabilir.",
+    "metaDescription": "Bloom ile geliştirilen, yayında olan oyunlar — şimdi ücretsiz oynanabilir.",
+    "liveBadge": "App Store'da yayında",
+    "bloomJump": {
+      "desc": "Ücretsiz bir retro piksel platform oyunu — el yapımı beş bölüm, 60 FPS ve özgün chiptune müzikler. Tamamen Bloom ile geliştirildi; iPhone, iPad ve Mac'te yerel olarak çalışır."
     },
     "cta": {
       "title": "Bloom ile bir şeyler mi yaptın?",

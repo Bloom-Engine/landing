@@ -102,17 +102,11 @@
   },
   "showcase": {
     "title": "Showcase",
-    "desc": "Game dan proyek yang dibangun dengan Bloom Engine.",
-    "metaDescription": "Game dan proyek yang dibangun dengan Bloom Engine.",
-    "featured": "Unggulan",
-    "viewLink": "Lihat di GitHub →",
-    "garden": {
-      "title": "Bloom Garden",
-      "desc": "Petualangan kebun mungil. Demo game andalan yang dibuat sepenuhnya dengan Bloom Engine — eksplorasi low-poly yang nyaman dengan pencahayaan golden-hour yang hangat."
-    },
-    "pong": {
-      "title": "Pong",
-      "desc": "Pong klasik dua pemain. Mendemonstrasikan penanganan input, bentuk 2D, deteksi tabrakan, audio, dan manajemen state game dalam ~170 baris."
+    "desc": "Game yang sudah rilis dan dibuat dengan Bloom — tersedia sekarang, gratis dimainkan.",
+    "metaDescription": "Game yang sudah rilis dan dibuat dengan Bloom — tersedia sekarang, gratis dimainkan.",
+    "liveBadge": "Tersedia di App Store",
+    "bloomJump": {
+      "desc": "Platformer piksel retro gratis — lima level buatan tangan, 60 FPS, dan soundtrack chiptune orisinal. Dibuat sepenuhnya dengan Bloom, berjalan secara native di iPhone, iPad, dan Mac."
     },
     "cta": {
       "title": "Membangun sesuatu dengan Bloom?",

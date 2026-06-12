@@ -102,17 +102,11 @@
   },
   "showcase": {
     "title": "쇼케이스",
-    "desc": "Bloom Engine으로 만든 게임과 프로젝트들.",
-    "metaDescription": "Bloom Engine으로 만든 게임과 프로젝트들.",
-    "featured": "주요 작품",
-    "viewLink": "GitHub에서 보기 →",
-    "garden": {
-      "title": "Bloom Garden",
-      "desc": "작은 정원 어드벤처. Bloom Engine만으로 제작한 플래그십 데모 게임 — 따스한 골든아워 조명이 어우러진 아늑한 로우폴리 탐험."
-    },
-    "pong": {
-      "title": "Pong",
-      "desc": "고전 2인용 Pong. 약 170줄로 입력 처리, 2D 도형, 충돌 감지, 오디오, 게임 상태 관리를 보여줍니다."
+    "desc": "Bloom으로 만든 출시 게임 — 지금 무료로 플레이할 수 있습니다.",
+    "metaDescription": "Bloom으로 만든 출시 게임 — 지금 무료로 플레이할 수 있습니다.",
+    "liveBadge": "App Store에서 이용 가능",
+    "bloomJump": {
+      "desc": "무료 레트로 픽셀 플랫포머 — 직접 제작한 5개의 레벨, 60 FPS, 오리지널 칩튠 사운드트랙. Bloom만으로 만들어져 iPhone, iPad, Mac에서 네이티브로 실행됩니다."
     },
     "cta": {
       "title": "Bloom으로 무언가를 만드셨나요?",

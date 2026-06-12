@@ -102,17 +102,11 @@
   },
   "showcase": {
     "title": "Showcase",
-    "desc": "Games and projects built with Bloom Engine.",
-    "metaDescription": "Games and projects built with Bloom Engine.",
-    "featured": "Featured",
-    "viewLink": "View on GitHub →",
-    "garden": {
-      "title": "Bloom Garden",
-      "desc": "A tiny garden adventure. The flagship demo game built entirely with Bloom Engine — cozy low-poly exploration with warm golden-hour lighting."
-    },
-    "pong": {
-      "title": "Pong",
-      "desc": "Classic two-player Pong. Demonstrates input handling, 2D shapes, collision detection, audio, and game state management in ~170 lines."
+    "desc": "Live games built with Bloom — out now and free to play.",
+    "metaDescription": "Live games built with Bloom — out now and free to play.",
+    "liveBadge": "Live on the App Store",
+    "bloomJump": {
+      "desc": "A free retro pixel platformer — five hand-crafted levels, 60 FPS, and an original chiptune soundtrack. Built entirely with Bloom, running natively on iPhone, iPad, and Mac."
     },
     "cta": {
       "title": "Build something with Bloom?",

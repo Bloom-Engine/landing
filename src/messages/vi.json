@@ -102,17 +102,11 @@
   },
   "showcase": {
     "title": "Trưng bày",
-    "desc": "Game và dự án được xây dựng bằng Bloom Engine.",
-    "metaDescription": "Game và dự án được xây dựng bằng Bloom Engine.",
-    "featured": "Nổi bật",
-    "viewLink": "Xem trên GitHub →",
-    "garden": {
-      "title": "Bloom Garden",
-      "desc": "Một cuộc phiêu lưu vườn nhỏ. Game demo chủ lực được xây dựng hoàn toàn bằng Bloom Engine — khám phá low-poly ấm cúng với ánh sáng vàng giờ hoàng hôn."
-    },
-    "pong": {
-      "title": "Pong",
-      "desc": "Pong hai người chơi cổ điển. Minh họa xử lý đầu vào, hình khối 2D, phát hiện va chạm, âm thanh và quản lý trạng thái game trong khoảng 170 dòng."
+    "desc": "Các trò chơi đã phát hành được xây dựng bằng Bloom — chơi miễn phí ngay.",
+    "metaDescription": "Các trò chơi đã phát hành được xây dựng bằng Bloom — chơi miễn phí ngay.",
+    "liveBadge": "Đã có trên App Store",
+    "bloomJump": {
+      "desc": "Một game platformer pixel retro miễn phí — năm màn chơi thiết kế thủ công, 60 FPS và nhạc chiptune nguyên bản. Được xây dựng hoàn toàn bằng Bloom, chạy native trên iPhone, iPad và Mac."
     },
     "cta": {
       "title": "Đã dựng thứ gì đó với Bloom?",

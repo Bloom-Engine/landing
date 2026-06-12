@@ -102,17 +102,11 @@
   },
   "showcase": {
     "title": "案例展示",
-    "desc": "使用 Bloom Engine 构建的游戏与项目。",
-    "metaDescription": "使用 Bloom Engine 构建的游戏与项目。",
-    "featured": "精选",
-    "viewLink": "在 GitHub 上查看 →",
-    "garden": {
-      "title": "Bloom Garden",
-      "desc": "一段小巧的花园冒险。完全使用 Bloom Engine 构建的旗舰演示游戏 —— 温暖黄金时刻光照下的惬意低多边形探索。"
-    },
-    "pong": {
-      "title": "Pong",
-      "desc": "经典的双人 Pong。在约 170 行代码中演示输入处理、2D 图形、碰撞检测、音频与游戏状态管理。"
+    "desc": "使用 Bloom 构建并已上线的游戏——现已推出，免费畅玩。",
+    "metaDescription": "使用 Bloom 构建并已上线的游戏——现已推出，免费畅玩。",
+    "liveBadge": "已上架 App Store",
+    "bloomJump": {
+      "desc": "一款免费的复古像素平台游戏——五个手工打造的关卡、60 FPS 和原创芯片音乐。完全使用 Bloom 构建，在 iPhone、iPad 和 Mac 上原生运行。"
     },
     "cta": {
       "title": "用 Bloom 做了点什么?",
