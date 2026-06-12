@@ -69,6 +69,13 @@
       "title": "One codebase. Every platform.",
       "desc": "Bloom maps to the native graphics API on each platform via a single wgpu-backed renderer. Your TypeScript compiles to real binaries — or to a WASM bundle for the web."
     },
+    "game": {
+      "badge": "Made with Bloom",
+      "title": "The first Bloom game is live",
+      "desc": "Bloom Jump, a free retro pixel platformer, is built entirely with Bloom — one TypeScript codebase running natively on iPhone, iPad, and Mac. Five hand-crafted levels, 60 FPS, original chiptune soundtrack.",
+      "cta": "Download on the App Store",
+      "alt": "Bloom Jump gameplay on Mac"
+    },
     "whatsnew": {
       "title": "What's new",
       "desc": "Bloom is in active development — 300+ commits in the last few weeks alone. Recent highlights:",

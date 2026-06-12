@@ -69,6 +69,13 @@
       "title": "Một codebase. Mọi nền tảng.",
       "desc": "Bloom ánh xạ tới API đồ họa native trên từng nền tảng thông qua một bộ kết xuất duy nhất dựa trên wgpu. TypeScript của bạn được biên dịch thành các binary thực — hoặc thành một bundle WASM cho web."
     },
+    "game": {
+      "badge": "Làm bằng Bloom",
+      "title": "Trò chơi Bloom đầu tiên đã ra mắt",
+      "desc": "Bloom Jump, một game platformer pixel retro miễn phí, được xây dựng hoàn toàn bằng Bloom — một codebase TypeScript duy nhất chạy native trên iPhone, iPad và Mac. Năm màn chơi thiết kế thủ công, 60 FPS, nhạc chiptune nguyên bản.",
+      "cta": "Tải về trên App Store",
+      "alt": "Gameplay Bloom Jump trên Mac"
+    },
     "whatsnew": {
       "title": "Có gì mới",
       "desc": "Bloom đang được phát triển tích cực — hơn 300 commit chỉ trong vài tuần qua. Các điểm nổi bật gần đây:",

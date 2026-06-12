@@ -69,6 +69,13 @@
       "title": "Satu codebase. Semua platform.",
       "desc": "Bloom memetakan ke API grafis native di tiap platform melalui satu renderer berbasis wgpu. TypeScript kamu dikompilasi ke binary asli — atau ke bundle WASM untuk web."
     },
+    "game": {
+      "badge": "Dibuat dengan Bloom",
+      "title": "Game Bloom pertama telah hadir",
+      "desc": "Bloom Jump, platformer piksel retro gratis, dibuat sepenuhnya dengan Bloom — satu basis kode TypeScript yang berjalan secara native di iPhone, iPad, dan Mac. Lima level buatan tangan, 60 FPS, soundtrack chiptune orisinal.",
+      "cta": "Unduh di App Store",
+      "alt": "Gameplay Bloom Jump di Mac"
+    },
     "whatsnew": {
       "title": "Yang baru",
       "desc": "Bloom sedang dalam pengembangan aktif — 300+ commit hanya dalam beberapa minggu terakhir. Sorotan terbaru:",

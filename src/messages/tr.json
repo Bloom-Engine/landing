@@ -69,6 +69,13 @@
       "title": "Tek kod tabanı. Her platform.",
       "desc": "Bloom, tek bir wgpu tabanlı render motoru aracılığıyla her platformda native grafik API'sine eşlenir. TypeScript kodun gerçek ikili dosyalara — ya da web için bir WASM paketine — derlenir."
     },
+    "game": {
+      "badge": "Bloom ile yapıldı",
+      "title": "İlk Bloom oyunu yayında",
+      "desc": "Ücretsiz bir retro piksel platform oyunu olan Bloom Jump, tamamen Bloom ile geliştirildi — iPhone, iPad ve Mac'te yerel olarak çalışan tek bir TypeScript kod tabanı. El yapımı beş bölüm, 60 FPS, özgün chiptune müzikler.",
+      "cta": "App Store'dan indir",
+      "alt": "Mac'te Bloom Jump oynanışı"
+    },
     "whatsnew": {
       "title": "Yenilikler",
       "desc": "Bloom aktif geliştirme aşamasında — sadece son birkaç haftada 300'ü aşkın commit. Son öne çıkanlar:",

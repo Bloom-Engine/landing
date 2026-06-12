@@ -69,6 +69,13 @@
       "title": "Uma base de código. Toda plataforma.",
       "desc": "A Bloom mapeia para a API gráfica nativa de cada plataforma através de um único renderer baseado em wgpu. Seu TypeScript compila para binários reais — ou para um bundle WASM para a web."
     },
+    "game": {
+      "badge": "Feito com Bloom",
+      "title": "O primeiro jogo Bloom já está disponível",
+      "desc": "Bloom Jump, um jogo de plataforma retrô em pixel art gratuito, foi feito inteiramente com Bloom — uma única base de código TypeScript rodando nativamente no iPhone, iPad e Mac. Cinco níveis feitos à mão, 60 FPS e trilha sonora chiptune original.",
+      "cta": "Baixar na App Store",
+      "alt": "Gameplay de Bloom Jump no Mac"
+    },
     "whatsnew": {
       "title": "Novidades",
       "desc": "A Bloom está em desenvolvimento ativo — mais de 300 commits só nas últimas semanas. Destaques recentes:",

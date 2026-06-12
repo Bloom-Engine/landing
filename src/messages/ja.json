@@ -69,6 +69,13 @@
       "title": "1 つのコードベース。あらゆるプラットフォーム。",
       "desc": "Bloom は単一の wgpu ベースのレンダラーを通じて、各プラットフォームのネイティブグラフィックス API へマッピングされます。TypeScript は本物のバイナリへ — もしくは Web 向けの WASM バンドルへコンパイルされます。"
     },
+    "game": {
+      "badge": "Bloom製",
+      "title": "最初のBloom製ゲームが登場",
+      "desc": "Bloom Jumpは、Bloomだけで作られた無料のレトロピクセルプラットフォーマー。1つのTypeScriptコードベースがiPhone、iPad、Macでネイティブに動作します。手作りの5つのレベル、60 FPS、オリジナルのチップチューンサウンドトラック。",
+      "cta": "App Storeでダウンロード",
+      "alt": "MacでのBloom Jumpのゲームプレイ"
+    },
     "whatsnew": {
       "title": "新着情報",
       "desc": "Bloom は活発に開発中です — ここ数週間だけで 300 以上のコミットがあります。最近のハイライト:",
