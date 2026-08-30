@@ -1,6 +1,6 @@
 {
   "meta": {
-    "defaultDescription": "TypeScript ile native oyunlar. TypeScript yaz. Native oyun yayınla. Tarayıcı yok, C++ yok.",
+    "defaultDescription": "TypeScript ile native oyunlar: gömülü tarayıcısız önceden derlenen yapılar ve web için WebAssembly.",
     "languageLabel": "Dil"
   },
   "nav": {
@@ -25,7 +25,7 @@
     "heroBadge": "Açık Kaynak Oyun Motoru",
     "heroTitlePrefix": "Native oyunlar, doğrudan ",
     "heroTitleHighlight": "TypeScript",
-    "heroDesc": "TypeScript yaz. Native oyun yayınla. Tarayıcı yok, C++ yok. Bloom oyununu önceden derler ve Metal, DirectX 12, Vulkan ile WebGPU üzerinde çalıştırır — tek kod tabanı, altı hedef, kutudan çıkar çıkmaz gerçek PBR render ve fizik.",
+    "heroDesc": "TypeScript yaz ve gömülü tarayıcı ya da C++ olmadan native oyun yayınla. Bloom oyununu önceden derler ve Metal, DirectX 12, Vulkan ile WebGPU üzerinde çalıştırır — tek kod tabanı, dokuz hedef, kutudan çıkar çıkmaz gerçek PBR render ve fizik.",
     "getStarted": "Başla",
     "viewOnGithub": "GitHub'da Görüntüle",
     "proof": {
@@ -36,10 +36,10 @@
     },
     "why": {
       "title": "Neden Bloom?",
-      "desc": "Bloom, TypeScript yazıp gerçek anlamda native oyunlar yayınlamana izin veren tek oyun motorudur. Electron yok, WebView yok, tarayıcı çalışma zamanı yok. Kodun Perry derleyicisi tarafından önceden derlenir ve bir Rust çekirdeğine karşı çalışır.",
+      "desc": "Bloom, TypeScript oyunlarını bir Rust çekirdeğine karşı önceden derler. Native hedefler Electron, WebView veya gömülü tarayıcı çalışma zamanı kullanmaz; Web hedefi WebAssembly üretir.",
       "simpleApi": {
         "title": "Basit API",
-        "desc": "API'nin tamamı bir kopya kağıdına sığar. Sınıf yok, kalıtım yok, sihir yok. Sadece çağırdığın fonksiyonlar."
+        "desc": "Oynanış API'si fonksiyon odaklıdır: sade veriler, açık handle'lar ve doğrudan çağrılan fonksiyonlar. Uzman araçlar yalnızca küçük yardımcı soyutlamalar ekler."
       },
       "trueNative": {
         "title": "Gerçek Native",
@@ -47,12 +47,12 @@
       },
       "shipEverywhere": {
         "title": "Her Yere Yayınla",
-        "desc": "Tek bir kod tabanından macOS, Windows, Linux, iOS, tvOS ve Web. Steam, App Store ve itch.io'ya hazır."
+        "desc": "Tek bir kod tabanından macOS, Windows, Linux, iOS, tvOS, watchOS, visionOS, Android ve Web."
       }
     },
     "modules": {
       "title": "İhtiyacın olan her şey",
-      "desc": "Dokuz modüler alt sistem, her biri bağımsız olarak içe aktarılabilir. Sadece ihtiyacın olanı kullan.",
+      "desc": "On üç modüler alt sistem, her biri bağımsız olarak içe aktarılabilir. Sadece ihtiyacın olanı kullan.",
       "items": [
         { "id": "core", "title": "Core", "desc": "Pencere oluşturma, oyun döngüsü, girdi yönetimi, zamanlama ve kare kontrolü." },
         { "id": "shapes", "title": "Shapes", "desc": "2B şekil çizimi — çizgiler, dikdörtgenler, daireler, çokgenler — artı çarpışma tespiti." },
@@ -62,7 +62,11 @@
         { "id": "models", "title": "Models", "desc": "glTF 2.0 yükleme, GPU iskelet animasyonu, PBR materyaller, mesh ilkel cisimleri." },
         { "id": "math", "title": "Math", "desc": "Vektörler, matrisler, kuaterniyonlar, easing fonksiyonları ve rastgele sayı üretimi." },
         { "id": "physics", "title": "Physics", "desc": "Jolt destekli katı ve yumuşak cisimler, karakter denetleyicileri, araçlar, ışın izleri, kısıtlar." },
-        { "id": "scene", "title": "Scene", "desc": "Tutulan kipte sahne grafiği — dönüşümler, görünürlük, gölgeler, materyal bağlama." }
+        { "id": "scene", "title": "Scene", "desc": "Tutulan kipte sahne grafiği — dönüşümler, görünürlük, gölgeler, materyal bağlama." },
+        { "id": "mobile", "title": "Mobile", "desc": "Sanal kontroller, güvenli alanlar ve dokunmatik girdi yardımcıları." },
+        { "id": "world", "title": "World", "desc": "Sürümlü dünya yükleme ve doğrulama, prefab'lar ve çalışma zamanı örnekleme." },
+        { "id": "vfx", "title": "VFX", "desc": "GPU parçacık sistemleri, yayıcılar ve decal'lar." },
+        { "id": "quality", "title": "Quality", "desc": "Deterministik kalite koşuları, yakalamalar ve telemetri." }
       ]
     },
     "platforms": {
@@ -143,7 +147,7 @@
         "p.whyWgpu2": "Bunun yerine, render motorunun tamamı bir kez <strong>wgpu</strong> üzerine yazıldı. Shader'lar WGSL. Apple platformlarında Metal, Windows'ta DirectX 12, Linux ve Android'de Vulkan ve tarayıcıda WebGPU (WebGL yedeği ile) — tek bir kod tabanından alıyoruz. Bedeli, wgpu'nun özellik setine bağlı kalmamız ve birkaç egzotik şeyin (mesh shader'lar, ray tracing) şimdilik masada olmaması. Küçük bir ekip için bunun adil bir takas olduğunu düşünüyoruz.",
         "h.box": "Bugün gerçekten kutuda olanlar",
         "p.box": "Pazarlama sitesine çalışmayan hiçbir şeyi koymamaya çalışıyoruz. Bugün gerçek olan şu:",
-        "li.box1": "<strong>Dokuz içe aktarılabilir modül</strong> — <code>bloom/core</code>, <code>bloom/shapes</code>, <code>bloom/textures</code>, <code>bloom/text</code>, <code>bloom/audio</code>, <code>bloom/models</code>, <code>bloom/math</code>, <code>bloom/physics</code> ve <code>bloom/scene</code>.",
+        "li.box1": "<strong>Dokuz içe aktarılabilir modül</strong> — <code>@bloomengine/engine/core</code>, <code>@bloomengine/engine/shapes</code>, <code>@bloomengine/engine/textures</code>, <code>@bloomengine/engine/text</code>, <code>@bloomengine/engine/audio</code>, <code>@bloomengine/engine/models</code>, <code>@bloomengine/engine/math</code>, <code>@bloomengine/engine/physics</code> ve <code>@bloomengine/engine/scene</code>.",
         "li.box2": "<strong>Gerçek bir PBR render motoru</strong> — substrate tarzı katmanlı materyaller, statik geometri için önbellekli kademeli gölge haritaları, ACES/AgX ton eşleme, otomatik pozlama, bloom, alan derinliği, hareket bulanıklığı, SSGI, SSAO, TAA ve kesirli render ölçekleri için bir CAS keskinleştirme geçişi.",
         "li.box3": "<strong>GPU iskelet animasyonu</strong> — glTF 2.0 içe aktarımı, GPU üzerinde dört kemikli doğrusal karışım skinning, iskelet başına 128'e kadar eklem.",
         "li.box4": "<strong>Jolt fizik</strong> — katı ve yumuşak cisimler, karakter denetleyicileri, araçlar, ışın izleri, kısıtlar, temas geri çağrımları. Web hedefi JoltPhysics.js yedeğini kullanır, böylece aynı kod tarayıcıda çalışır.",

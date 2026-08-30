@@ -2,11 +2,18 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Docs — Bloom Engine" description="Complete documentation and API reference for Bloom Engine.">
+<Layout
+  title="Docs — Bloom Engine"
+  description="Quick-start documentation and API overview for Bloom Engine."
+  pathWithoutLocale="/docs"
+  localizedPathAvailable={false}
+>
   <section class="page-hero">
     <div class="container">
       <h1>Documentation</h1>
-      <p class="page-desc">Everything you need to build native games with TypeScript.</p>
+      <p class="page-desc">A quick-start guide and overview of Bloom's public modules.</p>
+      <p class="language-notice"><strong>Language:</strong> The technical reference is maintained in English. The language menu opens localized marketing pages.</p>
+      <p class="version-notice"><strong>Version:</strong> The quick-start is type-checked against npm 0.4.16. The complete 13-module inventory and <code>Texture.handle</code> reflect the active 0.5 development branch; stable 0.4 uses <code>Texture.id</code> and does not yet export VFX or Quality. See the <a href="https://github.com/Bloom-Engine/engine/blob/main/docs/migration-0.5.md">0.5 migration guide</a>.</p>
     </div>
   </section>
 
@@ -28,6 +35,12 @@ import Layout from "../layouts/Layout.astro";
           <a href="#audio" class="sidebar-link">Audio</a>
           <a href="#models" class="sidebar-link">Models</a>
           <a href="#math" class="sidebar-link">Math</a>
+          <a href="#mobile" class="sidebar-link">Mobile</a>
+          <a href="#scene" class="sidebar-link">Scene</a>
+          <a href="#physics" class="sidebar-link">Physics</a>
+          <a href="#world" class="sidebar-link">World</a>
+          <a href="#vfx" class="sidebar-link">VFX</a>
+          <a href="#quality" class="sidebar-link">Quality</a>
         </nav>
         <nav>
           <h4>Reference</h4>
@@ -60,7 +73,7 @@ import Layout from "../layouts/Layout.astro";
 
         <div id="quick-start" class="docs-section">
           <h2>Quick Start</h2>
-          <p>A complete Bloom game in 12 lines. This opens a window, clears it each frame, draws text, and exits when the user closes the window.</p>
+          <p>Install the engine with <code>npm install @bloomengine/engine</code>. This complete example opens a window, clears it each frame, draws text, and exits when the user closes the window.</p>
           <div class="code-window">
             <div class="code-header">
               <span class="code-dot r"></span>
@@ -70,13 +83,13 @@ import Layout from "../layouts/Layout.astro";
             </div>
             <pre><code><span class="kw">import</span> {"{"} initWindow, windowShouldClose, beginDrawing,
          endDrawing, clearBackground, drawText,
-         Colors, closeWindow {"}"} <span class="kw">from</span> <span class="str">"bloom"</span>;
+         Colors, closeWindow {"}"} <span class="kw">from</span> <span class="str">"@bloomengine/engine"</span>;
 
 initWindow(<span class="num">800</span>, <span class="num">450</span>, <span class="str">"Hello Bloom"</span>);
 
 <span class="kw">while</span> (!windowShouldClose()) {"{"}
   beginDrawing();
-  clearBackground(Colors.<span class="prop">RAYWHITE</span>);
+  clearBackground(Colors.<span class="prop">SNOW</span>);
   drawText(<span class="str">"Hello, Bloom!"</span>, <span class="num">190</span>, <span class="num">200</span>, <span class="num">20</span>, Colors.<span class="prop">DARKGRAY</span>);
   endDrawing();
 {"}"}
@@ -119,8 +132,8 @@ closeWindow();</code></pre>
           <h3>Drawing Lifecycle</h3>
           <p>All draw calls must happen between <code>beginDrawing()</code> and <code>endDrawing()</code>. Bloom batches and submits GPU commands when you call <code>endDrawing()</code>.</p>
 
-          <h3>No Classes, No Magic</h3>
-          <p>Bloom uses plain interfaces and pure functions. Types like <code>Vec2</code>, <code>Color</code>, and <code>Rect</code> are plain objects. Functions never mutate their inputs — they return new values. There are no classes, no inheritance, no lifecycle hooks.</p>
+          <h3>Function-first, minimal abstraction</h3>
+          <p>Bloom's gameplay API uses functions, handles, and plain data types such as <code>Vec2</code>, <code>Color</code>, and <code>Rect</code>. Math helpers return new values rather than mutating their inputs. Specialized tooling modules may expose a helper class, such as <code>QualityRun</code>.</p>
         </div>
 
         <div id="project-structure" class="docs-section">
@@ -146,12 +159,12 @@ closeWindow();</code></pre>
             <div class="code-header">
               <span class="code-dot r"></span><span class="code-dot y"></span><span class="code-dot g"></span>
             </div>
-            <pre><code><span class="kw">import</span> {"{"} initWindow {"}"} <span class="kw">from</span> <span class="str">"bloom/core"</span>;
-<span class="kw">import</span> {"{"} drawRect {"}"} <span class="kw">from</span> <span class="str">"bloom/shapes"</span>;
-<span class="kw">import</span> {"{"} vec3Add {"}"} <span class="kw">from</span> <span class="str">"bloom/math"</span>;
+            <pre><code><span class="kw">import</span> {"{"} initWindow {"}"} <span class="kw">from</span> <span class="str">"@bloomengine/engine/core"</span>;
+<span class="kw">import</span> {"{"} drawRect {"}"} <span class="kw">from</span> <span class="str">"@bloomengine/engine/shapes"</span>;
+<span class="kw">import</span> {"{"} vec3Add {"}"} <span class="kw">from</span> <span class="str">"@bloomengine/engine/math"</span>;
 
 <span class="cmt">// Or import everything from the barrel export:</span>
-<span class="kw">import</span> {"{"} initWindow, drawRect, vec3Add {"}"} <span class="kw">from</span> <span class="str">"bloom"</span>;</code></pre>
+<span class="kw">import</span> {"{"} initWindow, drawRect, vec3Add {"}"} <span class="kw">from</span> <span class="str">"@bloomengine/engine"</span>;</code></pre>
           </div>
         </div>
 
@@ -165,14 +178,14 @@ closeWindow();</code></pre>
         <div id="core" class="docs-section">
           <div class="docs-module-header">
             <h2>Core</h2>
-            <code class="module-import">bloom/core</code>
+            <code class="module-import">@bloomengine/engine/core</code>
           </div>
           <p class="docs-module-desc">Window management, game loop, input handling, timing, and utility functions.</p>
 
           <h3>Window</h3>
           <div class="fn-group">
             <div class="fn">
-              <div class="fn-sig">initWindow(width: <span class="t">number</span>, height: <span class="t">number</span>, title: <span class="t">string</span>): <span class="t">void</span></div>
+              <div class="fn-sig">initWindow(width: <span class="t">number</span>, height: <span class="t">number</span>, title: <span class="t">string</span>, fullscreen?: <span class="t">boolean</span>): <span class="t">void</span></div>
               <div class="fn-desc">Creates a window with the given dimensions and title. Call this before anything else.</div>
             </div>
             <div class="fn">
@@ -324,7 +337,7 @@ closeWindow();</code></pre>
           <h3>Gamepad Input</h3>
           <div class="fn-group">
             <div class="fn">
-              <div class="fn-sig">isGamepadAvailable(): <span class="t">boolean</span></div>
+              <div class="fn-sig">isGamepadAvailable(id?: <span class="t">number</span>): <span class="t">boolean</span></div>
               <div class="fn-desc">Returns true if a gamepad is connected.</div>
             </div>
             <div class="fn">
@@ -394,7 +407,7 @@ closeWindow();</code></pre>
         <div id="shapes" class="docs-section">
           <div class="docs-module-header">
             <h2>Shapes</h2>
-            <code class="module-import">bloom/shapes</code>
+            <code class="module-import">@bloomengine/engine/shapes</code>
           </div>
           <p class="docs-module-desc">2D shape drawing and collision detection.</p>
 
@@ -471,7 +484,7 @@ closeWindow();</code></pre>
         <div id="textures" class="docs-section">
           <div class="docs-module-header">
             <h2>Textures</h2>
-            <code class="module-import">bloom/textures</code>
+            <code class="module-import">@bloomengine/engine/textures</code>
           </div>
           <p class="docs-module-desc">Image loading, texture management, and sprite rendering. Supports PNG, JPG, BMP, and TGA.</p>
 
@@ -540,7 +553,7 @@ closeWindow();</code></pre>
         <div id="text" class="docs-section">
           <div class="docs-module-header">
             <h2>Text</h2>
-            <code class="module-import">bloom/text</code>
+            <code class="module-import">@bloomengine/engine/text</code>
           </div>
           <p class="docs-module-desc">Font loading and text rendering. Supports TTF and OTF fonts.</p>
 
@@ -580,7 +593,7 @@ closeWindow();</code></pre>
         <div id="audio" class="docs-section">
           <div class="docs-module-header">
             <h2>Audio</h2>
-            <code class="module-import">bloom/audio</code>
+            <code class="module-import">@bloomengine/engine/audio</code>
           </div>
           <p class="docs-module-desc">Sound effects and music streaming. Supports WAV, OGG, and MP3.</p>
 
@@ -653,7 +666,7 @@ closeWindow();</code></pre>
         <div id="models" class="docs-section">
           <div class="docs-module-header">
             <h2>Models</h2>
-            <code class="module-import">bloom/models</code>
+            <code class="module-import">@bloomengine/engine/models</code>
           </div>
           <p class="docs-module-desc">3D model loading, primitive drawing, mesh generation, and shaders. Supports glTF and OBJ.</p>
 
@@ -676,7 +689,7 @@ closeWindow();</code></pre>
           <h3>3D Primitives</h3>
           <div class="fn-group">
             <div class="fn">
-              <div class="fn-sig">drawCube(pos: <span class="t">Vec3</span>, width: <span class="t">number</span>, height: <span class="t">number</span>, depth: <span class="t">number</span>, color: <span class="t">Color</span>): <span class="t">void</span></div>
+              <div class="fn-sig">drawCube(pos: <span class="t">Vec3</span>, width: <span class="t">number</span>, height: <span class="t">number</span>, depth: <span class="t">number</span>, color: <span class="t">Color</span>, opts?: <span class="t">DrawCubeOpts</span>): <span class="t">void</span></div>
               <div class="fn-desc">Draws a filled cube.</div>
             </div>
             <div class="fn">
@@ -692,7 +705,7 @@ closeWindow();</code></pre>
               <div class="fn-desc">Draws a wireframe sphere.</div>
             </div>
             <div class="fn">
-              <div class="fn-sig">drawCylinder(pos: <span class="t">Vec3</span>, radiusTop: <span class="t">number</span>, radiusBottom: <span class="t">number</span>, height: <span class="t">number</span>, color: <span class="t">Color</span>): <span class="t">void</span></div>
+              <div class="fn-sig">drawCylinder(pos: <span class="t">Vec3</span>, radiusTop: <span class="t">number</span>, radiusBottom: <span class="t">number</span>, height: <span class="t">number</span>, color: <span class="t">Color</span>, slices?: <span class="t">number</span>): <span class="t">void</span></div>
               <div class="fn-desc">Draws a cylinder (can be a cone if one radius is 0).</div>
             </div>
             <div class="fn">
@@ -736,8 +749,8 @@ closeWindow();</code></pre>
               <div class="fn-desc">Loads model animation data from a file.</div>
             </div>
             <div class="fn">
-              <div class="fn-sig">updateModelAnimation(handle: <span class="t">number</span>, animIndex: <span class="t">number</span>, time: <span class="t">number</span>): <span class="t">void</span></div>
-              <div class="fn-desc">Updates the animation state for a model.</div>
+              <div class="fn-sig">updateModelAnimation(handle: <span class="t">number</span>, animIndex: <span class="t">number</span>, time: <span class="t">number</span>, scale: <span class="t">number</span>, px: <span class="t">number</span>, py: <span class="t">number</span>, pz: <span class="t">number</span>, rotY: <span class="t">number</span>): <span class="t">void</span></div>
+              <div class="fn-desc">Samples an animation and writes joint matrices using the supplied model transform.</div>
             </div>
           </div>
         </div>
@@ -746,7 +759,7 @@ closeWindow();</code></pre>
         <div id="math" class="docs-section">
           <div class="docs-module-header">
             <h2>Math</h2>
-            <code class="module-import">bloom/math</code>
+            <code class="module-import">@bloomengine/engine/math</code>
           </div>
           <p class="docs-module-desc">Vectors, matrices, quaternions, easing functions, collision, and utilities. All functions are pure — they return new values and never mutate inputs.</p>
 
@@ -888,6 +901,48 @@ closeWindow();</code></pre>
           </div>
         </div>
 
+        <!-- ADDITIONAL PUBLIC MODULES -->
+        <div class="docs-divider">
+          <h2>Additional public modules</h2>
+          <p>The package exports all thirteen modules below. These module summaries link to the canonical source or focused guides for the full current surface.</p>
+        </div>
+
+        <div id="mobile" class="docs-section">
+          <div class="docs-module-header"><h2>Mobile</h2><code class="module-import">@bloomengine/engine/mobile</code></div>
+          <p class="docs-module-desc">Virtual joysticks, virtual buttons, safe-area handling, and touch-oriented input helpers.</p>
+          <p><a href="https://github.com/Bloom-Engine/engine/blob/main/src/mobile/index.ts">Browse the Mobile API source</a></p>
+        </div>
+
+        <div id="scene" class="docs-section">
+          <div class="docs-module-header"><h2>Scene</h2><code class="module-import">@bloomengine/engine/scene</code></div>
+          <p class="docs-module-desc">Retained scene nodes, transforms, geometry, material bindings, visibility, lights, picking, and frame callbacks.</p>
+          <p><a href="https://github.com/Bloom-Engine/engine/blob/main/src/scene/index.ts">Browse the Scene API source</a></p>
+        </div>
+
+        <div id="physics" class="docs-section">
+          <div class="docs-module-header"><h2>Physics</h2><code class="module-import">@bloomengine/engine/physics</code></div>
+          <p class="docs-module-desc">Jolt-backed worlds, shapes, bodies, constraints, characters, vehicles, queries, and contact events.</p>
+          <p><a href="https://github.com/Bloom-Engine/engine/blob/main/docs/physics.md">Read the Physics guide</a></p>
+        </div>
+
+        <div id="world" class="docs-section">
+          <div class="docs-module-header"><h2>World</h2><code class="module-import">@bloomengine/engine/world</code></div>
+          <p class="docs-module-desc">Versioned <code>.world.json</code> loading, migration, validation, prefab expansion, instantiation, and environment application.</p>
+          <p><a href="https://github.com/Bloom-Engine/engine/blob/main/docs/world-format.md">Read the World format guide</a></p>
+        </div>
+
+        <div id="vfx" class="docs-section">
+          <div class="docs-module-header"><h2>VFX</h2><code class="module-import">@bloomengine/engine/vfx</code></div>
+          <p class="docs-module-desc">GPU particle emitters, particle-system updates and drawing, plus decal creation and lifecycle helpers.</p>
+          <p><a href="https://github.com/Bloom-Engine/engine/blob/main/src/vfx/index.ts">Browse the VFX API source</a></p>
+        </div>
+
+        <div id="quality" class="docs-section">
+          <div class="docs-module-header"><h2>Quality</h2><code class="module-import">@bloomengine/engine/quality</code></div>
+          <p class="docs-module-desc">Deterministic qualification windows, captures, telemetry, and the <code>QualityRun</code> helper used by renderer examples.</p>
+          <p><a href="https://github.com/Bloom-Engine/engine/blob/26b1893/docs/quality-presets.md">Read the 0.5-preview Quality preset guide</a></p>
+        </div>
+
         <!-- ==================== REFERENCE ==================== -->
 
         <div class="docs-divider">
@@ -897,7 +952,7 @@ closeWindow();</code></pre>
         <!-- TYPES -->
         <div id="types" class="docs-section">
           <h2>Types</h2>
-          <p>All types are plain interfaces. No classes, no constructors — just object literals.</p>
+          <p>The core data types shown here are plain interfaces and object literals. Specialized helper modules may additionally expose classes.</p>
           <div class="code-window">
             <div class="code-header">
               <span class="code-dot r"></span><span class="code-dot y"></span><span class="code-dot g"></span>
@@ -925,7 +980,7 @@ closeWindow();</code></pre>
   target: Vec3;     <span class="cmt">// look-at point</span>
   up: Vec3;         <span class="cmt">// up direction</span>
   fovy: <span class="num">number</span>;     <span class="cmt">// field of view Y (degrees)</span>
-  projection: <span class="num">number</span>; <span class="cmt">// 0 = perspective, 1 = orthographic</span>
+  projection: <span class="str">"perspective"</span> | <span class="str">"orthographic"</span>;
 {"}"}
 
 <span class="cmt">// Resources (handle-based)</span>
@@ -955,7 +1010,7 @@ closeWindow();</code></pre>
         <!-- COLORS -->
         <div id="colors" class="docs-section">
           <h2>Colors</h2>
-          <p>Pre-defined colors available via <code>Colors.NAME</code>. Import from <code>bloom/core</code>.</p>
+          <p>Pre-defined colors available via <code>Colors.NAME</code>. Import from <code>@bloomengine/engine/core</code>.</p>
           <div class="color-grid">
             <div class="color-swatch"><div class="swatch" style="background: rgb(255,255,255); border: 1px solid #ddd"></div><span>WHITE</span></div>
             <div class="color-swatch"><div class="swatch" style="background: rgb(0,0,0)"></div><span>BLACK</span></div>
@@ -979,7 +1034,7 @@ closeWindow();</code></pre>
             <div class="color-swatch"><div class="swatch" style="background: rgb(200,200,200)"></div><span>LIGHTGRAY</span></div>
             <div class="color-swatch"><div class="swatch" style="background: rgb(130,130,130)"></div><span>GRAY</span></div>
             <div class="color-swatch"><div class="swatch" style="background: rgb(80,80,80)"></div><span>DARKGRAY</span></div>
-            <div class="color-swatch"><div class="swatch" style="background: rgb(245,245,245); border: 1px solid #ddd"></div><span>RAYWHITE</span></div>
+            <div class="color-swatch"><div class="swatch" style="background: rgb(245,245,245); border: 1px solid #ddd"></div><span>SNOW</span></div>
             <div class="color-swatch"><div class="swatch" style="background: repeating-conic-gradient(#ccc 0% 25%, transparent 0% 50%) 50%/8px 8px"></div><span>BLANK</span></div>
           </div>
           <p style="margin-top: 1rem">Custom colors are plain objects: <code>{"{"} r: 255, g: 100, b: 50, a: 255 {"}"}</code></p>
@@ -988,7 +1043,7 @@ closeWindow();</code></pre>
         <!-- KEYS -->
         <div id="keys" class="docs-section">
           <h2>Key Constants</h2>
-          <p>Import <code>Key</code> and <code>MouseButton</code> from <code>bloom/core</code>.</p>
+          <p>Import <code>Key</code> and <code>MouseButton</code> from <code>@bloomengine/engine/core</code>.</p>
 
           <h3>Keyboard</h3>
           <div class="key-grid">
@@ -1098,7 +1153,7 @@ drawText(<span class="str">"Score: 100"</span>, <span class="num">10</span>, <sp
   target: {"{"} x: <span class="num">0</span>, y: <span class="num">0</span>, z: <span class="num">0</span> {"}"},     <span class="cmt">// look-at point</span>
   up: {"{"} x: <span class="num">0</span>, y: <span class="num">1</span>, z: <span class="num">0</span> {"}"},         <span class="cmt">// up direction</span>
   fovy: <span class="num">45</span>,                       <span class="cmt">// field of view (degrees)</span>
-  projection: <span class="num">0</span>                   <span class="cmt">// 0=perspective, 1=orthographic</span>
+  projection: <span class="str">"perspective"</span>
 {"}"};
 
 beginMode3D(camera);
@@ -1298,6 +1353,26 @@ camera.target.y += (targetY - camera.target.y) * <span class="num">8</span> * dt
     color: rgba(27, 42, 30, 0.6);
     font-size: 1.125rem;
     margin-top: 0.75rem;
+  }
+
+  .language-notice {
+    width: fit-content;
+    max-width: 760px;
+    margin: 1rem auto 0;
+    padding: 0.65rem 0.9rem;
+    border: 1px solid rgba(76, 175, 80, 0.25);
+    border-radius: 8px;
+    background: rgba(76, 175, 80, 0.07);
+    color: rgba(27, 42, 30, 0.75);
+    font-size: 0.875rem;
+  }
+
+  .version-notice {
+    max-width: 860px;
+    margin: 0.75rem auto 0;
+    color: rgba(27, 42, 30, 0.68);
+    font-size: 0.8125rem;
+    line-height: 1.55;
   }
 
   .docs {

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "defaultDescription": "使用 TypeScript 构建原生游戏。编写 TypeScript,发布原生游戏。无需浏览器,无需 C++。",
+    "defaultDescription": "使用 TypeScript 构建原生游戏：无需嵌入式浏览器的提前编译构建，以及面向 Web 的 WebAssembly。",
     "languageLabel": "语言"
   },
   "nav": {
@@ -25,7 +25,7 @@
     "heroBadge": "开源游戏引擎",
     "heroTitlePrefix": "原生游戏,源自 ",
     "heroTitleHighlight": "TypeScript",
-    "heroDesc": "编写 TypeScript,发布原生游戏。无需浏览器,无需 C++。Bloom 会提前编译你的游戏,并在 Metal、DirectX 12、Vulkan 和 WebGPU 上运行 —— 一套代码库,六个目标平台,开箱即用的真正 PBR 渲染与物理。",
+    "heroDesc": "编写 TypeScript,无需嵌入式浏览器或 C++ 即可发布原生游戏。Bloom 会提前编译你的游戏,并在 Metal、DirectX 12、Vulkan 和 WebGPU 上运行 —— 一套代码库,九个目标平台,开箱即用的真正 PBR 渲染与物理。",
     "getStarted": "立即开始",
     "viewOnGithub": "在 GitHub 上查看",
     "proof": {
@@ -36,10 +36,10 @@
     },
     "why": {
       "title": "为什么选择 Bloom?",
-      "desc": "Bloom 是唯一一款让你用 TypeScript 编写并发布真正原生游戏的引擎。无需 Electron、无需 WebView、无需浏览器运行时。你的代码由 Perry 编译器提前编译,并基于 Rust 核心运行。",
+      "desc": "Bloom 将 TypeScript 游戏提前编译到 Rust 核心。原生目标无需 Electron、WebView 或嵌入式浏览器运行时；Web 目标生成 WebAssembly。",
       "simpleApi": {
         "title": "简洁 API",
-        "desc": "整个 API 一张速查表就能装下。没有类,没有继承,没有黑魔法,只有你调用的函数。"
+        "desc": "游戏 API 以函数为核心：简单数据、明确句柄和直接调用的函数。专业工具只增加少量辅助抽象。"
       },
       "trueNative": {
         "title": "真正原生",
@@ -47,12 +47,12 @@
       },
       "shipEverywhere": {
         "title": "处处可发布",
-        "desc": "一套代码库即可覆盖 macOS、Windows、Linux、iOS、tvOS 和 Web。Steam、App Store 和 itch.io 均可发布。"
+        "desc": "一套代码库即可覆盖 macOS、Windows、Linux、iOS、tvOS、watchOS、visionOS、Android 和 Web。"
       }
     },
     "modules": {
       "title": "你需要的一切",
-      "desc": "九个模块化子系统,均可独立导入。只用你需要的部分。",
+      "desc": "十三个模块化子系统,均可独立导入。只用你需要的部分。",
       "items": [
         { "id": "core", "title": "Core", "desc": "窗口创建、游戏循环、输入处理、计时与帧控制。" },
         { "id": "shapes", "title": "Shapes", "desc": "2D 图形绘制 —— 直线、矩形、圆形、多边形 —— 以及碰撞检测。" },
@@ -62,7 +62,11 @@
         { "id": "models", "title": "Models", "desc": "glTF 2.0 加载、GPU 骨骼动画、PBR 材质、网格基本体。" },
         { "id": "math", "title": "Math", "desc": "向量、矩阵、四元数、缓动函数与随机数生成。" },
         { "id": "physics", "title": "Physics", "desc": "由 Jolt 驱动的刚体与软体、角色控制器、载具、射线检测、约束。" },
-        { "id": "scene", "title": "Scene", "desc": "保留模式场景图 —— 变换、可见性、阴影、材质绑定。" }
+        { "id": "scene", "title": "Scene", "desc": "保留模式场景图 —— 变换、可见性、阴影、材质绑定。" },
+        { "id": "mobile", "title": "Mobile", "desc": "虚拟控件、安全区域与触控输入辅助。" },
+        { "id": "world", "title": "World", "desc": "带版本的世界加载与验证、预制体和运行时实例化。" },
+        { "id": "vfx", "title": "VFX", "desc": "GPU 粒子系统、发射器与贴花。" },
+        { "id": "quality", "title": "Quality", "desc": "确定性的质量测试、截图与遥测。" }
       ]
     },
     "platforms": {
@@ -143,7 +147,7 @@
         "p.whyWgpu2": "取而代之的是,整个渲染器只在 <strong>wgpu</strong> 之上写了一遍。着色器使用 WGSL。我们在 Apple 平台获得 Metal,在 Windows 上获得 DirectX 12,在 Linux 与 Android 上获得 Vulkan,在浏览器中获得 WebGPU(并以 WebGL 作为回退) —— 全部来自一套代码库。代价是我们被绑定在 wgpu 的特性集上,一些奇特的功能(网格着色器、光线追踪)目前无法实现。对于一个小团队来说,我们认为这是一笔公平的交易。",
         "h.box": "今天盒子里实际有什么",
         "p.box": "我们尽量不在营销网站上放任何不能用的东西。以下是今天真正可用的内容:",
-        "li.box1": "<strong>九个可导入模块</strong> —— <code>bloom/core</code>、<code>bloom/shapes</code>、<code>bloom/textures</code>、<code>bloom/text</code>、<code>bloom/audio</code>、<code>bloom/models</code>、<code>bloom/math</code>、<code>bloom/physics</code> 与 <code>bloom/scene</code>。",
+        "li.box1": "<strong>九个可导入模块</strong> —— <code>@bloomengine/engine/core</code>、<code>@bloomengine/engine/shapes</code>、<code>@bloomengine/engine/textures</code>、<code>@bloomengine/engine/text</code>、<code>@bloomengine/engine/audio</code>、<code>@bloomengine/engine/models</code>、<code>@bloomengine/engine/math</code>、<code>@bloomengine/engine/physics</code> 与 <code>@bloomengine/engine/scene</code>。",
         "li.box2": "<strong>一套真正的 PBR 渲染器</strong> —— substrate 风格的分层材质、为静态几何体缓存的级联阴影贴图、ACES/AgX 色调映射、自动曝光、bloom、景深、运动模糊、SSGI、SSAO、TAA,以及用于分数渲染缩放的 CAS 锐化通道。",
         "li.box3": "<strong>GPU 骨骼动画</strong> —— glTF 2.0 导入、GPU 上的四骨骼线性混合蒙皮,每副骨架最多 128 个关节。",
         "li.box4": "<strong>Jolt 物理</strong> —— 刚体与软体、角色控制器、载具、射线检测、约束、接触回调。Web 目标使用 JoltPhysics.js 回退,因此同一份代码也能在浏览器中运行。",

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "defaultDescription": "Game native từ TypeScript. Viết TypeScript. Xuất bản game native. Không trình duyệt, không C++.",
+    "defaultDescription": "Game native từ TypeScript: build biên dịch trước không nhúng trình duyệt và WebAssembly cho web.",
     "languageLabel": "Ngôn ngữ"
   },
   "nav": {
@@ -25,7 +25,7 @@
     "heroBadge": "Game Engine Mã nguồn mở",
     "heroTitlePrefix": "Game native viết bằng ",
     "heroTitleHighlight": "TypeScript",
-    "heroDesc": "Viết TypeScript. Xuất bản game native. Không trình duyệt, không C++. Bloom biên dịch game của bạn trước thời gian chạy và chạy trên Metal, DirectX 12, Vulkan và WebGPU — một codebase, sáu nền tảng, kết xuất PBR thực thụ và vật lý có sẵn.",
+    "heroDesc": "Viết TypeScript và xuất bản game native không cần trình duyệt nhúng hay C++. Bloom biên dịch game của bạn trước thời gian chạy và chạy trên Metal, DirectX 12, Vulkan và WebGPU — một codebase, chín nền tảng, kết xuất PBR thực thụ và vật lý có sẵn.",
     "getStarted": "Bắt đầu",
     "viewOnGithub": "Xem trên GitHub",
     "proof": {
@@ -36,10 +36,10 @@
     },
     "why": {
       "title": "Vì sao chọn Bloom?",
-      "desc": "Bloom là game engine duy nhất cho phép bạn viết TypeScript và xuất bản game native thực sự. Không Electron, không WebView, không runtime trình duyệt. Mã nguồn của bạn được biên dịch trước thời gian chạy bởi trình biên dịch Perry và chạy trên một lõi viết bằng Rust.",
+      "desc": "Bloom biên dịch trước game TypeScript trên một lõi Rust. Các nền tảng native không dùng Electron, WebView hay runtime trình duyệt nhúng; nền tảng Web tạo WebAssembly.",
       "simpleApi": {
         "title": "API Đơn giản",
-        "desc": "Toàn bộ API gói gọn trong một tờ cheatsheet. Không class, không kế thừa, không phép thuật. Chỉ là các hàm bạn gọi."
+        "desc": "API gameplay ưu tiên hàm: dữ liệu đơn giản, handle tường minh và các hàm gọi trực tiếp. Công cụ chuyên biệt chỉ thêm những lớp trừu tượng hỗ trợ nhỏ."
       },
       "trueNative": {
         "title": "Native Thực thụ",
@@ -47,12 +47,12 @@
       },
       "shipEverywhere": {
         "title": "Xuất bản Khắp nơi",
-        "desc": "macOS, Windows, Linux, iOS, tvOS và Web từ một codebase. Sẵn sàng cho Steam, App Store và itch.io."
+        "desc": "macOS, Windows, Linux, iOS, tvOS, watchOS, visionOS, Android và Web từ một codebase."
       }
     },
     "modules": {
       "title": "Mọi thứ bạn cần",
-      "desc": "Chín hệ thống con dạng module, mỗi cái có thể import độc lập. Chỉ dùng những gì bạn cần.",
+      "desc": "Mười ba hệ thống con dạng module, mỗi cái có thể import độc lập. Chỉ dùng những gì bạn cần.",
       "items": [
         { "id": "core", "title": "Core", "desc": "Tạo cửa sổ, vòng lặp game, xử lý đầu vào, định thời và điều khiển khung hình." },
         { "id": "shapes", "title": "Shapes", "desc": "Vẽ hình khối 2D — đường, hình chữ nhật, hình tròn, đa giác — cùng phát hiện va chạm." },
@@ -62,7 +62,11 @@
         { "id": "models", "title": "Models", "desc": "Tải glTF 2.0, hoạt hình xương trên GPU, vật liệu PBR, các mesh nguyên mẫu." },
         { "id": "math", "title": "Math", "desc": "Vector, ma trận, quaternion, hàm easing và sinh số ngẫu nhiên." },
         { "id": "physics", "title": "Physics", "desc": "Vật thể cứng và mềm bằng Jolt, bộ điều khiển nhân vật, phương tiện, raycast, ràng buộc." },
-        { "id": "scene", "title": "Scene", "desc": "Đồ thị scene retained-mode — biến đổi, hiển thị, đổ bóng, gắn vật liệu." }
+        { "id": "scene", "title": "Scene", "desc": "Đồ thị scene retained-mode — biến đổi, hiển thị, đổ bóng, gắn vật liệu." },
+        { "id": "mobile", "title": "Mobile", "desc": "Điều khiển ảo, vùng an toàn và trợ giúp nhập liệu cảm ứng." },
+        { "id": "world", "title": "World", "desc": "Tải và xác thực world có phiên bản, prefab và khởi tạo lúc chạy." },
+        { "id": "vfx", "title": "VFX", "desc": "Hệ thống hạt GPU, bộ phát và decal." },
+        { "id": "quality", "title": "Quality", "desc": "Chạy kiểm thử chất lượng xác định, chụp ảnh và telemetry." }
       ]
     },
     "platforms": {
@@ -143,7 +147,7 @@
         "p.whyWgpu2": "Thay vào đó, toàn bộ bộ kết xuất được viết một lần trên nền <strong>wgpu</strong>. Shader là WGSL. Chúng tôi có Metal trên các nền tảng Apple, DirectX 12 trên Windows, Vulkan trên Linux và Android, và WebGPU (với WebGL dự phòng) trong trình duyệt — từ một codebase. Cái giá phải trả là chúng tôi bị ràng buộc bởi bộ tính năng của wgpu, và một vài thứ kỳ lạ (mesh shader, ray tracing) tạm thời không khả dụng. Chúng tôi nghĩ đó là một cuộc đánh đổi công bằng cho một đội nhỏ.",
         "h.box": "Hôm nay thực sự có gì trong hộp",
         "p.box": "Chúng tôi cố gắng không để bất cứ thứ gì lên trang marketing mà không hoạt động. Đây là những gì có thật, ngay hôm nay:",
-        "li.box1": "<strong>Chín module có thể import</strong> — <code>bloom/core</code>, <code>bloom/shapes</code>, <code>bloom/textures</code>, <code>bloom/text</code>, <code>bloom/audio</code>, <code>bloom/models</code>, <code>bloom/math</code>, <code>bloom/physics</code> và <code>bloom/scene</code>.",
+        "li.box1": "<strong>Chín module có thể import</strong> — <code>@bloomengine/engine/core</code>, <code>@bloomengine/engine/shapes</code>, <code>@bloomengine/engine/textures</code>, <code>@bloomengine/engine/text</code>, <code>@bloomengine/engine/audio</code>, <code>@bloomengine/engine/models</code>, <code>@bloomengine/engine/math</code>, <code>@bloomengine/engine/physics</code> và <code>@bloomengine/engine/scene</code>.",
         "li.box2": "<strong>Một bộ kết xuất PBR thực thụ</strong> — vật liệu phân tầng kiểu substrate, bản đồ bóng phân tầng có cache cho hình học tĩnh, tone mapping ACES/AgX, auto-exposure, bloom, độ sâu trường ảnh, motion blur, SSGI, SSAO, TAA, và một lượt CAS sharpen cho các tỉ lệ kết xuất phân số.",
         "li.box3": "<strong>Hoạt hình xương trên GPU</strong> — import glTF 2.0, linear blend skinning bốn xương trên GPU, lên đến 128 khớp mỗi bộ xương.",
         "li.box4": "<strong>Vật lý Jolt</strong> — vật thể cứng và mềm, bộ điều khiển nhân vật, phương tiện, raycast, ràng buộc, callback va chạm. Mục tiêu web sử dụng JoltPhysics.js làm dự phòng để cùng một mã nguồn chạy được trong trình duyệt.",
