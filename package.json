@@ -5,9 +5,16 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "check:docs": "node scripts/check-docs.mjs",
+    "check:snippets": "tsc --noEmit --strict --noResolve --module esnext --target es2022 scripts/bloom-docs-api.d.ts scripts/docs-smoke.ts",
+    "test": "npm run check:docs && npm run check:snippets && npm run build"
   },
   "dependencies": {
     "astro": "^5.7.10"
+  },
+  "devDependencies": {
+    "@bloomengine/engine": "^0.4.16",
+    "typescript": "^5.9.3"
   }
 }

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "defaultDescription": "Game native dari TypeScript. Tulis TypeScript. Rilis game native. Tanpa browser, tanpa C++.",
+    "defaultDescription": "Game native dari TypeScript: build ahead-of-time tanpa browser tertanam, plus WebAssembly untuk web.",
     "languageLabel": "Bahasa"
   },
   "nav": {
@@ -25,7 +25,7 @@
     "heroBadge": "Game Engine Open Source",
     "heroTitlePrefix": "Game native dari ",
     "heroTitleHighlight": "TypeScript",
-    "heroDesc": "Tulis TypeScript. Rilis game native. Tanpa browser, tanpa C++. Bloom mengompilasi game kamu secara ahead-of-time dan menjalankannya di Metal, DirectX 12, Vulkan dan WebGPU — satu codebase, enam target, rendering PBR sungguhan dan physics siap pakai.",
+    "heroDesc": "Tulis TypeScript dan rilis game native tanpa browser tertanam atau C++. Bloom mengompilasi game kamu secara ahead-of-time dan menjalankannya di Metal, DirectX 12, Vulkan dan WebGPU — satu codebase, sembilan target, rendering PBR sungguhan dan physics siap pakai.",
     "getStarted": "Mulai Sekarang",
     "viewOnGithub": "Lihat di GitHub",
     "proof": {
@@ -36,10 +36,10 @@
     },
     "why": {
       "title": "Kenapa Bloom?",
-      "desc": "Bloom adalah satu-satunya game engine yang memungkinkan kamu menulis TypeScript dan merilis game yang benar-benar native. Tanpa Electron, tanpa WebView, tanpa runtime browser. Kode kamu dikompilasi ahead-of-time oleh kompiler Perry dan berjalan di atas core Rust.",
+      "desc": "Bloom mengompilasi game TypeScript secara ahead-of-time di atas core Rust. Target native tidak memakai Electron, WebView, atau runtime browser tertanam; target Web menghasilkan WebAssembly.",
       "simpleApi": {
         "title": "API Sederhana",
-        "desc": "Seluruh API muat di satu cheatsheet. Tanpa class, tanpa inheritance, tanpa sihir. Hanya fungsi yang kamu panggil."
+        "desc": "API gameplay mengutamakan fungsi: data sederhana, handle eksplisit, dan fungsi langsung. Tool khusus hanya menambahkan abstraksi bantuan kecil."
       },
       "trueNative": {
         "title": "Benar-benar Native",
@@ -47,12 +47,12 @@
       },
       "shipEverywhere": {
         "title": "Rilis ke Mana Saja",
-        "desc": "macOS, Windows, Linux, iOS, tvOS dan Web dari satu codebase. Siap untuk Steam, App Store dan itch.io."
+        "desc": "macOS, Windows, Linux, iOS, tvOS, watchOS, visionOS, Android dan Web dari satu codebase."
       }
     },
     "modules": {
       "title": "Semua yang kamu butuhkan",
-      "desc": "Sembilan subsistem modular, masing-masing bisa diimpor secara terpisah. Pakai hanya yang kamu butuhkan.",
+      "desc": "Tiga belas subsistem modular, masing-masing bisa diimpor secara terpisah. Pakai hanya yang kamu butuhkan.",
       "items": [
         { "id": "core", "title": "Core", "desc": "Pembuatan window, game loop, penanganan input, timing, dan kontrol frame." },
         { "id": "shapes", "title": "Shapes", "desc": "Menggambar bentuk 2D — garis, persegi, lingkaran, poligon — plus deteksi tabrakan." },
@@ -62,7 +62,11 @@
         { "id": "models", "title": "Models", "desc": "Pemuatan glTF 2.0, animasi skeletal di GPU, material PBR, mesh primitif." },
         { "id": "math", "title": "Math", "desc": "Vektor, matriks, kuaternion, fungsi easing, dan pembangkit angka acak." },
         { "id": "physics", "title": "Physics", "desc": "Rigid & soft body bertenaga Jolt, character controller, kendaraan, raycast, constraint." },
-        { "id": "scene", "title": "Scene", "desc": "Scene graph mode retained — transform, visibilitas, bayangan, binding material." }
+        { "id": "scene", "title": "Scene", "desc": "Scene graph mode retained — transform, visibilitas, bayangan, binding material." },
+        { "id": "mobile", "title": "Mobile", "desc": "Kontrol virtual, safe area, dan helper input sentuh." },
+        { "id": "world", "title": "World", "desc": "Pemuatan dan validasi world berversi, prefab, serta instansiasi runtime." },
+        { "id": "vfx", "title": "VFX", "desc": "Sistem partikel GPU, emitter, dan decal." },
+        { "id": "quality", "title": "Quality", "desc": "Pengujian kualitas deterministik, capture, dan telemetri." }
       ]
     },
     "platforms": {
@@ -143,7 +147,7 @@
         "p.whyWgpu2": "Sebagai gantinya, seluruh renderer ditulis sekali di atas <strong>wgpu</strong>. Shader pakai WGSL. Kami dapat Metal di platform Apple, DirectX 12 di Windows, Vulkan di Linux dan Android, serta WebGPU (dengan fallback WebGL) di browser — dari satu codebase. Konsekuensinya, kami terikat ke set fitur wgpu, dan beberapa hal eksotis (mesh shader, ray tracing) belum bisa untuk sekarang. Buat tim kecil, kami pikir itu pertukaran yang adil.",
         "h.box": "Apa yang sebenarnya sudah ada hari ini",
         "p.box": "Kami berusaha tidak menaruh apa pun di situs marketing yang belum berfungsi. Berikut yang sudah nyata, hari ini:",
-        "li.box1": "<strong>Sembilan modul yang bisa diimpor</strong> — <code>bloom/core</code>, <code>bloom/shapes</code>, <code>bloom/textures</code>, <code>bloom/text</code>, <code>bloom/audio</code>, <code>bloom/models</code>, <code>bloom/math</code>, <code>bloom/physics</code> dan <code>bloom/scene</code>.",
+        "li.box1": "<strong>Sembilan modul yang bisa diimpor</strong> — <code>@bloomengine/engine/core</code>, <code>@bloomengine/engine/shapes</code>, <code>@bloomengine/engine/textures</code>, <code>@bloomengine/engine/text</code>, <code>@bloomengine/engine/audio</code>, <code>@bloomengine/engine/models</code>, <code>@bloomengine/engine/math</code>, <code>@bloomengine/engine/physics</code> dan <code>@bloomengine/engine/scene</code>.",
         "li.box2": "<strong>Renderer PBR sungguhan</strong> — material berlapis bergaya substrate, cascaded shadow map dengan caching untuk geometri statis, tone mapping ACES/AgX, auto-exposure, bloom, depth of field, motion blur, SSGI, SSAO, TAA, dan CAS sharpen pass untuk skala render pecahan.",
         "li.box3": "<strong>Animasi skeletal di GPU</strong> — impor glTF 2.0, linear blend skinning empat-tulang di GPU, hingga 128 sendi per skeleton.",
         "li.box4": "<strong>Physics Jolt</strong> — rigid dan soft body, character controller, kendaraan, raycast, constraint, callback kontak. Target web menggunakan fallback JoltPhysics.js sehingga kode yang sama berjalan di browser.",

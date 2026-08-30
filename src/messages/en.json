@@ -1,6 +1,6 @@
 {
   "meta": {
-    "defaultDescription": "Native games from TypeScript. Write TypeScript. Ship native games. No browser, no C++.",
+    "defaultDescription": "Native games from TypeScript: ahead-of-time native builds without an embedded browser, plus WebAssembly for the web.",
     "languageLabel": "Language"
   },
   "nav": {
@@ -25,7 +25,7 @@
     "heroBadge": "Open Source Game Engine",
     "heroTitlePrefix": "Native games from ",
     "heroTitleHighlight": "TypeScript",
-    "heroDesc": "Write TypeScript. Ship native games. No browser, no C++. Bloom compiles your game ahead-of-time and runs it on Metal, DirectX 12, Vulkan and WebGPU — one codebase, six targets, real PBR rendering and physics out of the box.",
+    "heroDesc": "Write TypeScript. Ship native games without an embedded browser or C++. Bloom compiles your game ahead-of-time and runs it on Metal, DirectX 12, Vulkan and WebGPU — one codebase, nine targets, real PBR rendering and physics out of the box.",
     "getStarted": "Get Started",
     "viewOnGithub": "View on GitHub",
     "proof": {
@@ -36,10 +36,10 @@
     },
     "why": {
       "title": "Why Bloom?",
-      "desc": "Bloom is the only game engine that lets you write TypeScript and ship truly native games. No Electron, no WebView, no browser runtime. Your code is compiled ahead-of-time by the Perry compiler and runs against a Rust core.",
+      "desc": "Bloom compiles TypeScript games ahead-of-time against a Rust core. Native targets use no Electron, WebView, or embedded browser runtime; the Web target emits WebAssembly.",
       "simpleApi": {
         "title": "Simple API",
-        "desc": "The entire API fits on a cheatsheet. No classes, no inheritance, no magic. Just functions you call."
+        "desc": "The gameplay API is function-first: plain data, explicit handles, and functions you call. Specialized tooling adds only small helper abstractions."
       },
       "trueNative": {
         "title": "True Native",
@@ -47,12 +47,12 @@
       },
       "shipEverywhere": {
         "title": "Ship Everywhere",
-        "desc": "macOS, Windows, Linux, iOS, tvOS and the Web from one codebase. Steam, App Store and itch.io ready."
+        "desc": "macOS, Windows, Linux, iOS, tvOS, watchOS, visionOS, Android and the Web from one codebase."
       }
     },
     "modules": {
       "title": "Everything you need",
-      "desc": "Nine modular subsystems, each independently importable. Use only what you need.",
+      "desc": "Thirteen modular subsystems, each independently importable. Use only what you need.",
       "items": [
         { "id": "core", "title": "Core", "desc": "Window creation, game loop, input handling, timing, and frame control." },
         { "id": "shapes", "title": "Shapes", "desc": "2D shape drawing — lines, rects, circles, polygons — plus collision detection." },
@@ -62,7 +62,11 @@
         { "id": "models", "title": "Models", "desc": "glTF 2.0 loading, GPU skeletal animation, PBR materials, mesh primitives." },
         { "id": "math", "title": "Math", "desc": "Vectors, matrices, quaternions, easing functions, and random number generation." },
         { "id": "physics", "title": "Physics", "desc": "Jolt-powered rigid & soft bodies, character controllers, vehicles, raycasts, constraints." },
-        { "id": "scene", "title": "Scene", "desc": "Retained-mode scene graph — transforms, visibility, shadows, material binding." }
+        { "id": "scene", "title": "Scene", "desc": "Retained-mode scene graph — transforms, visibility, shadows, material binding." },
+        { "id": "mobile", "title": "Mobile", "desc": "Virtual controls, safe areas, and touch-input helpers." },
+        { "id": "world", "title": "World", "desc": "Versioned world loading, validation, prefabs, and runtime instantiation." },
+        { "id": "vfx", "title": "VFX", "desc": "GPU particle systems, emitters, and decals." },
+        { "id": "quality", "title": "Quality", "desc": "Deterministic quality runs, captures, and telemetry." }
       ]
     },
     "platforms": {
@@ -143,7 +147,7 @@
         "p.whyWgpu2": "Instead, the entire renderer is written once on top of <strong>wgpu</strong>. Shaders are WGSL. We get Metal on Apple platforms, DirectX 12 on Windows, Vulkan on Linux and Android, and WebGPU (with a WebGL fallback) in the browser — from one codebase. The cost is that we are bound to wgpu's feature set, and a few exotic things (mesh shaders, ray tracing) are off the table for now. We think that's a fair trade for a small team.",
         "h.box": "What's actually in the box today",
         "p.box": "We try not to put anything on the marketing site that does not work. Here is what is real, today:",
-        "li.box1": "<strong>Nine importable modules</strong> — <code>bloom/core</code>, <code>bloom/shapes</code>, <code>bloom/textures</code>, <code>bloom/text</code>, <code>bloom/audio</code>, <code>bloom/models</code>, <code>bloom/math</code>, <code>bloom/physics</code> and <code>bloom/scene</code>.",
+        "li.box1": "<strong>Nine importable modules</strong> — <code>@bloomengine/engine/core</code>, <code>@bloomengine/engine/shapes</code>, <code>@bloomengine/engine/textures</code>, <code>@bloomengine/engine/text</code>, <code>@bloomengine/engine/audio</code>, <code>@bloomengine/engine/models</code>, <code>@bloomengine/engine/math</code>, <code>@bloomengine/engine/physics</code> and <code>@bloomengine/engine/scene</code>.",
         "li.box2": "<strong>A real PBR renderer</strong> — substrate-style layered materials, cascaded shadow maps with caching for static geometry, ACES/AgX tone mapping, auto-exposure, bloom, depth of field, motion blur, SSGI, SSAO, TAA, and a CAS sharpen pass for fractional render scales.",
         "li.box3": "<strong>GPU skeletal animation</strong> — glTF 2.0 import, four-bone linear blend skinning on the GPU, up to 128 joints per skeleton.",
         "li.box4": "<strong>Jolt physics</strong> — rigid and soft bodies, character controllers, vehicles, raycasts, constraints, contact callbacks. The web target uses the JoltPhysics.js fallback so the same code runs in the browser.",

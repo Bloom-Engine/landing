@@ -89,13 +89,13 @@ const showcaseHref = localePath(locale, "/showcase");
       <h2>{k("h.api")}</h2>
       <p>{k("p.api1")}</p>
       <pre class="snippet"><code><span class="kw">import</span> {"{"} initWindow, windowShouldClose, beginDrawing,
-         endDrawing, clearBackground, drawText, Colors {"}"} <span class="kw">from</span> <span class="str">"bloom"</span>;
+         endDrawing, clearBackground, drawText, Colors {"}"} <span class="kw">from</span> <span class="str">"@bloomengine/engine"</span>;
 
 initWindow(<span class="num">800</span>, <span class="num">450</span>, <span class="str">"Hello Bloom"</span>);
 
 <span class="kw">while</span> (!windowShouldClose()) {"{"}
   beginDrawing();
-  clearBackground(Colors.<span class="prop">RAYWHITE</span>);
+  clearBackground(Colors.<span class="prop">SNOW</span>);
   drawText(<span class="str">"Hello, Bloom!"</span>, <span class="num">190</span>, <span class="num">200</span>, <span class="num">20</span>, Colors.<span class="prop">DARKGRAY</span>);
   endDrawing();
 {"}"}</code></pre>

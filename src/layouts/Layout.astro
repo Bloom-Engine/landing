@@ -15,18 +15,23 @@ interface Props {
   locale?: Locale;
   /** Path within the site without locale prefix, e.g. "/", "/blog", "/blog/where-bloom-stands". Used for hreflang + language switcher. */
   pathWithoutLocale?: string;
+  /** False for English-only pages such as technical and legal documentation. */
+  localizedPathAvailable?: boolean;
 }
 
 const {
   title,
   locale = defaultLocale,
   pathWithoutLocale = "/",
+  localizedPathAvailable = true,
 } = Astro.props;
 
 const t = tFor(locale);
 const description = Astro.props.description ?? t("meta.defaultDescription");
 
 const site = "https://bloomengine.dev";
+const alternateLocales = localizedPathAvailable ? locales : [defaultLocale];
+const languageMenuPath = localizedPathAvailable ? pathWithoutLocale : "/";
 ---
 
 <!doctype html>
@@ -37,7 +42,7 @@ const site = "https://bloomengine.dev";
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
-    {locales.map((alt) => (
+    {alternateLocales.map((alt) => (
       <link
         rel="alternate"
         hreflang={alt}
@@ -76,7 +81,7 @@ const site = "https://bloomengine.dev";
             <div class="lang-menu" role="menu">
               {locales.map((alt) => (
                 <a
-                  href={`${localePath(alt, pathWithoutLocale)}`}
+                  href={`${localePath(alt, languageMenuPath)}`}
                   role="menuitem"
                   class={alt === locale ? "active" : ""}
                   hreflang={alt}

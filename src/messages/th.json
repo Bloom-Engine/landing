@@ -1,6 +1,6 @@
 {
   "meta": {
-    "defaultDescription": "เกมเนทีฟจาก TypeScript เขียน TypeScript ส่งมอบเกมเนทีฟ ไม่ต้องใช้เบราว์เซอร์ ไม่ต้องใช้ C++",
+    "defaultDescription": "เกมเนทีฟจาก TypeScript: บิลด์แบบ ahead-of-time ที่ไม่ฝังเบราว์เซอร์ พร้อม WebAssembly สำหรับเว็บ",
     "languageLabel": "ภาษา"
   },
   "nav": {
@@ -25,7 +25,7 @@
     "heroBadge": "เกมเอนจินโอเพนซอร์ส",
     "heroTitlePrefix": "เกมเนทีฟที่สร้างด้วย ",
     "heroTitleHighlight": "TypeScript",
-    "heroDesc": "เขียน TypeScript ส่งมอบเกมเนทีฟ ไม่ต้องใช้เบราว์เซอร์ ไม่ต้องใช้ C++ Bloom คอมไพล์เกมของคุณแบบ ahead-of-time และรันบน Metal, DirectX 12, Vulkan และ WebGPU — โค้ดเบสเดียว หกแพลตฟอร์มเป้าหมาย พร้อมการเรนเดอร์ PBR และฟิสิกส์จริงในตัว",
+    "heroDesc": "เขียน TypeScript และส่งมอบเกมเนทีฟโดยไม่ต้องฝังเบราว์เซอร์หรือใช้ C++ Bloom คอมไพล์เกมของคุณแบบ ahead-of-time และรันบน Metal, DirectX 12, Vulkan และ WebGPU — โค้ดเบสเดียว เก้าแพลตฟอร์มเป้าหมาย พร้อมการเรนเดอร์ PBR และฟิสิกส์จริงในตัว",
     "getStarted": "เริ่มต้นใช้งาน",
     "viewOnGithub": "ดูบน GitHub",
     "proof": {
@@ -36,10 +36,10 @@
     },
     "why": {
       "title": "ทำไมต้อง Bloom?",
-      "desc": "Bloom เป็นเกมเอนจินเดียวที่ให้คุณเขียน TypeScript และส่งมอบเกมเนทีฟอย่างแท้จริง ไม่มี Electron ไม่มี WebView ไม่มีรันไทม์ของเบราว์เซอร์ โค้ดของคุณถูกคอมไพล์แบบ ahead-of-time ด้วยคอมไพเลอร์ Perry และทำงานบนคอร์ที่เขียนด้วย Rust",
+      "desc": "Bloom คอมไพล์เกม TypeScript แบบ ahead-of-time บนคอร์ Rust เป้าหมายเนทีฟไม่ใช้ Electron, WebView หรือรันไทม์เบราว์เซอร์แบบฝัง ส่วนเป้าหมาย Web สร้าง WebAssembly",
       "simpleApi": {
         "title": "API เรียบง่าย",
-        "desc": "API ทั้งหมดอยู่ในชีตเดียว ไม่มีคลาส ไม่มีการสืบทอด ไม่มีอะไรลึกลับ มีเพียงฟังก์ชันที่คุณเรียกใช้"
+        "desc": "API เกมเน้นฟังก์ชันเป็นหลัก: ข้อมูลเรียบง่าย แฮนเดิลชัดเจน และฟังก์ชันที่เรียกโดยตรง เครื่องมือเฉพาะทางเพิ่มเพียงตัวช่วยขนาดเล็ก"
       },
       "trueNative": {
         "title": "เนทีฟอย่างแท้จริง",
@@ -47,12 +47,12 @@
       },
       "shipEverywhere": {
         "title": "ส่งมอบได้ทุกที่",
-        "desc": "macOS, Windows, Linux, iOS, tvOS และเว็บจากโค้ดเบสเดียว พร้อมส่งขึ้น Steam, App Store และ itch.io"
+        "desc": "macOS, Windows, Linux, iOS, tvOS, watchOS, visionOS, Android และเว็บจากโค้ดเบสเดียว"
       }
     },
     "modules": {
       "title": "ทุกสิ่งที่คุณต้องการ",
-      "desc": "เก้าระบบย่อยแบบโมดูลาร์ แต่ละตัวสามารถนำเข้าได้อิสระ ใช้เฉพาะที่คุณต้องการ",
+      "desc": "สิบสามระบบย่อยแบบโมดูลาร์ แต่ละตัวสามารถนำเข้าได้อิสระ ใช้เฉพาะที่คุณต้องการ",
       "items": [
         { "id": "core", "title": "Core", "desc": "การสร้างหน้าต่าง, ลูปเกม, การจัดการอินพุต, การจับเวลา และการควบคุมเฟรม" },
         { "id": "shapes", "title": "Shapes", "desc": "การวาดรูปทรง 2D — เส้น, สี่เหลี่ยม, วงกลม, รูปหลายเหลี่ยม — พร้อมการตรวจจับการชน" },
@@ -62,7 +62,11 @@
         { "id": "models", "title": "Models", "desc": "การโหลด glTF 2.0, แอนิเมชันโครงกระดูกบน GPU, วัสดุ PBR และเมชพื้นฐาน" },
         { "id": "math", "title": "Math", "desc": "เวกเตอร์, เมทริกซ์, ควอเทอร์เนียน, ฟังก์ชัน easing และการสุ่มตัวเลข" },
         { "id": "physics", "title": "Physics", "desc": "วัตถุแข็งและอ่อนที่ขับเคลื่อนด้วย Jolt, ตัวควบคุมตัวละคร, ยานพาหนะ, raycast และข้อจำกัด" },
-        { "id": "scene", "title": "Scene", "desc": "ซีนกราฟแบบ retained-mode — การแปลง, การมองเห็น, เงา และการผูกวัสดุ" }
+        { "id": "scene", "title": "Scene", "desc": "ซีนกราฟแบบ retained-mode — การแปลง, การมองเห็น, เงา และการผูกวัสดุ" },
+        { "id": "mobile", "title": "Mobile", "desc": "ตัวควบคุมเสมือน พื้นที่ปลอดภัย และตัวช่วยอินพุตแบบสัมผัส" },
+        { "id": "world", "title": "World", "desc": "การโหลดและตรวจสอบเวิลด์แบบมีเวอร์ชัน prefab และการสร้างอินสแตนซ์ขณะรัน" },
+        { "id": "vfx", "title": "VFX", "desc": "ระบบอนุภาค GPU ตัวปล่อย และ decal" },
+        { "id": "quality", "title": "Quality", "desc": "การทดสอบคุณภาพแบบกำหนดผลได้ การจับภาพ และเทเลเมทรี" }
       ]
     },
     "platforms": {
@@ -143,7 +147,7 @@
         "p.whyWgpu2": "แทนที่จะเป็นเช่นนั้น เรนเดอเรอร์ทั้งหมดเขียนเพียงครั้งเดียวบน <strong>wgpu</strong> Shader คือ WGSL เราได้ Metal บนแพลตฟอร์ม Apple, DirectX 12 บน Windows, Vulkan บน Linux และ Android และ WebGPU (พร้อม WebGL เป็นทางสำรอง) ในเบราว์เซอร์ — จากโค้ดเบสเดียว ค่าใช้จ่ายคือเราถูกผูกกับชุดฟีเจอร์ของ wgpu และสิ่งแปลกใหม่บางอย่าง (mesh shader, ray tracing) อยู่นอกเหนือความเป็นไปได้ในตอนนี้ เราคิดว่านั่นเป็นการแลกเปลี่ยนที่ยุติธรรมสำหรับทีมเล็ก ๆ",
         "h.box": "อะไรอยู่ในกล่องจริง ๆ ในวันนี้",
         "p.box": "เราพยายามไม่ใส่อะไรบนเว็บไซต์การตลาดที่ไม่ทำงาน นี่คือสิ่งที่เป็นจริง วันนี้:",
-        "li.box1": "<strong>เก้าโมดูลที่นำเข้าได้</strong> — <code>bloom/core</code>, <code>bloom/shapes</code>, <code>bloom/textures</code>, <code>bloom/text</code>, <code>bloom/audio</code>, <code>bloom/models</code>, <code>bloom/math</code>, <code>bloom/physics</code> และ <code>bloom/scene</code>",
+        "li.box1": "<strong>เก้าโมดูลที่นำเข้าได้</strong> — <code>@bloomengine/engine/core</code>, <code>@bloomengine/engine/shapes</code>, <code>@bloomengine/engine/textures</code>, <code>@bloomengine/engine/text</code>, <code>@bloomengine/engine/audio</code>, <code>@bloomengine/engine/models</code>, <code>@bloomengine/engine/math</code>, <code>@bloomengine/engine/physics</code> และ <code>@bloomengine/engine/scene</code>",
         "li.box2": "<strong>เรนเดอเรอร์ PBR ของจริง</strong> — วัสดุแบบเลเยอร์สไตล์ substrate, แผนที่เงาแบบ cascaded พร้อมแคชสำหรับเรขาคณิตคงที่, ACES/AgX tone mapping, auto-exposure, bloom, depth of field, motion blur, SSGI, SSAO, TAA และ CAS sharpen pass สำหรับ render scale แบบเศษส่วน",
         "li.box3": "<strong>แอนิเมชันโครงกระดูกบน GPU</strong> — การนำเข้า glTF 2.0, four-bone linear blend skinning บน GPU, สูงสุด 128 joint ต่อโครงกระดูก",
         "li.box4": "<strong>ฟิสิกส์ Jolt</strong> — วัตถุแข็งและอ่อน, ตัวควบคุมตัวละคร, ยานพาหนะ, raycast, ข้อจำกัด, callback การสัมผัส เป้าหมายเว็บใช้ JoltPhysics.js เป็นทางสำรองเพื่อให้โค้ดเดียวกันทำงานในเบราว์เซอร์",

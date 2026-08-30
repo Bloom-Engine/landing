@@ -1,0 +1,11 @@
+---
+import { defaultLocale, locales } from "../../i18n/ui";
+
+export function getStaticPaths() {
+  return locales
+    .filter((lang) => lang !== defaultLocale)
+    .map((lang) => ({ params: { lang } }));
+}
+
+return Astro.redirect("/docs", 308);
+---

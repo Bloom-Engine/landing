@@ -1,6 +1,6 @@
 {
   "meta": {
-    "defaultDescription": "Des jeux natifs en TypeScript. Écrivez du TypeScript. Livrez des jeux natifs. Pas de navigateur, pas de C++.",
+    "defaultDescription": "Des jeux natifs en TypeScript : builds compilés en amont sans navigateur intégré, plus WebAssembly pour le web.",
     "languageLabel": "Langue"
   },
   "nav": {
@@ -25,7 +25,7 @@
     "heroBadge": "Moteur de jeu open source",
     "heroTitlePrefix": "Des jeux natifs en ",
     "heroTitleHighlight": "TypeScript",
-    "heroDesc": "Écrivez du TypeScript. Livrez des jeux natifs. Pas de navigateur, pas de C++. Bloom compile votre jeu en amont et l'exécute sur Metal, DirectX 12, Vulkan et WebGPU — un seul code, six cibles, du vrai rendu PBR et de la physique prêts à l'emploi.",
+    "heroDesc": "Écrivez du TypeScript et livrez des jeux natifs sans navigateur intégré ni C++. Bloom compile votre jeu en amont et l'exécute sur Metal, DirectX 12, Vulkan et WebGPU — un seul code, neuf cibles, du vrai rendu PBR et de la physique prêts à l'emploi.",
     "getStarted": "Commencer",
     "viewOnGithub": "Voir sur GitHub",
     "proof": {
@@ -36,10 +36,10 @@
     },
     "why": {
       "title": "Pourquoi Bloom ?",
-      "desc": "Bloom est le seul moteur de jeu qui vous permet d'écrire du TypeScript et de livrer des jeux véritablement natifs. Pas d'Electron, pas de WebView, pas de runtime de navigateur. Votre code est compilé en amont par le compilateur Perry et s'exécute sur un cœur écrit en Rust.",
+      "desc": "Bloom compile les jeux TypeScript en amont sur un cœur Rust. Les cibles natives n'utilisent ni Electron, ni WebView, ni navigateur intégré ; la cible Web produit du WebAssembly.",
       "simpleApi": {
         "title": "API simple",
-        "desc": "Toute l'API tient sur un aide-mémoire. Pas de classes, pas d'héritage, pas de magie. Juste des fonctions que vous appelez."
+        "desc": "L'API de jeu privilégie les fonctions : données simples, handles explicites et appels directs. Les outils spécialisés n'ajoutent que de petites abstractions pratiques."
       },
       "trueNative": {
         "title": "Vraiment natif",
@@ -47,12 +47,12 @@
       },
       "shipEverywhere": {
         "title": "Livrez partout",
-        "desc": "macOS, Windows, Linux, iOS, tvOS et le Web depuis une seule base de code. Prêt pour Steam, App Store et itch.io."
+        "desc": "macOS, Windows, Linux, iOS, tvOS, watchOS, visionOS, Android et le Web depuis une seule base de code."
       }
     },
     "modules": {
       "title": "Tout ce dont vous avez besoin",
-      "desc": "Neuf sous-systèmes modulaires, chacun importable indépendamment. N'utilisez que ce dont vous avez besoin.",
+      "desc": "Treize sous-systèmes modulaires, chacun importable indépendamment. N'utilisez que ce dont vous avez besoin.",
       "items": [
         { "id": "core", "title": "Core", "desc": "Création de fenêtre, boucle de jeu, gestion des entrées, timing et contrôle des frames." },
         { "id": "shapes", "title": "Shapes", "desc": "Dessin de formes 2D — lignes, rectangles, cercles, polygones — plus la détection de collisions." },
@@ -62,7 +62,11 @@
         { "id": "models", "title": "Models", "desc": "Chargement glTF 2.0, animation squelettique GPU, matériaux PBR, primitives de mesh." },
         { "id": "math", "title": "Math", "desc": "Vecteurs, matrices, quaternions, fonctions d'easing et génération de nombres aléatoires." },
         { "id": "physics", "title": "Physics", "desc": "Corps rigides et mous propulsés par Jolt, contrôleurs de personnage, véhicules, raycasts, contraintes." },
-        { "id": "scene", "title": "Scene", "desc": "Graphe de scène en mode retenu — transformations, visibilité, ombres, liaison de matériaux." }
+        { "id": "scene", "title": "Scene", "desc": "Graphe de scène en mode retenu — transformations, visibilité, ombres, liaison de matériaux." },
+        { "id": "mobile", "title": "Mobile", "desc": "Commandes virtuelles, zones sûres et aides à la saisie tactile." },
+        { "id": "world", "title": "Monde", "desc": "Chargement et validation versionnés des mondes, préfabriqués et instanciation à l'exécution." },
+        { "id": "vfx", "title": "VFX", "desc": "Systèmes de particules GPU, émetteurs et décalcomanies." },
+        { "id": "quality", "title": "Qualité", "desc": "Tests qualité déterministes, captures et télémétrie." }
       ]
     },
     "platforms": {
@@ -143,7 +147,7 @@
         "p.whyWgpu2": "À la place, tout le renderer est écrit une seule fois au-dessus de <strong>wgpu</strong>. Les shaders sont en WGSL. Nous obtenons Metal sur les plateformes Apple, DirectX 12 sur Windows, Vulkan sur Linux et Android, et WebGPU (avec un repli WebGL) dans le navigateur — depuis une seule base de code. Le coût, c'est que nous sommes liés à l'ensemble des fonctionnalités de wgpu, et que quelques choses exotiques (mesh shaders, ray tracing) sont hors de portée pour l'instant. Nous trouvons que c'est un compromis honnête pour une petite équipe.",
         "h.box": "Ce qui est réellement disponible aujourd'hui",
         "p.box": "Nous essayons de ne rien mettre sur le site marketing qui ne fonctionne pas. Voici ce qui est réel, aujourd'hui :",
-        "li.box1": "<strong>Neuf modules importables</strong> — <code>bloom/core</code>, <code>bloom/shapes</code>, <code>bloom/textures</code>, <code>bloom/text</code>, <code>bloom/audio</code>, <code>bloom/models</code>, <code>bloom/math</code>, <code>bloom/physics</code> et <code>bloom/scene</code>.",
+        "li.box1": "<strong>Neuf modules importables</strong> — <code>@bloomengine/engine/core</code>, <code>@bloomengine/engine/shapes</code>, <code>@bloomengine/engine/textures</code>, <code>@bloomengine/engine/text</code>, <code>@bloomengine/engine/audio</code>, <code>@bloomengine/engine/models</code>, <code>@bloomengine/engine/math</code>, <code>@bloomengine/engine/physics</code> et <code>@bloomengine/engine/scene</code>.",
         "li.box2": "<strong>Un véritable renderer PBR</strong> — matériaux en couches façon substrate, shadow maps en cascade avec mise en cache pour la géométrie statique, tone mapping ACES/AgX, auto-exposition, bloom, profondeur de champ, motion blur, SSGI, SSAO, TAA, et une passe de netteté CAS pour les échelles de rendu fractionnaires.",
         "li.box3": "<strong>Animation squelettique GPU</strong> — import glTF 2.0, skinning à mélange linéaire à quatre os sur le GPU, jusqu'à 128 articulations par squelette.",
         "li.box4": "<strong>Physique Jolt</strong> — corps rigides et mous, contrôleurs de personnage, véhicules, raycasts, contraintes, callbacks de contact. La cible web utilise le repli JoltPhysics.js pour que le même code tourne dans le navigateur.",

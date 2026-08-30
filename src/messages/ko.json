@@ -1,6 +1,6 @@
 {
   "meta": {
-    "defaultDescription": "TypeScript로 만드는 네이티브 게임. TypeScript로 작성하고, 네이티브 게임으로 출시하세요. 브라우저도, C++도 필요 없습니다.",
+    "defaultDescription": "TypeScript 네이티브 게임: 내장 브라우저 없는 사전 컴파일 빌드와 웹용 WebAssembly를 지원합니다.",
     "languageLabel": "언어"
   },
   "nav": {
@@ -25,7 +25,7 @@
     "heroBadge": "오픈 소스 게임 엔진",
     "heroTitlePrefix": "네이티브 게임을 만드는 언어, ",
     "heroTitleHighlight": "TypeScript",
-    "heroDesc": "TypeScript로 작성하고, 네이티브 게임으로 출시하세요. 브라우저도, C++도 필요 없습니다. Bloom은 게임을 사전 컴파일(AOT)하여 Metal, DirectX 12, Vulkan, WebGPU에서 실행합니다 — 하나의 코드베이스로 6개의 타깃, 진짜 PBR 렌더링과 물리를 기본 제공합니다.",
+    "heroDesc": "TypeScript로 작성하고 내장 브라우저나 C++ 없이 네이티브 게임으로 출시하세요. Bloom은 게임을 사전 컴파일(AOT)하여 Metal, DirectX 12, Vulkan, WebGPU에서 실행합니다 — 하나의 코드베이스로 9개의 타깃, 진짜 PBR 렌더링과 물리를 기본 제공합니다.",
     "getStarted": "시작하기",
     "viewOnGithub": "GitHub에서 보기",
     "proof": {
@@ -36,10 +36,10 @@
     },
     "why": {
       "title": "왜 Bloom인가?",
-      "desc": "Bloom은 TypeScript로 작성하면서도 진짜 네이티브 게임을 출시할 수 있는 유일한 게임 엔진입니다. Electron도, WebView도, 브라우저 런타임도 없습니다. 코드는 Perry 컴파일러로 사전 컴파일되어 Rust 코어 위에서 실행됩니다.",
+      "desc": "Bloom은 TypeScript 게임을 Rust 코어 대상으로 사전 컴파일합니다. 네이티브 타깃은 Electron, WebView, 내장 브라우저 런타임을 사용하지 않으며 Web 타깃은 WebAssembly를 생성합니다.",
       "simpleApi": {
         "title": "간결한 API",
-        "desc": "전체 API가 치트시트 한 장에 들어갑니다. 클래스도, 상속도, 마법 같은 동작도 없습니다. 호출하는 함수들뿐입니다."
+        "desc": "게임플레이 API는 함수 중심입니다. 단순 데이터, 명시적 핸들, 직접 호출하는 함수로 구성되며 전문 도구만 작은 보조 추상화를 추가합니다."
       },
       "trueNative": {
         "title": "진짜 네이티브",
@@ -47,12 +47,12 @@
       },
       "shipEverywhere": {
         "title": "모든 곳으로 출시",
-        "desc": "macOS, Windows, Linux, iOS, tvOS, 웹까지 하나의 코드베이스로. Steam, App Store, itch.io 출시 준비 완료."
+        "desc": "macOS, Windows, Linux, iOS, tvOS, watchOS, visionOS, Android, 웹까지 하나의 코드베이스로 지원합니다."
       }
     },
     "modules": {
       "title": "필요한 모든 것",
-      "desc": "9개의 모듈형 서브시스템, 각각 독립적으로 임포트 가능합니다. 필요한 것만 골라 쓰세요.",
+      "desc": "13개의 모듈형 서브시스템, 각각 독립적으로 임포트 가능합니다. 필요한 것만 골라 쓰세요.",
       "items": [
         { "id": "core", "title": "Core", "desc": "윈도우 생성, 게임 루프, 입력 처리, 타이밍, 프레임 제어." },
         { "id": "shapes", "title": "Shapes", "desc": "2D 도형 그리기 — 선, 사각형, 원, 다각형 — 그리고 충돌 감지까지." },
@@ -62,7 +62,11 @@
         { "id": "models", "title": "Models", "desc": "glTF 2.0 로딩, GPU 스켈레탈 애니메이션, PBR 머티리얼, 메시 프리미티브." },
         { "id": "math", "title": "Math", "desc": "벡터, 행렬, 쿼터니언, 이징 함수, 난수 생성." },
         { "id": "physics", "title": "Physics", "desc": "Jolt 기반 강체 및 연체, 캐릭터 컨트롤러, 차량, 레이캐스트, 컨스트레인트." },
-        { "id": "scene", "title": "Scene", "desc": "리테인드 모드 씬 그래프 — 트랜스폼, 가시성, 그림자, 머티리얼 바인딩." }
+        { "id": "scene", "title": "Scene", "desc": "리테인드 모드 씬 그래프 — 트랜스폼, 가시성, 그림자, 머티리얼 바인딩." },
+        { "id": "mobile", "title": "Mobile", "desc": "가상 컨트롤, 안전 영역, 터치 입력 도우미." },
+        { "id": "world", "title": "World", "desc": "버전 관리 월드 로딩과 검증, 프리팹, 런타임 인스턴스화." },
+        { "id": "vfx", "title": "VFX", "desc": "GPU 파티클 시스템, 이미터, 데칼." },
+        { "id": "quality", "title": "Quality", "desc": "결정론적 품질 실행, 캡처, 텔레메트리." }
       ]
     },
     "platforms": {
@@ -143,7 +147,7 @@
         "p.whyWgpu2": "대신 전체 렌더러를 <strong>wgpu</strong> 위에서 한 번만 작성했습니다. 셰이더는 WGSL입니다. 그 결과 Apple 플랫폼에서는 Metal, Windows에서는 DirectX 12, Linux와 Android에서는 Vulkan, 브라우저에서는 WebGPU(WebGL 폴백 포함)를 — 하나의 코드베이스로 얻습니다. 비용은 wgpu의 기능 집합에 묶인다는 점이고, 일부 특수한 기능들(메시 셰이더, 레이 트레이싱)은 당분간 사용할 수 없습니다. 작은 팀에게는 충분히 합리적인 거래라고 생각합니다.",
         "h.box": "오늘 실제로 들어 있는 것",
         "p.box": "마케팅 사이트에 동작하지 않는 것은 올리지 않으려고 합니다. 오늘 실제로 동작하는 것은 다음과 같습니다:",
-        "li.box1": "<strong>임포트 가능한 9개의 모듈</strong> — <code>bloom/core</code>, <code>bloom/shapes</code>, <code>bloom/textures</code>, <code>bloom/text</code>, <code>bloom/audio</code>, <code>bloom/models</code>, <code>bloom/math</code>, <code>bloom/physics</code>, 그리고 <code>bloom/scene</code>.",
+        "li.box1": "<strong>임포트 가능한 9개의 모듈</strong> — <code>@bloomengine/engine/core</code>, <code>@bloomengine/engine/shapes</code>, <code>@bloomengine/engine/textures</code>, <code>@bloomengine/engine/text</code>, <code>@bloomengine/engine/audio</code>, <code>@bloomengine/engine/models</code>, <code>@bloomengine/engine/math</code>, <code>@bloomengine/engine/physics</code>, 그리고 <code>@bloomengine/engine/scene</code>.",
         "li.box2": "<strong>진짜 PBR 렌더러</strong> — substrate 스타일의 레이어드 머티리얼, 정적 지오메트리에 대한 캐싱이 적용된 캐스케이드 섀도 맵, ACES/AgX 톤 매핑, 자동 노출, 블룸, 피사계 심도, 모션 블러, SSGI, SSAO, TAA, 그리고 분수 렌더 스케일을 위한 CAS 샤픈 패스.",
         "li.box3": "<strong>GPU 스켈레탈 애니메이션</strong> — glTF 2.0 임포트, GPU 위에서의 4본 선형 블렌드 스키닝, 스켈레톤당 최대 128개의 조인트.",
         "li.box4": "<strong>Jolt 물리</strong> — 강체 및 연체, 캐릭터 컨트롤러, 차량, 레이캐스트, 컨스트레인트, 컨택트 콜백. 웹 타깃은 JoltPhysics.js 폴백을 사용하여 동일한 코드가 브라우저에서도 실행됩니다.",

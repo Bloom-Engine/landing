@@ -19,7 +19,10 @@ const platforms = [
   { name: "Linux", api: "Vulkan" },
   { name: "iOS", api: "Metal" },
   { name: "tvOS", api: "Metal" },
-  { name: "Web", api: "WebGPU / WASM" },
+  { name: "watchOS", api: "SwiftUI / SceneKit" },
+  { name: "visionOS", api: "Metal" },
+  { name: "Android", api: "Vulkan / OpenGL ES" },
+  { name: "Web", api: "WebGPU / WebGL" },
 ];
 ---
 
@@ -28,11 +31,11 @@ const platforms = [
   <section class="hero">
     <div class="container hero-inner">
       <div class="hero-content">
-        <p class="hero-badge">{t("home.heroBadge")}</p>
+        <p class="hero-badge">{t("home.heroBadge")} · 0.5 preview</p>
         <h1>{t("home.heroTitlePrefix")}<span class="highlight">{t("home.heroTitleHighlight")}</span></h1>
         <p class="hero-desc">{t("home.heroDesc")}</p>
         <div class="hero-actions">
-          <a href="https://github.com/Bloom-Engine" target="_blank" rel="noopener" class="btn btn-primary">
+          <a href="/docs" class="btn btn-primary">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
             {t("home.getStarted")}
           </a>
@@ -52,13 +55,13 @@ const platforms = [
           <pre><code><span class="kw">import</span> {"{"} initWindow, windowShouldClose,
          beginDrawing, endDrawing,
          clearBackground, drawText,
-         Colors {"}"} <span class="kw">from</span> <span class="str">"bloom"</span>;
+         Colors {"}"} <span class="kw">from</span> <span class="str">"@bloomengine/engine"</span>;
 
 initWindow(<span class="num">800</span>, <span class="num">450</span>, <span class="str">"My Game"</span>);
 
 <span class="kw">while</span> (!windowShouldClose()) {"{"}
   beginDrawing();
-  clearBackground(Colors.<span class="prop">RAYWHITE</span>);
+  clearBackground(Colors.<span class="prop">SNOW</span>);
   drawText(<span class="str">"Hello, Bloom!"</span>,
     <span class="num">190</span>, <span class="num">200</span>, <span class="num">20</span>, Colors.<span class="prop">DARKGRAY</span>);
   endDrawing();
@@ -77,11 +80,11 @@ initWindow(<span class="num">800</span>, <span class="num">450</span>, <span cla
           <span class="proof-label">{t("home.proof.runtimeOverhead")}</span>
         </div>
         <div class="proof-card">
-          <span class="proof-number">6</span>
+          <span class="proof-number">9</span>
           <span class="proof-label">{t("home.proof.targetPlatforms")}</span>
         </div>
         <div class="proof-card">
-          <span class="proof-number">9</span>
+          <span class="proof-number">13</span>
           <span class="proof-label">{t("home.proof.modules")}</span>
         </div>
         <div class="proof-card">
@@ -134,7 +137,7 @@ initWindow(<span class="num">800</span>, <span class="num">450</span>, <span cla
             <div class={`module-icon ${m.id}`}></div>
             <h3>{m.title}</h3>
             <p>{m.desc}</p>
-            <code class="module-import">bloom/{m.id}</code>
+            <code class="module-import">@bloomengine/engine/{m.id}</code>
           </div>
         ))}
       </div>
@@ -210,7 +213,7 @@ initWindow(<span class="num">800</span>, <span class="num">450</span>, <span cla
               <span class="code-dot" style="background: #28C840"></span>
             </div>
             <pre><code><span class="kw">import</span> {"{"} drawRect, drawCircle,
-         checkCollisionRecs {"}"} <span class="kw">from</span> <span class="str">"bloom/shapes"</span>;
+         checkCollisionRecs {"}"} <span class="kw">from</span> <span class="str">"@bloomengine/engine/shapes"</span>;
 
 drawRect(<span class="num">100</span>, <span class="num">100</span>, <span class="num">200</span>, <span class="num">80</span>, Colors.<span class="prop">GREEN</span>);
 drawCircle(<span class="num">400</span>, <span class="num">300</span>, <span class="num">50</span>, Colors.<span class="prop">GOLD</span>);
@@ -232,11 +235,11 @@ drawCircle(<span class="num">400</span>, <span class="num">300</span>, <span cla
   position: {"{"} x: <span class="num">10</span>, y: <span class="num">10</span>, z: <span class="num">10</span> {"}"},
   target: {"{"} x: <span class="num">0</span>, y: <span class="num">0</span>, z: <span class="num">0</span> {"}"},
   up: {"{"} x: <span class="num">0</span>, y: <span class="num">1</span>, z: <span class="num">0</span> {"}"},
-  fovy: <span class="num">45</span>, projection: <span class="num">0</span>
+  fovy: <span class="num">45</span>, projection: <span class="str">"perspective"</span>
 {"}"};
 
 beginMode3D(camera);
-drawModel(tree, {"{"} x: <span class="num">0</span>, y: <span class="num">0</span>, z: <span class="num">0</span> {"}"});
+drawModel(tree, {"{"} x: <span class="num">0</span>, y: <span class="num">0</span>, z: <span class="num">0</span> {"}"}, <span class="num">1.0</span>, Colors.<span class="prop">WHITE</span>);
 drawGrid(<span class="num">10</span>, <span class="num">1</span>);
 endMode3D();</code></pre>
           </div>
