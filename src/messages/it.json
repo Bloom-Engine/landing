@@ -109,8 +109,13 @@
     "desc": "Giochi pubblicati realizzati con Bloom — disponibili ora e gratuiti.",
     "metaDescription": "Giochi pubblicati realizzati con Bloom — disponibili ora e gratuiti.",
     "liveBadge": "Disponibile sull'App Store",
+    "liveBadgeGooglePlay": "Disponibile su Google Play",
     "bloomJump": {
       "desc": "Un platform retrò in pixel art gratuito — cinque livelli fatti a mano, 60 FPS e una colonna sonora chiptune originale. Realizzato interamente con Bloom, gira in modo nativo su iPhone, iPad e Mac."
+    },
+    "bloomShooter": {
+      "desc": "Uno sparatutto in terza persona contro gli alieni, gratuito — cinque arene create a mano, cinquanta ondate, sei armi e la Matriarch che ti aspetta alla fine. Realizzato interamente con Bloom, senza pubblicità né acquisti in-app.",
+      "alt": "Gameplay di Bloom Shooter"
     },
     "cta": {
       "title": "Hai costruito qualcosa con Bloom?",
@@ -180,7 +185,7 @@
         "li.next4": "Rendere open source i giochi di esempio, inclusa una demo un po' più grande di Pong.",
         "li.next5": "Scrivere in dettaglio della pipeline di compilazione di Perry. Diverse persone l'hanno chiesto.",
         "h.try": "Provalo",
-        "p.try1": "Bloom è open source con licenza MIT. L'intero repository è su <a href=\"https://github.com/Bloom-Engine\" target=\"_blank\" rel=\"noopener\">GitHub</a>. Se vuoi seguire i lavori senza fare un fork, la <a data-internal=\"docs\">documentazione</a> ha un quick start di 12 righe, e la pagina <a data-internal=\"showcase\">vetrina</a> elenca cosa stiamo costruendo noi stessi con esso.",
+        "p.try1": "Bloom è open source con licenza MIT. L'intero repository è su <a href=\"https://github.com/Bloom-Engine/engine\" target=\"_blank\" rel=\"noopener\">GitHub</a>. Se vuoi seguire i lavori senza fare un fork, la <a data-internal=\"docs\">documentazione</a> ha un quick start di 12 righe, e la pagina <a data-internal=\"showcase\">vetrina</a> elenca cosa stiamo costruendo noi stessi con esso.",
         "p.try2": "In ogni caso: grazie per aver dato un'occhiata. Continueremo a postare qui man mano che atterrano pezzi più grossi."
       }
     }

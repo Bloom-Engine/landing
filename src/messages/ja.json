@@ -109,8 +109,13 @@
     "desc": "Bloomで作られた公開中のゲーム — 今すぐ無料でプレイできます。",
     "metaDescription": "Bloomで作られた公開中のゲーム — 今すぐ無料でプレイできます。",
     "liveBadge": "App Storeで配信中",
+    "liveBadgeGooglePlay": "Google Playで配信中",
     "bloomJump": {
       "desc": "無料のレトロピクセルプラットフォーマー。手作りの5つのレベル、60 FPS、オリジナルのチップチューンサウンドトラック。Bloomだけで作られ、iPhone、iPad、Macでネイティブに動作します。"
+    },
+    "bloomShooter": {
+      "desc": "無料の三人称視点エイリアンシューター。作り込まれた5つのアリーナ、50のウェーブ、6つの武器、そして最後に待ち受ける Matriarch。Bloomだけで作られ、広告もアプリ内課金もありません。",
+      "alt": "Bloom Shooterのゲームプレイ"
     },
     "cta": {
       "title": "Bloom で何かを作りましたか?",
@@ -180,7 +185,7 @@
         "li.next4": "サンプルゲームをオープンソース化します。Pong よりも少し大きなデモも含めます。",
         "li.next5": "Perry のコンパイルパイプラインを詳しく書き上げます。何人かの方から質問をいただきました。",
         "h.try": "試してみる",
-        "p.try1": "Bloom は MIT ライセンスのオープンソースです。リポジトリ全体は <a href=\"https://github.com/Bloom-Engine\" target=\"_blank\" rel=\"noopener\">GitHub</a> にあります。フォークせずに動向を追いかけたい場合は、<a data-internal=\"docs\">ドキュメント</a> に 12 行のクイックスタートがあり、<a data-internal=\"showcase\">ショーケース</a> ページには私たち自身が Bloom で作っているものを掲載しています。",
+        "p.try1": "Bloom は MIT ライセンスのオープンソースです。リポジトリ全体は <a href=\"https://github.com/Bloom-Engine/engine\" target=\"_blank\" rel=\"noopener\">GitHub</a> にあります。フォークせずに動向を追いかけたい場合は、<a data-internal=\"docs\">ドキュメント</a> に 12 行のクイックスタートがあり、<a data-internal=\"showcase\">ショーケース</a> ページには私たち自身が Bloom で作っているものを掲載しています。",
         "p.try2": "いずれにせよ、目を通していただきありがとうございます。より大きなピースが揃い次第、引き続きここで投稿していきます。"
       }
     }

@@ -17,6 +17,7 @@ const games = [
     url: "https://apps.apple.com/us/app/bloom-jump/id6761447092",
     image: "/games/bloom-jump/mac.webp",
     altKey: "home.game.alt",
+    liveKey: "showcase.liveBadge",
     platforms: "iPhone · iPad · Mac · Apple TV · Vision · Apple Watch · Android · Web",
     stores: [
       {
@@ -45,6 +46,23 @@ const games = [
       },
     ],
   },
+  {
+    name: "Bloom Shooter",
+    descKey: "showcase.bloomShooter.desc",
+    url: "https://play.google.com/store/apps/details?id=com.bloomengine.shooter",
+    image: "/games/bloom-shooter/gameplay.webp",
+    altKey: "showcase.bloomShooter.alt",
+    liveKey: "showcase.liveBadgeGooglePlay",
+    platforms: "Android",
+    stores: [
+      {
+        label: "Google Play",
+        sublabel: "Android",
+        url: "https://play.google.com/store/apps/details?id=com.bloomengine.shooter",
+        kind: "google",
+      },
+    ],
+  },
 ];
 ---
 
@@ -65,7 +83,7 @@ const games = [
               <img src={g.image} alt={t(g.altKey)} width="1640" height="1280" loading="lazy" />
             </a>
             <div class="showcase-info">
-              <span class="showcase-live">{t("showcase.liveBadge")}</span>
+              <span class="showcase-live">{t(g.liveKey)}</span>
               <h3>{g.name}</h3>
               <p>{g.descKey ? t(g.descKey) : ""}</p>
               <div class="showcase-stores">
@@ -94,7 +112,7 @@ const games = [
       <div class="showcase-cta">
         <h2>{t("showcase.cta.title")}</h2>
         <p>{t("showcase.cta.desc")}</p>
-        <a href="https://github.com/Bloom-Engine" target="_blank" rel="noopener" class="btn btn-primary">
+        <a href="https://github.com/Bloom-Engine/engine" target="_blank" rel="noopener" class="btn btn-primary">
           {t("showcase.cta.button")}
         </a>
       </div>

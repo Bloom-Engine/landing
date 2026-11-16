@@ -109,8 +109,13 @@
     "desc": "Bloom ile geliştirilen, yayında olan oyunlar — şimdi ücretsiz oynanabilir.",
     "metaDescription": "Bloom ile geliştirilen, yayında olan oyunlar — şimdi ücretsiz oynanabilir.",
     "liveBadge": "App Store'da yayında",
+    "liveBadgeGooglePlay": "Google Play'de yayında",
     "bloomJump": {
       "desc": "Ücretsiz bir retro piksel platform oyunu — el yapımı beş bölüm, 60 FPS ve özgün chiptune müzikler. Tamamen Bloom ile geliştirildi; iPhone, iPad ve Mac'te yerel olarak çalışır."
+    },
+    "bloomShooter": {
+      "desc": "Ücretsiz bir üçüncü şahıs uzaylı nişancı oyunu — özenle tasarlanmış beş arena, elli dalga, altı silah ve sonunda seni bekleyen Matriarch. Tamamen Bloom ile geliştirildi; reklam ve uygulama içi satın alma yok.",
+      "alt": "Bloom Shooter oynanışı"
     },
     "cta": {
       "title": "Bloom ile bir şeyler mi yaptın?",
@@ -180,7 +185,7 @@
         "li.next4": "Pong'dan biraz daha büyük bir demo dahil, örnek oyunları açık kaynak yap.",
         "li.next5": "Perry derleme hattını ayrıntılı olarak yaz. Birkaç kişi sordu.",
         "h.try": "Dene",
-        "p.try1": "Bloom MIT lisansı altında açık kaynak. Tüm depo <a href=\"https://github.com/Bloom-Engine\" target=\"_blank\" rel=\"noopener\">GitHub</a>'da. Çatallamadan takip etmek istersen, <a data-internal=\"docs\">dokümanlarda</a> 12 satırlık bir hızlı başlangıç var ve <a data-internal=\"showcase\">vitrin</a> sayfası bizim onunla neler ürettiğimizi listeler.",
+        "p.try1": "Bloom MIT lisansı altında açık kaynak. Tüm depo <a href=\"https://github.com/Bloom-Engine/engine\" target=\"_blank\" rel=\"noopener\">GitHub</a>'da. Çatallamadan takip etmek istersen, <a data-internal=\"docs\">dokümanlarda</a> 12 satırlık bir hızlı başlangıç var ve <a data-internal=\"showcase\">vitrin</a> sayfası bizim onunla neler ürettiğimizi listeler.",
         "p.try2": "Her durumda: göz attığın için teşekkürler. Daha büyük parçalar geldikçe burada paylaşmaya devam edeceğiz."
       }
     }

@@ -109,8 +109,13 @@
     "desc": "使用 Bloom 构建并已上线的游戏——现已推出，免费畅玩。",
     "metaDescription": "使用 Bloom 构建并已上线的游戏——现已推出，免费畅玩。",
     "liveBadge": "已上架 App Store",
+    "liveBadgeGooglePlay": "已上架 Google Play",
     "bloomJump": {
       "desc": "一款免费的复古像素平台游戏——五个手工打造的关卡、60 FPS 和原创芯片音乐。完全使用 Bloom 构建，在 iPhone、iPad 和 Mac 上原生运行。"
+    },
+    "bloomShooter": {
+      "desc": "一款免费的第三人称外星怪物射击游戏——五座精心打造的竞技场、五十波敌人、六种武器，以及在终点等待你的 Matriarch。完全使用 Bloom 构建，无广告、无应用内购买。",
+      "alt": "Bloom Shooter 游戏画面"
     },
     "cta": {
       "title": "用 Bloom 做了点什么?",
@@ -180,7 +185,7 @@
         "li.next4": "开源示例游戏,包括一个比 Pong 略大一些的演示。",
         "li.next5": "详细介绍 Perry 的编译流水线。已经有几位读者问过了。",
         "h.try": "试试看",
-        "p.try1": "Bloom 基于 MIT 开源。整个仓库托管在 <a href=\"https://github.com/Bloom-Engine\" target=\"_blank\" rel=\"noopener\">GitHub</a> 上。如果你想先关注而不分叉,<a data-internal=\"docs\">文档</a>里有 12 行的快速上手,<a data-internal=\"showcase\">案例展示</a>页面列出了我们自己用它构建的项目。",
+        "p.try1": "Bloom 基于 MIT 开源。整个仓库托管在 <a href=\"https://github.com/Bloom-Engine/engine\" target=\"_blank\" rel=\"noopener\">GitHub</a> 上。如果你想先关注而不分叉,<a data-internal=\"docs\">文档</a>里有 12 行的快速上手,<a data-internal=\"showcase\">案例展示</a>页面列出了我们自己用它构建的项目。",
         "p.try2": "无论怎样:感谢你来看一眼。随着更大的部分落地,我们会继续在这里更新。"
       }
     }

@@ -109,8 +109,13 @@
     "desc": "Bloom으로 만든 출시 게임 — 지금 무료로 플레이할 수 있습니다.",
     "metaDescription": "Bloom으로 만든 출시 게임 — 지금 무료로 플레이할 수 있습니다.",
     "liveBadge": "App Store에서 이용 가능",
+    "liveBadgeGooglePlay": "Google Play에서 이용 가능",
     "bloomJump": {
       "desc": "무료 레트로 픽셀 플랫포머 — 직접 제작한 5개의 레벨, 60 FPS, 오리지널 칩튠 사운드트랙. Bloom만으로 만들어져 iPhone, iPad, Mac에서 네이티브로 실행됩니다."
+    },
+    "bloomShooter": {
+      "desc": "무료 3인칭 에일리언 슈팅 게임 — 공들여 만든 5개의 아레나, 50개의 웨이브, 6종의 무기, 그리고 마지막에 기다리는 Matriarch. Bloom만으로 만들어졌으며 광고와 인앱 구매가 없습니다.",
+      "alt": "Bloom Shooter 게임플레이"
     },
     "cta": {
       "title": "Bloom으로 무언가를 만드셨나요?",
@@ -180,7 +185,7 @@
         "li.next4": "예제 게임들을 오픈소스화하기. Pong보다 약간 더 큰 데모도 포함합니다.",
         "li.next5": "Perry 컴파일 파이프라인을 자세히 정리하기. 여러 분이 물어봤습니다.",
         "h.try": "사용해보기",
-        "p.try1": "Bloom은 MIT 라이선스 기반 오픈 소스입니다. 전체 저장소는 <a href=\"https://github.com/Bloom-Engine\" target=\"_blank\" rel=\"noopener\">GitHub</a>에 있습니다. 포크 없이 따라가고 싶다면 <a data-internal=\"docs\">문서</a>에 12줄짜리 빠른 시작 가이드가 있고, <a data-internal=\"showcase\">쇼케이스</a> 페이지에는 우리가 직접 Bloom으로 만들고 있는 것들이 정리되어 있습니다.",
+        "p.try1": "Bloom은 MIT 라이선스 기반 오픈 소스입니다. 전체 저장소는 <a href=\"https://github.com/Bloom-Engine/engine\" target=\"_blank\" rel=\"noopener\">GitHub</a>에 있습니다. 포크 없이 따라가고 싶다면 <a data-internal=\"docs\">문서</a>에 12줄짜리 빠른 시작 가이드가 있고, <a data-internal=\"showcase\">쇼케이스</a> 페이지에는 우리가 직접 Bloom으로 만들고 있는 것들이 정리되어 있습니다.",
         "p.try2": "어느 쪽이든: 살펴봐 주셔서 감사합니다. 더 큰 조각들이 자리잡으면 이곳에 계속 글을 올리겠습니다."
       }
     }
