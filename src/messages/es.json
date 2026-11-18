@@ -109,8 +109,14 @@
     "desc": "Juegos publicados creados con Bloom: ya disponibles y gratuitos.",
     "metaDescription": "Juegos publicados creados con Bloom: ya disponibles y gratuitos.",
     "liveBadge": "Disponible en el App Store",
+    "liveBadgeGooglePlay": "Disponible en Google Play",
+    "download": "Descargar",
     "bloomJump": {
       "desc": "Un plataformas retro de píxeles gratuito: cinco niveles artesanales, 60 FPS y banda sonora chiptune original. Hecho íntegramente con Bloom, funciona de forma nativa en iPhone, iPad y Mac."
+    },
+    "bloomShooter": {
+      "desc": "Un shooter de alienígenas en tercera persona gratuito: cinco arenas diseñadas a mano, cincuenta oleadas, seis armas y la Matriarch esperando al final. Hecho íntegramente con Bloom, sin anuncios ni compras dentro de la app.",
+      "alt": "Partida de Bloom Shooter"
     },
     "cta": {
       "title": "¿Construiste algo con Bloom?",
@@ -180,7 +186,7 @@
         "li.next4": "Liberar el código de los juegos de ejemplo, incluido un demo un poco más grande que Pong.",
         "li.next5": "Documentar en detalle el pipeline de compilación de Perry. Varias personas lo han pedido.",
         "h.try": "Pruébalo",
-        "p.try1": "Bloom es de código abierto bajo MIT. Todo el repositorio está en <a href=\"https://github.com/Bloom-Engine\" target=\"_blank\" rel=\"noopener\">GitHub</a>. Si quieres seguirlo sin hacer fork, la <a data-internal=\"docs\">documentación</a> tiene un quick start de 12 líneas, y la página de <a data-internal=\"showcase\">vitrina</a> lista lo que estamos construyendo nosotros mismos con él.",
+        "p.try1": "Bloom es de código abierto bajo MIT. Todo el repositorio está en <a href=\"https://github.com/Bloom-Engine/engine\" target=\"_blank\" rel=\"noopener\">GitHub</a>. Si quieres seguirlo sin hacer fork, la <a data-internal=\"docs\">documentación</a> tiene un quick start de 12 líneas, y la página de <a data-internal=\"showcase\">vitrina</a> lista lo que estamos construyendo nosotros mismos con él.",
         "p.try2": "De cualquier manera: gracias por echar un vistazo. Seguiremos publicando aquí a medida que aterricen piezas más grandes."
       }
     }

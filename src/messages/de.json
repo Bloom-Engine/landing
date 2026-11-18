@@ -109,8 +109,14 @@
     "desc": "Veröffentlichte Spiele, gebaut mit Bloom — jetzt erhältlich und kostenlos spielbar.",
     "metaDescription": "Veröffentlichte Spiele, gebaut mit Bloom — jetzt erhältlich und kostenlos spielbar.",
     "liveBadge": "Jetzt im App Store",
+    "liveBadgeGooglePlay": "Jetzt bei Google Play",
+    "download": "Download",
     "bloomJump": {
       "desc": "Ein kostenloser Retro-Pixel-Plattformer — fünf handgemachte Level, 60 FPS und ein originaler Chiptune-Soundtrack. Komplett mit Bloom gebaut, läuft nativ auf iPhone, iPad und Mac."
+    },
+    "bloomShooter": {
+      "desc": "Ein kostenloser Third-Person-Alien-Shooter — fünf handgestaltete Arenen, fünfzig Wellen, sechs Waffen und am Ende wartet die Matriarch. Komplett mit Bloom gebaut, ohne Werbung und ohne In-App-Käufe.",
+      "alt": "Bloom Shooter Gameplay"
     },
     "cta": {
       "title": "Etwas mit Bloom gebaut?",
@@ -180,7 +186,7 @@
         "li.next4": "Die Beispielspiele als Open Source veröffentlichen, inklusive einer Demo, die etwas größer ist als Pong.",
         "li.next5": "Die Perry-Kompilierungspipeline im Detail aufschreiben. Mehrere Leute haben danach gefragt.",
         "h.try": "Probier es aus",
-        "p.try1": "Bloom ist Open Source unter MIT. Das gesamte Repository liegt auf <a href=\"https://github.com/Bloom-Engine\" target=\"_blank\" rel=\"noopener\">GitHub</a>. Wenn du mitlesen willst, ohne zu forken, gibt es in den <a data-internal=\"docs\">Docs</a> einen 12-zeiligen Quick Start, und die <a data-internal=\"showcase\">Showcase</a>-Seite listet, was wir selbst damit bauen.",
+        "p.try1": "Bloom ist Open Source unter MIT. Das gesamte Repository liegt auf <a href=\"https://github.com/Bloom-Engine/engine\" target=\"_blank\" rel=\"noopener\">GitHub</a>. Wenn du mitlesen willst, ohne zu forken, gibt es in den <a data-internal=\"docs\">Docs</a> einen 12-zeiligen Quick Start, und die <a data-internal=\"showcase\">Showcase</a>-Seite listet, was wir selbst damit bauen.",
         "p.try2": "So oder so: Danke fürs Reinschauen. Wir posten hier weiter, sobald größere Stücke landen."
       }
     }

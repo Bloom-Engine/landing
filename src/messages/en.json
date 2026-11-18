@@ -109,8 +109,14 @@
     "desc": "Live games built with Bloom — out now and free to play.",
     "metaDescription": "Live games built with Bloom — out now and free to play.",
     "liveBadge": "Live on the App Store",
+    "liveBadgeGooglePlay": "Live on Google Play",
+    "download": "Download",
     "bloomJump": {
       "desc": "A free retro pixel platformer — five hand-crafted levels, 60 FPS, and an original chiptune soundtrack. Built entirely with Bloom, running natively on iPhone, iPad, and Mac."
+    },
+    "bloomShooter": {
+      "desc": "A free third-person alien shooter — five handcrafted arenas, fifty waves, six weapons, and the Matriarch waiting at the end. Built entirely with Bloom, with no ads and no in-app purchases.",
+      "alt": "Bloom Shooter gameplay"
     },
     "cta": {
       "title": "Build something with Bloom?",
@@ -180,7 +186,7 @@
         "li.next4": "Open-source the example games, including a slightly bigger demo than Pong.",
         "li.next5": "Write up the Perry compilation pipeline in detail. Several people have asked.",
         "h.try": "Try it",
-        "p.try1": "Bloom is open source under MIT. The whole repository is on <a href=\"https://github.com/Bloom-Engine\" target=\"_blank\" rel=\"noopener\">GitHub</a>. If you want to follow along without forking, the <a data-internal=\"docs\">docs</a> have a 12-line quick start, and the <a data-internal=\"showcase\">showcase</a> page lists what we are building with it ourselves.",
+        "p.try1": "Bloom is open source under MIT. The whole repository is on <a href=\"https://github.com/Bloom-Engine/engine\" target=\"_blank\" rel=\"noopener\">GitHub</a>. If you want to follow along without forking, the <a data-internal=\"docs\">docs</a> have a 12-line quick start, and the <a data-internal=\"showcase\">showcase</a> page lists what we are building with it ourselves.",
         "p.try2": "Either way: thanks for taking a look. We will keep posting here as bigger pieces land."
       }
     }

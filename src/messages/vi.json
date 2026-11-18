@@ -109,8 +109,14 @@
     "desc": "Các trò chơi đã phát hành được xây dựng bằng Bloom — chơi miễn phí ngay.",
     "metaDescription": "Các trò chơi đã phát hành được xây dựng bằng Bloom — chơi miễn phí ngay.",
     "liveBadge": "Đã có trên App Store",
+    "liveBadgeGooglePlay": "Đã có trên Google Play",
+    "download": "Tải xuống",
     "bloomJump": {
       "desc": "Một game platformer pixel retro miễn phí — năm màn chơi thiết kế thủ công, 60 FPS và nhạc chiptune nguyên bản. Được xây dựng hoàn toàn bằng Bloom, chạy native trên iPhone, iPad và Mac."
+    },
+    "bloomShooter": {
+      "desc": "Một game bắn súng alien góc nhìn thứ ba miễn phí — năm đấu trường thiết kế thủ công, năm mươi đợt, sáu loại vũ khí và Matriarch đang chờ ở cuối. Được xây dựng hoàn toàn bằng Bloom, không quảng cáo và không mua hàng trong ứng dụng.",
+      "alt": "Gameplay Bloom Shooter"
     },
     "cta": {
       "title": "Đã dựng thứ gì đó với Bloom?",
@@ -180,7 +186,7 @@
         "li.next4": "Mở mã nguồn các game ví dụ, bao gồm một demo lớn hơn Pong một chút.",
         "li.next5": "Viết chi tiết về pipeline biên dịch của Perry. Vài người đã hỏi.",
         "h.try": "Thử ngay",
-        "p.try1": "Bloom là mã nguồn mở theo giấy phép MIT. Toàn bộ kho lưu trữ nằm trên <a href=\"https://github.com/Bloom-Engine\" target=\"_blank\" rel=\"noopener\">GitHub</a>. Nếu bạn muốn theo dõi mà không cần fork, <a data-internal=\"docs\">tài liệu</a> có một quick start 12 dòng, và trang <a data-internal=\"showcase\">trưng bày</a> liệt kê những gì chính chúng tôi đang xây dựng với nó.",
+        "p.try1": "Bloom là mã nguồn mở theo giấy phép MIT. Toàn bộ kho lưu trữ nằm trên <a href=\"https://github.com/Bloom-Engine/engine\" target=\"_blank\" rel=\"noopener\">GitHub</a>. Nếu bạn muốn theo dõi mà không cần fork, <a data-internal=\"docs\">tài liệu</a> có một quick start 12 dòng, và trang <a data-internal=\"showcase\">trưng bày</a> liệt kê những gì chính chúng tôi đang xây dựng với nó.",
         "p.try2": "Dù sao đi nữa: cảm ơn vì đã ghé xem. Chúng tôi sẽ tiếp tục đăng ở đây khi các mảnh lớn hơn được hoàn thành."
       }
     }

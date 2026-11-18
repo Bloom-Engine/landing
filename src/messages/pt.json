@@ -109,8 +109,14 @@
     "desc": "Jogos publicados feitos com Bloom — disponíveis agora e gratuitos.",
     "metaDescription": "Jogos publicados feitos com Bloom — disponíveis agora e gratuitos.",
     "liveBadge": "Disponível na App Store",
+    "liveBadgeGooglePlay": "Disponível no Google Play",
+    "download": "Baixar",
     "bloomJump": {
       "desc": "Um jogo de plataforma retrô em pixel art gratuito — cinco níveis feitos à mão, 60 FPS e trilha sonora chiptune original. Feito inteiramente com Bloom, roda nativamente no iPhone, iPad e Mac."
+    },
+    "bloomShooter": {
+      "desc": "Um jogo de tiro alienígena em terceira pessoa gratuito — cinco arenas feitas à mão, cinquenta ondas, seis armas e a Matriarch esperando por você no final. Feito inteiramente com Bloom, sem anúncios e sem compras no app.",
+      "alt": "Gameplay de Bloom Shooter"
     },
     "cta": {
       "title": "Construiu algo com a Bloom?",
@@ -180,7 +186,7 @@
         "li.next4": "Abrir o código dos jogos de exemplo, incluindo um demo um pouco maior que o Pong.",
         "li.next5": "Documentar o pipeline de compilação do Perry em detalhes. Várias pessoas pediram.",
         "h.try": "Experimente",
-        "p.try1": "A Bloom é código aberto sob a licença MIT. O repositório inteiro está no <a href=\"https://github.com/Bloom-Engine\" target=\"_blank\" rel=\"noopener\">GitHub</a>. Se você quer acompanhar sem fazer fork, a <a data-internal=\"docs\">documentação</a> tem um quick start de 12 linhas, e a página de <a data-internal=\"showcase\">vitrine</a> lista o que estamos construindo com ela nós mesmos.",
+        "p.try1": "A Bloom é código aberto sob a licença MIT. O repositório inteiro está no <a href=\"https://github.com/Bloom-Engine/engine\" target=\"_blank\" rel=\"noopener\">GitHub</a>. Se você quer acompanhar sem fazer fork, a <a data-internal=\"docs\">documentação</a> tem um quick start de 12 linhas, e a página de <a data-internal=\"showcase\">vitrine</a> lista o que estamos construindo com ela nós mesmos.",
         "p.try2": "De qualquer forma: obrigado por dar uma olhada. Continuaremos postando aqui à medida que peças maiores forem chegando."
       }
     }

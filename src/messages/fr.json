@@ -109,8 +109,14 @@
     "desc": "Des jeux publiés créés avec Bloom — disponibles dès maintenant et gratuits.",
     "metaDescription": "Des jeux publiés créés avec Bloom — disponibles dès maintenant et gratuits.",
     "liveBadge": "Disponible sur l'App Store",
+    "liveBadgeGooglePlay": "Disponible sur Google Play",
+    "download": "Télécharger",
     "bloomJump": {
       "desc": "Un jeu de plateforme rétro en pixel art gratuit — cinq niveaux faits main, 60 FPS et une bande-son chiptune originale. Entièrement développé avec Bloom, il tourne nativement sur iPhone, iPad et Mac."
+    },
+    "bloomShooter": {
+      "desc": "Un jeu de tir alien à la troisième personne gratuit — cinq arènes conçues à la main, cinquante vagues, six armes et la Matriarch qui vous attend au bout du chemin. Entièrement développé avec Bloom, sans publicité ni achats intégrés.",
+      "alt": "Bloom Shooter en action"
     },
     "cta": {
       "title": "Vous construisez quelque chose avec Bloom ?",
@@ -180,7 +186,7 @@
         "li.next4": "Ouvrir le code source des jeux d'exemple, dont une démo un peu plus grosse que Pong.",
         "li.next5": "Documenter le pipeline de compilation Perry en détail. Plusieurs personnes ont posé la question.",
         "h.try": "Essayez-le",
-        "p.try1": "Bloom est open source sous licence MIT. Le dépôt complet est sur <a href=\"https://github.com/Bloom-Engine\" target=\"_blank\" rel=\"noopener\">GitHub</a>. Si vous voulez suivre sans forker, la <a data-internal=\"docs\">doc</a> propose un démarrage rapide en 12 lignes, et la page <a data-internal=\"showcase\">vitrine</a> liste ce que nous construisons nous-mêmes avec.",
+        "p.try1": "Bloom est open source sous licence MIT. Le dépôt complet est sur <a href=\"https://github.com/Bloom-Engine/engine\" target=\"_blank\" rel=\"noopener\">GitHub</a>. Si vous voulez suivre sans forker, la <a data-internal=\"docs\">doc</a> propose un démarrage rapide en 12 lignes, et la page <a data-internal=\"showcase\">vitrine</a> liste ce que nous construisons nous-mêmes avec.",
         "p.try2": "Quoi qu'il en soit : merci d'y avoir jeté un œil. Nous continuerons à publier ici à mesure que de plus gros morceaux atterriront."
       }
     }
