@@ -18,7 +18,7 @@ const games = [
     image: "/games/bloom-jump/mac.webp",
     altKey: "home.game.alt",
     liveKey: "showcase.liveBadge",
-    platforms: "iPhone · iPad · Mac · Apple TV · Vision · Apple Watch · Android · Web",
+    platforms: "iPhone · iPad · Mac · Apple TV · Vision · Apple Watch · Android · Windows · Web",
     stores: [
       {
         label: "App Store",
@@ -44,6 +44,18 @@ const games = [
         url: "https://bloomengine.dev/jump/",
         kind: "web",
       },
+      {
+        label: "Microsoft Store",
+        sublabel: "Windows",
+        url: "https://apps.microsoft.com/detail/9nltqh8f4cg8",
+        kind: "microsoft",
+      },
+      {
+        label: "Download",
+        sublabel: "Windows · MSIX",
+        url: "/downloads/bloom-jump/BloomJump-1.0.83.0.msix",
+        kind: "download",
+      },
     ],
   },
   {
@@ -53,13 +65,31 @@ const games = [
     image: "/games/bloom-shooter/gameplay.webp",
     altKey: "showcase.bloomShooter.alt",
     liveKey: "showcase.liveBadgeGooglePlay",
-    platforms: "Android",
+    platforms: "Android · Windows · Web",
     stores: [
       {
         label: "Google Play",
         sublabel: "Android",
         url: "https://play.google.com/store/apps/details?id=com.bloomengine.shooter",
         kind: "google",
+      },
+      {
+        label: "Microsoft Store",
+        sublabel: "Windows",
+        url: "https://apps.microsoft.com/detail/9p1wzjt33htp",
+        kind: "microsoft",
+      },
+      {
+        label: "Web",
+        sublabel: "bloomengine.dev/shooter",
+        url: "https://bloomengine.dev/shooter/",
+        kind: "web",
+      },
+      {
+        label: "Download",
+        sublabel: "Windows · MSIX",
+        url: "/downloads/bloom-shooter/BloomShooter-1.0.7.0.msix",
+        kind: "download",
       },
     ],
   },
@@ -78,7 +108,7 @@ const games = [
     <div class="container">
       <div class="showcase-grid">
         {games.map((g) => (
-          <div class="showcase-card">
+          <article class="showcase-card">
             <a href={g.url} target="_blank" rel="noopener" class="showcase-preview">
               <img src={g.image} alt={t(g.altKey)} width="1640" height="1280" loading="lazy" />
             </a>
@@ -88,16 +118,24 @@ const games = [
               <p>{g.descKey ? t(g.descKey) : ""}</p>
               <div class="showcase-stores">
                 {g.stores.map((s) => (
-                  <a href={s.url} target="_blank" rel="noopener" class="store-badge">
+                  <a
+                    href={s.url}
+                    class="store-badge"
+                    {...(s.kind === "download" ? { download: "" } : { target: "_blank", rel: "noopener" })}
+                  >
                     {s.kind === "apple" ? (
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
                     ) : s.kind === "google" ? (
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 2.1c-.3.3-.5.7-.5 1.2v17.4c0 .5.2.9.5 1.2l.1.1 9.7-9.7v-.2L3.7 2zM17 15.3l-3.2-3.2v-.2L17 8.7l.1.1 3.8 2.2c1.1.6 1.1 1.7 0 2.3zm-1-1.1l-2.4-2.4-7.5 7.5c.4.4 1 .4 1.6.1zm-9.9 5.3 7.5-7.5-7.5-7.5z"/></svg>
+                    ) : s.kind === "microsoft" ? (
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 3h8.5v8.5H3zM12.5 3H21v8.5h-8.5zM3 12.5h8.5V21H3zM12.5 12.5H21V21h-8.5z"/></svg>
+                    ) : s.kind === "download" ? (
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 3h2v9.17l3.59-3.58L18 10l-6 6-6-6 1.41-1.41L11 12.17zM5 18h14v2H5z"/></svg>
                     ) : (
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm6.93 6h-2.95a15.65 15.65 0 0 0-1.38-3.56A8.03 8.03 0 0 1 18.93 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56A8.03 8.03 0 0 1 5.08 16zm2.95-8H5.08a8.03 8.03 0 0 1 4.33-3.56A15.65 15.65 0 0 0 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/></svg>
                     )}
                     <span class="store-badge-text">
-                      <span class="store-badge-label">{s.label}</span>
+                      <span class="store-badge-label">{s.kind === "download" ? t("showcase.download") : s.label}</span>
                       <span class="store-badge-sub">{s.sublabel}</span>
                     </span>
                   </a>
@@ -105,7 +143,7 @@ const games = [
               </div>
               <span class="showcase-platforms">{g.platforms}</span>
             </div>
-          </div>
+          </article>
         ))}
       </div>
 
@@ -139,13 +177,14 @@ const games = [
 
   .showcase-grid {
     display: grid;
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
     margin-bottom: 4rem;
   }
 
   .showcase-card {
-    display: grid;
-    grid-template-columns: 6fr 5fr;
+    display: flex;
+    flex-direction: column;
     border-radius: 16px;
     overflow: hidden;
     background: var(--bloom-light);
@@ -161,6 +200,8 @@ const games = [
 
   .showcase-preview {
     display: block;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
   }
 
   .showcase-preview img {
@@ -171,10 +212,10 @@ const games = [
   }
 
   .showcase-info {
-    padding: 2.5rem;
+    flex: 1;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: flex-start;
   }
 
@@ -192,7 +233,7 @@ const games = [
   }
 
   .showcase-info h3 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     margin-bottom: 0.5rem;
   }
 
@@ -206,14 +247,15 @@ const games = [
   .showcase-stores {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.6rem;
+    gap: 0.5rem;
+    margin-top: auto;
   }
 
   .store-badge {
     display: inline-flex;
     align-items: center;
-    gap: 0.55rem;
-    padding: 0.5rem 0.9rem;
+    gap: 0.5rem;
+    padding: 0.45rem 0.75rem;
     border-radius: 10px;
     background: var(--bloom-dark);
     color: #fff;
@@ -245,12 +287,12 @@ const games = [
   }
 
   .store-badge-label {
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
     font-weight: 700;
   }
 
   .showcase-platforms {
-    margin-top: 0.5rem;
+    margin-top: 0.9rem;
     font-size: 0.8125rem;
     font-weight: 600;
     color: rgba(27, 42, 30, 0.45);
@@ -267,11 +309,5 @@ const games = [
     color: rgba(27, 42, 30, 0.6);
     margin: 0.75rem auto 1.5rem;
     max-width: 400px;
-  }
-
-  @media (max-width: 768px) {
-    .showcase-card {
-      grid-template-columns: 1fr;
-    }
   }
 </style>
