@@ -56,6 +56,12 @@ const games = [
         url: "/downloads/bloom-jump/BloomJump-1.0.83.0.msix",
         kind: "download",
       },
+      {
+        label: "GitHub",
+        sublabel: "Bloom-Engine/jump",
+        url: "https://github.com/Bloom-Engine/jump",
+        kind: "github",
+      },
     ],
   },
   {
@@ -90,6 +96,12 @@ const games = [
         sublabel: "Windows · MSIX",
         url: "/downloads/bloom-shooter/BloomShooter-1.0.7.0.msix",
         kind: "download",
+      },
+      {
+        label: "GitHub",
+        sublabel: "Bloom-Engine/shooter",
+        url: "https://github.com/Bloom-Engine/shooter",
+        kind: "github",
       },
     ],
   },
@@ -129,6 +141,8 @@ const games = [
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 2.1c-.3.3-.5.7-.5 1.2v17.4c0 .5.2.9.5 1.2l.1.1 9.7-9.7v-.2L3.7 2zM17 15.3l-3.2-3.2v-.2L17 8.7l.1.1 3.8 2.2c1.1.6 1.1 1.7 0 2.3zm-1-1.1l-2.4-2.4-7.5 7.5c.4.4 1 .4 1.6.1zm-9.9 5.3 7.5-7.5-7.5-7.5z"/></svg>
                     ) : s.kind === "microsoft" ? (
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 3h8.5v8.5H3zM12.5 3H21v8.5h-8.5zM3 12.5h8.5V21H3zM12.5 12.5H21V21h-8.5z"/></svg>
+                    ) : s.kind === "github" ? (
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.88-.01-1.73-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.57 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
                     ) : s.kind === "download" ? (
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 3h2v9.17l3.59-3.58L18 10l-6 6-6-6 1.41-1.41L11 12.17zM5 18h14v2H5z"/></svg>
                     ) : (
