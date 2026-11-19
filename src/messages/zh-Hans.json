@@ -75,10 +75,12 @@
     },
     "game": {
       "badge": "使用 Bloom 构建",
-      "title": "首款 Bloom 游戏正式上线",
-      "desc": "Bloom Jump 是一款免费的复古像素平台游戏，完全使用 Bloom 构建——同一套 TypeScript 代码库在 iPhone、iPad 和 Mac 上原生运行。五个手工打造的关卡、60 FPS、原创芯片音乐。",
-      "cta": "在 App Store 下载",
-      "alt": "Bloom Jump 在 Mac 上的游戏画面"
+      "title": "使用 Bloom 打造的游戏",
+      "desc": "从复古平台跳跃游戏、儿童国际象棋，到第三人称射击游戏和电影化重述的约拿故事——这些都是用 TypeScript 编写、在手机、桌面、电视和网页上原生运行的真实游戏。",
+      "cta": "浏览展示",
+      "alt": "Bloom Jump 在 Mac 上的游戏画面",
+      "altJonahCity": "Jonah: The Deep——尼尼微的街道",
+      "altChesslingsTitle": "Chesslings 标题画面"
     },
     "whatsnew": {
       "title": "最新动态",

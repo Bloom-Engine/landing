@@ -75,10 +75,12 @@
     },
     "game": {
       "badge": "Bloom으로 제작",
-      "title": "첫 번째 Bloom 게임 출시",
-      "desc": "Bloom Jump는 Bloom만으로 만든 무료 레트로 픽셀 플랫포머입니다. 하나의 TypeScript 코드베이스가 iPhone, iPad, Mac에서 네이티브로 실행됩니다. 직접 제작한 5개의 레벨, 60 FPS, 오리지널 칩튠 사운드트랙.",
-      "cta": "App Store에서 다운로드",
-      "alt": "Mac에서의 Bloom Jump 게임 플레이"
+      "title": "Bloom으로 만든 게임",
+      "desc": "레트로 플랫포머와 어린이 체스부터 3인칭 슈터, 요나 이야기를 영화처럼 재구성한 작품까지 — TypeScript로 작성되어 휴대폰, 데스크톱, TV, 웹에서 네이티브로 실행되는 실제 게임들입니다.",
+      "cta": "쇼케이스 보기",
+      "alt": "Mac에서의 Bloom Jump 게임 플레이",
+      "altJonahCity": "Jonah: The Deep — 니느웨의 거리",
+      "altChesslingsTitle": "Chesslings 타이틀 화면"
     },
     "whatsnew": {
       "title": "새로운 소식",

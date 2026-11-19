@@ -75,10 +75,12 @@
     },
     "game": {
       "badge": "Dibuat dengan Bloom",
-      "title": "Game Bloom pertama telah hadir",
-      "desc": "Bloom Jump, platformer piksel retro gratis, dibuat sepenuhnya dengan Bloom — satu basis kode TypeScript yang berjalan secara native di iPhone, iPad, dan Mac. Lima level buatan tangan, 60 FPS, soundtrack chiptune orisinal.",
-      "cta": "Unduh di App Store",
-      "alt": "Gameplay Bloom Jump di Mac"
+      "title": "Game yang dibuat dengan Bloom",
+      "desc": "Dari platformer retro dan catur untuk anak hingga shooter orang ketiga dan penceritaan sinematik kisah Yunus — game sungguhan, ditulis dengan TypeScript dan berjalan native di ponsel, desktop, TV, dan web.",
+      "cta": "Lihat showcase",
+      "alt": "Gameplay Bloom Jump di Mac",
+      "altJonahCity": "Jonah: The Deep — jalan-jalan Niniwe",
+      "altChesslingsTitle": "Layar judul Chesslings"
     },
     "whatsnew": {
       "title": "Yang baru",

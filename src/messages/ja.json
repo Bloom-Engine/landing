@@ -75,10 +75,12 @@
     },
     "game": {
       "badge": "Bloom製",
-      "title": "最初のBloom製ゲームが登場",
-      "desc": "Bloom Jumpは、Bloomだけで作られた無料のレトロピクセルプラットフォーマー。1つのTypeScriptコードベースがiPhone、iPad、Macでネイティブに動作します。手作りの5つのレベル、60 FPS、オリジナルのチップチューンサウンドトラック。",
-      "cta": "App Storeでダウンロード",
-      "alt": "MacでのBloom Jumpのゲームプレイ"
+      "title": "Bloomで作られたゲーム",
+      "desc": "レトロなプラットフォーマーや子ども向けチェスから、三人称シューター、ヨナ書を映画的に描く作品まで。TypeScriptで書かれ、スマートフォン、デスクトップ、テレビ、ウェブでネイティブに動く本物のゲームです。",
+      "cta": "ショーケースを見る",
+      "alt": "MacでのBloom Jumpのゲームプレイ",
+      "altJonahCity": "Jonah: The Deep — ニネベの街並み",
+      "altChesslingsTitle": "Chesslingsのタイトル画面"
     },
     "whatsnew": {
       "title": "新着情報",

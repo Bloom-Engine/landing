@@ -75,10 +75,12 @@
     },
     "game": {
       "badge": "Bloom ile yapıldı",
-      "title": "İlk Bloom oyunu yayında",
-      "desc": "Ücretsiz bir retro piksel platform oyunu olan Bloom Jump, tamamen Bloom ile geliştirildi — iPhone, iPad ve Mac'te yerel olarak çalışan tek bir TypeScript kod tabanı. El yapımı beş bölüm, 60 FPS, özgün chiptune müzikler.",
-      "cta": "App Store'dan indir",
-      "alt": "Mac'te Bloom Jump oynanışı"
+      "title": "Bloom ile yapılmış oyunlar",
+      "desc": "Retro bir platform oyunu ve çocuklar için satrançtan üçüncü şahıs nişancı oyununa ve Yunus'un sinematik anlatımına — TypeScript ile yazılmış, telefonlarda, masaüstünde, TV'lerde ve web'de yerel olarak çalışan gerçek oyunlar.",
+      "cta": "Vitrine göz at",
+      "alt": "Mac'te Bloom Jump oynanışı",
+      "altJonahCity": "Jonah: The Deep — Ninova sokakları",
+      "altChesslingsTitle": "Chesslings başlık ekranı"
     },
     "whatsnew": {
       "title": "Yenilikler",

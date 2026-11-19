@@ -75,10 +75,12 @@
     },
     "game": {
       "badge": "Làm bằng Bloom",
-      "title": "Trò chơi Bloom đầu tiên đã ra mắt",
-      "desc": "Bloom Jump, một game platformer pixel retro miễn phí, được xây dựng hoàn toàn bằng Bloom — một codebase TypeScript duy nhất chạy native trên iPhone, iPad và Mac. Năm màn chơi thiết kế thủ công, 60 FPS, nhạc chiptune nguyên bản.",
-      "cta": "Tải về trên App Store",
-      "alt": "Gameplay Bloom Jump trên Mac"
+      "title": "Các trò chơi làm bằng Bloom",
+      "desc": "Từ game đi cảnh retro và cờ vua cho trẻ em đến game bắn súng góc nhìn thứ ba và câu chuyện Giô-na theo phong cách điện ảnh — những trò chơi thực sự, viết bằng TypeScript và chạy native trên điện thoại, máy tính, TV và web.",
+      "cta": "Xem showcase",
+      "alt": "Gameplay Bloom Jump trên Mac",
+      "altJonahCity": "Jonah: The Deep — đường phố Ni-ni-ve",
+      "altChesslingsTitle": "Màn hình tiêu đề của Chesslings"
     },
     "whatsnew": {
       "title": "Có gì mới",

@@ -75,10 +75,12 @@
     },
     "game": {
       "badge": "Made with Bloom",
-      "title": "The first Bloom game is live",
-      "desc": "Bloom Jump, a free retro pixel platformer, is built entirely with Bloom — one TypeScript codebase running natively on iPhone, iPad, and Mac. Five hand-crafted levels, 60 FPS, original chiptune soundtrack.",
-      "cta": "Download on the App Store",
-      "alt": "Bloom Jump gameplay on Mac"
+      "title": "Games built with Bloom",
+      "desc": "From a retro platformer and a kids' chess game to a third-person shooter and a cinematic retelling of Jonah — real games, written in TypeScript and running natively on phones, desktops, TVs and the web.",
+      "cta": "Explore the showcase",
+      "alt": "Bloom Jump gameplay on Mac",
+      "altJonahCity": "Jonah: The Deep — the streets of Nineveh",
+      "altChesslingsTitle": "Chesslings title screen"
     },
     "whatsnew": {
       "title": "What's new",

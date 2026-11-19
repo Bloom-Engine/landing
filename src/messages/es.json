@@ -75,10 +75,12 @@
     },
     "game": {
       "badge": "Hecho con Bloom",
-      "title": "El primer juego de Bloom ya está disponible",
-      "desc": "Bloom Jump, un plataformas retro de píxeles gratuito, está hecho íntegramente con Bloom: una sola base de código TypeScript que se ejecuta de forma nativa en iPhone, iPad y Mac. Cinco niveles artesanales, 60 FPS y banda sonora chiptune original.",
-      "cta": "Descárgalo en el App Store",
-      "alt": "Bloom Jump en Mac"
+      "title": "Juegos creados con Bloom",
+      "desc": "Desde un plataformas retro y un ajedrez para niños hasta un shooter en tercera persona y una recreación cinematográfica de Jonás: juegos reales, escritos en TypeScript y nativos en móviles, ordenadores, televisores y la web.",
+      "cta": "Ver el showcase",
+      "alt": "Bloom Jump en Mac",
+      "altJonahCity": "Jonah: The Deep — las calles de Nínive",
+      "altChesslingsTitle": "Pantalla de título de Chesslings"
     },
     "whatsnew": {
       "title": "Novedades",
