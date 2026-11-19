@@ -106,17 +106,28 @@
   },
   "showcase": {
     "title": "ショーケース",
-    "desc": "Bloomで作られた公開中のゲーム — 今すぐ無料でプレイできます。",
-    "metaDescription": "Bloomで作られた公開中のゲーム — 今すぐ無料でプレイできます。",
+    "desc": "Bloomで作られたゲーム — 配信中のタイトルと開発中のタイトル。",
+    "metaDescription": "Bloomで作られたゲーム — 配信中のタイトルと開発中のタイトル。",
     "liveBadge": "App Storeで配信中",
-    "liveBadgeGooglePlay": "Google Playで配信中",
+    "outNow": "配信中",
     "download": "ダウンロード",
+    "trailer": "トレーラー",
+    "website": "ウェブサイト",
     "bloomJump": {
       "desc": "無料のレトロピクセルプラットフォーマー。手作りの5つのレベル、60 FPS、オリジナルのチップチューンサウンドトラック。Bloomだけで作られ、iPhone、iPad、Macでネイティブに動作します。"
     },
     "bloomShooter": {
       "desc": "無料の三人称視点エイリアンシューター。作り込まれた5つのアリーナ、50のウェーブ、6つの武器、そして最後に待ち受ける Matriarch。Bloomだけで作られ、広告もアプリ内課金もありません。",
       "alt": "Bloom Shooterのゲームプレイ"
+    },
+    "chesslings": {
+      "desc": "4〜12歳の子ども向けチェスゲーム。音声付きレッスン35本、やさしいコーチ、12のテーマワールド。無料で始められ、広告なし、オフラインでも遊べます。",
+      "alt": "Chesslingsの恐竜チェス盤"
+    },
+    "jonah": {
+      "desc": "ヨナ書を家族と大人のために映画的に描くゲーム。召命から嵐と深淵を経てニネベへ。ナレーションガイドが小さなプレイヤーを助けます。",
+      "alt": "Jonah: The Deep — 嵐の中、船から投げ出されるヨナ",
+      "badge": "2027年第1四半期 公開予定"
     },
     "cta": {
       "title": "Bloom で何かを作りましたか?",

@@ -106,17 +106,28 @@
   },
   "showcase": {
     "title": "Showcase",
-    "desc": "Live games built with Bloom — out now and free to play.",
-    "metaDescription": "Live games built with Bloom — out now and free to play.",
+    "desc": "Games built with Bloom — out now or on the way.",
+    "metaDescription": "Games built with Bloom — out now or on the way.",
     "liveBadge": "Live on the App Store",
-    "liveBadgeGooglePlay": "Live on Google Play",
+    "outNow": "Out now",
     "download": "Download",
+    "trailer": "Trailer",
+    "website": "Website",
     "bloomJump": {
       "desc": "A free retro pixel platformer — five hand-crafted levels, 60 FPS, and an original chiptune soundtrack. Built entirely with Bloom, running natively on iPhone, iPad, and Mac."
     },
     "bloomShooter": {
       "desc": "A free third-person alien shooter — five handcrafted arenas, fifty waves, six weapons, and the Matriarch waiting at the end. Built entirely with Bloom, with no ads and no in-app purchases.",
       "alt": "Bloom Shooter gameplay"
+    },
+    "chesslings": {
+      "desc": "A chess game for kids aged 4 to 12 — 35 spoken lessons, a friendly coach, and 12 themed worlds to play in. Free to start, no ads, works offline.",
+      "alt": "Chesslings dinosaur chess board"
+    },
+    "jonah": {
+      "desc": "A cinematic retelling of the Book of Jonah for families and adults — from the call, through the storm and the deep, to Nineveh. A narrated guide helps younger players.",
+      "alt": "Jonah: The Deep — Jonah thrown overboard in the storm",
+      "badge": "Coming Q1 2027"
     },
     "cta": {
       "title": "Build something with Bloom?",

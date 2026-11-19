@@ -106,17 +106,28 @@
   },
   "showcase": {
     "title": "Vitrin",
-    "desc": "Bloom ile geliştirilen, yayında olan oyunlar — şimdi ücretsiz oynanabilir.",
-    "metaDescription": "Bloom ile geliştirilen, yayında olan oyunlar — şimdi ücretsiz oynanabilir.",
+    "desc": "Bloom ile yapılmış oyunlar — yayında olanlar ve yolda olanlar.",
+    "metaDescription": "Bloom ile yapılmış oyunlar — yayında olanlar ve yolda olanlar.",
     "liveBadge": "App Store'da yayında",
-    "liveBadgeGooglePlay": "Google Play'de yayında",
+    "outNow": "Şimdi yayında",
     "download": "İndir",
+    "trailer": "Fragman",
+    "website": "Web sitesi",
     "bloomJump": {
       "desc": "Ücretsiz bir retro piksel platform oyunu — el yapımı beş bölüm, 60 FPS ve özgün chiptune müzikler. Tamamen Bloom ile geliştirildi; iPhone, iPad ve Mac'te yerel olarak çalışır."
     },
     "bloomShooter": {
       "desc": "Ücretsiz bir üçüncü şahıs uzaylı nişancı oyunu — özenle tasarlanmış beş arena, elli dalga, altı silah ve sonunda seni bekleyen Matriarch. Tamamen Bloom ile geliştirildi; reklam ve uygulama içi satın alma yok.",
       "alt": "Bloom Shooter oynanışı"
+    },
+    "chesslings": {
+      "desc": "4-12 yaş arası çocuklar için bir satranç oyunu — 35 sesli ders, dost canlısı bir koç ve 12 temalı dünya. Ücretsiz başla, reklamsız, çevrimdışı çalışır.",
+      "alt": "Chesslings dinozor satranç tahtası"
+    },
+    "jonah": {
+      "desc": "Yunus Kitabı'nın aileler ve yetişkinler için sinematik bir anlatımı — çağrıdan fırtınaya ve derinliklere, oradan Ninova'ya. Anlatıcı rehber küçük oyunculara yardım eder.",
+      "alt": "Jonah: The Deep — Fırtınada gemiden atılan Yunus",
+      "badge": "2027'nin ilk çeyreğinde geliyor"
     },
     "cta": {
       "title": "Bloom ile bir şeyler mi yaptın?",

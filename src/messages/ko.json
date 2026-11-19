@@ -106,17 +106,28 @@
   },
   "showcase": {
     "title": "쇼케이스",
-    "desc": "Bloom으로 만든 출시 게임 — 지금 무료로 플레이할 수 있습니다.",
-    "metaDescription": "Bloom으로 만든 출시 게임 — 지금 무료로 플레이할 수 있습니다.",
+    "desc": "Bloom으로 만든 게임 — 출시작과 개발 중인 작품.",
+    "metaDescription": "Bloom으로 만든 게임 — 출시작과 개발 중인 작품.",
     "liveBadge": "App Store에서 이용 가능",
-    "liveBadgeGooglePlay": "Google Play에서 이용 가능",
+    "outNow": "지금 이용 가능",
     "download": "다운로드",
+    "trailer": "트레일러",
+    "website": "웹사이트",
     "bloomJump": {
       "desc": "무료 레트로 픽셀 플랫포머 — 직접 제작한 5개의 레벨, 60 FPS, 오리지널 칩튠 사운드트랙. Bloom만으로 만들어져 iPhone, iPad, Mac에서 네이티브로 실행됩니다."
     },
     "bloomShooter": {
       "desc": "무료 3인칭 에일리언 슈팅 게임 — 공들여 만든 5개의 아레나, 50개의 웨이브, 6종의 무기, 그리고 마지막에 기다리는 Matriarch. Bloom만으로 만들어졌으며 광고와 인앱 구매가 없습니다.",
       "alt": "Bloom Shooter 게임플레이"
+    },
+    "chesslings": {
+      "desc": "4~12세 어린이를 위한 체스 게임 — 음성 레슨 35개, 친절한 코치, 12개의 테마 월드. 무료로 시작, 광고 없음, 오프라인 지원.",
+      "alt": "Chesslings 공룡 체스판"
+    },
+    "jonah": {
+      "desc": "요나서를 가족과 성인을 위해 영화처럼 재구성한 게임 — 부르심에서 폭풍과 깊은 바다를 지나 니느웨까지. 내레이션 가이드가 어린 플레이어를 돕습니다.",
+      "alt": "Jonah: The Deep — 폭풍 속에서 배 밖으로 던져지는 요나",
+      "badge": "2027년 1분기 출시 예정"
     },
     "cta": {
       "title": "Bloom으로 무언가를 만드셨나요?",

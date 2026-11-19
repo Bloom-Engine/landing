@@ -70,9 +70,15 @@ const games = [
     url: "https://play.google.com/store/apps/details?id=com.bloomengine.shooter",
     image: "/games/bloom-shooter/gameplay.webp",
     altKey: "showcase.bloomShooter.alt",
-    liveKey: "showcase.liveBadgeGooglePlay",
-    platforms: "Android · Windows · Web",
+    liveKey: "showcase.outNow",
+    platforms: "Apple TV · Android · Windows · Web",
     stores: [
+      {
+        label: "App Store",
+        sublabel: "tvOS",
+        url: "https://apps.apple.com/us/app/bloom-shooter/id6834091121",
+        kind: "apple",
+      },
       {
         label: "Google Play",
         sublabel: "Android",
@@ -102,6 +108,62 @@ const games = [
         sublabel: "Bloom-Engine/shooter",
         url: "https://github.com/Bloom-Engine/shooter",
         kind: "github",
+      },
+    ],
+  },
+  {
+    name: "Chesslings",
+    descKey: "showcase.chesslings.desc",
+    url: "https://www.chesslings.app",
+    image: "/games/chesslings/hero.webp",
+    altKey: "showcase.chesslings.alt",
+    liveKey: "showcase.liveBadge",
+    platforms: "iPhone · iPad · Mac · Apple TV",
+    stores: [
+      {
+        label: "App Store",
+        sublabel: "iOS · macOS · tvOS",
+        url: "https://apps.apple.com/us/app/chesslings-kids-chess/id6832182005",
+        kind: "apple",
+      },
+      {
+        label: "Website",
+        labelKey: "showcase.website",
+        sublabel: "chesslings.app",
+        url: "https://www.chesslings.app",
+        kind: "web",
+      },
+      {
+        label: "Trailer",
+        labelKey: "showcase.trailer",
+        sublabel: "YouTube",
+        url: "https://www.youtube.com/watch?v=YWmLbSWRQ2w",
+        kind: "youtube",
+      },
+    ],
+  },
+  {
+    name: "Jonah: The Deep",
+    descKey: "showcase.jonah.desc",
+    url: "https://playjonah.com",
+    image: "/games/jonah/poster.webp",
+    altKey: "showcase.jonah.alt",
+    liveKey: "showcase.jonah.badge",
+    platforms: "iPhone · iPad · Mac · Apple TV · Windows · Linux",
+    stores: [
+      {
+        label: "Website",
+        labelKey: "showcase.website",
+        sublabel: "playjonah.com",
+        url: "https://playjonah.com",
+        kind: "web",
+      },
+      {
+        label: "Trailer",
+        labelKey: "showcase.trailer",
+        sublabel: "YouTube",
+        url: "https://www.youtube.com/watch?v=hsYZJ3UXytY",
+        kind: "youtube",
       },
     ],
   },
@@ -143,13 +205,15 @@ const games = [
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 3h8.5v8.5H3zM12.5 3H21v8.5h-8.5zM3 12.5h8.5V21H3zM12.5 12.5H21V21h-8.5z"/></svg>
                     ) : s.kind === "github" ? (
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.88-.01-1.73-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.57 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
+                    ) : s.kind === "youtube" ? (
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg>
                     ) : s.kind === "download" ? (
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 3h2v9.17l3.59-3.58L18 10l-6 6-6-6 1.41-1.41L11 12.17zM5 18h14v2H5z"/></svg>
                     ) : (
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm6.93 6h-2.95a15.65 15.65 0 0 0-1.38-3.56A8.03 8.03 0 0 1 18.93 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56A8.03 8.03 0 0 1 5.08 16zm2.95-8H5.08a8.03 8.03 0 0 1 4.33-3.56A15.65 15.65 0 0 0 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/></svg>
                     )}
                     <span class="store-badge-text">
-                      <span class="store-badge-label">{s.kind === "download" ? t("showcase.download") : s.label}</span>
+                      <span class="store-badge-label">{s.labelKey ? t(s.labelKey) : s.kind === "download" ? t("showcase.download") : s.label}</span>
                       <span class="store-badge-sub">{s.sublabel}</span>
                     </span>
                   </a>

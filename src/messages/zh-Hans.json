@@ -106,17 +106,28 @@
   },
   "showcase": {
     "title": "案例展示",
-    "desc": "使用 Bloom 构建并已上线的游戏——现已推出，免费畅玩。",
-    "metaDescription": "使用 Bloom 构建并已上线的游戏——现已推出，免费畅玩。",
+    "desc": "使用 Bloom 打造的游戏——已上线或即将推出。",
+    "metaDescription": "使用 Bloom 打造的游戏——已上线或即将推出。",
     "liveBadge": "已上架 App Store",
-    "liveBadgeGooglePlay": "已上架 Google Play",
+    "outNow": "现已推出",
     "download": "下载",
+    "trailer": "预告片",
+    "website": "官网",
     "bloomJump": {
       "desc": "一款免费的复古像素平台游戏——五个手工打造的关卡、60 FPS 和原创芯片音乐。完全使用 Bloom 构建，在 iPhone、iPad 和 Mac 上原生运行。"
     },
     "bloomShooter": {
       "desc": "一款免费的第三人称外星怪物射击游戏——五座精心打造的竞技场、五十波敌人、六种武器，以及在终点等待你的 Matriarch。完全使用 Bloom 构建，无广告、无应用内购买。",
       "alt": "Bloom Shooter 游戏画面"
+    },
+    "chesslings": {
+      "desc": "一款面向 4 至 12 岁儿童的国际象棋游戏——35 节语音课程、友好的教练和 12 个主题世界。免费开始，无广告，支持离线游玩。",
+      "alt": "Chesslings 恐龙国际象棋棋盘"
+    },
+    "jonah": {
+      "desc": "以电影化方式为家庭和成人重述《约拿书》——从蒙召到风暴与深渊，再到尼尼微。旁白向导帮助年幼的玩家。",
+      "alt": "Jonah: The Deep——约拿在风暴中被抛下船",
+      "badge": "2027 年第一季度推出"
     },
     "cta": {
       "title": "用 Bloom 做了点什么?",

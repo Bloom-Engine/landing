@@ -106,17 +106,28 @@
   },
   "showcase": {
     "title": "Trưng bày",
-    "desc": "Các trò chơi đã phát hành được xây dựng bằng Bloom — chơi miễn phí ngay.",
-    "metaDescription": "Các trò chơi đã phát hành được xây dựng bằng Bloom — chơi miễn phí ngay.",
+    "desc": "Các trò chơi được làm bằng Bloom — đã phát hành hoặc sắp ra mắt.",
+    "metaDescription": "Các trò chơi được làm bằng Bloom — đã phát hành hoặc sắp ra mắt.",
     "liveBadge": "Đã có trên App Store",
-    "liveBadgeGooglePlay": "Đã có trên Google Play",
+    "outNow": "Đã phát hành",
     "download": "Tải xuống",
+    "trailer": "Trailer",
+    "website": "Trang web",
     "bloomJump": {
       "desc": "Một game platformer pixel retro miễn phí — năm màn chơi thiết kế thủ công, 60 FPS và nhạc chiptune nguyên bản. Được xây dựng hoàn toàn bằng Bloom, chạy native trên iPhone, iPad và Mac."
     },
     "bloomShooter": {
       "desc": "Một game bắn súng alien góc nhìn thứ ba miễn phí — năm đấu trường thiết kế thủ công, năm mươi đợt, sáu loại vũ khí và Matriarch đang chờ ở cuối. Được xây dựng hoàn toàn bằng Bloom, không quảng cáo và không mua hàng trong ứng dụng.",
       "alt": "Gameplay Bloom Shooter"
+    },
+    "chesslings": {
+      "desc": "Trò chơi cờ vua cho trẻ từ 4 đến 12 tuổi — 35 bài học có lời thoại, một huấn luyện viên thân thiện và 12 thế giới theo chủ đề. Bắt đầu miễn phí, không quảng cáo, chơi được ngoại tuyến.",
+      "alt": "Bàn cờ khủng long của Chesslings"
+    },
+    "jonah": {
+      "desc": "Một trò chơi kể lại Sách Giô-na theo phong cách điện ảnh cho gia đình và người lớn — từ lời kêu gọi, qua cơn bão và vực sâu, đến thành Ni-ni-ve. Người dẫn chuyện giúp đỡ người chơi nhỏ tuổi.",
+      "alt": "Jonah: The Deep — Giô-na bị ném xuống biển giữa cơn bão",
+      "badge": "Ra mắt quý 1 năm 2027"
     },
     "cta": {
       "title": "Đã dựng thứ gì đó với Bloom?",

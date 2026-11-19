@@ -106,17 +106,28 @@
   },
   "showcase": {
     "title": "Vitrine",
-    "desc": "Des jeux publiés créés avec Bloom — disponibles dès maintenant et gratuits.",
-    "metaDescription": "Des jeux publiés créés avec Bloom — disponibles dès maintenant et gratuits.",
+    "desc": "Des jeux créés avec Bloom — déjà disponibles ou en préparation.",
+    "metaDescription": "Des jeux créés avec Bloom — déjà disponibles ou en préparation.",
     "liveBadge": "Disponible sur l'App Store",
-    "liveBadgeGooglePlay": "Disponible sur Google Play",
+    "outNow": "Disponible",
     "download": "Télécharger",
+    "trailer": "Bande-annonce",
+    "website": "Site web",
     "bloomJump": {
       "desc": "Un jeu de plateforme rétro en pixel art gratuit — cinq niveaux faits main, 60 FPS et une bande-son chiptune originale. Entièrement développé avec Bloom, il tourne nativement sur iPhone, iPad et Mac."
     },
     "bloomShooter": {
       "desc": "Un jeu de tir alien à la troisième personne gratuit — cinq arènes conçues à la main, cinquante vagues, six armes et la Matriarch qui vous attend au bout du chemin. Entièrement développé avec Bloom, sans publicité ni achats intégrés.",
       "alt": "Bloom Shooter en action"
+    },
+    "chesslings": {
+      "desc": "Un jeu d'échecs pour les enfants de 4 à 12 ans — 35 leçons narrées, un coach bienveillant et 12 mondes à thème. Gratuit pour commencer, sans publicité, fonctionne hors ligne.",
+      "alt": "Échiquier dinosaures de Chesslings"
+    },
+    "jonah": {
+      "desc": "Une adaptation cinématographique du Livre de Jonas pour les familles et les adultes — de l'appel à Ninive, en passant par la tempête et les profondeurs. Un narrateur guide les plus jeunes.",
+      "alt": "Jonah: The Deep — Jonas jeté par-dessus bord dans la tempête",
+      "badge": "Prévu au 1er trimestre 2027"
     },
     "cta": {
       "title": "Vous construisez quelque chose avec Bloom ?",

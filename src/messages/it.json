@@ -106,17 +106,28 @@
   },
   "showcase": {
     "title": "Vetrina",
-    "desc": "Giochi pubblicati realizzati con Bloom — disponibili ora e gratuiti.",
-    "metaDescription": "Giochi pubblicati realizzati con Bloom — disponibili ora e gratuiti.",
+    "desc": "Giochi creati con Bloom — già disponibili o in arrivo.",
+    "metaDescription": "Giochi creati con Bloom — già disponibili o in arrivo.",
     "liveBadge": "Disponibile sull'App Store",
-    "liveBadgeGooglePlay": "Disponibile su Google Play",
+    "outNow": "Disponibile ora",
     "download": "Scarica",
+    "trailer": "Trailer",
+    "website": "Sito web",
     "bloomJump": {
       "desc": "Un platform retrò in pixel art gratuito — cinque livelli fatti a mano, 60 FPS e una colonna sonora chiptune originale. Realizzato interamente con Bloom, gira in modo nativo su iPhone, iPad e Mac."
     },
     "bloomShooter": {
       "desc": "Uno sparatutto in terza persona contro gli alieni, gratuito — cinque arene create a mano, cinquanta ondate, sei armi e la Matriarch che ti aspetta alla fine. Realizzato interamente con Bloom, senza pubblicità né acquisti in-app.",
       "alt": "Gameplay di Bloom Shooter"
+    },
+    "chesslings": {
+      "desc": "Un gioco di scacchi per bambini dai 4 ai 12 anni — 35 lezioni narrate, un coach amichevole e 12 mondi a tema. Gratis per iniziare, senza pubblicità, funziona offline.",
+      "alt": "Scacchiera con dinosauri di Chesslings"
+    },
+    "jonah": {
+      "desc": "Una rivisitazione cinematografica del Libro di Giona per famiglie e adulti — dalla chiamata, attraverso la tempesta e gli abissi, fino a Ninive. Un narratore guida i giocatori più giovani.",
+      "alt": "Jonah: The Deep — Giona gettato in mare durante la tempesta",
+      "badge": "In arrivo nel primo trimestre 2027"
     },
     "cta": {
       "title": "Hai costruito qualcosa con Bloom?",

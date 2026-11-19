@@ -106,17 +106,28 @@
   },
   "showcase": {
     "title": "Showcase",
-    "desc": "Veröffentlichte Spiele, gebaut mit Bloom — jetzt erhältlich und kostenlos spielbar.",
-    "metaDescription": "Veröffentlichte Spiele, gebaut mit Bloom — jetzt erhältlich und kostenlos spielbar.",
+    "desc": "Spiele, die mit Bloom gebaut sind — schon erschienen oder in Arbeit.",
+    "metaDescription": "Spiele, die mit Bloom gebaut sind — schon erschienen oder in Arbeit.",
     "liveBadge": "Jetzt im App Store",
-    "liveBadgeGooglePlay": "Jetzt bei Google Play",
+    "outNow": "Jetzt erhältlich",
     "download": "Download",
+    "trailer": "Trailer",
+    "website": "Website",
     "bloomJump": {
       "desc": "Ein kostenloser Retro-Pixel-Plattformer — fünf handgemachte Level, 60 FPS und ein originaler Chiptune-Soundtrack. Komplett mit Bloom gebaut, läuft nativ auf iPhone, iPad und Mac."
     },
     "bloomShooter": {
       "desc": "Ein kostenloser Third-Person-Alien-Shooter — fünf handgestaltete Arenen, fünfzig Wellen, sechs Waffen und am Ende wartet die Matriarch. Komplett mit Bloom gebaut, ohne Werbung und ohne In-App-Käufe.",
       "alt": "Bloom Shooter Gameplay"
+    },
+    "chesslings": {
+      "desc": "Ein Schachspiel für Kinder von 4 bis 12 — 35 gesprochene Lektionen, ein freundlicher Coach und 12 Themenwelten. Kostenlos starten, ohne Werbung, funktioniert offline.",
+      "alt": "Chesslings-Schachbrett mit Dinosauriern"
+    },
+    "jonah": {
+      "desc": "Eine filmische Nacherzählung des Buches Jona für Familien und Erwachsene — vom Ruf über den Sturm und die Tiefe bis nach Ninive. Ein Erzähler begleitet jüngere Spieler.",
+      "alt": "Jonah: The Deep — Jona wird im Sturm über Bord geworfen",
+      "badge": "Erscheint Q1 2027"
     },
     "cta": {
       "title": "Etwas mit Bloom gebaut?",
